@@ -1,0 +1,6 @@
+sphinx
+myst-parser
+sphinx-rtd-theme
+myst-nb
+jupyter
+sphinxcontrib-bibtex
