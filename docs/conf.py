@@ -1,8 +1,8 @@
 # -- Project info -----------------------------------------------------
-project = "MIDAS AI in Research"
-author = "Frank Hu @ MIDAS, University of Michigan"
-html_title = "MIDAS AI in Research"
-release = "0.1"
+project = 'MIDAS AI in Research'
+copyright = '2025, Frank Hu'
+author = 'Frank Hu'
+release = '0.1'
 
 # -- General config ---------------------------------------------------
 extensions = [
