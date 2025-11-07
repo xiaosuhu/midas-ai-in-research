@@ -6,7 +6,12 @@
 :align: center
 ```
 
-Welcome! This handbook guides medical and health researchers at the University of Michigan in using AI responsibly and effectively for literature reviews, grant and paper writing, and ethics/compliance.
+Welcome to the **MIDAS AI in Research Tutorial**.  
+This handbook began with a simple curiosity — how do our questions as researchers evolve in the era of artificial intelligence? Each advance in AI reshapes not only *how* we analyze data or write code, but *what* we ask, *why* we ask it, and *how* we validate answers.  
+
+Through this living tutorial, I aim to gather and organize the essential **questions and answers** that researchers across disciplines face when integrating AI into their work — from literature review and grant writing, to ethical practice, reproducibility, and responsible deployment.  
+
+Rather than a static guide, this is an evolving space to **collect insights, examples, and reflections** about using AI as a true collaborator in research. Whether you are new to AI tools or looking to deepen your methodological understanding, I invite you to explore, question, and contribute to this shared resource.
 
 ```{toctree}
 :maxdepth: 2
@@ -20,3 +25,15 @@ Welcome! This handbook guides medical and health researchers at the University o
 05_data_analysis
 06_resources_templates
 ```
+
+---
+
+## References
+
+- [State of AI Report (2024)](https://www.stateof.ai/)
+- [Stanford HAI AI Index Report (2025)](https://hai.stanford.edu/ai-index/2025-ai-index-report)
+- [TechRadar: How AI is redefining university research](https://www.techradar.com/ai-platforms-assistants/ai-is-redefining-university-research-heres-how)
+- [University of Michigan: Going All-In on AI](https://research.umich.edu/research-stories/going-all-in-on-ai/)
+- [Yale News: Doing more, learning less — the risks of AI in research](https://news.yale.edu/2024/03/07/doing-more-learning-less-risks-ai-research)
+- [Harvard Medical School: AI in clinical research — opportunities and limitations](https://learn.hms.harvard.edu/insights/all-insights/ai-clinical-research-opportunities-limitations-and-what-comes-next)
+- [Marie Curie Alumni: Proceed with caution — the potential negative impact of AI](https://www.mariecuriealumni.eu/newsletters/35th-mcaa-newsletter/special-issue-proceed-caution-potential-negative-impact-ai)
