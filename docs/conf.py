@@ -2,6 +2,7 @@
 project = 'MIDAS AI in Research'
 copyright = '2025, Frank Hu'
 author = 'Frank Hu'
+version = '0.1'
 release = '0.1'
 
 # -- General config ---------------------------------------------------
