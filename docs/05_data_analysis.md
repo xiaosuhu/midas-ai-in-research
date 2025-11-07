@@ -1,4 +1,4 @@
-# Resources
+# Data Analysis
 
 - Checklists, prompt templates
 - UM policies (IRB, HIPAA, data handling)
