@@ -1,4 +1,4 @@
-# Grant & Paper Writing with AI
+# Writing & Communication with AI
 
 - Brainstorming aims, structuring sections, clarity edits
 - Transparency: acknowledge AI assistance when required by the funder/journal

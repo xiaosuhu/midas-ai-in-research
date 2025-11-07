@@ -8,6 +8,8 @@ Welcome! This handbook guides medical/health researchers at UM in using AI respo
 
 00_overview
 01_litreview
-02_grant_writing
-03_ethics_privacy
-04_resources
+02_writing_communication
+03_grant_prep_policy
+04_ethics_privacy
+05_data_analysis
+06_resources_templates
