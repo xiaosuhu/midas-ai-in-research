@@ -1,7 +1,5 @@
 # Overview: Artificial Intelligence in Research
 
-![MIDAS AI in Research logo](./_static/midas_ai_logo.png)
-
 Welcome to this guide on using Artificial Intelligence (AI) in your research. This introductory module provides a high-level overview of why AI is becoming an indispensable tool for researchers, what its capabilities and boundaries are, and how it fits within our academic community.
 
 Why AI in Research?
