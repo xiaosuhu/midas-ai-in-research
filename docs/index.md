@@ -4,9 +4,12 @@
 :alt: MIDAS AI in Research logo
 :width: 800px
 :align: center
+:target: https://midas.umich.edu
 ```
 
+
 Welcome to the **MIDAS AI in Research Tutorial**.  
+
 This handbook began with a simple curiosity — how do our questions as researchers evolve in the era of artificial intelligence? Each advance in AI reshapes not only *how* we analyze data or write code, but *what* we ask, *why* we ask it, and *how* we validate answers.  
 
 Through this living tutorial, I aim to gather and organize the essential **questions and answers** that researchers across disciplines face when integrating AI into their work — from literature review and grant writing, to ethical practice, reproducibility, and responsible deployment.  
@@ -28,7 +31,7 @@ Rather than a static guide, this is an evolving space to **collect insights, exa
 
 ---
 
-## References
+## Useful Resources
 
 - [State of AI Report (2024)](https://www.stateof.ai/)
 - [Stanford HAI AI Index Report (2025)](https://hai.stanford.edu/ai-index/2025-ai-index-report)
