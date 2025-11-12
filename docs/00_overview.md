@@ -127,3 +127,4 @@ AI offers a powerful lever for accelerating and expanding research—but it is n
 
 ```{bibliography}
 :style: unsrt
+```
