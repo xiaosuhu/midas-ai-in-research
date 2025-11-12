@@ -125,12 +125,5 @@ AI offers a powerful lever for accelerating and expanding research—but it is n
 
 ---
 
-### References
-
-*   LibGuide: Limitations of AI-Based Tools. [SJCD LibGuides](https://sjcd.libguides.com/c.php?g=1358464&p=10036323&utm_source=chatgpt.com)
-*   Library guide: Generative AI Tools & Resources: Benefits, Limitations. [library.thechicagoschool.edu](https://library.thechicagoschool.edu/c.php?g=1318063&p=10468577&utm_source=chatgpt.com)
-*   NCBI: Hurdles for AI for Scientific Discovery. [NCBI](https://www.ncbi.nlm.nih.gov/books/NBK603481/?utm_source=chatgpt.com)
-*   Library guide: Using Generative AI in Research — Limitations & Warnings. [USC LibGuides](https://libguides.usc.edu/generative-AI/limitations?utm_source=chatgpt.com)
-*   Library guide: Artificial Intelligence (AI) for Academic Research: Limitations. [University of Mary Washington Library](https://library.umw.edu/AI-for-research/limitations?utm_source=chatgpt.com)
-*   TechRadar: AI is redefining university research. [TechRadar](https://www.techradar.com/ai-platforms-assistants/ai-is-redefining-university-research-heres-how?utm_source=chatgpt.com)
-*   University of Michigan — research stories: “Going All-In on AI”. [U-M Research+1](https://research.umich.edu/research-stories/going-all-in-on-ai/?utm_source=chatgpt.com)
+```{bibliography}
+:style: unsrt
