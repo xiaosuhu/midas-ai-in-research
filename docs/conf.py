@@ -9,8 +9,10 @@ release = '0.1'
 extensions = [
     "myst_parser",               # Markdown support (MyST)
     # "myst_nb",                 # <- use this instead of myst_parser if you want notebooks
-    # "sphinxcontrib.bibtex",    # <- enable if you'll cite references
+    "sphinxcontrib.bibtex",    # <- enable if you'll cite references
 ]
+
+bibtex_bibfiles = ['references.bib']
 
 myst_enable_extensions = [
     "colon_fence", "deflist", "substitution", "tasklist"

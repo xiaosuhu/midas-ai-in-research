@@ -1,6 +1,6 @@
 # Overview: Artificial Intelligence in Research
 
-## 00 Overview
+## Overview
 
 ### Purpose
 
@@ -16,15 +16,43 @@ This tutorial introduces the role of Artificial Intelligence (AI) in modern rese
 
 ## Why AI in Research
 
-AI is increasingly integrated into research workflows and has become a major catalyst in the science of discovery. Some of the key motivations include:
+Artificial intelligence is becoming an integral part of modern research practice, transforming how questions are asked, how data are analyzed, and how results are communicated.  
+Several complementary motivations explain why researchers across disciplines are adopting AI:
 
-*   **Scaling and accelerating discovery**: As one large-scale study found, research papers using AI show a citation “premium” and AI’s expansion across disciplines is rapidly accelerating since ~2015. [arXiv+1](https://arxiv.org/abs/2304.10578?utm_source=chatgpt.com)
-*   **Handling data complexity and volume**: Modern research often entails massive, heterogeneous datasets (imaging, genomics, sensors, social data). AI methods (e.g., machine learning, deep learning) help detect patterns, model complex relationships, and extract insights that would be hard to achieve with traditional methods.
-*   **Expanding research questions and designs**: AI enables exploration of novel hypotheses, simulation of alternatives, and design of experiment workflows at scale (e.g., “shotgun” hypothesis generation). [TechRadar+1](https://www.techradar.com/ai-platforms-assistants/ai-is-redefining-university-research-heres-how?utm_source=chatgpt.com)
-*   **Enhancing efficiency and reproducibility**: Tasks such as literature screening, summarising prior work, data cleaning/feature extraction, and even writing drafts or code can be supported or automated with AI, freeing researchers to focus on higher-level scientific thinking. [UT Libraries Guides+1](https://guides.lib.utexas.edu/AI/benefits_and_limitations?utm_source=chatgpt.com)
-*   **Interdisciplinary reach and democratization**: Because AI tools are increasingly accessible, they allow researchers in diverse disciplines (social sciences, humanities, arts, health) to leverage computational methods and forge cross-disciplinary innovations. As U-M notes: “From medicine and engineering to the arts and humanities… faculty are using AI to reimagine their research and amplify its impact.” [U-M Research](https://research.umich.edu/research-stories/going-all-in-on-ai/?utm_source=chatgpt.com)
+**Scaling and accelerating discovery.**  
+AI expands the pace and reach of scientific progress. Studies show that papers using AI-based methods often receive higher citation impact, and the presence of AI-driven work has grown sharply since around 2015 [@arxiv_ai_growth_2023].  
+By automating repetitive steps and exploring large hypothesis spaces, AI helps researchers move from concept to discovery much faster.
 
-In short: AI in research is less about replacing human intelligence and more about augmenting it — enabling new scales, speeds, and modes of inquiry.
+**Handling data complexity and volume.**  
+Modern research produces vast, multimodal datasets—ranging from medical imaging and genomics to environmental sensors and social media streams.  
+AI methods, including machine learning and deep learning, make it possible to identify hidden patterns, model nonlinear relationships, and extract insights that would be difficult to achieve using classical statistics alone.
+
+**Expanding research questions and designs.**  
+AI enables exploration beyond traditional experimental limits: simulating hypothetical conditions, designing adaptive experiments, and generating new hypotheses at scale [@techradar_ai_research_2024].  
+This capacity turns AI into a creative partner for the scientific process.
+
+**Enhancing efficiency and reproducibility.**  
+Tasks such as literature review, summarizing prior work, data wrangling, and even early drafting can be supported or semi-automated through AI-driven tools [@utlib_ai_guides_2024].  
+These tools reduce manual errors and free up time for conceptual reasoning and interpretation.
+
+**Interdisciplinary reach and democratization.**  
+Because AI platforms are increasingly accessible, they allow scholars from diverse fields—humanities, social sciences, health, and engineering—to adopt computational reasoning.  
+This accessibility has enabled collaborations that merge qualitative insight with quantitative modeling [@umich_research_ai_2024].
+
+**Augmenting the researcher’s own capability.**  
+AI can surface relationships or explanations that a researcher might not have considered, revealing blind spots or hidden patterns in data or literature.  
+In this sense, AI acts as a cognitive amplifier, helping us learn things we didn’t know we didn’t know.
+
+**Supporting writing and structure.**  
+Language models can serve as real-time writing partners—helping outline an argument, organize sections, refine clarity, and maintain narrative flow.  
+Used responsibly, this enhances coherence and productivity without diminishing scholarly ownership of ideas.
+
+**Assisting with coding and computation.**  
+AI-assisted coding tools help researchers write, debug, and optimize code across languages and frameworks.  
+They accelerate prototyping and lower technical barriers, allowing investigators to focus more on research design and interpretation.
+
+In short, AI in research is not about replacing human intelligence but about **amplifying it**—enabling new scales, speeds, and styles of inquiry that make discovery more efficient, creative, and inclusive.
+
 
 ---
 
