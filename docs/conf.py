@@ -1,26 +1,28 @@
 # -- Project info -----------------------------------------------------
 project = 'MIDAS AI in Research'
-copyright = '2025, Frank Hu'
-author = 'Frank Hu'
+copyright = '2025, Michigan Institute for Data and AI in Society'
+author = 'MIDAS Research Team'
 version = '0.1'
 release = '0.1'
 
 # -- General config ---------------------------------------------------
 extensions = [
-    "myst_parser",               # Markdown support (MyST)
-    # "myst_nb",                 # <- use this instead of myst_parser if you want notebooks
-    "sphinxcontrib.bibtex",    # <- enable if you'll cite references
+    "myst_parser",
+    "sphinxcontrib.bibtex",  # Bibliography support
 ]
 
+# BibTeX configuration
 bibtex_bibfiles = ['references.bib']
+bibtex_default_style = 'unsrt'
+bibtex_reference_style = 'label'  # or 'super'
 
 myst_enable_extensions = [
     "colon_fence", "deflist", "substitution", "tasklist"
 ]
 
 templates_path = ["_templates"]
-exclude_patterns = ["_build"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # -- Options for HTML output ------------------------------------------
-html_theme = "sphinx_rtd_theme"   # clean “book-like” theme (like Andy’s)
+html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]

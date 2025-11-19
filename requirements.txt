@@ -1,6 +1,6 @@
-sphinx
-myst-parser
-sphinx-rtd-theme
+sphinx>=5.0
+myst-parser>=1.0
+sphinxcontrib-bibtex>=2.0
+sphinx-rtd-theme>=1.0
 myst-nb
 jupyter
-sphinxcontrib-bibtex
