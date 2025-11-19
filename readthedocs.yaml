@@ -7,17 +7,8 @@ build:
 
 sphinx:
   configuration: docs/conf.py
-  # Add this line to specify the source directory
-  builder: html
-  # Or use the explicit format:
-  # fail_on_warning: false
+  # Remove the duplicate sphinx section and the builder line
 
 python:
   install:
     - requirements: requirements.txt
-
-# Explicitly set the source directory
-sphinx:
-  configuration: docs/conf.py
-  # This tells Read the Docs where your source files are
-  # Remove any custom build commands if you have them
