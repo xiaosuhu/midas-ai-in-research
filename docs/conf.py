@@ -1,3 +1,12 @@
+# conf.py
+import os
+
+# Use Read the Docs output directory if available
+if os.environ.get('READTHEDOCS') == 'True':
+    html_dir = os.path.join(os.environ.get('READTHEDOCS_OUTPUT', ''), 'html')
+else:
+    html_dir = '_build/html'
+    
 # -- Project info -----------------------------------------------------
 project = 'MIDAS AI in Research'
 copyright = '2025, Michigan Institute for Data and AI in Society'
