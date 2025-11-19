@@ -1,11 +1,12 @@
 # conf.py
 import os
 
-# Use Read the Docs output directory if available
+# -- Read the Docs specific configuration ---
 if os.environ.get('READTHEDOCS') == 'True':
-    html_dir = os.path.join(os.environ.get('READTHEDOCS_OUTPUT', ''), 'html')
-else:
-    html_dir = '_build/html'
+    # This forces Sphinx to use the correct output directory
+    html_context = {
+        'output_path': os.path.join(os.environ.get('READTHEDOCS_OUTPUT', ''), 'html')
+    }
     
 # -- Project info -----------------------------------------------------
 project = 'MIDAS AI in Research'
@@ -23,7 +24,7 @@ extensions = [
 # BibTeX configuration
 bibtex_bibfiles = ['references.bib']
 bibtex_default_style = 'unsrt'
-bibtex_reference_style = 'label'  # or 'super'
+bibtex_reference_style = 'label'
 
 myst_enable_extensions = [
     "colon_fence", "deflist", "substitution", "tasklist"
