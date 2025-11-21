@@ -1,1 +1,12 @@
-/docs/_builds
+# Sphinx build outputs
+docs/_build/
+_build/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
