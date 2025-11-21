@@ -19,6 +19,7 @@ release = '0.1'
 extensions = [
     "myst_parser",
     "sphinxcontrib.bibtex",  # Bibliography support
+    "sphinx_revealjs",
 ]
 
 # BibTeX configuration
