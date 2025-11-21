@@ -32,16 +32,16 @@ Modern research produces vast, multimodal datasets—ranging from medical imagin
 AI methods, including machine learning and deep learning, make it possible to identify hidden patterns, model nonlinear relationships, and extract insights that would be difficult to achieve using classical statistics alone.
 
 **Expanding research questions and designs.**  
-AI enables exploration beyond traditional experimental limits: simulating hypothetical conditions, designing adaptive experiments, and generating new hypotheses at scale [@techradar_ai_research_2024].  
+AI enables exploration beyond traditional experimental limits: simulating hypothetical conditions, designing adaptive experiments, and generating new hypotheses at scale {cite}`techradar_ai_research_2024`.  
 This capacity turns AI into a creative partner for the scientific process.
 
 **Enhancing efficiency and reproducibility.**  
-Tasks such as literature review, summarizing prior work, data wrangling, and even early drafting can be supported or semi-automated through AI-driven tools [@utlib_ai_guides_2024].  
+Tasks such as literature review, summarizing prior work, data wrangling, and even early drafting can be supported or semi-automated through AI-driven tools {cite}`utlib_ai_guides_2024`.  
 These tools reduce manual errors and free up time for conceptual reasoning and interpretation.
 
 **Interdisciplinary reach and democratization.**  
 Because AI platforms are increasingly accessible, they allow scholars from diverse fields—humanities, social sciences, health, and engineering—to adopt computational reasoning.  
-This accessibility has enabled collaborations that merge qualitative insight with quantitative modeling [@umich_research_ai_2024].
+This accessibility has enabled collaborations that merge qualitative insight with quantitative modeling [umich_research_ai_2024](https://research.umich.edu/research-stories/going-all-in-on-ai/).
 
 **Augmenting the researcher’s own capability.**  
 AI can surface relationships or explanations that a researcher might not have considered, revealing blind spots or hidden patterns in data or literature.  
