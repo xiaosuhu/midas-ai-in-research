@@ -8,12 +8,14 @@ This tutorial introduces the role of Artificial Intelligence (AI) in modern rese
 
 ### Structure
 
-1.  **Why AI in Research**: motivations and drivers.
-2.  **Scope, Benefits & Limitations**: what AI brings, what it cannot replace, and caveats.
-3.  **U-M Context**: how the University of Michigan positions and deploys AI in its research enterprise.
+1.  **What is "AI"**: Brief terminology clarification
+2.  **Why AI in Research**: motivations and drivers.
+3.  **Scope, Benefits & Limitations**: what AI brings, what it cannot replace, and caveats.
+4.  **Should I trust AI**: Concerns about current AI
+5.  **U-M Context**: how the University of Michigan positions and deploys AI in its research enterprise.
 
 ---
-## What is "AI"?
+## What is "AI"
 
 ---
 ## Why AI in Research
@@ -22,7 +24,7 @@ Artificial intelligence is becoming an integral part of modern research practice
 Several complementary motivations explain why researchers across disciplines are adopting AI:
 
 **Scaling and accelerating discovery.**  
-AI expands the pace and reach of scientific progress. Studies show that papers using AI-based methods often receive higher citation impact, and the presence of AI-driven work has grown sharply since around 2015 [@arxiv_ai_growth_2023].  
+AI expands the pace and reach of scientific progress. Studies show that papers using AI-based methods often receive higher citation impact, and the presence of AI-driven work has grown sharply since around 2015 {cite}`arxiv_ai_growth_2023`.  
 By automating repetitive steps and exploring large hypothesis spaces, AI helps researchers move from concept to discovery much faster.
 
 **Handling data complexity and volume.**  
@@ -55,9 +57,6 @@ They accelerate prototyping and lower technical barriers, allowing investigators
 
 In short, AI in research is not about replacing human intelligence but about **amplifying it**—enabling new scales, speeds, and styles of inquiry that make discovery more efficient, creative, and inclusive.
 
-
----
-## Should I trust AI
 
 ---
 ## Scope, Benefits & Limitations
@@ -95,6 +94,10 @@ AI is not a panacea; significant limitations must be recognised. Some of the maj
 | What AI does | Augments scale, speed, pattern detection, cross-discipline workflows |
 | What AI cannot do | Replace human creativity/intuition, guarantee validity, ensure full ethical/social oversight |
 | Critical caveats | Bias, transparency, reproducibility, privacy, over-reliance |
+
+
+---
+## Should I trust AI
 
 ---
 
