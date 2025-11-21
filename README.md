@@ -79,29 +79,17 @@ Balance technical depth with approachability
 
 Follow the existing citation format (hybrid system)
 
-Local Development
-To build the documentation locally:
 
-bash
 # Install dependencies
+```bash
 pip install sphinx sphinx-rtd-theme myst-parser
+```
+# Acknowledgments
+This tutorial is maintained by the Michigan Institute for Data Science (MIDAS) research team at the University of Michigan.
 
-# Build the documentation
-make html
-
-# Serve locally
-cd _build/html && python -m http.server 8000
-License
-This tutorial is available under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
-
-Acknowledgments
-This tutorial is maintained by the Michigan Institute for Data Science (MIDAS) at the University of Michigan.
-
-Contact
+# Contact
 For questions or suggestions about this tutorial:
 
 Open an issue in this repository
-
-Contact MIDAS at midas-contact@umich.edu
-
+Contact MIDAS at midas-research@umich.edu
 This is a living document — we welcome your insights and experiences to help this resource grow and evolve with the AI research landscape.
