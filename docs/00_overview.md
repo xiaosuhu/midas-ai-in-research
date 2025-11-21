@@ -13,7 +13,9 @@ This tutorial introduces the role of Artificial Intelligence (AI) in modern rese
 3.  **U-M Context**: how the University of Michigan positions and deploys AI in its research enterprise.
 
 ---
+## What is "AI"?
 
+---
 ## Why AI in Research
 
 Artificial intelligence is becoming an integral part of modern research practice, transforming how questions are asked, how data are analyzed, and how results are communicated.  
@@ -55,7 +57,9 @@ In short, AI in research is not about replacing human intelligence but about **a
 
 
 ---
+## Should I trust AI
 
+---
 ## Scope, Benefits & Limitations
 
 ### Scope
