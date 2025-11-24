@@ -15,7 +15,7 @@ This tutorial introduces the role of Artificial Intelligence (AI) in modern rese
 5.  **U-M Context**: how the University of Michigan positions and deploys AI in its research enterprise.
 
 ---
-## What is "AI"
+## What is "AI"?
 
 The conceptual landscape of artificial intelligence can be understood as a set of nested domains, each building on the previous one. At the broadest level, Artificial Intelligence (AI) encompasses computational approaches for tasks such as reasoning, perception, and language understanding, as broadly characterized in foundational textbooks on the field {cite}`Russell_Norvig_2021`. Within AI, Machine Learning (ML) focuses on algorithms that improve by learning patterns from data rather than following hand-crafted rules. A more specific subset of ML, Deep Learning (DL), uses multilayer neural networks to learn hierarchical representations of information—an approach that has driven major progress in computer vision, speech processing, and natural language systems {cite}`LeCun2015deep`.
 
@@ -107,14 +107,13 @@ AI is not a panacea; significant limitations must be recognised. Some of the maj
 | What AI cannot do | Replace human creativity/intuition, guarantee validity, ensure full ethical/social oversight |
 | Critical caveats | Bias, transparency, reproducibility, privacy, over-reliance |
 
-
 ---
-## Should I trust AI
+## Should I trust AI?
 
-As AI becomes more deeply integrated into scientific research, one of the most common concerns among researchers is whether using large language models might inadvertently “give away” their ideas. These worries are understandable—after all, scientific innovation depends on protecting emerging hypotheses, unpublished data, and grant-sensitive intellectual work. Fortunately, when used correctly, modern AI tools can be trusted in the same way we trust other research infrastructure. Reputable AI providers (e.g., OpenAI, Anthropic, Google) now offer clear assurances that user inputs are not used to train future models when operating through enterprise, API, or institution-managed environments e.g., [OpenAI Data Usage Policy](https://openai.com/policies/usage-policies
-). Importantly, this means your ideas are not added to training corpora and are not surfaced to other users. From a technical standpoint, the training of frontier models is frozen at a specific cutoff date, and the model cannot “learn” from your conversation in real time {cite}`Russell_Norvig_2021`. Furthermore, privacy-preserving AI practices—such as on-premise deployment, sandboxed environments, and encryption—align with established standards for protecting sensitive research data {cite}`kethireddy2020privacy`.
+As AI becomes more deeply integrated into scientific research, one of the most common concerns among researchers is whether using large language models might inadvertently “give away” their ideas. These worries are understandable—after all, scientific innovation depends on protecting emerging hypotheses, unpublished data, and grant-sensitive intellectual work. Fortunately, when used correctly, modern AI tools can be trusted in the same way we trust other research infrastructure. Reputable AI providers (e.g., OpenAI, Anthropic, Google) now offer clear assurances that user inputs are not used to train future models when operating through enterprise, API, or institution-managed environments e.g., [OpenAI Data Usage Policy](https://openai.com/policies/usage-policies). Importantly, this means your ideas are not added to training corpora and are not surfaced to other users. From a technical standpoint, the training of frontier models is frozen at a specific cutoff date, and the model cannot “learn” from your conversation in real time {cite}`Russell_Norvig_2021`. Furthermore, privacy-preserving AI practices—such as on-premise deployment, sandboxed environments, and encryption—align with established standards for protecting sensitive research data {cite}`kethireddy2020privacy`.
 
 Trusting AI does not mean abandoning caution; it means using the right tool in the right context. For exploratory ideation, literature review, or rapid prototyping, AI can accelerate insight without exposing confidential details. For sensitive content (e.g., unpublished datasets, human subjects information, proprietary algorithms), local or institution-approved models provide additional guarantees. As with any scientific method, the key is controlled usage, documented workflows, and awareness of the environment in which the tool is running. With these safeguards in place, AI becomes not a threat to research integrity but a powerful collaborator—one that expands the researcher’s analytical reach while respecting intellectual ownership and privacy.
+
 ---
 
 ## U-M Context
