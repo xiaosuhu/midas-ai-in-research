@@ -45,7 +45,7 @@ AI enables exploration beyond traditional experimental limits: simulating hypoth
 This capacity turns AI into a creative partner for the scientific process.
 
 **Enhancing efficiency and reproducibility.**  
-Tasks such as literature review, summarizing prior work, data wrangling, and even early drafting can be supported or semi-automated through AI-driven tools [utlib_ai_guides_2024](https://info.library.okstate.edu/AI/tools).  
+Tasks such as literature review, summarizing prior work, data wrangling, and even early drafting can be supported or semi-automated through AI-driven tools [oku_lib_ai_guides_2025](https://info.library.okstate.edu/AI/tools).  
 These tools reduce manual errors and free up time for conceptual reasoning and interpretation.
 
 **Interdisciplinary reach and democratization.**  
@@ -78,9 +78,9 @@ In short, AI in research is not about replacing human intelligence but about **a
 
 Here are several of the commonly cited benefits:
 
-*   Faster throughput: AI can support faster screening of literature or large datasets, accelerating time-to-insight. [PMC+1](https://pmc.ncbi.nlm.nih.gov/articles/PMC10205760/?utm_source=chatgpt.com)
-*   Improved discovery: AI may reveal patterns not obvious to humans, thereby enabling exploratory or “serendipitous” findings. [arXiv](https://arxiv.org/abs/2307.10265?utm_source=chatgpt.com)
-*   Efficiency gains: Automating repetitive tasks (e.g., data cleaning, extraction, formatting) allows researchers to spend more time on interpretation and creativity. [UT Libraries Guides](https://guides.lib.utexas.edu/AI/benefits_and_limitations?utm_source=chatgpt.com)
+*   Faster throughput: AI can support faster screening of literature or large datasets, accelerating time-to-insight. {cite}`smeds2023ai_manuscript_prep`
+*   Improved discovery: AI may reveal patterns not obvious to humans, thereby enabling exploratory or “serendipitous” findings. {cite}`frança2023aiempoweringresearch10`
+*   Efficiency gains: Automating repetitive tasks (e.g., data cleaning, extraction, formatting) allows researchers to spend more time on interpretation and creativity. [oku_lib_ai_guides_2025](https://info.library.okstate.edu/AI/tools)
 *   Broadening access: With AI tools, smaller teams or less-resourced groups may leverage advanced analytics, potentially democratizing aspects of research.
 *   Cross-discipline enablement: AI methods allow disciplines previously less quantitatively oriented (e.g., humanities, social sciences) to adopt computational/synthetic workflows, opening new hybrid research models.
 
@@ -88,9 +88,9 @@ Here are several of the commonly cited benefits:
 
 AI is not a panacea; significant limitations must be recognised. Some of the major ones:
 
-*   **Accuracy and validity issues**: AI models may provide plausible-looking but incorrect outputs (“hallucinations”), mis-attribute citations, or generate biased or misleading results. [SJCD LibGuides+1](https://sjcd.libguides.com/c.php?g=1358464&p=10036323&utm_source=chatgpt.com)
-*   **Bias, fairness and representativeness**: Models trained on biased datasets may perpetuate or amplify disparities (e.g., underrepresentation of certain groups or domains). [library.cia.edu+1](https://library.cia.edu/AI/ethics?utm_source=chatgpt.com)
-*   **Reproducibility and transparency**: Some AI workflows may lack adequate documentation, be irreproducible, or opaque (“black box” models), undermining rigorous scientific standards. [USC LibGuides+1](https://libguides.usc.edu/generative-AI/limitations?utm_source=chatgpt.com)
+*   **Accuracy and validity issues**: AI models may provide plausible-looking but incorrect outputs (“hallucinations”), mis-attribute citations, or generate biased or misleading results. [SJCD LibGuides+1](https://sjcd.libguides.com/c.php?g=1358464&p=10036323)
+*   **Bias, fairness and representativeness**: Models trained on biased datasets may perpetuate or amplify disparities (e.g., underrepresentation of certain groups or domains). [library.cia.edu+1](https://library.cia.edu/AI/ethics?)
+*   **Reproducibility and transparency**: Some AI workflows may lack adequate documentation, be irreproducible, or opaque (“black box” models), undermining rigorous scientific standards. [USC LibGuides+1](https://libguides.usc.edu/generative-AI/limitations?)
 *   **Over-reliance and epistemic risk**: There is risk that researchers lean on AI output without sufficient critical reflection, possibly reducing depth of understanding. As one commentary notes: “There is a risk that scientists will use AI to produce more while understanding less.” [YaleNews](https://news.yale.edu/2024/03/07/doing-more-learning-less-risks-ai-research?utm_source=chatgpt.com)
 *   **Data privacy, ethics and governance**: Use of AI often entails large datasets, potentially sensitive information, and raises concerns about consent, ownership, transparency, and misuse. [mariecuriealumni.eu+1](https://www.mariecuriealumni.eu/newsletters/35th-mcaa-newsletter/special-issue-proceed-caution-potential-negative-impact-ai?utm_source=chatgpt.com)
 *   **Scope of expertise**: AI tools may require specialised expertise (data science, ML), and misuse without proper understanding may lead to flawed conclusions or mis-applied tools. [WIRED](https://www.wired.com/story/machine-learning-reproducibility-crisis?utm_source=chatgpt.com)
@@ -108,6 +108,10 @@ AI is not a panacea; significant limitations must be recognised. Some of the maj
 ---
 ## Should I trust AI
 
+As AI becomes more deeply integrated into scientific research, one of the most common concerns among researchers is whether using large language models might inadvertently “give away” their ideas. These worries are understandable—after all, scientific innovation depends on protecting emerging hypotheses, unpublished data, and grant-sensitive intellectual work. Fortunately, when used correctly, modern AI tools can be trusted in the same way we trust other research infrastructure. Reputable AI providers (e.g., OpenAI, Anthropic, Google) now offer clear assurances that user inputs are not used to train future models when operating through enterprise, API, or institution-managed environments e.g., [OpenAI Data Usage Policy](https://openai.com/policies/usage-policies
+). Importantly, this means your ideas are not added to training corpora and are not surfaced to other users. From a technical standpoint, the training of frontier models is frozen at a specific cutoff date, and the model cannot “learn” from your conversation in real time {cite}`Russell_Norvig_2021`. Furthermore, privacy-preserving AI practices—such as on-premise deployment, sandboxed environments, and encryption—align with established standards for protecting sensitive research data {cite}`arxiv_ai_growth_2023`.
+
+Trusting AI does not mean abandoning caution; it means using the right tool in the right context. For exploratory ideation, literature review, or rapid prototyping, AI can accelerate insight without exposing confidential details. For sensitive content (e.g., unpublished datasets, human subjects information, proprietary algorithms), local or institution-approved models provide additional guarantees. As with any scientific method, the key is controlled usage, documented workflows, and awareness of the environment in which the tool is running. With these safeguards in place, AI becomes not a threat to research integrity but a powerful collaborator—one that expands the researcher’s analytical reach while respecting intellectual ownership and privacy.
 ---
 
 ## U-M Context
