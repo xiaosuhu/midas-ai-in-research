@@ -83,7 +83,7 @@ Here are several of the commonly cited benefits:
 
 *   Faster throughput: AI can support faster screening of literature or large datasets, accelerating time-to-insight. {cite}`smeds2023ai_manuscript_prep`
 *   Improved discovery: AI may reveal patterns not obvious to humans, thereby enabling exploratory or “serendipitous” findings. {cite}`franca2023aiempoweringresearch10`
-*   Efficiency gains: Automating repetitive tasks (e.g., data cleaning, extraction, formatting) allows researchers to spend more time on interpretation and creativity [oku_lib_ai_guides_2025](https://info.library.okstate.edu/AI/tools).
+*   Efficiency gains: Automating repetitive tasks (e.g., data cleaning, extraction, formatting) allows researchers to spend more time on interpretation and creativity. [oku_lib_ai_guides_2025](https://info.library.okstate.edu/AI/tools)
 *   Broadening access: With AI tools, smaller teams or less-resourced groups may leverage advanced analytics, potentially democratizing aspects of research.
 *   Cross-discipline enablement: AI methods allow disciplines previously less quantitatively oriented (e.g., humanities, social sciences) to adopt computational/synthetic workflows, opening new hybrid research models.
 
