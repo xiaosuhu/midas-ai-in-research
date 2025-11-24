@@ -82,8 +82,8 @@ In short, AI in research is not about replacing human intelligence but about **a
 Here are several of the commonly cited benefits:
 
 *   Faster throughput: AI can support faster screening of literature or large datasets, accelerating time-to-insight. {cite}`smeds2023ai_manuscript_prep`
-*   Improved discovery: AI may reveal patterns not obvious to humans, thereby enabling exploratory or “serendipitous” findings. {cite}`frança2023aiempoweringresearch10`
-*   Efficiency gains: Automating repetitive tasks (e.g., data cleaning, extraction, formatting) allows researchers to spend more time on interpretation and creativity. [oku_lib_ai_guides_2025](https://info.library.okstate.edu/AI/tools)
+*   Improved discovery: AI may reveal patterns not obvious to humans, thereby enabling exploratory or “serendipitous” findings. {cite}`franca2023aiempoweringresearch10`
+*   Efficiency gains: Automating repetitive tasks (e.g., data cleaning, extraction, formatting) allows researchers to spend more time on interpretation and creativity [oku_lib_ai_guides_2025](https://info.library.okstate.edu/AI/tools).
 *   Broadening access: With AI tools, smaller teams or less-resourced groups may leverage advanced analytics, potentially democratizing aspects of research.
 *   Cross-discipline enablement: AI methods allow disciplines previously less quantitatively oriented (e.g., humanities, social sciences) to adopt computational/synthetic workflows, opening new hybrid research models.
 
@@ -91,13 +91,13 @@ Here are several of the commonly cited benefits:
 
 AI is not a panacea; significant limitations must be recognised. Some of the major ones:
 
-*   **Accuracy and validity issues**: AI models may provide plausible-looking but incorrect outputs (“hallucinations”), mis-attribute citations, or generate biased or misleading results. [SJCD LibGuides+1](https://sjcd.libguides.com/c.php?g=1358464&p=10036323)
-*   **Bias, fairness and representativeness**: Models trained on biased datasets may perpetuate or amplify disparities (e.g., underrepresentation of certain groups or domains). [library.cia.edu+1](https://library.cia.edu/AI/ethics?)
-*   **Reproducibility and transparency**: Some AI workflows may lack adequate documentation, be irreproducible, or opaque (“black box” models), undermining rigorous scientific standards. [USC LibGuides+1](https://libguides.usc.edu/generative-AI/limitations?)
+*   **Accuracy and validity issues**: AI models may provide plausible-looking but incorrect outputs (“hallucinations”), mis-attribute citations, or generate biased or misleading results. [SJCD LibGuides](https://sjcd.libguides.com/c.php?g=1358464&p=10036323)
+*   **Bias, fairness and representativeness**: Models trained on biased datasets may perpetuate or amplify disparities (e.g., underrepresentation of certain groups or domains). [library.cia.edu](https://library.cia.edu/AI/ethics?)
+*   **Reproducibility and transparency**: Some AI workflows may lack adequate documentation, be irreproducible, or opaque (“black box” models), undermining rigorous scientific standards. [USC LibGuides](https://libguides.usc.edu/generative-AI/limitations?)
 *   **Over-reliance and epistemic risk**: There is risk that researchers lean on AI output without sufficient critical reflection, possibly reducing depth of understanding. As one commentary notes: “There is a risk that scientists will use AI to produce more while understanding less.” [YaleNews](https://news.yale.edu/2024/03/07/doing-more-learning-less-risks-ai-research?utm_source=chatgpt.com)
-*   **Data privacy, ethics and governance**: Use of AI often entails large datasets, potentially sensitive information, and raises concerns about consent, ownership, transparency, and misuse. [mariecuriealumni.eu+1](https://www.mariecuriealumni.eu/newsletters/35th-mcaa-newsletter/special-issue-proceed-caution-potential-negative-impact-ai?utm_source=chatgpt.com)
+*   **Data privacy, ethics and governance**: Use of AI often entails large datasets, potentially sensitive information, and raises concerns about consent, ownership, transparency, and misuse. [mariecuriealumni.eu](https://www.mariecuriealumni.eu/newsletters/35th-mcaa-newsletter/special-issue-proceed-caution-potential-negative-impact-ai?utm_source=chatgpt.com)
 *   **Scope of expertise**: AI tools may require specialised expertise (data science, ML), and misuse without proper understanding may lead to flawed conclusions or mis-applied tools. [WIRED](https://www.wired.com/story/machine-learning-reproducibility-crisis?utm_source=chatgpt.com)
-*   **Creativity and context limitations**: AI excels at identifying patterns from data it has seen, but may struggle with novel conceptual insights, creativity, or domain-specific nuance / common-sense reasoning. [Harvard Medical School CE+1](https://learn.hms.harvard.edu/insights/all-insights/ai-clinical-research-opportunities-limitations-and-what-comes-next?utm_source=chatgpt.com)
+*   **Creativity and context limitations**: AI excels at identifying patterns from data it has seen, but may struggle with novel conceptual insights, creativity, or domain-specific nuance / common-sense reasoning. [Harvard Medical School CE](https://learn.hms.harvard.edu/insights/all-insights/ai-clinical-research-opportunities-limitations-and-what-comes-next?utm_source=chatgpt.com)
 
 ### Summary Table
 
@@ -120,7 +120,7 @@ Trusting AI does not mean abandoning caution; it means using the right tool in t
 
 At the University of Michigan (U-M), AI is not treated as an optional add-on—it is treated as a strategic research enabler, supported institutionally across disciplines. Some highlights:
 
-*   The U-M research office observes: “AI has already created many new opportunities for U-M researchers … [the university] is making deliberate investments in infrastructure, talent and collaboration to integrate AI across our entire research enterprise.” [U-M Research+1](https://research.umich.edu/research-stories/going-all-in-on-ai/?utm_source=chatgpt.com)
+*   The U-M research office observes: “AI has already created many new opportunities for U-M researchers … [the university] is making deliberate investments in infrastructure, talent and collaboration to integrate AI across our entire research enterprise.” [U-M Research](https://research.umich.edu/research-stories/going-all-in-on-ai/?utm_source=chatgpt.com)
 *   For example, within U-M’s health and medical research, AI methods are used to detect genetic mutations in brain tumours in under 90 seconds, illustrating high-impact, translational applications. [Michigan Medicine](https://www.michiganmedicine.org/health-lab-podcast/using-ai-combat-cancerous-brain-tumors?utm_source=chatgpt.com)
 *   The AI Research Committee at U-M recommended establishing guidelines, expanding AI consulting services, and investing in AI-ready infrastructure and training. [U-M Research](https://research.umich.edu/wp-content/uploads/2024/11/AI-Report-2024.pdf?utm_source=chatgpt.com)
 *   U-M also emphasises responsible, inclusive AI: “AI with, for and by everyone can help maximise its benefits.” [cse.engin.umich.edu](https://cse.engin.umich.edu/stories/ai-with-for-and-by-everyone-can-help-maximize-its-benefits?utm_source=chatgpt.com)
