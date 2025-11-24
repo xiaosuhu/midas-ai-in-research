@@ -17,6 +17,15 @@ This tutorial introduces the role of Artificial Intelligence (AI) in modern rese
 ---
 ## What is "AI"
 
+The conceptual landscape of artificial intelligence can be understood as a set of nested domains, each building on the previous one. At the broadest level, Artificial Intelligence (AI) encompasses computational approaches for tasks such as reasoning, perception, and language understanding, as broadly characterized in foundational textbooks on the field {cite}`Russell_Norvig_2021`. Within AI, Machine Learning (ML) focuses on algorithms that improve by learning patterns from data rather than following hand-crafted rules. A more specific subset of ML, Deep Learning (DL), uses multilayer neural networks to learn hierarchical representations of information—an approach that has driven major progress in computer vision, speech processing, and natural language systems {cite}`LeCun2015deep`.
+
+Inside the deep-learning landscape, Generative AI refers to models capable of synthesizing new content—text, images, audio, or molecular structures—by learning the underlying probability distributions of existing data. Among these generative models, Large Language Models (LLMs) represent a particularly influential class: deep neural networks trained on massive text corpora to produce coherent, context-aware language. Early formulations of generative modeling, such as Generative Adversarial Networks {cite}`Goodfellow2014gan`, laid the foundation for today’s generative paradigm, while modern LLMs such as GPT-3 demonstrated unprecedented few-shot and generalization capabilities {cite}`Brown2020gpt3`. As illustrated in the figure, LLMs occupy the overlapping region where deep learning and generative modeling converge—reflecting both their architectural foundations and their emerging role as a central tool in scientific research and discovery (see also https://openai.com/research for further background).
+
+```{image} _static/overview/AI-terminology.png
+:alt: AI-terminology
+:width: 400px
+:align: center
+```
 ---
 ## Why AI in Research
 
@@ -36,7 +45,7 @@ AI enables exploration beyond traditional experimental limits: simulating hypoth
 This capacity turns AI into a creative partner for the scientific process.
 
 **Enhancing efficiency and reproducibility.**  
-Tasks such as literature review, summarizing prior work, data wrangling, and even early drafting can be supported or semi-automated through AI-driven tools {cite}`utlib_ai_guides_2024`.  
+Tasks such as literature review, summarizing prior work, data wrangling, and even early drafting can be supported or semi-automated through AI-driven tools [utlib_ai_guides_2024](https://info.library.okstate.edu/AI/tools).  
 These tools reduce manual errors and free up time for conceptual reasoning and interpretation.
 
 **Interdisciplinary reach and democratization.**  

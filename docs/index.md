@@ -17,7 +17,6 @@ Through this living tutorial, I aim to gather and organize the essential **quest
 ## A Collaborative Resource
 Rather than a static guide, this is an evolving space to **collect insights, examples, and reflections** about using AI as a true collaborator in research. Whether you are new to AI tools or looking to deepen your methodological understanding, I invite you to explore, question, and contribute to this shared resource.
 
-## Tutorial Structure
 ```{toctree}
 :maxdepth: 2
 :caption: PART I — AI in Research
