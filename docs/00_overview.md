@@ -21,9 +21,12 @@ The conceptual landscape of artificial intelligence can be understood as a set o
 
 Inside the deep-learning landscape, Generative AI refers to models capable of synthesizing new content—text, images, audio, or molecular structures—by learning the underlying probability distributions of existing data. Among these generative models, Large Language Models (LLMs) represent a particularly influential class: deep neural networks trained on massive text corpora to produce coherent, context-aware language. Early formulations of generative modeling, such as Generative Adversarial Networks {cite}`Goodfellow2014gan`, laid the foundation for today’s generative paradigm, while modern LLMs such as GPT-3 demonstrated unprecedented few-shot and generalization capabilities {cite}`Brown2020gpt3`. As illustrated in the figure, LLMs occupy the overlapping region where deep learning and generative modeling converge—reflecting both their architectural foundations and their emerging role as a central tool in scientific research and discovery (see also https://openai.com/research for further background).
 
+A crucial turning point in the evolution of modern generative models was the introduction of the Transformer architecture by Vaswani et al. {cite}`vaswani2017attention`. Transformers were a major breakthrough because they can look at all parts of a sentence at the same time, instead of reading it slowly one word after another. This lets them understand long or complicated text much more effectively. Because they work in parallel, they can also learn from huge amounts of information very quickly, which is why modern AI models have become so powerful. Transformers became the foundation for today’s large language models because they can learn from huge amounts of text in a stable and efficient way. But an equally important part of the story is hardware. Modern GPUs and AI accelerators can perform billions of calculations at the same time, something that simply was not possible a decade ago [gpu-ai](https://blogs.nvidia.com/blog/why-gpus-are-great-for-ai/). The combination of a new architecture (Transformers) and powerful computing hardware made it finally realistic to train extremely large models. These two changes together explain why AI has advanced so quickly and why LLMs are now able to support scientific research, data analysis, and discovery in ways that were unimaginable before.
+
+
 ```{image} _static/overview/AI-terminology.png
 :alt: AI-terminology
-:width: 400px
+:width: 800px
 :align: center
 ```
 ---
@@ -33,7 +36,7 @@ Artificial intelligence is becoming an integral part of modern research practice
 Several complementary motivations explain why researchers across disciplines are adopting AI:
 
 **Scaling and accelerating discovery.**  
-AI expands the pace and reach of scientific progress. Studies show that papers using AI-based methods often receive higher citation impact, and the presence of AI-driven work has grown sharply since around 2015 {cite}`arxiv_ai_growth_2023`.  
+AI expands the pace and reach of scientific progress. Studies show that papers using AI-based methods often receive higher citation impact, and the presence of AI-driven work has grown sharply since around 2015 {cite}`hao2025artificialintelligencetoolsexpand`.  
 By automating repetitive steps and exploring large hypothesis spaces, AI helps researchers move from concept to discovery much faster.
 
 **Handling data complexity and volume.**  
@@ -41,7 +44,7 @@ Modern research produces vast, multimodal datasets—ranging from medical imagin
 AI methods, including machine learning and deep learning, make it possible to identify hidden patterns, model nonlinear relationships, and extract insights that would be difficult to achieve using classical statistics alone.
 
 **Expanding research questions and designs.**  
-AI enables exploration beyond traditional experimental limits: simulating hypothetical conditions, designing adaptive experiments, and generating new hypotheses at scale {cite}`techradar_ai_research_2024`.  
+AI enables exploration beyond traditional experimental limits: simulating hypothetical conditions, designing adaptive experiments, and generating new hypotheses at scale [teaching_ai](https://www.techradar.com/ai-platforms-assistants/ai-is-redefining-university-research-heres-how).  
 This capacity turns AI into a creative partner for the scientific process.
 
 **Enhancing efficiency and reproducibility.**  
@@ -109,7 +112,7 @@ AI is not a panacea; significant limitations must be recognised. Some of the maj
 ## Should I trust AI
 
 As AI becomes more deeply integrated into scientific research, one of the most common concerns among researchers is whether using large language models might inadvertently “give away” their ideas. These worries are understandable—after all, scientific innovation depends on protecting emerging hypotheses, unpublished data, and grant-sensitive intellectual work. Fortunately, when used correctly, modern AI tools can be trusted in the same way we trust other research infrastructure. Reputable AI providers (e.g., OpenAI, Anthropic, Google) now offer clear assurances that user inputs are not used to train future models when operating through enterprise, API, or institution-managed environments e.g., [OpenAI Data Usage Policy](https://openai.com/policies/usage-policies
-). Importantly, this means your ideas are not added to training corpora and are not surfaced to other users. From a technical standpoint, the training of frontier models is frozen at a specific cutoff date, and the model cannot “learn” from your conversation in real time {cite}`Russell_Norvig_2021`. Furthermore, privacy-preserving AI practices—such as on-premise deployment, sandboxed environments, and encryption—align with established standards for protecting sensitive research data {cite}`arxiv_ai_growth_2023`.
+). Importantly, this means your ideas are not added to training corpora and are not surfaced to other users. From a technical standpoint, the training of frontier models is frozen at a specific cutoff date, and the model cannot “learn” from your conversation in real time {cite}`Russell_Norvig_2021`. Furthermore, privacy-preserving AI practices—such as on-premise deployment, sandboxed environments, and encryption—align with established standards for protecting sensitive research data {cite}`kethireddy2020privacy`.
 
 Trusting AI does not mean abandoning caution; it means using the right tool in the right context. For exploratory ideation, literature review, or rapid prototyping, AI can accelerate insight without exposing confidential details. For sensitive content (e.g., unpublished datasets, human subjects information, proprietary algorithms), local or institution-approved models provide additional guarantees. As with any scientific method, the key is controlled usage, documented workflows, and awareness of the environment in which the tool is running. With these safeguards in place, AI becomes not a threat to research integrity but a powerful collaborator—one that expands the researcher’s analytical reach while respecting intellectual ownership and privacy.
 ---
