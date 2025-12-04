@@ -135,9 +135,9 @@ AI can summarize and map the literature, but humans must interpret:
 
 The combination—AI for scale, humans for judgment—is the strongest workflow.
 
-## 3. Deep Research Tools Comparison
+## 3. Comparison of Deep Research Tools 
 
-### Comparison of Deep Research Tools (Overview)
+### Overview
 
 | System | Primary Strength | How It Conducts Research |
 |--------|------------------|--------------------------|
@@ -148,7 +148,7 @@ The combination—AI for scale, humans for judgment—is the strongest workflow.
 | **Google Gemini** | Long-form analytic reports | Multi-source synthesis; integrates with Google ecosystem |
 | **AI2 A\* / Asta** | Precision scientific retrieval | Semantic Scholar–based semantic search; metadata-driven retrieval |
 
-### Comparison of Deep Research Tools (Use Cases and Limitations)
+### Use Cases and Limitations
 
 | System | Ideal Use Cases | Limitations |
 |--------|-----------------|-------------|
