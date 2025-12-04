@@ -46,6 +46,7 @@ Rather than a static guide, this is an evolving space to **collect insights, exa
 
 08_resources_on_campus
 09_resources_outside
+10_glossary
 ```
 
 ---
