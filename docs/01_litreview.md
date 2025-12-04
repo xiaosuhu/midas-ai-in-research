@@ -137,14 +137,27 @@ The combination—AI for scale, humans for judgment—is the strongest workflow.
 
 ## 3. Deep Research Tools Comparison
 
-| System | Primary Strength | How It Conducts Research | Ideal Use Cases | Limitations |
-|--------|------------------|--------------------------|-----------------|-------------|
-| **AI2 A\* / AI2 Asta (Allen Institute for AI)** | High-precision scientific retrieval grounded in Semantic Scholar | Uses semantic search and structured scientific metadata to surface relevant, high-quality papers; excels at literature mapping | Precision search in domains with strong Semantic Scholar coverage; identifying influential or methodologically rigorous papers | Semantic Scholar coverage does not include all disciplines equally; less suited for general web search; limited PDF reasoning compared with OpenRead |
-| **OpenAI Deep Research (ChatGPT)** | Integrated multi-step reasoning within ChatGPT ecosystem | Breaks down queries, performs sequential searches, and synthesizes evidence-backed responses; supports document uploads | Researchers already using ChatGPT for coding/writing who want end-to-end integration and structured outputs with citations | May miss paywalled or domain-specific literature; requires user validation of citations |
-| **Perplexity (Research Mode)** | Fast, transparent search with explicit citations | Runs multiple searches in parallel, aggregates results, and surfaces direct answers with linked sources | Rapid topic scoping, finding key papers quickly, broad exploratory searches | Can overemphasize popular or highly ranked sources; less suited for deep PDF analysis |
-| **OpenRead** | Deep, interactive analysis of academic PDFs | Paper Q&A, Paper Compare, and network graph visualizations; excellent for paper-to-paper connections | Students and researchers analyzing specific papers or comparing methods/results across studies | Limited for broad web-based searches; dependent on user-uploaded PDFs |
-| **Consensus** | Evidence synthesis based on peer-reviewed studies only | Retrieves only peer-reviewed literature, generates summary cards with key findings and links; supports filtering by study type | Medicine, public health, social science, or any domain requiring high-quality evidence and reduced noise | Limited coverage (peer-reviewed only); not ideal for exploratory or interdisciplinary searches |
-| **Google Gemini (Deep Research)** | Long-form, multi-page analytic reports | Synthesizes information across sources, supports document uploads, and integrates tightly with Google tools (Docs, Drive, Scholar) | Researchers in Google ecosystems; large, complex queries requiring structured narratives | May be less transparent about source ranking; outputs can be lengthy and require pruning |
+### Comparison of Deep Research Tools (Overview)
+
+| System | Primary Strength | How It Conducts Research |
+|--------|------------------|--------------------------|
+| **OpenAI Deep Research** | Integrated multi-step reasoning in ChatGPT | Sequential searches + synthesis; supports document uploads |
+| **Perplexity** | Fast, transparent cited answers | Parallel searches + aggregated results with linked sources |
+| **OpenRead** | Deep PDF understanding and paper-to-paper comparison | Paper Q&A, Paper Compare, network graph visualization |
+| **Consensus** | Evidence synthesis from peer-reviewed studies | Retrieves peer-reviewed findings and produces summary cards |
+| **Google Gemini** | Long-form analytic reports | Multi-source synthesis; integrates with Google ecosystem |
+| **AI2 A\* / Asta** | Precision scientific retrieval | Semantic Scholar–based semantic search; metadata-driven retrieval |
+
+### Comparison of Deep Research Tools (Use Cases and Limitations)
+
+| System | Ideal Use Cases | Limitations |
+|--------|-----------------|-------------|
+| **OpenAI Deep Research** | Integrated workflow for drafting + research | May miss paywalled content; citation validation required |
+| **Perplexity** | Rapid scoping, finding key papers fast | Can overemphasize mainstream sources |
+| **OpenRead** | Deep PDF review and cross-paper comparison | Limited for web-based discovery |
+| **Consensus** | Medicine, policy, high-evidence fields | Only peer-reviewed content; not for broad exploration |
+| **Google Gemini** | Complex queries needing long-form synthesis | Outputs may be long; source ranking less transparent |
+| **AI2 A\* / Asta** | Precision academic search in well-indexed fields | Limited PDF reasoning; domain-dependent coverage |
 
 ---
 
