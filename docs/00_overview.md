@@ -24,7 +24,7 @@ Inside the deep-learning landscape, Generative AI refers to models capable of sy
 A crucial turning point in the evolution of modern generative models was the introduction of the Transformer architecture by Vaswani et al. {cite}`vaswani2017attention`. Transformers were a major breakthrough because they can look at all parts of a sentence at the same time, instead of reading it slowly one word after another. This lets them understand long or complicated text much more effectively. Because they work in parallel, they can also learn from huge amounts of information very quickly, which is why modern AI models have become so powerful. Transformers became the foundation for today’s large language models because they can learn from huge amounts of text in a stable and efficient way. But an equally important part of the story is hardware. Modern GPUs and AI accelerators can perform billions of calculations at the same time, something that simply was not possible a decade ago [gpu-ai](https://blogs.nvidia.com/blog/why-gpus-are-great-for-ai/). The combination of a new architecture (Transformers) and powerful computing hardware made it finally realistic to train extremely large models. These two changes together explain why AI has advanced so quickly and why LLMs are now able to support scientific research, data analysis, and discovery in ways that were unimaginable before.
 
 
-```{image} _static/overview/AI-terminology.png
+```{image} _static/_overview_assets/AI-terminology.png
 :alt: AI-terminology
 :width: 800px
 :align: center
