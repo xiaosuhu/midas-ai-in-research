@@ -141,23 +141,23 @@ The combination—AI for scale, humans for judgment—is the strongest workflow.
 
 | System | Primary Strength | How It Conducts Research |
 |--------|------------------|--------------------------|
+| **Ai2 Asta** | Precision scientific retrieval | Semantic Scholar–based semantic search; metadata-driven retrieval |
 | **OpenAI Deep Research** | Integrated multi-step reasoning in ChatGPT | Sequential searches + synthesis; supports document uploads |
 | **Perplexity** | Fast, transparent cited answers | Parallel searches + aggregated results with linked sources |
 | **OpenRead** | Deep PDF understanding and paper-to-paper comparison | Paper Q&A, Paper Compare, network graph visualization |
 | **Consensus** | Evidence synthesis from peer-reviewed studies | Retrieves peer-reviewed findings and produces summary cards |
 | **Google Gemini** | Long-form analytic reports | Multi-source synthesis; integrates with Google ecosystem |
-| **AI2 A\* / Asta** | Precision scientific retrieval | Semantic Scholar–based semantic search; metadata-driven retrieval |
 
 ### Use Cases and Limitations
 
 | System | Ideal Use Cases | Limitations |
 |--------|-----------------|-------------|
+| **Ai2 Asta** | Precision academic search in well-indexed fields | Limited PDF reasoning; domain-dependent coverage |
 | **OpenAI Deep Research** | Integrated workflow for drafting + research | May miss paywalled content; citation validation required |
 | **Perplexity** | Rapid scoping, finding key papers fast | Can overemphasize mainstream sources |
 | **OpenRead** | Deep PDF review and cross-paper comparison | Limited for web-based discovery |
 | **Consensus** | Medicine, policy, high-evidence fields | Only peer-reviewed content; not for broad exploration |
 | **Google Gemini** | Complex queries needing long-form synthesis | Outputs may be long; source ranking less transparent |
-| **AI2 A\* / Asta** | Precision academic search in well-indexed fields | Limited PDF reasoning; domain-dependent coverage |
 
 ---
 
