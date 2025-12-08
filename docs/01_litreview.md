@@ -161,7 +161,7 @@ The combination—AI for scale, humans for judgment—is the strongest workflow.
 
 ---
 
-## References (Web Sources)
+## Web Sources
 
 - Ai2 Asta: https://asta.allen.ai/
 - OpenAI Deep Research: https://openai.com/index/deep-research/  

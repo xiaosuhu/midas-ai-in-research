@@ -42,18 +42,18 @@ The use of GenAI in grant writing raises a suite of ethical, integrity, and poli
 
 Key guidelines for responsible AI use include:
 
-- **Transparency and Documentation**  
+**Transparency and Documentation**  
   Researchers should document when and how AI tools are used (e.g., prompts and revisions).  
   See: *AI Usage Cards* framework {cite}`Wahle_2023_AI_Usage_Cards`.
 
-- **Human Oversight**  
+**Human Oversight**  
   Researchers are fully accountable for final content accuracy {cite}`Lin_2025_Beyond_principlism`.
 
-- **Respect for Confidentiality, Privacy, and IP**  
+**Respect for Confidentiality, Privacy, and IP**  
   Avoid uploading sensitive or unpublished data to public AI tools.  
   See: U-M OVPR AI Guidelines (2025). {cite}`UM_OVPR_AI_guidelines_2025`
 
-- **Critical Evaluation of AI Outputs**  
+**Critical Evaluation of AI Outputs**  
   AI can hallucinate citations, invent facts, or misrepresent studies — requiring careful validation.
 
 Ethical AI use in grant writing means using AI to **support thinking** (organization, clarity, framing), not to replace original intellectual work.
@@ -66,14 +66,14 @@ U-M has established guidelines emphasizing privacy, security, and responsible AI
 
 Key points:
 
-- U-M provides secure internal AI tools to avoid risks associated with commercial platforms.{cite}`UM_GenAI_resources`
+U-M provides secure internal AI tools to avoid risks associated with commercial platforms.{cite}`UM_GenAI_resources`
 
-- Researchers **must not upload sensitive or unpublished data** into public AI tools.  
+Researchers **must not upload sensitive or unpublished data** into public AI tools.  
   Reference: U-M Ross IT AI Guidelines.
 
-- OVPR (2025) discourages AI use in internal peer review due to confidentiality and bias risks.
+OVPR (2025) discourages AI use in internal peer review due to confidentiality and bias risks.
 
-- Students and researchers should **document** AI-generated or AI-assisted content in academic contexts.
+Students and researchers should **document** AI-generated or AI-assisted content in academic contexts.
 
 For grant writing, this means using **internal tools**, avoiding exposure of sensitive material, and documenting AI involvement.
 
@@ -81,10 +81,10 @@ For grant writing, this means using **internal tools**, avoiding exposure of sen
 
 #### NIH
 
-- **Notice NOT-OD-25-132 (2025)**: Applications “substantially developed by AI” may be considered non-original and may be rejected. {cite}`NIH_NOT_OD_25_132`  
-- Limits PIs to **six** applications per year starting Sept 25, 2025.  
-- **Generative AI is prohibited in peer review** {cite}`NIH_NOT_OD_23_149`.  
-- Applicants are responsible for ensuring accuracy, originality, and integrity of all text.
+**Notice NOT-OD-25-132 (2025)**: Applications “substantially developed by AI” may be considered non-original and may be rejected. {cite}`NIH_NOT_OD_25_132`  
+Limits PIs to **six** applications per year starting Sept 25, 2025.  
+**Generative AI is prohibited in peer review** {cite}`NIH_NOT_OD_23_149`.  
+Applicants are responsible for ensuring accuracy, originality, and integrity of all text.
 
 NIH does not forbid limited AI-assisted drafting, but the **intellectual substance must originate from humans**.
 
