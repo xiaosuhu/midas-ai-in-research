@@ -142,14 +142,14 @@ This highlights why regulated or unpublished research materials should never be 
 - [ ] Retain human oversight for all research decisions
 
 ### **Documentation Templates**
-Your project can include templates for:
+To support transparency, reproducibility, and ethical AI use, this book provides a set of ready-to-use documentation templates. These include:
 
-- AI usage statements  
-- Data provenance and preprocessing logs  
-- Model card summaries  
-- Ethics review checklists  
+- AI usage statements
+- Data provenance and preprocessing logs
+- Model card summaries
+- Ethics review checklists
 
-These help maintain transparency and reproducibility across projects.
+For examples and copy-ready templates, see the :ref:`documentation-templates-examples` section in the appendix of this book.
 
 ---
 
