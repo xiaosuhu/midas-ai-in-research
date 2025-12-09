@@ -1,3 +1,5 @@
+.. _documentation-templates-examples:
+
 # **Documentation Templates Examples**
 
 ## AI Usage Statement
