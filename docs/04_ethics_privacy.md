@@ -25,7 +25,7 @@ AI systems trained on incomplete or unrepresentative data may reinforce or ampli
 AI should be used to enhance knowledge and societal good while minimizing risks of harm—to research participants, communities, or scientific credibility.
 
 ### **Human Oversight**
-Automated decision-making without human review can lead to errors, privacy violations, or unethical interpretations. Best practice is to position AI as an assistive tool, not an autonomous decision-maker (NIST AI RMF 2023).
+Automated decision-making without human review can lead to errors, privacy violations, or unethical interpretations. Best practice is to position AI as an assistive tool, not an autonomous decision-maker {cite}`NIST2023AI`.
 
 ---
 
@@ -78,7 +78,7 @@ Bias can enter AI workflows through:
 - Skewed or unrepresentative training datasets  
 - Historical inequities embedded in source data  
 - Sampling biases in web-scale corpora  
-- Annotation biases in crowdsourced labels (Mehrabi et al., 2021)
+- Annotation biases in crowdsourced labels {cite}`Mehrabi2021SurveyBias`
 
 In biomedical and social research, such biases may lead to harmful misclassification, unequal model performance across demographic groups, or invalid scientific conclusions.
 
@@ -107,9 +107,9 @@ Human subjects research involving AI may require:
 ### **AI Accountability Frameworks**
 Several formal frameworks guide responsible AI research:
 
-- **ISO/IEC 42001:2023**, the first international AI management system standard  
-- **NIST AI Risk Management Framework (AI RMF)**, emphasizing governance, monitoring, and stakeholder engagement  
-- **U-M’s Research Integrity Program** and **ITS/HITS security offices**, which provide guidance on secure data handling and compliance
+- **ISO/IEC 42001:2023**, the first international AI management system standard {cite}`ISO42001` 
+- **NIST AI Risk Management Framework (AI RMF)**, emphasizing governance, monitoring, and stakeholder engagement {cite}`NIST2023AI`  
+- [**U-M’s Research Integrity Program**](https://research-compliance.umich.edu/research-integrity) and [**ITS/HITS security offices**](https://safecomputing.umich.edu/dataguide), which provide guidance on secure data handling and compliance
 
 These frameworks help researchers build workflows that are auditable, reproducible, and ethically defensible.
 
@@ -118,11 +118,11 @@ These frameworks help researchers build workflows that are auditable, reproducib
 ## 6. Case Studies
 
 ### **Case Study 1: Bias Propagation in Clinical Classification**
-A widely discussed example is the racial bias discovered in clinical risk scores where AI systems underestimated the severity of illness in marginalized populations due to historical inequities embedded in EHR datasets (Obermeyer et al., 2019).  
+A widely discussed example is the racial bias discovered in clinical risk scores where AI systems underestimated the severity of illness in marginalized populations due to historical inequities embedded in EHR datasets {cite}`Obermeyer2019Bias`.  
 This demonstrates how unbalanced training data can produce inequitable care recommendations, even when developers do not explicitly encode demographic variables.
 
 ### **Case Study 2: Privacy Leakage from LLM Training Corpora**
-Large language models trained on public internet data have been shown to occasionally **memorize** snippets of personal information or copyrighted text (Carlini et al., 2021).  
+Large language models trained on public internet data have been shown to occasionally **memorize** snippets of personal information or copyrighted text {cite}`Carlini2021Extracting`.  
 This highlights why regulated or unpublished research materials should never be uploaded to public training datasets and why enterprises now prohibit training on user content.
 
 ---
