@@ -4,7 +4,7 @@
 
 Artificial intelligence (AI) tools now participate in nearly every layer of academic research—from literature review and drafting to data analysis, modeling, and dissemination. As these tools become woven into research workflows, ethical and privacy considerations take on heightened importance. Responsible AI use is not only a matter of regulatory compliance; it is fundamental to *scientific reproducibility*, *public trust*, and *institutional accountability*.  
 
-Using AI responsibly means understanding **what data we send into AI systems**, **how the model may store or process that data**, **what risks exist for research integrity**, and **what oversight structures guide ethical deployment** (NIST 2023; ISO/IEC 42001:2023).
+Using AI responsibly means understanding **what data we send into AI systems**, **how the model may store or process that data**, **what risks exist for research integrity**, and **what oversight structures guide ethical deployment** {cite}`NIST2023AI` {cite}`ISO42001`.
 
 A particularly common concern among researchers is whether sharing research ideas, hypotheses, or unpublished text with an AI tool risks *intellectual leakage*. This chapter addresses that question directly and explains how different classes of AI systems handle user data, what protections exist, and how researchers can choose appropriate environments (e.g., U-M approved tools, on-premise LLMs, or air-gapped compute clusters).
 
