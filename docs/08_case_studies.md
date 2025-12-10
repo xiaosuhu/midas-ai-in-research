@@ -5,9 +5,9 @@ This chapter presents two applied AI Sandbox modules used at the University of M
 
 ---
 
-# Part 1: AI Sandbox for Text Analysis
+## Part 1: AI Sandbox for Text Analysis
 
-## 1. Introduction
+### 1. Introduction
 
 Researchers across education, health, policy, humanities, and social sciences routinely work with large amounts of unstructured text: interviews, survey responses, reports, patient narratives, archival material, or multilingual documents. Manually reviewing such data is time-consuming due to volume, not conceptual difficulty.
 
@@ -29,7 +29,7 @@ These tools offer fast, flexible entry points into early-stage qualitative analy
 
 ---
 
-## 2. EmbeddingGemma-300M: Measuring Semantic Similarity
+### 2. EmbeddingGemma-300M: Measuring Semantic Similarity
 
 **Model type:** Text embedding model  
 **Purpose:** Converts text into vectors that reflect meaning.
@@ -46,7 +46,7 @@ In education research, embeddings can automatically group thousands of student r
 
 ---
 
-## 3. BART-Large-MNLI: Zero-Shot Text Classification
+### 3. BART-Large-MNLI: Zero-Shot Text Classification
 
 **Model type:** Zero-shot classifier  
 **Purpose:** Assigns user-defined labels without training.
@@ -67,7 +67,7 @@ Policy researchers can sort hundreds of interview excerpts into themes to guide 
 
 ---
 
-## 4. Helsinki-NLP / OPUS-MT: Machine Translation
+### 4. Helsinki-NLP / OPUS-MT: Machine Translation
 
 **Model type:** Open-access machine translation  
 **Purpose:** Cross-lingual research workflows.
@@ -84,7 +84,7 @@ Migration researchers can translate interviews collected across countries into a
 
 ---
 
-## 5. BART-Large-CNN: Summarizing Long Documents
+### 5. BART-Large-CNN: Summarizing Long Documents
 
 **Model type:** Abstractive summarization  
 **Purpose:** Produces concise, readable overviews.
@@ -103,17 +103,17 @@ A research team can generate summaries of hundreds of interview transcripts, the
 
 ---
 
-## 6. Additional Text Models
+### 6. Additional Text Models
 
-### BERT Base Uncased
+#### BERT Base Uncased
 A bidirectional masked-language model used for understanding sentence context, predicting masked words, and forming a foundation for tasks such as sentiment analysis, named entity recognition, or document classification.
 
-### CardiffNLP Twitter RoBERTa (Sentiment Analysis)
+#### CardiffNLP Twitter RoBERTa (Sentiment Analysis)
 A sentiment model trained on millions of tweets to handle informal language, slang, emojis, and sarcasm. Ideal for public-perception studies and large-scale social-media monitoring.
 
 ---
 
-## 7. Text Model Comparison Table
+### 7. Text Model Comparison Table
 
 | Model | Primary Function | Strengths | Limitations | Research Uses |
 |------|------------------|-----------|-------------|----------------|
@@ -124,9 +124,9 @@ A sentiment model trained on millions of tweets to handle informal language, sla
 
 ---
 
-# Part 2: AI Sandbox for Computer Vision
+## Part 2: AI Sandbox for Computer Vision
 
-## 1. Introduction
+### 1. Introduction
 
 This module introduces how AI “sees” and interprets images. You will explore four models that represent a progression from **recognition → localization → segmentation → reasoning**:
 
@@ -139,7 +139,7 @@ These tools support research across biology, medicine, environmental science, cu
 
 ---
 
-## 2. Segment Anything (SAM)
+### 2. Segment Anything (SAM)
 
 **Model type:** Segmentation (object outlining)  
 **Demo:** https://segment-anything.com/demo
@@ -164,7 +164,7 @@ Microbiologists use SAM to automatically outline cells, replacing hours of manua
 
 ---
 
-## 3. Grounding DINO
+### 3. Grounding DINO
 
 **Model type:** Text-guided object detection  
 **Demo:** https://huggingface.co/spaces/merve/Grounding_DINO_demo
@@ -185,7 +185,7 @@ Environmental scientists use it to detect solar farms or wind turbines in satell
 
 ---
 
-## 4. Vision Transformer (ViT)
+### 4. Vision Transformer (ViT)
 
 **Model type:** Image classification  
 **Demo:** https://huggingface.co/google/vit-base-patch16-224?maximized=true
@@ -204,7 +204,7 @@ Researchers rapidly categorize large sets of lab or field images before deeper m
 
 ---
 
-## 5. Qwen-VL (Qwen3)
+### 5. Qwen-VL (Qwen3)
 
 **Model type:** Vision–language reasoning  
 **Demo:** https://huggingface.co/spaces/Qwen/Qwen3-VL-Demo
@@ -225,7 +225,7 @@ Museum researchers use it to analyze historical photographs quickly.
 
 ---
 
-## 6. Vision Model Comparison Table
+### 6. Vision Model Comparison Table
 
 | Model | Primary Function | Strengths | Limitations | Research Uses |
 |------|------------------|-----------|-------------|----------------|
