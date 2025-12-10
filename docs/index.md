@@ -36,7 +36,8 @@ Rather than a static guide, this is an evolving space to **collect insights, exa
 
 05_data_analysis
 06_autogluon
-07_case_studies
+07_data_example
+08_case_studies
 ```
 
 ```{toctree}
@@ -44,10 +45,10 @@ Rather than a static guide, this is an evolving space to **collect insights, exa
 :caption: PART III — AI Resources
 :hidden:
 
-08_resources_on_campus
-09_resources_outside
-10_glossary
-11_useful_templates
+09_resources_on_campus
+10_resources_outside
+11_glossary
+12_useful_templates
 ```
 
 ---
