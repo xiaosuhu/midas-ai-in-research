@@ -149,7 +149,7 @@ To support transparency, reproducibility, and ethical AI use, this book provides
 - Model card summaries
 - Ethics review checklists
 
-For examples and copy-ready templates, see the :ref:`documentation-templates-examples` section in the appendix of this book.
+For examples and copy-ready templates, see the :ref:`_documentation-templates-examples` section in the appendix of this book.
 
 ---
 

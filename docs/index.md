@@ -56,6 +56,7 @@ Rather than a static guide, this is an evolving space to **collect insights, exa
 
 - [State of AI Report (2024)](https://www.stateof.ai/)
 - [Stanford HAI AI Index Report (2025)](https://hai.stanford.edu/ai-index/2025-ai-index-report)
+- [ExplanAItions 2025 The evolution of AI in research](https://www.wiley.com/en-us/about-us/ai-resources/ai-study/)
 - [TechRadar: How AI is redefining university research](https://www.techradar.com/ai-platforms-assistants/ai-is-redefining-university-research-heres-how)
 - [University of Michigan: Going All-In on AI](https://research.umich.edu/research-stories/going-all-in-on-ai/)
 
