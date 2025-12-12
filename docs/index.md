@@ -1,4 +1,4 @@
-# MIDAS Tutorial: Applying AI in Research
+# MIDAS Handbook: Applying AI in Research
 
 ```{image} _static/MIDAS_ai_logo.png
 :alt: MIDAS AI in Research logo
@@ -7,7 +7,7 @@
 :target: https://midas.umich.edu
 ```
 
-## Welcome to the **MIDAS AI in Research Tutorial**.  
+## Welcome to the **MIDAS AI in Research Handbook**.  
 
 This handbook began with a simple curiosity — how do our questions as researchers evolve in the era of artificial intelligence? Each advance in AI reshapes not only *how* we analyze data or write code, but *what* we ask, *why* we ask it, and *how* we validate answers.  
 
