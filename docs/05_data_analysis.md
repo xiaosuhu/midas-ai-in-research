@@ -35,14 +35,18 @@ Deep learning methods are well suited for **high-dimensional and unstructured da
 
 Large language models enable analysis of **unstructured text**, including classification, summarization, extraction, translation, and qualitative coding support. They also enable interactive, conversational data exploration, but require careful validation and human oversight.
 
-Most modern AutoML systems dynamically select and tune models across these families depending on the task, data characteristics, and evaluation criteria.
+### Summary
+
+The figure below provides a conceptual overview of major families of data analysis methods, organized along two dimensions that are often central to methodological decision-making. The horizontal axis reflects increasing model complexity and data scale, while the vertical axis reflects emphasis on interpretability and statistical inference.
+
+Statistical modeling approaches appear in the upper-left region, reflecting their strong focus on interpretability, uncertainty estimation, and hypothesis testing, typically with relatively modest data and computational requirements. Classical machine learning methods occupy a middle position, emphasizing predictive performance while retaining some degree of interpretability, particularly for structured tabular data. Deep learning methods are positioned toward the lower-right region, indicating higher model complexity and data demands, often at the expense of transparency. Language models also fall on the high-complexity end of the spectrum, but are shown with greater interpretive affordances due to their interactive and language-based interfaces.
 
 ```{image} _static/_data_analysis_assets/method_families_concept_map.png
 :alt: AI-method
-:width: 800px
+:width: 600px
 :align: center
 ```
-
+Most modern AutoML systems dynamically select and tune models across these families depending on the task, data characteristics, and evaluation criteria.
 
 ## 3. Analysis as an Iterative Workflow
 
