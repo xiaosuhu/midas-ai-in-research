@@ -31,36 +31,33 @@ This handbook is organized around the research lifecycle. You don't need to read
 
 ```{toctree}
 :maxdepth: 2
-:caption: PART I — AI in Research
+:caption: Part I — AI Across the Research Lifecycle
 :hidden:
 
-00_introduction
-02_literature_review
-04_writing_communication
-05_grant_writing
-06_ethics_privacy
+part1/00_introduction
+part1/02_literature_review
+part1/04_writing_communication
+part1/05_grant_writing
+part1/06_ethics_privacy
 ```
-
 ```{toctree}
 :maxdepth: 2
-:caption: PART II — AI in Data Analysis
+:caption: Part II — AI in Data Analysis
 :hidden:
 
-08_data_access
-12_automl
-07_data_example
-08_case_studies
+part2/08_data_access
+part2/12_automl
+part2/13_case_study_clinical
 ```
-
 ```{toctree}
 :maxdepth: 2
-:caption: PART III — AI Resources
+:caption: Part III — Resources & Getting Started
 :hidden:
 
-09_resources_on_campus
-10_resources_outside
-11_glossary
-12_useful_templates
+part3/15_um_resources
+part3/16_external_resources
+part3/17_templates
+part3/18_glossary
 ```
 
 ---
