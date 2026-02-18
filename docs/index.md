@@ -6,16 +6,28 @@
 :align: center
 :target: https://midas.umich.edu
 ```
+A practical guide for researchers integrating AI tools into their work responsibly and effectively.
 
-## Welcome to the **MIDAS AI in Research Handbook**.  
+## A Practical Guide to AI-Augmented Research
 
-This handbook began with a simple curiosity — how do our questions as researchers evolve in the era of artificial intelligence? Each advance in AI reshapes not only *how* we analyze data or write code, but *what* we ask, *why* we ask it, and *how* we validate answers.  
+This handbook helps researchers across all disciplines integrate AI tools into their work responsibly and effectively. Whether you're conducting literature reviews, analyzing data, or writing grants, you'll find practical guidance on using AI as a research collaborator — not a replacement for domain expertise.
 
-## Our Mission
-Through this living tutorial, I aim to gather and organize the essential **questions and answers** that researchers across disciplines face when integrating AI into their work — from literature review and grant writing, to ethical practice, reproducibility, and responsible deployment.  
+**Who this is for:**
+- Researchers wanting to leverage AI tools in their workflow
+- Faculty developing AI-assisted research methods
+- Graduate students learning responsible AI practices
+- Anyone seeking practical, validated approaches to AI in research
 
-## A Collaborative Resource
-Rather than a static guide, this is an evolving space to **collect insights, examples, and reflections** about using AI as a true collaborator in research. Whether you are new to AI tools or looking to deepen your methodological understanding, I invite you to explore, question, and contribute to this shared resource.
+**What makes this different:**
+This is a **human-centered, domain-expertise-first approach** to AI in research. We emphasize validation, reproducibility, and transparency — treating AI as a powerful collaborator that amplifies (never replaces) your research judgment.
+
+## How to Use This Handbook
+
+This handbook is organized around the research lifecycle. You don't need to read it sequentially — jump to the chapter that addresses your current need:
+
+- **Part I** covers AI across research activities (literature review, writing, ethics)
+- **Part II** focuses on AI-assisted data analysis with hands-on examples
+- **Part III** provides resources, tools, and templates to get started
 
 ```{toctree}
 :maxdepth: 2
