@@ -34,11 +34,11 @@ This handbook is organized around the research lifecycle. You don't need to read
 :caption: PART I — AI in Research
 :hidden:
 
-00_overview
-01_litreview
-02_writing_communication
-03_grant_prep_policy
-04_ethics_privacy
+00_introduction
+02_literature_review
+04_writing_communication
+05_grant_writing
+06_ethics_privacy
 ```
 
 ```{toctree}
@@ -46,8 +46,8 @@ This handbook is organized around the research lifecycle. You don't need to read
 :caption: PART II — AI in Data Analysis
 :hidden:
 
-05_data_analysis
-06_autogluon
+08_data_access
+12_automl
 07_data_example
 08_case_studies
 ```
