@@ -35,10 +35,13 @@ This handbook is organized around the research lifecycle. You don't need to read
 :hidden:
 
 part1/00_introduction
+part1/01_when_to_use_ai
 part1/02_literature_review
+part1/03_research_planning
 part1/04_writing_communication
 part1/05_grant_writing
 part1/06_ethics_privacy
+part1/07_validation
 ```
 ```{toctree}
 :maxdepth: 2
@@ -46,8 +49,12 @@ part1/06_ethics_privacy
 :hidden:
 
 part2/08_data_access
+part2/09_data_preparation
+part2/10_computing_resources
+part2/11_exploratory_analysis
 part2/12_automl
-part2/13_case_study_clinical
+part2/13_case_studies
+part2/14_validation_interpretation
 ```
 ```{toctree}
 :maxdepth: 2
