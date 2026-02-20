@@ -19,7 +19,7 @@ What sets this handbook apart is its human-centered approach. We put domain know
 
 ## How the Handbook Is Organized
 
-The handbook follows the research lifecycle, from the earliest stage of framing a research question through data work, analysis, and finally sharing your findings. You do not need to read it from beginning to end. Each chapter is designed to stand on its own, so you can jump to whatever is most relevant to you right now.
+The handbook follows the research lifecycle, from the earliest stage of framing a research question through data work, analysis, and finally sharing your findings. **You do not need to read it from beginning to end**. Each chapter is designed to stand on its own, so you can jump to whatever is most relevant to you right now.
 
 Part I covers how AI fits into the broader research process, including literature review, writing, grant development, and ethics. Part II focuses on the hands-on side of data analysis, from accessing and preparing data to running models. Part III is a reference section with tools, resources, and templates you can put to use right away.
 
@@ -33,7 +33,9 @@ AI can play a useful role at many points in a research project, but knowing wher
 :align: center
 ```
 
-The lifecycle starts with research design, where you think carefully about what questions AI can help you address and where your own judgment is irreplaceable. It moves through data access, preparation, and compute decisions, then into analysis at increasing levels of sophistication. The final phases focus on making sure your outputs are reproducible and well-documented, and on sharing your work with the broader community. The dashed arrow back to phase one is intentional: good research is iterative, and what you learn along the way often reshapes how you think about the original question.
+The lifecycle starts with research design, where you think carefully about what questions AI can help you address and where your own judgment is irreplaceable. It moves through data access, preparation, and compute decisions, then into analysis at increasing levels of sophistication. The final phases focus on making sure your outputs are reproducible and well-documented, and on sharing your work with the broader community. The circled arrow back to phase one is intentional: good research is iterative, and what you learn along the way often reshapes how you think about the original question.
+
+This handbook is a living document. The field of AI moves quickly, and we update the content regularly to reflect new tools, emerging practices, and lessons learned from researchers using this material in their own work. If you are returning after some time away, it is worth checking back — there is a good chance something new has been added since your last visit.
 
 ```{toctree}
 :maxdepth: 2
@@ -77,7 +79,7 @@ part3/18_glossary
 
 ## Resources
 
-The resources below were selected to give you a broader picture of where AI in research stands today and where it is heading. They pair well with the themes in this handbook, from understanding the overall landscape to thinking through the risks.
+The resources below were selected to give you a **broader picture of where AI in research** stands today and where it is heading. They pair well with the themes in this handbook, from understanding the overall landscape to thinking through the risks.
 
 [Stanford HAI AI Index Report (2025)](https://hai.stanford.edu/ai-index/2025-ai-index-report) is one of the most comprehensive annual overviews of AI progress, adoption, and societal impact. It is a good starting point if you want data-driven context for the conversations happening in your field.
 
