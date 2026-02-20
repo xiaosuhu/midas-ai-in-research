@@ -116,7 +116,7 @@ source ~/ai_env/bin/activate
 ## Related Chapters
 
 - [Data Preparation](09_data_preparation.md) - Getting data ready for analysis
-- [UM Resources](../part3/15_um_resources.md) - Detailed UM resource guide
+- [UM Resources](../part3/16_um_resources.md) - Detailed UM resource guide
 - [Exploratory Analysis](11_exploratory_analysis.md) - Interactive data exploration
 
 ---

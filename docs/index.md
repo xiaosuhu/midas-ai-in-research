@@ -57,22 +57,23 @@ part1/07_validation
 :hidden:
 
 part2/08_data_access
-part2/09_data_preparation
-part2/10_computing_resources
-part2/11_exploratory_analysis
-part2/12_automl
-part2/13_case_studies
-part2/14_validation_interpretation
+part2/09_data_example
+part2/10_data_preparation
+part2/11_computing_resources
+part2/12_exploratory_analysis
+part2/13_automl
+part2/14_case_studies
+part2/15_validation_interpretation
 ```
 ```{toctree}
 :maxdepth: 2
 :caption: Part III — Resources & Getting Started
 :hidden:
 
-part3/15_um_resources
-part3/16_external_resources
-part3/17_templates
-part3/18_glossary
+part3/16_um_resources
+part3/17_external_resources
+part3/18_templates
+part3/19_glossary
 ```
 
 ---

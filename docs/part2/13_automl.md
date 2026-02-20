@@ -73,7 +73,7 @@ print(f"Training rows: {len(train_df)}")
 print(f"Test rows:     {len(test_df)}")
 ```
 
-For datasets where samples are not independent — for example, multiple measurements from the same research participant, or data collected over time — a simple random split like this is not appropriate. Chapter 14 covers validation strategies for these situations in more detail.
+For datasets where samples are not independent — for example, multiple measurements from the same research participant, or data collected over time — a simple random split like this is not appropriate. Chapter 15 covers validation strategies for these situations in more detail.
 
 ---
 
