@@ -1,16 +1,13 @@
 # Literature Review with AI
 
-## What You Will Learn
-
-By the end of this chapter, you will understand:
-
+:::{admonition} What You'll Learn
+:class: tip
 - How deep research tools work and what capabilities they add beyond traditional search
 - Why semantic search matters for literature discovery and when keyword matching falls short
 - How to orchestrate a workflow combining human expertise, search databases, and AI tools
 - What makes specialized tools like Asta different from general-purpose deep research systems
 - Where human judgment remains irreplaceable in the review process
-
----
+:::
 
 ## 1. The Changing Landscape of Literature Review
 
