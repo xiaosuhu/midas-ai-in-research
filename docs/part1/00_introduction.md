@@ -1,151 +1,92 @@
 # Overview: Artificial Intelligence in Research
 
-## Overview
-
-### Purpose
-
-This tutorial introduces the role of Artificial Intelligence (AI) in modern research — exploring _why_ researchers are adopting AI, _what_ it can (and can’t) do, and how this plays out in a large research-intensive university context (here, the University of Michigan). It is aimed at an audience of faculty, staff and students engaged in research and familiarizing themselves with AI-augmented workflows.
-
-### Structure
-
-1.  **What is "AI"**: Brief terminology clarification
-2.  **Why AI in Research**: motivations and drivers.
-3.  **Scope, Benefits & Limitations**: what AI brings, what it cannot replace, and caveats.
-4.  **Should I trust AI**: Concerns about current AI
-5.  **U-M Context**: how the University of Michigan positions and deploys AI in its research enterprise.
+If you've been paying attention to conversations in your department lately, you've probably noticed that AI keeps coming up — in seminars, in grant discussions, in conversations about what your students are submitting. This chapter is meant to give you a grounded starting point: what AI actually is, why researchers across disciplines are adopting it, what it genuinely does well and poorly, and how to think about using it responsibly. It also gives you a map of what's in the rest of this handbook so you can navigate straight to whatever is most useful to you right now.
 
 ---
-## What is "AI"?
 
-The conceptual landscape of artificial intelligence can be understood as a set of nested domains, each building on the previous one. At the broadest level, Artificial Intelligence (AI) encompasses computational approaches for tasks such as reasoning, perception, and language understanding, as broadly characterized in foundational textbooks on the field {cite}`Russell_Norvig_2021`. Within AI, Machine Learning (ML) focuses on algorithms that improve by learning patterns from data rather than following hand-crafted rules. A more specific subset of ML, Deep Learning (DL), uses multilayer neural networks to learn hierarchical representations of information—an approach that has driven major progress in computer vision, speech processing, and natural language systems {cite}`LeCun2015deep`.
+## What Is "AI," Anyway?
 
-Inside the deep-learning landscape, Generative AI refers to models capable of synthesizing new content—text, images, audio, or molecular structures—by learning the underlying probability distributions of existing data. Among these generative models, Large Language Models (LLMs) represent a particularly influential class: deep neural networks trained on massive text corpora to produce coherent, context-aware language. Early formulations of generative modeling, such as Generative Adversarial Networks {cite}`Goodfellow2014gan`, laid the foundation for today’s generative paradigm, while modern LLMs such as GPT-3 demonstrated unprecedented few-shot and generalization capabilities {cite}`Brown2020gpt3`. As illustrated in the figure, LLMs occupy the overlapping region where deep learning and generative modeling converge—reflecting both their architectural foundations and their emerging role as a central tool in scientific research and discovery (see also https://openai.com/research for further background).
+The terminology around AI can feel like a moving target, so it's worth a quick orientation. The way to think about it is as a set of nested categories, each one more specific than the last.
 
-A crucial turning point in the evolution of modern generative models was the introduction of the Transformer architecture by Vaswani et al. {cite}`vaswani2017attention`. Transformers were a major breakthrough because they can look at all parts of a sentence at the same time, instead of reading it slowly one word after another. This lets them understand long or complicated text much more effectively. Because they work in parallel, they can also learn from huge amounts of information very quickly, which is why modern AI models have become so powerful. Transformers became the foundation for today’s large language models because they can learn from huge amounts of text in a stable and efficient way. But an equally important part of the story is hardware. Modern GPUs and AI accelerators can perform billions of calculations at the same time, something that simply was not possible a decade ago [gpu-ai](https://blogs.nvidia.com/blog/why-gpus-are-great-for-ai/). The combination of a new architecture (Transformers) and powerful computing hardware made it finally realistic to train extremely large models. These two changes together explain why AI has advanced so quickly and why LLMs are now able to support scientific research, data analysis, and discovery in ways that were unimaginable before.
+**Artificial intelligence** is the broadest term. It refers to computational systems designed to carry out tasks that normally require human-like reasoning, perception, or language understanding {cite}`Russell_Norvig_2021`. **Machine learning** sits inside that category. Rather than following hand-crafted rules, machine learning systems improve by finding patterns in data — they learn from examples rather than being explicitly programmed. **Deep learning** is a specific type of machine learning that uses multilayer neural networks to build up rich, layered representations of information. It's what powers modern image recognition, speech processing, and natural language systems {cite}`LeCun2015deep`.
 
+Within deep learning, **generative AI** refers to models that can produce new content — text, images, code, molecular structures — by learning the statistical structure underlying existing data. Some of the earliest generative models were Generative Adversarial Networks, introduced in 2014 {cite}`Goodfellow2014gan`. But the category really took off with **Large Language Models (LLMs)**: massive neural networks trained on enormous text corpora to understand and generate language. GPT-3 was one of the first to demonstrate that these models could handle a remarkably wide range of tasks with minimal task-specific training {cite}`Brown2020gpt3`.
 
-```{image} _static/_overview_assets/AI-terminology.png
-:alt: AI-terminology
-:width: 800px
+What made all of this possible at scale was an architectural breakthrough from 2017: the Transformer {cite}`vaswani2017attention`. Unlike earlier approaches that processed text word by word, Transformers can attend to all parts of an input simultaneously. This makes them both more capable and much more efficient to train at large scale. Combine that with the parallel computing power of modern GPUs, and you have the two ingredients that explain why AI has advanced so quickly — and why LLMs are now showing up across the research enterprise.
+
+```{image} ../_static/_overview_assets/AI-terminology.png
+:alt: Nested diagram showing AI containing ML containing Deep Learning, which overlaps with Generative AI to produce LLMs
+:width: 700px
 :align: center
 ```
----
-## Why AI in Research
-
-Artificial intelligence is becoming an integral part of modern research practice, transforming how questions are asked, how data are analyzed, and how results are communicated.  
-Several complementary motivations explain why researchers across disciplines are adopting AI:
-
-**Scaling and accelerating discovery.**  
-AI expands the pace and reach of scientific progress. Studies show that papers using AI-based methods often receive higher citation impact, and the presence of AI-driven work has grown sharply since around 2015 {cite}`hao2025artificialintelligencetoolsexpand`.  
-By automating repetitive steps and exploring large hypothesis spaces, AI helps researchers move from concept to discovery much faster.
-
-**Handling data complexity and volume.**  
-Modern research produces vast, multimodal datasets—ranging from medical imaging and genomics to environmental sensors and social media streams.  
-AI methods, including machine learning and deep learning, make it possible to identify hidden patterns, model nonlinear relationships, and extract insights that would be difficult to achieve using classical statistics alone.
-
-**Expanding research questions and designs.**  
-AI enables exploration beyond traditional experimental limits: simulating hypothetical conditions, designing adaptive experiments, and generating new hypotheses at scale [teaching_ai](https://www.techradar.com/ai-platforms-assistants/ai-is-redefining-university-research-heres-how).  
-This capacity turns AI into a creative partner for the scientific process.
-
-**Enhancing efficiency and reproducibility.**  
-Tasks such as literature review, summarizing prior work, data wrangling, and even early drafting can be supported or semi-automated through AI-driven tools [oku_lib_ai_guides_2025](https://info.library.okstate.edu/AI/tools).  
-These tools reduce manual errors and free up time for conceptual reasoning and interpretation.
-
-**Interdisciplinary reach and democratization.**  
-Because AI platforms are increasingly accessible, they allow scholars from diverse fields—humanities, social sciences, health, and engineering—to adopt computational reasoning.  
-This accessibility has enabled collaborations that merge qualitative insight with quantitative modeling [umich_research_ai_2024](https://research.umich.edu/research-stories/going-all-in-on-ai/).
-
-**Augmenting the researcher’s own capability.**  
-AI can surface relationships or explanations that a researcher might not have considered, revealing blind spots or hidden patterns in data or literature.  
-In this sense, AI acts as a cognitive amplifier, helping us learn things we didn’t know we didn’t know.
-
-**Supporting writing and structure.**  
-Language models can serve as real-time writing partners—helping outline an argument, organize sections, refine clarity, and maintain narrative flow.  
-Used responsibly, this enhances coherence and productivity without diminishing scholarly ownership of ideas.
-
-**Assisting with coding and computation.**  
-AI-assisted coding tools help researchers write, debug, and optimize code across languages and frameworks.  
-They accelerate prototyping and lower technical barriers, allowing investigators to focus more on research design and interpretation.
-
-In short, AI in research is not about replacing human intelligence but about **amplifying it**—enabling new scales, speeds, and styles of inquiry that make discovery more efficient, creative, and inclusive.
-
-
----
-## Scope, Benefits & Limitations
-
-### Scope
-
-“AI in research” encompasses a broad set of methods and tools. It includes machine learning (supervised, unsupervised, reinforcement), deep learning, generative models (text, image, code), natural language processing (NLP) for literature review, and AI-assisted experimentation. It applies across the research lifecycle: question framing, hypothesis generation, data acquisition/processing, modelling, interpretation, writing and dissemination.
-
-### Benefits
-
-Here are several of the commonly cited benefits:
-
-*   Faster throughput: AI can support faster screening of literature or large datasets, accelerating time-to-insight. {cite}`smeds2023ai_manuscript_prep`
-*   Improved discovery: AI may reveal patterns not obvious to humans, thereby enabling exploratory or “serendipitous” findings. {cite}`franca2023aiempoweringresearch10`
-*   Efficiency gains: Automating repetitive tasks (e.g., data cleaning, extraction, formatting) allows researchers to spend more time on interpretation and creativity. [oku_lib_ai_guides_2025](https://info.library.okstate.edu/AI/tools)
-*   Broadening access: With AI tools, smaller teams or less-resourced groups may leverage advanced analytics, potentially democratizing aspects of research.
-*   Cross-discipline enablement: AI methods allow disciplines previously less quantitatively oriented (e.g., humanities, social sciences) to adopt computational/synthetic workflows, opening new hybrid research models.
-
-### Limitations & Cautions
-
-AI is not a panacea; significant limitations must be recognised. Some of the major ones:
-
-*   **Accuracy and validity issues**: AI models may provide plausible-looking but incorrect outputs (“hallucinations”), mis-attribute citations, or generate biased or misleading results. [SJCD LibGuides](https://sjcd.libguides.com/c.php?g=1358464&p=10036323)
-*   **Bias, fairness and representativeness**: Models trained on biased datasets may perpetuate or amplify disparities (e.g., underrepresentation of certain groups or domains). [library.cia.edu](https://library.cia.edu/AI/ethics?)
-*   **Reproducibility and transparency**: Some AI workflows may lack adequate documentation, be irreproducible, or opaque (“black box” models), undermining rigorous scientific standards. [USC LibGuides](https://libguides.usc.edu/generative-AI/limitations?)
-*   **Over-reliance and epistemic risk**: There is risk that researchers lean on AI output without sufficient critical reflection, possibly reducing depth of understanding. As one commentary notes: “There is a risk that scientists will use AI to produce more while understanding less.” [YaleNews](https://news.yale.edu/2024/03/07/doing-more-learning-less-risks-ai-research?utm_source=chatgpt.com)
-*   **Data privacy, ethics and governance**: Use of AI often entails large datasets, potentially sensitive information, and raises concerns about consent, ownership, transparency, and misuse. [mariecuriealumni.eu](https://www.mariecuriealumni.eu/newsletters/35th-mcaa-newsletter/special-issue-proceed-caution-potential-negative-impact-ai?utm_source=chatgpt.com)
-*   **Scope of expertise**: AI tools may require specialised expertise (data science, ML), and misuse without proper understanding may lead to flawed conclusions or mis-applied tools. [WIRED](https://www.wired.com/story/machine-learning-reproducibility-crisis?utm_source=chatgpt.com)
-*   **Creativity and context limitations**: AI excels at identifying patterns from data it has seen, but may struggle with novel conceptual insights, creativity, or domain-specific nuance / common-sense reasoning. [Harvard Medical School CE](https://learn.hms.harvard.edu/insights/all-insights/ai-clinical-research-opportunities-limitations-and-what-comes-next?utm_source=chatgpt.com)
-
-### Summary Table
-
-| Category | Key Points |
-| --- | --- |
-| What AI does | Augments scale, speed, pattern detection, cross-discipline workflows |
-| What AI cannot do | Replace human creativity/intuition, guarantee validity, ensure full ethical/social oversight |
-| Critical caveats | Bias, transparency, reproducibility, privacy, over-reliance |
-
----
-## Should I trust AI?
-
-As AI becomes more deeply integrated into scientific research, one of the most common concerns among researchers is whether using large language models might inadvertently “give away” their ideas. These worries are understandable—after all, scientific innovation depends on protecting emerging hypotheses, unpublished data, and grant-sensitive intellectual work. Fortunately, when used correctly, modern AI tools can be trusted in the same way we trust other research infrastructure. Reputable AI providers (e.g., OpenAI, Anthropic, Google) now offer clear assurances that user inputs are not used to train future models when operating through enterprise, API, or institution-managed environments e.g., [OpenAI Data Usage Policy](https://openai.com/policies/usage-policies). Importantly, this means your ideas are not added to training corpora and are not surfaced to other users. From a technical standpoint, the training of frontier models is frozen at a specific cutoff date, and the model cannot “learn” from your conversation in real time {cite}`Russell_Norvig_2021`. Furthermore, privacy-preserving AI practices—such as on-premise deployment, sandboxed environments, and encryption—align with established standards for protecting sensitive research data {cite}`kethireddy2020privacy`.
-
-Trusting AI does not mean abandoning caution; it means using the right tool in the right context. For exploratory ideation, literature review, or rapid prototyping, AI can accelerate insight without exposing confidential details. For sensitive content (e.g., unpublished datasets, human subjects information, proprietary algorithms), local or institution-approved models provide additional guarantees. As with any scientific method, the key is controlled usage, documented workflows, and awareness of the environment in which the tool is running. With these safeguards in place, AI becomes not a threat to research integrity but a powerful collaborator—one that expands the researcher’s analytical reach while respecting intellectual ownership and privacy.
 
 ---
 
-## U-M Context
+## Why Researchers Are Turning to AI
 
-At the University of Michigan (U-M), AI is not treated as an optional add-on—it is treated as a strategic research enabler, supported institutionally across disciplines. Some highlights:
+The short answer is that research has a scale problem. Scientific literature is growing faster than any individual researcher can track — PubMed alone adds more than 100,000 new biomedical articles every month {cite}`NLM_PubMed_Stats`. Datasets are larger, more complex, and more heterogeneous than ever. And the pressure to move quickly has not let up. AI doesn't solve all of that, but it does genuinely change the equation in several ways.
 
-*   The U-M research office observes: “AI has already created many new opportunities for U-M researchers … [the university] is making deliberate investments in infrastructure, talent and collaboration to integrate AI across our entire research enterprise.” [U-M Research](https://research.umich.edu/research-stories/going-all-in-on-ai/?utm_source=chatgpt.com)
-*   For example, within U-M’s health and medical research, AI methods are used to detect genetic mutations in brain tumours in under 90 seconds, illustrating high-impact, translational applications. [Michigan Medicine](https://www.michiganmedicine.org/health-lab-podcast/using-ai-combat-cancerous-brain-tumors?utm_source=chatgpt.com)
-*   The AI Research Committee at U-M recommended establishing guidelines, expanding AI consulting services, and investing in AI-ready infrastructure and training. [U-M Research](https://research.umich.edu/wp-content/uploads/2024/11/AI-Report-2024.pdf?utm_source=chatgpt.com)
-*   U-M also emphasises responsible, inclusive AI: “AI with, for and by everyone can help maximise its benefits.” [cse.engin.umich.edu](https://cse.engin.umich.edu/stories/ai-with-for-and-by-everyone-can-help-maximize-its-benefits?utm_source=chatgpt.com)
+The most obvious is speed. AI can scan, summarize, and surface patterns across bodies of text or data that would take a human researcher weeks to process manually. Research has found that papers using AI-assisted methods tend to receive higher citation impact, and the share of AI-driven research has grown sharply since around 2015 {cite}`hao2025artificialintelligencetoolsexpand`. But the more interesting shift is qualitative. AI can reveal patterns in complex, multimodal datasets — genomics, medical imaging, social media streams, environmental sensors — that classical statistical approaches might not detect. It opens up research questions that were previously intractable because of data complexity, not because the questions weren't worth asking.
 
-### Implications for You (as a researcher at U-M)
+Beyond analysis, AI has become a practical assistant across almost every phase of the research workflow. It can help with literature screening, early-stage data wrangling, drafting and editing prose, writing and debugging code, and structuring arguments {cite}`smeds2023ai_manuscript_prep`. Because AI tools are increasingly accessible through standard platforms, researchers in fields that have traditionally been less computationally oriented — the humanities, social sciences, qualitative health research — can now engage with methods that weren't realistic to adopt before {cite}`franca2023aiempoweringresearch10`.
 
-*   Capitalise on institutional resources: U-M has hubs, consulting services, and infrastructure for AI-based research.
-*   Be aware of institutional expectations: U-M emphasizes ethics, reproducibility, transparency, and equitable access when deploying AI.
-*   Recognise that responsible AI adoption involves more than tool use — it involves training, planning, reviewing bias/validity, and documenting workflows.
-
-### Recommended U-M-specific Actions
-
-1.  Before integrating AI in your work, consult U-M’s AI research policy documents and any unit-specific guidelines.
-2.  Evaluate whether AI adds value beyond “doing the same things faster” — ask: does it enable _new_ insights or just speed the old?
-3.  Document your AI workflow (data sources, pre-processing, model choice, evaluation, limitations) to support reproducibility.
-4.  Consider cross-disciplinary collaborations (e.g., data science core + domain scientist) to maximise rigour and creative potential.
-5.  Stay alert for bias, privacy or ethical issues especially when working with sensitive data (e.g., biomedical, behavioural, neuroimaging).
+The framing we use throughout this handbook is that AI works best as a **collaborator**, not a replacement. It amplifies what you can do; it doesn't substitute for your domain expertise, your judgment about what questions matter, or your responsibility for what you produce.
 
 ---
 
-## Conclusion
+## What AI Can and Cannot Do
 
-AI offers a powerful lever for accelerating and expanding research—but it is not a magic bullet. In the context of U-M (and similarly research-intensive institutions), success lies in combining technological tools with human insight, ethical reflection, rigorous methodology, and institutional support. As you embark on using AI in your research workflow, keep asking: _What new questions does this enable? What new value? What new risks?_
+It's easy to come away from a well-performing language model demo thinking these systems are more capable than they actually are. Here is an honest account of both sides.
+
+On the capability side, AI is genuinely good at processing large volumes of text and data, identifying patterns and relationships, generating drafts, translating between formats, and surfacing relevant literature. It can suggest analytical approaches you might not have considered, and it can accelerate prototyping considerably.
+
+On the limitation side, the list is important enough to take seriously. AI models can produce confident-sounding outputs that are simply wrong. The well-documented phenomenon of "hallucinations" — where a model generates plausible but fabricated information, including fake citations — is a real hazard for research use {cite}`franca2023aiempoweringresearch10`. Models trained on biased data can perpetuate and amplify those biases in ways that are not always visible {cite}`Mehrabi2021SurveyBias`. Many systems are difficult to interpret, which creates real challenges for reproducibility and scientific transparency. And there is a genuine concern worth taking seriously: the convenience of AI-assisted research may encourage researchers to produce more while understanding less {cite}`yale_news_ai_learning_2024`. As AI tools make certain tasks faster and easier, there is a real question about whether researchers are developing the deeper understanding their work actually requires.
+
+None of this means you should avoid AI. It means you should use it thoughtfully, document your workflows, validate outputs carefully, and stay critically engaged with what the tool is actually doing.
+
+| | What AI does well | Where it falls short |
+|---|---|---|
+| **Scale** | Processing large volumes of text and data | Reasoning about genuinely novel problems |
+| **Pattern recognition** | Finding relationships in complex datasets | Understanding causation or context |
+| **Efficiency** | Drafting, summarizing, formatting | Guaranteeing factual accuracy |
+| **Accessibility** | Lowering barriers across disciplines | Replacing domain expertise and judgment |
 
 ---
+
+## Should You Trust AI with Your Research?
+
+One concern that comes up regularly, especially among researchers working with sensitive or unpublished material, is whether using AI tools is safe from a data privacy standpoint. It's a fair concern — scientific innovation depends on protecting emerging hypotheses, unpublished datasets, and grant-sensitive intellectual work.
+
+The answer is: it depends on the tool and the context, and the distinctions matter. Reputable AI providers operating through enterprise or institution-managed environments offer explicit assurances that user inputs are not used to train future models {cite}`kethireddy2020privacy`. From a technical standpoint, frontier models are trained on data with a fixed cutoff date; they do not learn from your conversation in real time. That said, data retention policies vary across providers and product tiers, and not all tools offer the same level of protection. Before using any AI tool with sensitive research data — unpublished manuscripts, identifiable human subjects data, or proprietary datasets — it is worth checking the provider's current data use policy and, where applicable, consulting with your IRB or data governance office.
+
+For highly sensitive content, university-managed or on-premise deployments offer the strongest guarantees. For everyday research tasks like literature exploration, drafting, or code assistance, mainstream enterprise tools are generally appropriate with standard precautions. Knowing which tier of tool to use for which task is part of working responsibly with AI, and it's something we come back to in the ethics and privacy chapter.
+
+Trusting AI is not an all-or-nothing judgment. It means understanding what safeguards are in place, using the right tool for the right task, and documenting your process.
+
+---
+
+## AI at the University of Michigan
+
+At U-M, the institutional investment in AI for research is substantial and deliberate. The university has established AI consulting services, expanded infrastructure for AI-ready computing, and developed guidelines for responsible use across research contexts {cite}`umich_going_all_in_2024`. The emphasis is explicitly on equitable, inclusive AI — the goal is making these tools work "with, for, and by everyone," not just researchers who already have a technical background {cite}`umor_ai_guidance_2024`.
+
+For you as a U-M researcher, this means there are real resources available — computing infrastructure through Great Lakes, consulting support through MIDAS and other centers, and university-approved tool platforms — that you may not be fully aware of. There are also institutional expectations around ethics, reproducibility, and transparent documentation that apply whenever AI is part of your research workflow. Part III of this handbook walks through those resources in detail.
+
+---
+
+## What's in the Rest of This Handbook
+
+This chapter has given you the landscape. The chapters that follow get progressively more specific and practical.
+
+**Part I: AI Across the Research Lifecycle** covers the strategic and process side. Chapter 1 helps you decide when and whether to use AI for a given task, and what questions to ask before you start. Chapters 2, 3, and 4 go deep on three of the most common applications in research practice: AI-assisted literature review, research planning, and writing and communication. Chapter 5 focuses specifically on grant writing with AI, which comes with its own norms and agency policies you need to understand. Chapters 6 and 7 address ethics and privacy, and validation — themes that come up throughout this handbook.
+
+**Part II: AI in Data Analysis** is the hands-on section. It starts with how to access and work with data (Chapters 8 and 9), moves through data preparation and computing resources (Chapters 10 and 11), and then gets into analysis workflows: exploratory analysis, AutoML for rapid model testing, case studies, and validation and interpretation (Chapters 12 through 15). These chapters assume basic familiarity with Python but are designed to be accessible even if you are not primarily a data scientist.
+
+**Part III: Resources and Reference** is where you will find the U-M-specific resource guide, curated external tools and readings, templates you can adapt directly, and a glossary of key terms.
+
+You do not need to read this handbook from beginning to end. Each chapter is designed to stand on its own, so if you already have a specific task in mind — working through a data analysis pipeline, preparing a grant with AI assistance, or thinking through the ethics of a particular project — you can jump straight to the relevant chapter and get what you need.
+
+---
+
 ## References
 
 ```{bibliography}
