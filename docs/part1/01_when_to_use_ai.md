@@ -43,7 +43,7 @@ Before using AI for a research task, ask:
 
 1. ✅ **Do I understand what the AI is doing?** If not, don't use it for critical tasks
 2. ✅ **Can I validate the output?** If you can't check it, you shouldn't rely on it
-3. ✅ **Is the task repetitive at scale?** This is where AI shines
+3. ✅ **Is the task repetitive at scale?** Does it follow a consistent pattern, and are you doing it across many instances (screening 200 papers, processing 1000 samples, analyzing multiple datasets)? If doing it manually would take 40 hours but AI could handle it in 2, that's a strong signal.
 4. ✅ **Do I have a backup plan?** Never let AI be a single point of failure
 5. ✅ **Is this ethically appropriate?** Some tasks need human judgment, not just automation
 
