@@ -23,6 +23,8 @@ Not every research task benefits from AI. This chapter helps you make informed d
 
 The key insight here is scalability. A task that costs you an hour once might cost you 40 hours if you do it manually for 40 documents or datasets. With AI, it costs roughly an hour to set up and maybe another hour total for review and adjustment, no matter if you have 10 or 1000 items. That's transformative for your research possibilities.
 
+But there's something more fundamental: **AI excels at answering questions, not at forming them.** The quality of what you get back from AI directly reflects the quality of the question you asked. A vague prompt produces vague results. A thoughtful, precisely framed question produces focused, useful output. So before you ask an AI tool to help, make sure you've done the analytical work yourself. Clarify what you're actually trying to learn, what your assumptions are, and what would count as a good answer. That thinking has to come from you.
+
 ## When to Skip AI
 
 **Traditional methods are better when:**
@@ -36,6 +38,12 @@ The key insight here is scalability. A task that costs you an hour once might co
 ## The Human-AI Collaboration Spectrum
 
 Most research should operate in the "AI-assisted" or "AI-augmented" zones, where you maintain control and understanding while AI handles scalable, repetitive elements.
+
+Think of AI not as a single tool but as a group of assistants, each with different strengths. You might use one AI tool for drafting and editing prose, another for code debugging, another for literature analysis, and yet another for brainstorming. The key is intentionality—you're choosing which assistant for which task because you understand what each one is good at. A researcher using Claude for writing strategy, ChatGPT for quick exploratory questions, and a specialized tool for data analysis is thinking more strategically than someone treating "AI" as one monolithic black box. You're building a team that serves your research questions, not asking every tool to do everything.
+
+## Your Thinking Comes First
+
+Before you ask AI for help, do the analytical work yourself. This doesn't mean you can't use AI to explore—you can. But it means you should understand your research problem, your assumptions, and what you're trying to learn before you delegate any part of it to a tool. AI is remarkably good at amplifying and refining your thinking, but it cannot substitute for it. If you haven't thought through what you actually need, asking AI to help won't fix that. The best researchers aren't the ones who use the most AI. They're the ones who think clearly first, then strategically use AI to extend their reach.
 
 ## Decision Checklist
 
