@@ -9,7 +9,7 @@
 - Where human judgment remains irreplaceable in the review process
 :::
 
-## 1. The Changing Landscape of Literature Review
+## The Changing Landscape of Literature Review
 
 Traditional literature review workflows—PubMed searches, keyword filtering, citation chaining, and expert judgment—remain essential in research. However, the volume and pace of scientific publishing have made manual review increasingly challenging. PubMed alone adds more than 100,000 new biomedical articles per month {cite}`NLM_PubMed_Stats`, creating a scale challenge for researchers who must stay current. Scientific output continues to grow exponentially, both in number of publications and the volume of cited references {cite}`bornmann2015growth`.
 
@@ -19,7 +19,7 @@ The real challenge is not that we lack information. It is that we have too much 
 
 ---
 
-## 2. What Are Deep Research Tools and What Do They Add?
+## What Are Deep Research Tools and What Do They Add?
 
 Deep research systems extend large language models with capabilities specifically designed for academic workflows. The major platforms include:
 
@@ -36,7 +36,7 @@ Importantly, **they do not replace expert reading or judgment**. What they do is
 
 ---
 
-## 3. Why Semantic Search Matters
+## Why Semantic Search Matters
 
 PubMed and similar databases rely on exact keyword matches, metadata supplied by authors or journals, and MeSH term indexing. This approach has real limitations:
 
@@ -54,7 +54,7 @@ might surface literature from cognitive neuroscience, pain research, and optical
 
 ---
 
-## 4. A Practical Workflow: Combining Human, Keyword Search, and Deep Research
+## A Practical Workflow: Combining Human, Keyword Search, and Deep Research
 
 The best approach is not to choose one method over another, but to combine them strategically. Here is what that looks like:
 
@@ -89,7 +89,7 @@ This is where rigor happens. The AI accelerates discovery, but you make the judg
 
 ---
 
-## 5. Deep Dive: Asta and Semantic Scholar Based Search
+## Deep Dive: Asta and Semantic Scholar Based Search
 
 Since Asta appears frequently in research workflows, it deserves closer attention. Asta is built on the Allen Institute's Semantic Scholar, a production academic search engine that indexes over 215 million papers. Unlike general purpose LLMs, Asta is tuned specifically for academic discovery.
 
@@ -107,7 +107,7 @@ Asta cannot reason deeply about the PDF content of papers you upload the way Ope
 
 ---
 
-## 6. Comparison of Deep Research Tools
+## Comparison of Deep Research Tools
 
 | System | Primary Strength | How It Works |
 |--------|------------------|--------------|
@@ -120,7 +120,7 @@ Asta cannot reason deeply about the PDF content of papers you upload the way Ope
 
 ---
 
-## 7. When Human Expertise Remains Irreplaceable
+## When Human Expertise Remains Irreplaceable
 
 **Deep research tools excel at breadth and speed. Humans excel at depth and judgment**. Here are scenarios where human expertise is essential:
 
@@ -136,7 +136,7 @@ Asta cannot reason deeply about the PDF content of papers you upload the way Ope
 
 ---
 
-## 8. Best Practices for Using Deep Research Tools
+## Best Practices for Using Deep Research Tools
 
 **Start with clarity.** Your research question should be specific enough to guide search but open enough to discover related work. Vague questions produce vague results.
 
@@ -152,22 +152,15 @@ Asta cannot reason deeply about the PDF content of papers you upload the way Ope
 
 ---
 
-## 9. Quick Reference: Which Tool to Use When
+## Quick Reference: Which Tool to Use When?
 
-**You want to rapidly scope an unfamiliar area.**
-Use Perplexity or Google Gemini. Both are fast, transparent, and good at breadth. Results appear in minutes rather than hours.
-
-**You need precision scientific retrieval in a well indexed field.**
-Use Asta. It is built specifically for academic discovery and excels at finding papers that are thematically related but use different keywords.
-
-**You want to deeply understand a specific set of papers.**
-Use OpenRead. Upload your key papers and let it extract methods, find similar work, and build a network visualization.
-
-**You are synthesizing evidence for a clinical or policy decision.**
-Use Consensus. It filters for peer reviewed studies and provides summary cards with effect sizes, reducing the risk of citing low evidence work.
-
-**You want everything integrated into your writing workflow.**
-Use OpenAI Deep Research. It integrates with ChatGPT and supports document uploads, making it convenient for drafting alongside research.
+| Your Situation | Best Tool(s) | Why |
+|---|---|---|
+| Rapidly scope an unfamiliar area | Perplexity or Google Gemini | Fast, transparent, and good at breadth. Results appear in minutes rather than hours. |
+| Need precision scientific retrieval in a well indexed field | Asta | Built specifically for academic discovery and excels at finding papers that are thematically related but use different keywords. |
+| Want to deeply understand a specific set of papers | OpenRead | Upload your key papers and let it extract methods, find similar work, and build a network visualization. |
+| Synthesizing evidence for a clinical or policy decision | Consensus | Filters for peer reviewed studies and provides summary cards with effect sizes, reducing the risk of citing low evidence work. |
+| Want everything integrated into your writing workflow | OpenAI Deep Research | Integrates with ChatGPT and supports document uploads, making it convenient for drafting alongside research. |
 
 ---
 
@@ -190,9 +183,9 @@ Use OpenAI Deep Research. It integrates with ChatGPT and supports document uploa
 
 **Related Handbook Chapters**
 
-- Chapter 1: When to Use AI in Research
-- Chapter 4: Research Planning with AI
-- Chapter 7: Validation and Reproducibility
+- When to Use AI in Research
+- Research Planning with AI
+- Validation and Reproducibility
 
 ---
 
