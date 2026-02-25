@@ -1,91 +1,135 @@
-# Writing and Communication with AI  
-*A Practical Guide for Research Writing in the Age of Generative Models*
+# AI-Assisted Writing and Research Communication
+*Using Generative AI as a Writing Partner, Not a Ghostwriter*
 
-## 1. Introduction
+```{admonition} What You Will Learn
+:class: note
 
-Artificial intelligence has become a pervasive partner in the scholarly writing process. Yet its role is best understood not as a replacement for human authorship but as an amplifier of a researcher’s thinking, planning, and communication. AI tools provide scaffolding—helping researchers brainstorm ideas, experiment with narrative structures, check clarity, and iterate more quickly—while responsibility for accuracy, originality, and interpretation remains squarely with the human author.
+This chapter covers how to use AI tools responsibly and practically across the research writing process, from drafting a first outline to polishing a final manuscript. You will also find a summary of major journal policies on AI use, and a "Try This" section at the end with exercises you can apply to your current writing project. One important thing to keep in mind throughout: AI is here to help you think and communicate more clearly, not to write your research for you.
+```
 
-Academic writing often follows a nonlinear path: ideas emerge, drafts evolve, arguments shift, and reviewers ask for clarifications. Generative AI can assist across the entire arc—from the earliest stage of identifying a research angle, to drafting sections, revising the logical flow, preparing figures, and translating material for broader audiences. When used thoughtfully, AI becomes a “writing lab partner,” accelerating exploration while preserving the researcher’s intellectual ownership.
+## A Familiar Scene
 
-## 2. Typical Use Cases
+It is 10:30 at night. You have been staring at the same partially written discussion section for the past hour. You know what you want to say. You ran the analysis, you understand the results, and you have a mental picture of how this finding connects to the existing literature. But the words just will not come together into coherent sentences.
 
-### Brainstorming titles, abstracts, and framing
-Tools like ChatGPT or domain-specific systems (e.g., Maizey or NotebookLM) can generate variations of titles, refine abstract structures, and identify alternative framings. This helps overcome “blank page paralysis” and exposes different conceptual angles users may not have initially considered.
+This is not a rare experience. Most researchers, at every career stage, hit walls like this one. Now here is a different question: what if you could tell an AI tool something like, "I found that older patients with comorbidities responded significantly better to the intervention than younger patients, which was the opposite of our hypothesis, and I need to write a discussion paragraph that acknowledges this surprise and connects it to two papers I have in my Zotero library"? And what if the AI came back with a paragraph that, while not publication-ready, actually got you unstuck and moving again?
 
-### Outlining logical flow and argument structure
-AI can suggest narrative sequences, highlight missing transitions, or surface latent assumptions. For example, a researcher writing an introduction may ask AI to map out potential sub-sections or compare alternative logical progressions.
+That is the practical core of this chapter. Not AI as a ghostwriter, but AI as a writing partner that helps you get ideas onto the page faster so that you can do the real intellectual work of shaping them.
 
-### Rewriting for clarity, tone, or conciseness
-Editing assistance—clarifying sentence structure, reducing jargon, or tailoring tone to a grant proposal—is among the most mature and reliable applications of generative AI. Tools such as GrammarlyGO or Overleaf’s AI assistant can standardize style while maintaining the author’s conceptual intent.
+---
 
-### Translating or simplifying technical content
-AI can help convert highly technical descriptions into plain-language explanations for interdisciplinary collaborators, patient-facing summaries, or media outreach. When translating between languages, however, authors must review carefully to ensure conceptual precision and avoid cultural or domain-specific misinterpretations.
+## What "AI-Assisted Writing" Actually Means
 
-### Generating visual summaries or diagrams
-Some AI systems can produce conceptual diagrams, workflow figures, or graphical abstracts. While helpful for communication, these should be refined to ensure compliance with journal formatting and accessibility standards.
+Before diving into tools and techniques, it helps to be clear about the role AI should play. When you use AI in research writing, you are still the author. You are responsible for every claim, every citation, every inference. The AI's job is to help you organize your thinking, push past stuck points, sharpen your language, and communicate more clearly with your intended audience.
 
-## 3. Good Practices for AI-Assisted Writing
+Think of it the way you might think of working with a writing center consultant or a thoughtful labmate who reads your drafts. They can point out where an argument feels unclear, suggest a different way to open a section, or ask "what do you actually mean by this?" But they are not writing your paper. You are.
 
-### Maintain authorship and intellectual ownership
-The researcher—not the AI—must remain the originator of ideas, claims, and interpretations. AI suggestions should be treated as drafts or prompts, not authoritative content.
+This distinction matters because the way you interact with AI tools should reflect it. If you hand AI a vague prompt and paste whatever it generates directly into your manuscript, you are setting yourself up for problems: factual errors, hallucinated citations, prose that sounds nothing like you, and potential disclosure violations with your journal. If instead you use AI as a thinking scaffold, you get the actual benefits without those risks.
 
-### Verify sources, citations, and factual accuracy
-Large language models may generate plausible but incorrect references (“hallucinations”). Authors should manually confirm every citation, data point, and factual claim. Several journals explicitly prohibit unverified AI-generated citations (e.g., Nature and Science policies).
+---
 
-### Document how AI was used
-Many journals now request transparency statements describing whether AI contributed to brainstorming, drafting, editing, or summarizing. These statements ensure ethical disclosure while protecting author accountability.
+## Where AI Fits in the Writing Process
 
-### Avoid plagiarism and text recycling
-Even when AI generates the wording, reusing text without disclosure can raise concerns about originality. Researchers should ensure that any AI-generated content is substantially revised and reflects their own intellectual contribution.
+Research writing is not linear. Most researchers cycle through phases of brainstorming, outlining, drafting, getting stuck, revising, and revising again. Here is where AI genuinely helps at each stage.
 
-## 4. Institutional and Journal Guidelines
+### Getting Started: Brainstorming and Framing
 
-### University of Michigan guidance
-UM’s Office of Research (UMOR) and the U-M Library have released ongoing guidance emphasizing:
-- AI tools may be used for drafting and editing as long as authors maintain responsibility for accuracy and originality.
-- Sensitive or proprietary data must not be uploaded into public AI tools unless approved.
+When you are in the early stages of a piece, AI can help you break out of your own perspective. You might ask a tool like ChatGPT, Gemini, or UM-GPT something like: "I am writing a research article about X. Here is what I found. What are three different ways I could frame the significance of this finding for a general biomedical audience?" The responses will not be right, but they will give you something to react to, and reacting is often easier than starting from nothing.
 
-Links:
-- UMOR AI Guidance: https://genai.umich.edu/resources/research  
+This works especially well for titles and abstracts, which are notoriously hard to write because they demand extreme compression. You can draft a rough abstract yourself, share it with an AI tool, and ask it to generate three variations that emphasize different aspects of the work. Then you pick the framing that best matches your intent and refine from there.
+
+### Building Structure: Outlining Before You Draft
+
+One of the most underused applications of AI in research writing is using it to help with structure before you have written a single paragraph. You can describe your study, your key findings, and your target journal to an AI tool and ask it to sketch a potential section outline. This gives you a starting scaffold that you can accept, reject, or rearrange.
+
+A useful prompt for this might look like: "I am writing a methods section for a clinical study that used retrospective EHR data and a propensity score matching approach. I need to cover data source, cohort definition, exposure and outcome variables, and statistical analysis. Can you suggest a logical order and sub-section structure for this?" The AI will give you something to work with. You are not copying it, you are using it to think.
+
+### Drafting: Getting Words on the Page
+
+For drafting, the most practical approach is to use AI to generate rough first-pass text for sections where you are stuck, then revise heavily. The key is to give the AI enough context to be useful. Instead of "write my introduction," try "I am writing an introduction for a paper on cardiovascular disease prediction in older adults. My paper addresses a gap in the literature: most existing prediction models were built on younger patient cohorts. Here are three papers I want to cite. Can you draft an opening paragraph that establishes this gap?"
+
+Even if the draft is not usable, it will almost certainly get you moving. And in research writing, momentum matters.
+
+A few important cautions here. First, AI tools like ChatGPT and Gemini regularly fabricate citations. They will confidently generate a reference that does not exist, or that exists but says something completely different from what was claimed {cite}`bender2021stochastic`. Always verify every citation independently, using a tool like Semantic Scholar, Zotero, or direct journal search. Second, never paste AI-generated text directly into a manuscript without substantial revision. You need to ensure the content is accurate, that it reflects your actual data and findings, and that it reads in your voice.
+
+### Editing and Polishing
+
+This is where AI tools are probably most reliable and most widely used. Tools like GrammarlyGO, Wordtune, and the Overleaf AI assistant can catch grammar issues, suggest cleaner phrasing, identify sentences that are too long or too dense, and help you adjust tone between a technical audience and a general one. These are genuinely useful, low-risk applications.
+
+For polishing, a helpful prompt pattern is to give the AI a specific task rather than a general one. Instead of "edit this paragraph," try "can you revise this paragraph to reduce jargon while keeping the technical accuracy? The audience is a biomedical researcher who is not a specialist in this area." Specificity gets better results.
+
+### Translating for Different Audiences
+
+If you are writing a lay summary, a patient-facing document, a grant abstract for a non-specialist review panel, or a press release, AI can dramatically speed up the translation process. You write the technical version, then ask AI to help convert it. Always review the output carefully because conceptual precision tends to get soft in translation, and domain-specific nuance can be lost. But as a starting point, this works well.
+
+---
+
+## What About Emails and Other Professional Communication?
+
+Yes, this is worth including. Researchers write far more than manuscripts. A single grant cycle might involve dozens of emails: to program officers, collaborators, institutional review staff, and potential co-investigators. Writing a clear, appropriately toned email to a program officer you have never met, or a follow-up to a colleague about a delayed data agreement, takes real effort and often does not get the attention it deserves.
+
+AI can help here too. If you have a difficult email to write, one where you need to raise a concern diplomatically, or request a timeline extension, or push back on a reviewer comment in a cover letter, you can describe the situation to an AI tool and ask for a draft. You will almost always need to revise it to sound like you, but you will have something to start with.
+
+Other communication formats where AI is practically useful include: responses to reviewer comments (drafting the rebuttal framing), lay summaries for grant applications, presentation abstracts, slide narrative drafts, and short-form research summaries for institutional newsletters or social media posts.
+
+The same principles apply across all of these: you supply the intellectual content, the AI helps with structure and language, and you review everything carefully before it goes out.
+
+---
+
+## Institutional and Journal Guidelines
+
+### University of Michigan
+
+The University of Michigan has published guidance through the Office of Research and the U-M Library emphasizing that AI tools may be used for drafting and editing as long as authors maintain responsibility for accuracy and originality. Sensitive or proprietary data must not be uploaded to public AI platforms unless approved through appropriate institutional channels.
+
+Useful UM resources:
+
+- UM GenAI Research Guidance: https://genai.umich.edu/resources/research
 - U-M Library AI Resources: https://guides.lib.umich.edu/c.php?g=1039501&p=9763907
 - U-M ITS AI Resources: https://its.umich.edu/computing/ai
 
-### Examples from major journals
+### What Major Journals Say
 
-| Journal | Key Policy Points | Correct Source |
-|:--------|:------------------|:---------------|
-| **Nature** | AI tools cannot be listed as authors; authors remain accountable for content; AI-generated text must be disclosed; fabricated citations are prohibited. | [Springer Nature Editorial Policies (Nature Portfolio)](https://www.springernature.com/gp/policies/editorial-policies) |
+Policies are evolving quickly, but as of early 2025 the major journals have converged on a few shared principles: AI tools cannot be listed as authors, use must be disclosed, and authors remain fully responsible for the accuracy and integrity of the work.
+
+| Journal | Key Policy Points | Policy Source |
+|:--------|:------------------|:--------------|
+| **Nature** | AI tools cannot be listed as authors; AI-generated text must be disclosed; fabricated citations are prohibited. | [Springer Nature Editorial Policies](https://www.springernature.com/gp/policies/editorial-policies) |
 | **Science** | Fully prohibits AI-generated text unless explicitly permitted; AI cannot be used to generate conclusions; no AI authorship. | [Science Editorial Policies](https://www.science.org/content/page/science-journals-editorial-policies) |
 | **PLOS** | Allows AI for language editing; requires disclosure; prohibits AI-generated data or results without verification. | [PLOS Research Integrity and Publication Ethics](https://plos.org/research-integrity-and-ethics/) |
-| **Elsevier** | Similar to COPE: AI cannot be listed as authors; use must be disclosed; authors remain responsible for accuracy. | [Elsevier Generative AI Policies for Journals](https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals) |
+| **Elsevier** | AI cannot be listed as author; use must be disclosed; authors remain responsible for accuracy. | [Elsevier Generative AI Policies for Journals](https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals) |
 
-These policies converge on a common stance: AI may support writing but cannot take responsibility for scientific claims.
+Because policies change frequently, always check your target journal's author guidelines directly before submitting. The Committee on Publication Ethics (COPE) has also published position statements that many journals follow, which you can find at https://publicationethics.org/.
 
-## 5. Tools and Examples
+### A Note on Disclosure Language
 
-### ChatGPT, Maizey, Gemeni, NotebookLM
-Useful for ideation, early drafting, and summarization. ChatGPT provides flexible conversational refinement; Maizey allows UM-hosted retrieval systems for course and research materials; NotebookLM offers document-grounded assistance.
-
-### Editing Tools: GrammarlyGO, Wordtune, Overleaf Copilot
-These systems excel in polishing prose—correcting grammar, aligning tone with academic norms, and improving readability.
-
-### Reference Tools with AI Integration
-- Zotero (reference manager) + Zotero Scholar Citations plugin
-Note: Zotero itself is not an AI tool but integrates well with AI-powered systems and supports plugins that automate citation retrieval.
-- Semantic Scholar (AI-powered recommendations and summaries)
-- Scite.ai (citation verification and claim classification)
-
-These tools address weak points of LLMs by grounding suggestions in verifiable metadata.
-
-## 6. Reflection: Writing as a Dialogue with AI
-
-Generative AI shifts writing from a solitary act to a dialogic one. Researchers increasingly engage in a back-and-forth with an intelligent assistant that surfaces alternatives, identifies gaps, and prompts deeper reasoning. This dialogical model encourages iteration and exploration while freeing cognitive bandwidth for higher-level conceptual work.
-
-Yet the human researcher remains the ethical and intellectual center of the process. AI can amplify clarity, accelerate revisions, and democratize access to writing support, but it cannot judge scientific integrity, understand disciplinary nuance, or accept responsibility for the final scholarly product. Maintaining a strong personal voice and clear research perspective is essential.
-
-Ultimately, AI-assisted writing is most powerful when treated as collaborative scaffolding: a system that helps the author think more clearly, communicate more effectively, and iterate more rapidly—without displacing the human insight that drives research.
+Most journals now ask authors to include a statement describing how AI was or was not used. A simple, honest disclosure might look like: "The authors used ChatGPT (OpenAI) to assist with initial drafting of the introduction and to suggest alternative phrasings during editing. All content was reviewed and revised by the authors, who take full responsibility for the accuracy and integrity of the work." Some journals have specific templates; check the author instructions.
 
 ---
+
+## Tools Worth Knowing
+
+**For writing and drafting:** ChatGPT, Gemini, UM-GPT, and Maizey are the most commonly used conversational AI tools for writing assistance. Maizey is particularly useful if you are working with UM-hosted research materials, while NotebookLM works well when you want an AI that reasons specifically from documents you have uploaded.
+
+**For editing and polishing:** GrammarlyGO and Wordtune are strong options for prose-level editing. The Overleaf AI Copilot is useful if you are writing in LaTeX and want editing assistance embedded in your workflow.
+
+**For citation integrity:** This is a place where AI tools have real weaknesses, so supplement with dedicated tools. Semantic Scholar provides AI-powered recommendations and summaries grounded in real literature. Scite.ai classifies whether a paper supports, contrasts, or simply mentions a given claim, which is genuinely useful for lit review work. Zotero remains the gold standard reference manager, and it integrates well with AI writing tools even though it is not itself AI-powered.
+
+---
+
+## Try This
+
+These exercises are designed to be used with your current writing project. You do not need to start anything new.
+
+**Exercise 1: Unstick a stuck section.** Take a section of a paper or report you are currently working on that you have been avoiding. Describe the section to an AI tool (what it needs to cover, what your data shows, what the reader should understand after reading it) and ask for a rough draft. Do not use the draft. Instead, use it as a prompt: what did the AI get wrong or miss? What would you say differently? Now write the section yourself, using your reaction to the AI draft as your starting point.
+
+**Exercise 2: Framing test.** Take your current abstract or a one-paragraph summary of your project and share it with an AI tool. Ask for three alternative ways to frame the significance of the work for different audiences (your disciplinary peers, a general biomedical audience, and a funding panel). Compare the framings. Which elements does each version emphasize? Does this change how you think about your own framing?
+
+**Exercise 3: Check your journal's policy.** Find the AI policy for the primary journal you are currently writing for, or planning to submit to. Write a one-sentence disclosure statement that accurately describes how you have used (or not used) AI in your writing process on this project.
+
+**Exercise 4: Difficult email.** Think of a professional email you have been putting off because the tone is tricky. Describe the situation to an AI tool and ask for a draft. Revise it until it sounds like you and says what you actually need to say. Notice where the AI's version was helpful and where it went wrong.
+
+---
+
 ## References
 
 ```{bibliography}
