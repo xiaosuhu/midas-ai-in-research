@@ -122,7 +122,7 @@ Asta cannot reason deeply about the PDF content of papers you upload the way Ope
 
 ## 7. When Human Expertise Remains Irreplaceable
 
-Deep research tools excel at breadth and speed. Humans excel at depth and judgment. Here are scenarios where human expertise is essential:
+**Deep research tools excel at breadth and speed. Humans excel at depth and judgment**. Here are scenarios where human expertise is essential:
 
 **Systematic reviews and meta analyses.** If you are conducting a systematic review for publication or policy impact, you cannot delegate the screening to AI. Methodological rigor demands that you (or your team) read and evaluate every paper that meets your inclusion criteria. This is not just best practice; in many cases it is required by funders, institutions, or journal guidelines.
 
