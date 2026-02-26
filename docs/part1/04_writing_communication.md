@@ -4,16 +4,23 @@
 ```{admonition} What You Will Learn
 :class: tip
 
-This chapter covers how to use AI tools responsibly and practically across the research writing process, from drafting a first outline to polishing a final manuscript. You will also find a summary of major journal policies on AI use, and a "Try This" section at the end with exercises you can apply to your current writing project. One important thing to keep in mind throughout: AI is here to help you think and communicate more clearly, not to write your research for you.
+- How to use AI tools practically at each stage of the research writing process, from first outline to final manuscript.
+- What the major journal policies on AI use actually say, and how to write a disclosure statement.
+- How AI can help with professional research communication beyond manuscripts, including emails and lay summaries.
+- A "Try This" section at the end with exercises you can apply to your current writing project.
+
+One thing to keep in mind throughout: AI is here to help you think and communicate more clearly, not to write your research for you.
 ```
 
 ## A Familiar Scene
 
 It is 10:30 at night. You have been staring at the same partially written discussion section for the past hour. You know what you want to say. You ran the analysis, you understand the results, and you have a mental picture of how this finding connects to the existing literature. But the words just will not come together into coherent sentences.
 
-This is not a rare experience. Most researchers, at every career stage, hit walls like this one. Now here is a different question: what if you could tell an AI tool something like, "I found that older patients with comorbidities responded significantly better to the intervention than younger patients, which was the opposite of our hypothesis, and I need to write a discussion paragraph that acknowledges this surprise and connects it to two papers I have in my Zotero library"? And what if the AI came back with a paragraph that, while not publication-ready, actually got you unstuck and moving again?
+This experience is not specific to any one field. A clinical researcher might be trying to explain why a treatment effect showed up only in older patients, the opposite of what the literature predicted. A social scientist might be wrestling with how to frame an unexpected pattern in survey data without overstating what the numbers can actually support. A computational researcher might know exactly what their model does but struggle to write an introduction that non-specialist reviewers will follow. The domain is different, the data is different, but the feeling is the same: you understand your work, and you cannot write it right now.
 
-That is the practical core of this chapter. Not AI as a ghostwriter, but AI as a writing partner that helps you get ideas onto the page faster so that you can do the real intellectual work of shaping them.
+Now imagine telling an AI tool exactly that. Not "write my discussion section," but something more like: "I found a result that surprised me, here is what I expected and here is what I got, and I need to write a paragraph that honestly addresses this gap and connects it to two papers in my library." The AI will come back with something imperfect, maybe quite imperfect. But it will be a paragraph, and having a paragraph to react to is a completely different mental state than staring at a blank page.
+
+That is the practical core of this chapter. Not AI as a ghostwriter, but AI as a writing partner that helps you get ideas onto the page faster so you can do the real intellectual work of shaping them.
 
 ---
 
