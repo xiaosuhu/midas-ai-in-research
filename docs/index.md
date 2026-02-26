@@ -48,8 +48,9 @@ part1/02_literature_review
 part1/03_research_planning
 part1/04_writing_communication
 part1/05_grant_writing
-part1/06_ethics_privacy
-part1/07_validation
+part1/06_reviewing_with_ai
+part1/07_ethics_privacy
+part1/08_validation
 ```
 ```{toctree}
 :maxdepth: 2

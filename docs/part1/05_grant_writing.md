@@ -1,139 +1,126 @@
-# Grant Preparation and Policy
+# Grant Writing with AI
 
-## 1. Introduction
+```{admonition} What You Will Learn
+:class: tip
 
-The rise of generative artificial intelligence (GenAI) tools — large-language models, automated summarizers, AI-driven Gantt-chart or timeline generators, etc. — promises to transform how researchers develop grant proposals. By accelerating tasks like literature scoping, drafting narrative sections, or formatting budgets, AI can yield greater efficiency, consistency, and creative ideation. Particularly in competitive funding environments, the ability to rapidly iterate on proposals can help teams explore multiple aims, refine hypotheses, or re-package ideas for different funders.
+- How grant writing is strategically different from other research writing, and why that changes how you should use AI.
+- Which parts of a grant proposal AI genuinely helps with, and which parts it cannot do for you.
+- What "substantially developed by AI" actually means under NIH policy, and how to stay on the right side of that line.
+- What University of Michigan, NIH, and NSF policies currently say about AI use in proposals.
+- A "Try This" exercise at the end to practice using AI as a strategic thought partner on your own proposal.
+```
 
-At the same time, AI’s use raises institutional concerns, especially around originality (intellectual ownership), data confidentiality and management (especially when using public AI tools), and compliance with funder and university policy. It is therefore critical to treat AI as an *assistive tool* — not a substitute for researchers’ own intellectual contributions — and to embed ethical and compliance practices in AI-augmented grant development workflows.
+## Why Grant Writing Is Different
 
-## 2. AI for Grant Ideation and Planning
+If you have already read the chapter on AI-assisted writing, you might wonder whether this chapter is redundant. The short answer is no, and the reason comes down to what grant writing actually is.
 
-AI tools offer immediate value in the early, planning stages of grant development:
+Writing a manuscript is primarily an act of communication. You have findings. Your job is to describe them clearly, accurately, and in a way that helps readers understand their significance. AI can genuinely help with that: organizing your argument, smoothing your prose, adapting your language for a particular journal audience.
 
-- **Literature Scoping and Gap Identification**  
-  GenAI tools can help scan large literatures, summarize key findings, highlight trends, or suggest underexplored areas. This can help PIs and teams quickly map the landscape, identify gaps, and formulate promising research questions.
+Grant writing is something else. It is a strategic act. You are not reporting what you found — you are making an argument for why a specific research question matters, why your team is the right one to answer it, and why the approach you have chosen is sound. The strength of a grant proposal comes directly from the depth of your thinking about those three things. A beautifully written proposal built on shallow thinking will not survive review. A proposal with clunky prose but a genuinely original and well-argued question often will.
 
-- **Drafting Specific Aims or Project Summaries**  
-  Early-stage prompts (e.g., “Write a draft of specific aims for a project investigating X”) can yield coherent, structured drafts that teams can then refine. This accelerates brainstorming and supports less experienced writers.
+This means AI's role in grant writing is less about the writing and more about the thinking. The rest of this chapter is organized around that distinction.
 
-- **Generating Timelines, Budgets, or Gantt Charts**  
-  AI-driven project-management tools can assist in constructing realistic project timelines, milestone charts, resource allocations, and preliminary budgets.
+---
 
-When used responsibly — with human oversight, critical evaluation, and iteration — these capabilities expand the creative and organizational potential of research teams.
+## Where AI Actually Helps in Grant Development
 
-## 3. AI in Proposal Writing
+### Mapping the Landscape Before You Write
 
-Once a project plan and aims are outlined, GenAI can support the writing and formatting of the proposal:
+One of the most useful things AI can do in the early stages of grant development is help you get oriented quickly. If you are applying to a new funding mechanism, responding to a specific program announcement, or writing for an audience outside your primary discipline, you can use a tool like UM-GPT or ChatGPT to summarize what a particular study section typically values, what common weaknesses reviewers flag in your target mechanism, or how similar funded projects have framed their significance. This is not cheating — it is using AI the same way you would use a mentor's advice or a funded application from your institution's grants office.
 
-- **Structuring Narrative Sections (Significance, Innovation, Approach)**  
-  AI can help align sections with funder expectations and ensure logical flow.
+Similarly, AI can help you scan and organize a large literature quickly during the aims development stage. If you are trying to identify the specific gap your work addresses, you can describe your area to an AI tool and ask it to highlight what remains understudied. You will still need to verify everything it surfaces, and you will likely find that it misses things a field expert would catch immediately. But it can give you a working map to react to, which is often faster than starting from scratch.
 
-- **Improving Readability and Alignment with Review Criteria**  
-  AI can support clarity, coherence, and persuasive framing while helping writers meet page limits or structural requirements.
+### Stress-Testing Your Aims
 
-- **Language Polishing for Clarity and Impact**  
-  AI assists with grammar, readability, conciseness, and tone.
+This is one of the most underused applications of AI in grant writing, and it is genuinely valuable. Once you have a draft of your specific aims, you can ask an AI tool to take the role of a skeptical reviewer and identify the weaknesses. What would a study section worry about? What assumptions in your approach are most vulnerable? What is the most obvious alternative explanation for the expected findings?
 
-However, AI-assisted writing must be carefully reviewed for scientific accuracy, proper citations, methodological clarity, and idea integrity. Ultimately, the human researcher must determine the final content, since much of the deeper logic of grantwriting — the tacit assumptions, strategic framing, and experiential knowledge that never appears explicitly on paper — can only be provided by experienced investigators and cannot be reliably inferred by AI.
+The AI's critique will not be as sharp as a real grant reviewer's, and it will miss things that only someone in your subfield would catch. But it will often surface the generic structural problems that are easy to miss when you have been staring at the same document for weeks. Think of it as a first-pass review before you ask colleagues to read it.
 
-## 4. Ethical and Policy Considerations
+### Timelines, Budgets, and Boilerplate
 
-The use of GenAI in grant writing raises a suite of ethical, integrity, and policy issues. Recent analyses highlight risks including hallucinations, incorrect content, bias, potential IP violations, privacy breaches, and lack of reproducibility {cite}`Bjelobaba_2024_GenAI_integrity`.
+Gantt charts, milestone tables, resource justifications, facilities descriptions — these are real parts of a grant proposal and they take time. AI tools can help draft these efficiently. There is very little intellectual risk here. The substance of your timeline and budget still has to reflect your actual project, but AI can give you a reasonable starting structure to fill in rather than formatting a table from scratch.
 
-Key guidelines for responsible AI use include:
+### Language Polishing
 
-- **Transparency and Documentation**  
-  Researchers should document when and how AI tools are used (e.g., prompts and revisions).  
-  See: *AI Usage Cards* framework {cite}`Wahle_2023_AI_Usage_Cards`.
+This is where the overlap with the writing chapter is most direct. AI can help with clarity, coherence, flow, and meeting page limits. If you have a 12-page research strategy that needs to fit into 6 pages, AI can help you identify what to cut and how to compress without losing key content. If English is not your first language, AI can help make your prose more natural without changing your scientific meaning. These are legitimate uses, and they are broadly accepted.
 
-- **Human Oversight**  
-  Researchers are fully accountable for final content accuracy {cite}`Lin_2025_Beyond_principlism`.
+---
 
-- **Respect for Confidentiality, Privacy, and IP**  
-  Avoid uploading sensitive or unpublished data to public AI tools.  
-  See: U-M OVPR AI Guidelines (2025). {cite}`UM_OVPR_AI_guidelines_2025`
+## What AI Cannot Do
 
-- **Critical Evaluation of AI Outputs**  
-  AI can hallucinate citations, invent facts, or misrepresent studies — requiring careful validation.
+AI cannot provide the intellectual substance of your proposal. It cannot tell you what the right research question is, whether your experimental design is actually sound, or why your preliminary data supports the approach you are proposing. It cannot make the tacit connections that come from years of working in a field — the sense of which questions are genuinely open versus technically open, which methods are reliable in your specific context versus in general, which claims will ring true to your study section and which will raise flags.
 
-Ethical AI use in grant writing means using AI to **support thinking** (organization, clarity, framing), not to replace original intellectual work.
+More importantly: if you cannot walk into a room of experts in your field and defend every aim, every methodological choice, and every framing decision without the AI to help you, then the proposal does not yet reflect your intellectual contribution. That is the standard that matters, both ethically and practically.
 
-## 5. UM and Sponsor Policies
+---
 
-### 5.1 University of Michigan Policies
+## What "Substantially Developed by AI" Actually Means
 
-U-M has established guidelines emphasizing privacy, security, and responsible AI use.
+In 2025, NIH issued Notice NOT-OD-25-132, which states that applications "substantially developed by AI" may be considered non-original and subject to rejection {cite}`NIH_NOT_OD_25_132`. The policy also limits PIs to six applications per year starting September 2025. Understanding what triggered this policy helps explain what the line actually is.
 
-Key points:
+The immediate context was a researcher who submitted approximately 40 NIH applications in a single grant cycle — a volume that is essentially impossible through normal human writing. The sheer number made it obvious that AI was doing the generative work, not just assisting with it. That volume also flooded the review system in a way that harmed other applicants and degraded the peer review process for everyone.
 
-- U-M provides secure internal AI tools to avoid risks associated with commercial platforms.{cite}`UM_GenAI_resources`
+But the policy is not just about volume. The deeper issue is about whose intellectual contribution a proposal represents. NIH funds you — a specific person or team with specific expertise — to answer a specific question. The proposal is supposed to be the evidence that you have thought deeply enough about the question to be trusted with the funding to pursue it.
 
-- Researchers **must not upload sensitive or unpublished data** into public AI tools.  
-  Reference: U-M Ross IT AI Guidelines.
+```{admonition} Where Is the Line?
+:class: note
 
-- OVPR (2025) discourages AI use in internal peer review due to confidentiality and bias risks.
+Think of it in two layers. The first layer is the scientific core: the research question, the central hypothesis, the experimental design, the interpretation of what makes your work significant and innovative. If AI generated these elements, the application misrepresents whose intellectual contribution it reflects, regardless of how well-written it is.
 
-- Students and researchers should **document** AI-generated or AI-assisted content in academic contexts.
+The second layer is expression: sentence structure, flow, clarity, and how you communicate ideas you already have. AI assistance here is much closer to what a writing center consultant, a mentor who reads your drafts, or a grammar tool does. That kind of assistance has always been part of the grant writing process.
 
-For grant writing, this means using **internal tools**, avoiding exposure of sensitive material, and documenting AI involvement.
+The practical test: if you could sit in front of a study section and defend every aim, every methodological choice, and every framing decision without the AI in the room, the proposal reflects your intellectual contribution. If you could not, it does not.
+```
 
-### 5.2 Funder Policies: NIH, NSF, and Others
+NIH does not prohibit AI-assisted drafting. It requires that the intellectual substance originate from humans, that applicants take full responsibility for accuracy and originality, and that the proposal genuinely represent the researcher's own scientific thinking.
 
-#### NIH
+---
 
-- **Notice NOT-OD-25-132 (2025)**: Applications “substantially developed by AI” may be considered non-original and may be rejected. {cite}`NIH_NOT_OD_25_132`  
-- Limits PIs to **six** applications per year starting Sept 25, 2025.  
-- **Generative AI is prohibited in peer review** {cite}`NIH_NOT_OD_23_149`.  
-- Applicants are responsible for ensuring accuracy, originality, and integrity of all text.
+## Institutional and Funder Policies
 
-NIH does not forbid limited AI-assisted drafting, but the **intellectual substance must originate from humans**.
+### University of Michigan
 
-#### NSF
+U-M's approach centers on two concerns: confidentiality and accountability. The OVPR discourages AI use in internal peer review processes due to confidentiality and bias risks {cite}`UM_OVPR_AI_guidelines_2025`. For grant writing specifically, U-M guidance emphasizes using institutionally governed tools rather than public AI platforms, not uploading sensitive or unpublished research material to commercial systems, and documenting AI use when required by funders or journals {cite}`UM_GenAI_resources`.
 
-- NSF’s 2023 community notice permits proposers to use GenAI but emphasizes:  
-  - Proposers are fully responsible for accuracy and authenticity.  
-  - Confidential proposal content **cannot** be uploaded to commercial AI tools.  
-  - Reviewers cannot use GenAI for proposal evaluation.  
-  - Fabrication, falsification, or plagiarism remains misconduct under PAPPG.
+The practical implication is that if you are using AI to help develop a grant proposal, you should be working within UM-GPT or a similarly governed environment rather than a public tool like the free tier of ChatGPT. Preliminary data, unpublished findings, and confidential collaborator information should not enter any system that could retain or use that content.
 
-#### Other Agencies (DOE, DOD, NASA, NOAA)
+### NIH
 
-Current public policy is sparse. No widely publicized agency-wide rules comparable to NIH/NSF exist (as of 2025).  
-Research shows that federal NOFOs rarely mention explicit AI-use criteria, indicating a **policy gap**.  
-{cite}`Bateyko_2025_AI_governance_grants`
+NIH's current position under NOT-OD-25-132 {cite}`NIH_NOT_OD_25_132` can be summarized as follows: AI may assist with writing, but the intellectual substance must be yours, you are responsible for all accuracy and integrity, and proposals that appear to have been generated wholesale by AI risk rejection. Separately, NIH prohibits AI use in peer review under NOT-OD-23-149 {cite}`NIH_NOT_OD_23_149` — this applies to reviewers, not applicants, but is worth knowing.
 
-Until further clarification:
+One important caveat: NIH policy in this area is evolving quickly. The notice issued in 2025 was partly a response to an emerging situation, and further guidance is likely. Always check the current notice before submitting.
 
-- Follow institutional policies (e.g., U-M guidelines).  
-- Apply general research integrity principles (transparency, originality, confidentiality).
+### NSF
 
-## 6. Case Example
+NSF's position, articulated in a 2023 community notice {cite}`NSF_AI_notice_2023`, permits proposers to use generative AI but places full responsibility for accuracy and authenticity on the proposer. Confidential proposal content cannot be uploaded to commercial AI tools. Reviewers cannot use AI for proposal evaluation. Fabrication, falsification, or plagiarism remains research misconduct under PAPPG regardless of whether AI was involved.
 
-### Mock NIH Summary Paragraph (Before vs. After AI Polishing)
+### Other Agencies
 
-**Before (human draft):**
+For DOE, DOD, NASA, NOAA, and most other federal agencies, explicit AI-use policies for grant applications are still sparse as of 2025 {cite}`Bateyko_2025_AI_governance_grants`. In the absence of specific guidance, the safe approach is to follow U-M's institutional policies and apply general research integrity principles: transparency, originality, and protection of confidential information.
 
-> We plan to investigate how pollutant X affects gene expression in cell type Y under hypoxic conditions. This will help understand disease Z and could lead to potential therapeutic targets. We will use RNA-seq and functional assays...
+---
 
-**After (AI-polished):**
+## A Note on Transparency
 
-> This project aims to elucidate the molecular mechanisms by which pollutant X modulates gene regulatory networks in Y cells under hypoxia — bridging a critical gap in our understanding of pollutant-induced pathogenesis in Z. By combining high-throughput transcriptomics (Aim 1), targeted functional assays (Aim 2), and reversibility studies (Aim 3), we expect to identify novel regulatory nodes...
+Whatever tools you use, document them. Keep a record of which AI tools you used, at what stages, and for what purposes. Some funders are beginning to require disclosure, and even where disclosure is not yet required, having that documentation protects you if questions arise later. The AI Usage Cards framework provides a structured way to do this {cite}`Wahle_2023_AI_Usage_Cards`.
 
-**Benefits:**  
-Clearer structure, improved flow, stronger alignment with NIH expectations.
+Transparency also means being honest with yourself about where the intellectual work is coming from. If you find yourself accepting AI-generated aims without being sure why they are structured the way they are, that is a signal to step back and do more of the thinking yourself before moving forward.
 
-**Risks:**  
-AI may overstate impact, introduce ambiguous claims, or add unsupported statements — requiring human correction.
+---
 
-AI works best as a **language refinement tool** when humans fully control scientific content.
+## Try This
 
-## 7. Conclusion
+The following exercise works best if you have a grant idea you are actually developing, but it also works with a hypothetical project.
 
-Generative AI offers powerful tools that can greatly enhance efficiency, clarity, and creativity in grant proposal development. When used judiciously — with human oversight, transparency, and adherence to institutional and funder policies — AI can accelerate idea development and improve writing quality.
+**Step 1.** Write a one-paragraph description of your research question, why it matters, and what you plan to do. Write it yourself, without AI, in whatever rough form comes naturally.
 
-However, risks include loss of originality, confidentiality breaches, hallucinations, and noncompliance with evolving policies. NIH and NSF policies already place clear boundaries on acceptable use, and universities like U-M emphasize secure, documented, human-centered workflows.
+**Step 2.** Share that paragraph with UM-GPT or another AI tool and ask: "You are a skeptical NIH study section reviewer. What are the three most significant weaknesses in this aims concept?" Read the response carefully. Note which criticisms feel valid and which feel off-base.
 
-AI should be treated as a **thought partner**, not a replacement for human expertise. Responsible integration ensures AI enhances scholarly work without compromising research integrity.
+**Step 3.** Now ask the AI to draft a two-sentence version of your significance statement. Compare it to your own. Where is the AI's version stronger? Where has it lost something important that only you would know to include?
+
+**Step 4.** Revise your paragraph based on your own reactions to both responses. The goal is not to use the AI's language — it is to use your reaction to the AI's language to sharpen your own thinking.
+
+This exercise illustrates the role AI works best in: not as a generator of your scientific ideas, but as a structured sounding board that pushes you to articulate and defend them more clearly.
 
 ---
 
