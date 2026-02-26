@@ -2,7 +2,7 @@
 *Using Generative AI as a Writing Partner, Not a Ghostwriter*
 
 ```{admonition} What You Will Learn
-:class: note
+:class: tip
 
 This chapter covers how to use AI tools responsibly and practically across the research writing process, from drafting a first outline to polishing a final manuscript. You will also find a summary of major journal policies on AI use, and a "Try This" section at the end with exercises you can apply to your current writing project. One important thing to keep in mind throughout: AI is here to help you think and communicate more clearly, not to write your research for you.
 ```
@@ -33,7 +33,7 @@ Research writing is not linear. Most researchers cycle through phases of brainst
 
 ### Getting Started: Brainstorming and Framing
 
-When you are in the early stages of a piece, AI can help you break out of your own perspective. You might ask a tool like ChatGPT, Gemini, or UM-GPT something like: "I am writing a research article about X. Here is what I found. What are three different ways I could frame the significance of this finding for a general biomedical audience?" The responses will not be right, but they will give you something to react to, and reacting is often easier than starting from nothing.
+When you are in the early stages of a piece, AI can help you break out of your own perspective. You might ask a tool like ChatGPT, Gemini, or UM-GPT something like: "I am writing a research article about X. Here is what I found. What are three different ways I could frame the significance of this finding for a general biomedical audience?" The responses may not be right, but they will give you something to react to, and reacting is often easier than starting from nothing.
 
 This works especially well for titles and abstracts, which are notoriously hard to write because they demand extreme compression. You can draft a rough abstract yourself, share it with an AI tool, and ask it to generate three variations that emphasize different aspects of the work. Then you pick the framing that best matches your intent and refine from there.
 
@@ -79,7 +79,7 @@ The same principles apply across all of these: you supply the intellectual conte
 
 ### University of Michigan
 
-The University of Michigan has published guidance through the Office of Research and the U-M Library emphasizing that AI tools may be used for drafting and editing as long as authors maintain responsibility for accuracy and originality. Sensitive or proprietary data must not be uploaded to public AI platforms unless approved through appropriate institutional channels.
+The University of Michigan has published guidance through the Office of Research and the U-M Library emphasizing that AI tools may be used for drafting and editing as long as authors maintain responsibility for accuracy and originality {cite}`umor_ai_guidance_2024,um_library_ai_2024`. Sensitive or proprietary data must not be uploaded to public AI platforms unless approved through appropriate institutional channels.
 
 Useful UM resources:
 
@@ -108,9 +108,9 @@ Most journals now ask authors to include a statement describing how AI was or wa
 
 ## Tools Worth Knowing
 
-**For writing and drafting:** ChatGPT, Gemini, UM-GPT, and Maizey are the most commonly used conversational AI tools for writing assistance. Maizey is particularly useful if you are working with UM-hosted research materials, while NotebookLM works well when you want an AI that reasons specifically from documents you have uploaded.
+**For writing and drafting:** ChatGPT, Claude, Gemini, UM-GPT, and Maizey are the most commonly used conversational AI tools for writing assistance. Maizey is particularly useful if you are working with UM-hosted research materials, while NotebookLM works well when you want an AI that reasons specifically from documents you have uploaded.
 
-**For editing and polishing:** GrammarlyGO and Wordtune are strong options for prose-level editing. The Overleaf AI Copilot is useful if you are writing in LaTeX and want editing assistance embedded in your workflow.
+**For editing and polishing:** The same general-purpose tools above work well for editing tasks when you give them a specific prompt (for example, "revise this paragraph to reduce jargon for a non-specialist audience"). If you want a more integrated editing experience built into your writing environment, Grammarly has an AI companion called GrammarlyGO, and the Overleaf AI Copilot is available if you write in LaTeX. That said, many researchers find that sticking with a conversational AI tool they already know, and just being specific about what kind of editing they want, is the most practical approach.
 
 **For citation integrity:** This is a place where AI tools have real weaknesses, so supplement with dedicated tools. Semantic Scholar provides AI-powered recommendations and summaries grounded in real literature. Scite.ai classifies whether a paper supports, contrasts, or simply mentions a given claim, which is genuinely useful for lit review work. Zotero remains the gold standard reference manager, and it integrates well with AI writing tools even though it is not itself AI-powered.
 
