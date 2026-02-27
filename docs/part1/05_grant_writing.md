@@ -72,7 +72,7 @@ The second layer is expression: sentence structure, flow, clarity, and how you c
 The practical test: if you could sit in front of a study section and defend every aim, every methodological choice, and every framing decision without the AI in the room, the proposal reflects your intellectual contribution. If you could not, it does not.
 ```
 
-NIH does not prohibit AI-assisted drafting. It requires that the intellectual substance originate from humans, that applicants take full responsibility for accuracy and originality, and that the proposal genuinely represent the researcher's own scientific thinking.
+NOT-OD-25-132 does not ban all AI assistance outright. The notice states that AI tools "may be appropriate to assist in application preparation for limited aspects or in specific circumstances" {cite}`NIH_NOT_OD_25_132`. What it prohibits is proposals substantially developed by AI, which it treats as non-original work. Critically, the policy has teeth beyond submission: if AI use is detected after an award is made, NIH may refer the matter to the Office of Research Integrity for a misconduct investigation and may revoke funding {cite}`NIH_NOT_OD_25_132`.
 
 ---
 
@@ -86,7 +86,7 @@ The practical implication is that if you are using AI to help develop a grant pr
 
 ### NIH
 
-NIH's current position under NOT-OD-25-132 {cite}`NIH_NOT_OD_25_132` can be summarized as follows: AI may assist with writing, but the intellectual substance must be yours, you are responsible for all accuracy and integrity, and proposals that appear to have been generated wholesale by AI risk rejection. Separately, NIH prohibits AI use in peer review under NOT-OD-23-149 {cite}`NIH_NOT_OD_23_149` — this applies to reviewers, not applicants, but is worth knowing.
+Under NOT-OD-25-132 {cite}`NIH_NOT_OD_25_132`, applications that are substantially developed by AI are not considered original work and will not be reviewed. AI tools may assist with limited aspects of preparation, but applicants must certify that the application represents their own original ideas. The stakes extend beyond rejection: if AI-generated content is detected after an award is made, NIH may refer the matter to the Office of Research Integrity for a misconduct investigation and revoke funding. Separately, NIH prohibits AI use in peer review under NOT-OD-23-149 {cite}`NIH_NOT_OD_23_149` — this applies to reviewers, not applicants, but is worth knowing.
 
 One important caveat: NIH policy in this area is evolving quickly. The notice issued in 2025 was partly a response to an emerging situation, and further guidance is likely. Always check the current notice before submitting.
 
