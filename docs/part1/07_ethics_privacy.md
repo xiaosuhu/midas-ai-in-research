@@ -1,162 +1,112 @@
 # Ethics, Privacy, and Compliance
 
-## 1. Introduction
+```{admonition} What You Will Learn
+:class: tip
 
-Artificial intelligence (AI) tools now participate in nearly every layer of academic research—from literature review and drafting to data analysis, modeling, and dissemination. As these tools become woven into research workflows, ethical and privacy considerations take on heightened importance. Responsible AI use is not only a matter of regulatory compliance; it is fundamental to *scientific reproducibility*, *public trust*, and *institutional accountability*.  
+- How to figure out which privacy regulations apply to your specific data, whether you work in clinical research, social science, education, or computational fields.
+- What actually happens to your data when you type it into an AI tool, and how to choose the right environment for your work.
+- Where bias enters AI-assisted research and how to catch it before it affects your conclusions.
+- When you need IRB approval, a data use agreement, or both, even if no one in your study was formally recruited as a participant.
+- A self-audit exercise at the end you can apply to your current project right now.
+```
 
-Using AI responsibly means understanding **what data we send into AI systems**, **how the model may store or process that data**, **what risks exist for research integrity**, and **what oversight structures guide ethical deployment** {cite}`NIST2023AI` {cite}`ISO42001`.
+## The Question Researchers Actually Ask
 
-A particularly common concern among researchers is whether sharing research ideas, hypotheses, or unpublished text with an AI tool risks *intellectual leakage*. This chapter addresses that question directly and explains how different classes of AI systems handle user data, what protections exist, and how researchers can choose appropriate environments (e.g., U-M approved tools, on-premise LLMs, or air-gapped compute clusters).
+Most researchers do not wake up wondering whether they are following the NIST AI Risk Management Framework. What they actually wonder is something more like: I have a dataset and I want to use an AI tool with it — am I allowed to do that, and what could go wrong?
 
----
-
-## 2. Core Ethical Principles
-
-### **Transparency**
-Researchers should understand the capabilities and limits of AI tools, including how outputs are generated and whether citations, summaries, or analyses are explainable or verifiable. Transparent documentation of AI use is increasingly required by journals and funders.
-
-### **Accountability**
-Human researchers remain responsible for the scientific validity of all AI-assisted outputs. This includes verifying literature citations, checking analytical results, and ensuring that AI-generated content does not introduce bias or misinterpretation.
-
-### **Fairness and Equity**
-AI systems trained on incomplete or unrepresentative data may reinforce or amplify disparities. Fairness requires attention to whether datasets represent diverse populations and whether downstream outputs produce equitable benefits or burdens.
-
-### **Beneficence and Non-maleficence**
-AI should be used to enhance knowledge and societal good while minimizing risks of harm—to research participants, communities, or scientific credibility.
-
-### **Human Oversight**
-Automated decision-making without human review can lead to errors, privacy violations, or unethical interpretations. Best practice is to position AI as an assistive tool, not an autonomous decision-maker {cite}`NIST2023AI`.
+That is the question this chapter is organized around. The compliance frameworks and ethical principles matter, but they matter because they help answer that practical question for your specific situation. Rather than starting with abstract principles, we start with your data and work outward from there.
 
 ---
 
-## 3. Data Privacy and Security
+## What Kind of Data Do You Have?
 
-### **Handling Sensitive Data**
-Many research domains involve sensitive or regulated data—electronic health records (EHR), neuroimaging, genomic data, classroom information, or identifiable photos. When these data are used with AI systems, researchers must ensure compliance with HIPAA, FERPA, GDPR, and applicable U-M policy.
+The single most important factor in determining how you can use AI with your research data is whether that data involves people, and if so, in what form. The answer to that question changes significantly depending on your field.
 
-- **HIPAA** governs protected health information in clinical and research contexts. Uploading identifiable health data to a public AI model *violates HIPAA* unless a Business Associate Agreement exists.  
-- **FERPA** restricts how student educational records can be processed or disclosed.  
-- **GDPR** imposes strict requirements for data minimization, consent, and cross-border processing for EU persons.
+If you work in clinical or health research, your data almost certainly includes protected health information covered by HIPAA. That means electronic health records, imaging data, genomic sequences, insurance claims, or anything else that could be linked back to an individual patient. Uploading any of this to a public AI tool is a HIPAA violation, full stop, regardless of whether you think the data is de-identified. Re-identification from supposedly anonymous records is a well-documented risk, and the legal standard for de-identification under HIPAA is specific and strict {cite}`NIST2023AI`.
 
-### **UM Secure Computing Environments**
-The University of Michigan provides secure, compliant infrastructures for AI-related work involving sensitive data:
+If you work in education research, the relevant regulation is FERPA, which governs student educational records. If your dataset includes grades, enrollment data, course evaluations, or anything tied to an individual student at an institution receiving federal funding, FERPA applies. This catches many researchers off guard because the data often feels administrative rather than sensitive, but the protections are real.
 
-- **Armis2** — HIPAA-aligned secure research cluster  
-- **Lighthouse** — Michigan Medicine’s secure analytics environment  
-- **Great Lakes** — HPC cluster for general research with data governance controls  
+If you work in social science, survey research, or behavioral science and any of your participants are located in the European Union, GDPR enters the picture. GDPR is notably broader than US regulations in what it considers personal data and imposes strict requirements around consent, data minimization, and the right of participants to have their data deleted. It applies based on where your participants are located, not where you are.
 
-Researchers handling controlled data should use these environments or institutionally approved tools rather than public AI services.
+If you work in computational research, NLP, or machine learning and you are building or fine-tuning models on text data scraped from the web, you are operating in a different but equally real compliance context. Terms of service agreements, copyright law, and in some cases GDPR can all apply to web-scraped corpora, particularly if that text includes posts, comments, or other content generated by identifiable individuals {cite}`Bjelobaba_2024_GenAI_integrity`.
 
-### **Does AI “steal ideas” or share them with other users?**
-This is one of the most frequent concerns raised by researchers.
+If you work in physical, environmental, or engineering sciences and your data does not involve people at all, most of the regulatory landscape above does not apply to you directly. Your primary concerns are more likely around confidentiality of unpublished results, data use agreements with external partners or government agencies, and export controls if your work involves dual-use technology.
 
-There are *three categories* of AI tools, each with different privacy guarantees:
-
-1. **Public commercial AI models (e.g., free-tier ChatGPT, Gemini, Claude)**  
-   - Some providers may **retain user inputs to improve models** unless users opt out.  
-   - They **do not intentionally share your content with other users**, but the data *can* be used for training unless a privacy policy explicitly forbids it.  
-   - This means unpublished manuscripts, grant ideas, or confidential institutional information should *not* be entered.
-
-2. **Enterprise or institutionally governed AI (e.g., U-M GPT, Maizey, Microsoft Azure OpenAI with enterprise contract)**  
-   - Inputs are **not used for training**.  
-   - Data are governed by institutional agreements and stored within enterprise-controlled infrastructure.  
-   - This is the recommended environment for research-related writing or ideation.
-
-3. **Local or self-hosted models (e.g., LM Studio, Ollama, on-premise LLMs on Armis2)**  
-   - Inputs remain on the researcher’s machine or secure cluster.  
-   - **Highest level of confidentiality**. Ideal for proprietary or sensitive research.
-
-So the answer is: *AI does not “steal” ideas, but some systems may store your inputs unless you use an enterprise or local model.* Choosing the correct environment solves most of these concerns.
+The point is not to memorize each regulation in detail — your institution's research compliance office exists precisely for that. The point is to be able to identify which category your work falls into so you know when to ask.
 
 ---
 
-## 4. Bias, Fairness, and Representation
+## What Happens to Your Data in an AI Tool
 
-### **Sources of Bias**
-Bias can enter AI workflows through:
+One of the most common questions researchers ask is whether AI tools share their inputs with other users or use them to train future models. The short answer is: it depends entirely on which tool you are using, and the differences matter a great deal.
 
-- Skewed or unrepresentative training datasets  
-- Historical inequities embedded in source data  
-- Sampling biases in web-scale corpora  
-- Annotation biases in crowdsourced labels {cite}`Mehrabi2021SurveyBias`
+There are three meaningfully different categories of AI tools, and choosing the right one for your situation is one of the most concrete decisions you can make for research compliance.
 
-In biomedical and social research, such biases may lead to harmful misclassification, unequal model performance across demographic groups, or invalid scientific conclusions.
+The first category is public commercial tools on their free tiers — the default version of ChatGPT, Gemini, Claude, and similar products when accessed without a paid or enterprise account. Some providers in this category may retain your inputs and use them to improve their models unless you explicitly opt out, and opt-out mechanisms vary by platform and can change over time. These tools do not deliberately share your content with other users, but your inputs may become part of training data in ways you cannot fully control. Unpublished results, grant ideas, confidential collaborator information, and anything covered by the regulations above should not go into these tools {cite}`Carlini2021Extracting`.
 
-### **Auditing Outputs**
-Best practices for fairness include:
+The second category is enterprise or institutionally governed AI tools — UM-GPT, Microsoft Azure OpenAI through U-M's enterprise agreement, and similar institutional deployments. In these environments, your inputs are contractually not used for model training, data is stored within enterprise-controlled infrastructure, and the tools are governed by institutional agreements that include privacy protections. This is the appropriate environment for most research-related AI use at U-M, including working with draft manuscripts, grant materials, and research ideas.
 
-- Checking model behavior on subgroups  
-- Testing robustness to perturbed datasets  
-- Comparing outputs against domain knowledge  
-- Documenting model limitations
+The third category is local or self-hosted models — tools like LM Studio or Ollama running on your own machine, or on-premise LLMs deployed on secure institutional clusters like Armis2. In these environments, nothing leaves your machine or your institution's network. This offers the highest level of confidentiality and is the right choice when working with genuinely sensitive data that cannot go anywhere outside a controlled environment, even in an enterprise system.
 
-### **Equitable Dataset Design**
-Whenever possible, research datasets should include diverse populations representative of the actual study context. FAIR principles (Findable, Accessible, Interoperable, Reusable) also help reduce structural biases by promoting transparency and documentation.
+```{admonition} A Practical Decision Rule
+:class: note
+
+Before pasting anything into an AI tool, ask yourself: would I be comfortable if this text appeared in a training dataset used by a commercial AI company? If the answer is no — because it contains patient data, unpublished findings, confidential grant information, or personally identifiable information about study participants — use UM-GPT or a local model instead of a public tool.
+```
+
+For researchers at U-M handling particularly sensitive data, the following institutional computing environments are designed for compliance-sensitive work. Armis2 is the HIPAA-aligned secure research cluster. Lighthouse is Michigan Medicine's secure analytics environment. Great Lakes is the general HPC cluster with data governance controls for broader research use. If your work involves controlled data and you are unsure which environment applies, the MIDAS team and U-M Research Computing can help you find the right fit.
 
 ---
 
-## 5. Research Governance and Institutional Oversight
+## IRB, Data Use Agreements, and the "It's Public Data" Question
 
-### **IRB and Data Use Agreements**
-Human subjects research involving AI may require:
+A common assumption in computational and social science research is that publicly available data is automatically fair to use without IRB review or other oversight. This is often, but not always, correct, and the exceptions matter.
 
-- IRB review for analysis of identifiable or potentially identifiable data  
-- Data Use Agreements (DUAs) when using external datasets  
-- Explicit consent language if AI tools will handle participant data
+IRB review is triggered by research involving human subjects, which federal regulations define as living individuals about whom a researcher obtains data through intervention or interaction, or identifiable private information. The key word is identifiable. If you are working with a dataset that contains no information that could, even indirectly, be linked back to an individual person, you are likely outside IRB jurisdiction. But if your dataset contains text, behavioral traces, location data, or other information that could plausibly be tied to a specific person — even if names are not present — IRB review is worth seeking, if only to get a formal determination that your work is exempt.
 
-### **AI Accountability Frameworks**
-Several formal frameworks guide responsible AI research:
+This catches researchers working with social media data more often than almost any other context. A dataset of tweets or Reddit posts feels public because the original posts were visible to anyone. But those posts were written by identifiable individuals who may not have understood or consented to their words being used in research. Several disciplines have developed specific ethical frameworks for social media research, and IRB offices at most institutions have guidance on this. If you are using AI to analyze social media text at scale, it is worth a conversation with your IRB before you start rather than after.
 
-- **ISO/IEC 42001:2023**, the first international AI management system standard {cite}`ISO42001` 
-- **NIST AI Risk Management Framework (AI RMF)**, emphasizing governance, monitoring, and stakeholder engagement {cite}`NIST2023AI`  
-- [**U-M’s Research Integrity Program**](https://research-compliance.umich.edu/research-integrity) and [**ITS/HITS security offices**](https://safecomputing.umich.edu/dataguide), which provide guidance on secure data handling and compliance
-
-These frameworks help researchers build workflows that are auditable, reproducible, and ethically defensible.
+Data use agreements (DUAs) are a separate but related concern. Many datasets — particularly administrative datasets from government agencies, hospital systems, school districts, or commercial data providers — come with DUAs that specify how the data can be used, where it can be stored, and who can access it. If your DUA was written before large language models existed (which is most of them), it almost certainly does not address whether you can process the data through an AI tool. When in doubt, contact the data provider. Getting explicit permission in writing takes a few days and protects you from significant risk.
 
 ---
 
-## 6. Case Studies
+## Bias in AI-Assisted Research
 
-### **Case Study 1: Bias Propagation in Clinical Classification**
-A widely discussed example is the racial bias discovered in clinical risk scores where AI systems underestimated the severity of illness in marginalized populations due to historical inequities embedded in EHR datasets {cite}`Obermeyer2019Bias`.  
-This demonstrates how unbalanced training data can produce inequitable care recommendations, even when developers do not explicitly encode demographic variables.
+Bias is a word that gets used in a lot of different ways, so it helps to be specific about where it actually enters AI-assisted research workflows and what the consequences are.
 
-### **Case Study 2: Privacy Leakage from LLM Training Corpora**
-Large language models trained on public internet data have been shown to occasionally **memorize** snippets of personal information or copyrighted text {cite}`Carlini2021Extracting`.  
-This highlights why regulated or unpublished research materials should never be uploaded to public training datasets and why enterprises now prohibit training on user content.
+The most fundamental source of bias is training data. Large language models and other AI systems learn from whatever data they were trained on, and that data reflects the world as it has been documented — which is not the same as the world as it is. Models trained predominantly on English-language text from the global north will perform better on text from those contexts than on text from other languages, dialects, or cultural settings. Models trained on published scientific literature will reflect whatever biases exist in that literature, including the historical underrepresentation of certain populations in research studies {cite}`Mehrabi2021SurveyBias`.
 
----
+A well-documented example from clinical research is the racial bias found in a widely used clinical risk-scoring algorithm, where the model systematically underestimated the severity of illness in Black patients because it used healthcare costs as a proxy for health needs — and Black patients had historically received less care for the same conditions {cite}`Obermeyer2019Bias`. The developers did not deliberately encode race into the model. The bias came from the data.
 
-## 7. Practical Guidelines for Ethical AI Use
+Outside of clinical research, similar dynamics appear in different forms. NLP models used to analyze job applications or academic writing have been shown to perform differently on text written in African American Vernacular English than on standard American English, in ways that could disadvantage candidates or students if the outputs were used for evaluation {cite}`Mehrabi2021SurveyBias`. Sentiment analysis tools trained on Western social media corpora often produce unreliable results when applied to text from other cultural contexts. Computational models trained on historical data in any domain will encode historical patterns, including historical inequities.
 
-### **Checklist**
-- [ ] Use institutionally governed or local models for research ideas, drafts, or unpublished data  
-- [ ] Avoid entering identifiable human subject data into public AI tools  
-- [ ] Maintain transparent documentation of AI-assisted steps  
-- [ ] Audit model outputs for errors, hallucinations, or bias  
-- [ ] Verify citations and factual claims  
-- [ ] Use reproducible pipelines when integrating AI into data analysis  
-- [ ] Seek IRB guidance when AI interacts with human subject data  
-- [ ] Follow U-M data classification and storage policies  
-- [ ] Provide attribution for AI tools used in writing or analysis  
-- [ ] Retain human oversight for all research decisions
-
-### **Documentation Templates**
-To support transparency, reproducibility, and ethical AI use, this book provides a set of ready-to-use documentation templates. These include:
-
-- AI usage statements
-- Data provenance and preprocessing logs
-- Model card summaries
-- Ethics review checklists
-
-For examples and copy-ready templates, see the {ref}`documentation-templates-examples` section in Part III of this book.
+For researchers, the practical implication is that AI outputs need to be interrogated, not just accepted. If you are using a model to classify text, identify patterns, or generate summaries, it is worth asking whether the model's training data was representative of your specific study population, and whether there are subgroups in your data for which the model might behave differently. This does not require running a full fairness audit on every project, but it does require holding the output to the same critical standard you would apply to any other analytical tool.
 
 ---
 
-## 8. Reflection: The Role of Researchers in Responsible AI Adoption
+## Documentation and Transparency
 
-Researchers occupy a unique position of responsibility. As early adopters of advanced AI tools, they shape not only the scientific outcomes but also the *social expectations* for how AI will be integrated into academic inquiry. Responsible use requires critical thinking, transparency, and respect for the people and communities whose data underpin AI research.  
-By approaching AI with both enthusiasm and caution, researchers can model practices that enhance trust, preserve privacy, and advance ethical innovation.
+Several of the preceding chapters have mentioned documenting your AI use. This chapter is the right place to say more concretely what that means and why it matters beyond just satisfying a journal requirement.
+
+Good documentation of AI use serves three purposes. It makes your work reproducible — someone following your methods section should be able to understand what role AI played, with which tools, and at which stages. It protects you — if questions arise later about the provenance of your work, documentation is your evidence that you used AI appropriately. And it contributes to an emerging shared understanding of norms — as a field, we are still working out what responsible AI use in research looks like, and transparent documentation is how those norms get established.
+
+At minimum, documentation should include which tools you used, for what purpose, at what stage of the research process, and what human review or verification you applied to AI outputs. The AI Usage Cards framework provides a structured template for this {cite}`Wahle_2023_AI_Usage_Cards`, and Part III of this handbook includes ready-to-use templates you can adapt for your own work.
+
+---
+
+## Try This
+
+This exercise is a self-audit for your current project. It takes about ten minutes and will tell you whether there are any compliance or ethical questions worth looking into before you go further.
+
+**Step 1.** Write down in one sentence what kind of data your project uses and where it came from. Is it data you collected yourself? Administrative data from an institution? Publicly scraped text? A dataset shared by a collaborator under a DUA?
+
+**Step 2.** Ask yourself whether any of the following apply: the data involves living human beings in any form, including their words, behaviors, or records. If yes, identify which regulatory framework is most relevant to your situation using the discussion above as a guide.
+
+**Step 3.** Identify which tier of AI tool you have been using or plan to use with this data. If you have been using a public free-tier tool, ask whether the data you have been entering would be acceptable to appear in a commercial training dataset. If the answer is no, switch to UM-GPT or a local model for that work.
+
+**Step 4.** Think about one output your project will produce that involves AI assistance — a classification, a summary, a generated text. Ask: is there a subgroup in my data for which this output might be systematically less accurate or fair? How would I know if that were the case?
+
+You do not need to have perfect answers to all of these. The goal is to surface the questions that are worth raising with your IRB, your compliance office, or a colleague before they become problems downstream.
 
 ---
 
@@ -165,4 +115,3 @@ By approaching AI with both enthusiasm and caution, researchers can model practi
 ```{bibliography}
 :filter: docname in docnames
 ```
-
