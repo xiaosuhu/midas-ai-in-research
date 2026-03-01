@@ -8,78 +8,65 @@ In the context of research, AutoGluon is best understood as a rapid feasibility 
 
 ## What AutoGluon Actually Does
 
-When you call `TabularPredictor.fit()`, AutoGluon runs a full default pipeline that would otherwise require considerable manual effort. It starts by handling data preprocessing automatically — imputing missing values, encoding categorical variables, and generating additional features where appropriate. It then trains a range of model families including gradient boosting models like LightGBM and XGBoost, random forests, and neural networks, running hyperparameter search within each family. Finally, it combines the best-performing models into a stacked ensemble, where the outputs of individual models become inputs to a higher-level model. All of this happens within the time budget you set.
+Regardless of which problem type you are working with, AutoGluon follows the same underlying approach. It starts with automated preprocessing — handling missing values, encoding categorical variables, and generating additional features where appropriate, so you do not need to do this manually before handing data over. It then searches across a range of model families (gradient boosting, random forests, neural networks, and others), tunes hyperparameters within each, and combines the best-performing results into a stacked ensemble. Everything runs within a time budget you control.
 
-The output is a ranked leaderboard showing how each model and ensemble performed on a held-out validation set. This transparency is one of the things that makes AutoGluon well-suited for research: you can see exactly what was tried and how each approach compared, rather than receiving a single number from an opaque process.
+Each problem type has its own predictor class — `TabularPredictor` for row-and-column data, `TimeSeriesPredictor` for temporally indexed data, and `MultiModalPredictor` for mixed text, image, and tabular inputs — but the design pattern is the same across all three: specify your target, set a time limit, and inspect what came out.
+
+The output is always a ranked leaderboard showing how each model and ensemble performed, rather than a single opaque number. This transparency is what makes AutoGluon particularly useful in a research context.
 
 ---
 
 ## Supported Problem Types
 
-For the purposes of a feasibility test, AutoGluon handles three problem types that come up regularly in research.
+AutoGluon handles three problem types that come up regularly in research.
 
-Tabular prediction is the most common starting point. If your data is organized in rows and columns, such as clinical measurements, survey responses, administrative records, or experimental outcomes, AutoGluon can tackle classification (predicting categories) and regression (predicting continuous values) with the same interface. This is covered in depth in the tutorial below.
+**Tabular prediction** is the most common starting point. If your data is organized in rows and columns — clinical measurements, survey responses, administrative records, experimental outcomes — AutoGluon can tackle both classification (predicting categories) and regression (predicting continuous values) with the same interface. This chapter's tutorial covers tabular prediction in depth.
 
-Time series forecasting is supported natively, including datasets with multiple series and external covariates. If your research involves longitudinal tracking, repeated measurements, or any data with a meaningful temporal structure, AutoGluon's `TimeSeriesPredictor` follows the same overall design pattern as the tabular interface.
+**Time series forecasting** is supported natively, including datasets with multiple series and external covariates. If your research involves longitudinal tracking, repeated measurements, or any data with a meaningful temporal structure, `TimeSeriesPredictor` is the right entry point.
 
-Multimodal learning allows you to combine text fields, images, and structured columns in a single model. This is particularly relevant for clinical datasets that include both structured data and free-text notes, or social science datasets that combine survey responses with document content.
+**Multimodal learning** allows you to combine text, images, and structured columns in a single model — useful for datasets that mix clinical notes with lab values, or survey instruments that include both rating scales and open-ended responses.
 
 ---
 
 ## Hands-On Tutorial: Predicting House Prices
 
-The best way to understand what AutoGluon offers is to run through a complete example. The tutorial below uses a 500-row sample based on the California Housing dataset, originally from Pace and Barry (1997) {cite}`statlib_ca_housing`. Each row represents a census block group, and the task is to predict the median house value from neighborhood characteristics. This is a regression problem, but the workflow is identical for classification — you simply have a categorical label column instead of a continuous one.
+The tutorial below uses a 500-row sample based on the California Housing dataset, originally from Pace and Barry (1997) {cite}`statlib_ca_housing`. Each row represents a census block group, and the task is to predict median house value from neighborhood characteristics — a regression problem. The workflow is identical for classification; only the label column and evaluation metric differ.
 
-You can run the full tutorial interactively in Google Colab by clicking the badge below. No local installation is needed, and everything runs in a free cloud environment. Clicking the badge opens a temporary session — to save your work, click "Copy to Drive" inside Colab.
+All explanatory notes and hands-on exercises live in the Colab notebook. The chapter below shows the key steps and what to look for in the results. Clicking the badge opens a temporary Colab session — click "Copy to Drive" inside Colab to save your own copy.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/autogluon_tabular_demo.ipynb)
 
 ---
 
-### Setting Up
-
-Start by installing AutoGluon. In Colab, this takes about 2 to 3 minutes:
+### Install and Load Data
 
 ```python
 !pip install autogluon.tabular -q
-```
 
-Then load the dataset directly from the repository. Because the dataset is a public file on GitHub, there is nothing to upload or download manually:
-
-```python
 import pandas as pd
 
 DATA_URL = "https://raw.githubusercontent.com/xiaosuhu/midas-ai-in-research/v1.0-dev/docs/data/ca_housing_sample.csv"
-
 df = pd.read_csv(DATA_URL)
-print(f"Dataset shape: {df.shape}")
 df.head()
 ```
 
-The dataset has 500 rows and 9 columns. The first 8 are features (median income, house age, average rooms, average bedrooms, population, average occupancy, latitude, and longitude) and the last column `MedHouseVal` is the prediction target, representing median house value in hundreds of thousands of USD.
-
 ---
 
-### Splitting the Data
+### Split Train and Test
 
-Before any modeling, we divide the data into a training set and a test set. The model learns only from the training set. The test set is held back entirely and used only at the end to measure how well the model performs on data it has never seen. AutoGluon does its own internal validation split during training, but that is separate from your test set — the test set is your independent check, and it should only be touched once.
+Hold back 20% of the data before any modeling begins. The test set is your independent check and should only be used once, at the end.
 
 ```python
 from sklearn.model_selection import train_test_split
 
 train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
-
-print(f"Training rows: {len(train_df)}")
-print(f"Test rows:     {len(test_df)}")
 ```
 
-For datasets where samples are not independent — for example, multiple measurements from the same research participant, or data collected over time — a simple random split like this is not appropriate. Chapter 15 covers validation strategies for these situations in more detail.
+For data where samples are not independent — repeated measures, longitudinal data, multiple rows per participant — a random split is not appropriate. See Chapter 15 for alternatives.
 
 ---
 
-### Training the Model
-
-This is the core of the workflow. We tell AutoGluon three things: which column is the target, what metric to optimize, and how much time it can use:
+### Train
 
 ```python
 from autogluon.tabular import TabularPredictor
@@ -95,91 +82,76 @@ predictor = TabularPredictor(
 )
 ```
 
-The `time_limit=120` gives AutoGluon 2 minutes, which is usually enough for a first feasibility pass. The `presets` parameter lets you trade runtime for performance: `"medium_quality"` is a reasonable default, while `"best_quality"` enables more aggressive ensembling and hyperparameter search at the cost of longer training time.
-
-You do not need to specify the problem type — AutoGluon infers it from the label column. You also do not need to preprocess the data, because the internal pipeline handles missing values, categorical encoding, and feature scaling automatically.
+AutoGluon infers the problem type from the label column and handles all preprocessing internally. The `time_limit` is the single most important lever — two minutes is sufficient for a first feasibility pass.
 
 ---
 
-### Reading the Leaderboard
-
-Once training finishes, the leaderboard is one of the most informative artifacts to examine:
+### Inspect the Leaderboard
 
 ```python
 leaderboard = predictor.leaderboard(test_df, silent=True)
 leaderboard
 ```
 
-The leaderboard ranks every model and ensemble that was trained, showing both validation performance (from AutoGluon's internal split) and test performance (from your held-out set). A few things to look for: check whether the ensemble models at the top outperform the best individual model (if the gap is small, a simpler model may be preferable for interpretability), look for models with good validation performance but poor test performance (a sign of overfitting), and note training times if compute cost matters for your use case.
+The leaderboard ranks every model and ensemble trained, showing test and validation scores side by side. Here is an example of what you would typically see:
+
+```{image} ../_static/autogluon_leaderboard_example.png
+:alt: Example AutoGluon leaderboard showing model rankings by RMSE score
+:width: 100%
+:align: center
+```
+
+AutoGluon reports RMSE as a negative number so that higher values always mean better performance — a convention it applies across all metrics. The ensemble (`WeightedEnsemble_L2`) typically sits at the top. If a single model is close behind, that simpler model may be preferable when interpretability matters.
 
 ---
 
-### Evaluating on the Test Set
-
-To get the full performance summary on your held-out data, pass `auxiliary_metrics=True` to see all available metrics alongside the primary one:
+### Evaluate and Check Metrics
 
 ```python
 performance = predictor.evaluate(test_df, auxiliary_metrics=True)
 print(performance)
 ```
 
-For regression, this returns several complementary metrics. RMSE (Root Mean Squared Error) measures average prediction error in the same units as the target — for this dataset, an RMSE of 0.5 means predictions are off by about $50,000 on average. R2 (the coefficient of determination) tells you what proportion of the variance in house values is explained by the model, where 1.0 is a perfect fit and 0 means the model is no better than predicting the mean. MAE (Mean Absolute Error) gives a more robust measure that is less sensitive to large individual errors. Together, these metrics give a more complete picture than any single number alone. Whether the results are good enough depends entirely on your research question, not on any universal standard.
-
-For classification tasks, the same `auxiliary_metrics=True` call also returns F1 score, precision, and recall alongside accuracy, which is important when classes are imbalanced — a situation common in clinical and biomedical datasets.
+For regression, the key metrics are RMSE (average error in the target's units), R2 (proportion of variance explained, where 1.0 is perfect), and MAE (average absolute error, less sensitive to outliers). For classification, `auxiliary_metrics=True` also returns F1, precision, and recall alongside accuracy — important when classes are imbalanced, as is common in clinical datasets.
 
 ---
 
-### Understanding Which Features Matter
-
-For many research applications, the feature importance is more interesting than the prediction itself. It tells you which variables carry the most predictive information, which can help generate hypotheses, flag potential data leakage, or identify redundant measurements:
+### Feature Importance
 
 ```python
 importance = predictor.feature_importance(test_df)
-importance
-```
 
-AutoGluon estimates importance using permutation: it shuffles each feature one at a time and measures how much model performance drops. A larger drop means the feature was doing more work. You can visualize this to make the ranking easier to read:
-
-```python
 import matplotlib.pyplot as plt
-
-importance_sorted = importance["importance"].sort_values()
-
-fig, ax = plt.subplots(figsize=(7, 5))
-importance_sorted.plot(kind="barh", ax=ax, color="steelblue")
-ax.set_xlabel("Permutation Importance")
-ax.set_title("Feature Importance — AutoGluon Best Model")
-ax.axvline(0, color="gray", linewidth=0.8)
+importance["importance"].sort_values().plot(kind="barh", figsize=(7, 5), color="steelblue")
+plt.xlabel("Permutation Importance")
+plt.title("Feature Importance — AutoGluon Best Model")
 plt.tight_layout()
 plt.show()
 ```
 
-In this dataset, median income and geographic location tend to dominate. If you ran this on your own research data and saw a variable you did not expect at the top of the list, that would be a reason to pause and investigate. It could be a meaningful finding, or it could indicate that a feature is inadvertently encoding the outcome.
+AutoGluon estimates importance by permuting each feature and measuring the resulting performance drop. Unexpected results here — a feature ranked far higher than domain knowledge would suggest — are worth investigating before drawing conclusions.
 
 ---
 
-### Saving and Reloading a Model
-
-Reproducibility matters in research. If you want to reuse a trained model later — for validation on a new cohort, for sharing with collaborators, or for comparison in a future study — you can save and reload it:
+### Save and Reload
 
 ```python
-# The model is already saved to the path you specified in TabularPredictor()
-# To reload it later:
+# Model is already saved to the path set in TabularPredictor()
 reloaded_predictor = TabularPredictor.load("autogluon_housing_model")
 predictions = reloaded_predictor.predict(test_df)
 ```
 
-Saving the model alongside your data and notebook means someone else can reproduce your results without rerunning the full training process.
-
 ---
 
-## Going Further: Time Series and Multimodal
+## What's Coming: Time Series and Multimodal Notebooks
 
-If your research data has a temporal structure — repeated measurements, longitudinal follow-up, or any data indexed by time — AutoGluon's `TimeSeriesPredictor` follows the same overall design pattern with some additional arguments for the time column and forecast horizon. The [AutoGluon time series documentation](https://auto.gluon.ai/stable/tutorials/timeseries/index.html) provides a complete walkthrough.
+This chapter focused on tabular prediction, which is the right starting point for most research datasets. Two additional notebooks are planned to extend the same feasibility-testing workflow to other data types.
 
-For datasets that mix structured columns with text or images, `MultiModalPredictor` handles the combination automatically. This can be useful for datasets that include clinical notes alongside lab values, or survey instruments that combine rating scales with open-ended text responses. A hands-on example using image classification with the MNIST dataset — including how to enable free GPU acceleration in Colab — will be added in a future chapter. See the [multimodal tutorials](https://auto.gluon.ai/stable/tutorials/multimodal/index.html) in the AutoGluon documentation for examples in the meantime.
+The **time series notebook** will walk through `TimeSeriesPredictor` using a longitudinal research dataset, covering how to specify the time column and item ID, set a forecast horizon, and interpret the resulting metrics. It will also show how to handle irregular time intervals and missing observations, which are common in clinical and social science data.
 
-In both cases, the core idea is the same as what you practiced above: define your target, set a time budget, and inspect the results before deciding whether deeper investment is warranted.
+The **multimodal notebook** will demonstrate `MultiModalPredictor` combining structured fields with text, using a dataset that pairs tabular features with short text descriptions. It will include a GPU-enabled example using MNIST image classification, taking advantage of the free GPU runtime available in Colab, to show how the same interface scales to image data with minimal code changes.
+
+Both notebooks will follow the same structure as the tabular tutorial above: load data, split, fit, inspect the leaderboard, evaluate, and check feature importance — so once you are comfortable with one, the others will feel familiar.
 
 ---
 
@@ -189,11 +161,11 @@ AutoML lowers the barrier to getting a model running, but it does not lower the 
 
 Data leakage is the most common pitfall. Features derived from future information, variables that are proxies for the outcome, or aggregations that inadvertently incorporate test data can all produce inflated performance estimates that do not hold up in practice. If your results look surprisingly good, leakage is the first thing to investigate.
 
-The test set is a one-time measurement. Once you evaluate on the test set, any subsequent changes to your model or features should ideally trigger a fresh train/test split. Repeatedly evaluating on the same test set and adjusting based on those results is a form of overfitting, even if the decisions feel subjective.
+The test set is a one-time measurement. Once you evaluate on it, any subsequent changes to your model or features should ideally trigger a fresh split. Repeatedly adjusting based on the same test results is a form of overfitting, even when the decisions feel subjective.
 
-AutoGluon is a starting point, not an endpoint. The feasibility test is meant to answer "is there signal here worth pursuing," not "what is my final model." If the results look promising, a custom pipeline with more careful feature engineering and domain-informed design will typically outperform AutoGluon's defaults on a specific problem.
+AutoGluon is a starting point, not an endpoint. The feasibility test answers "is there signal here worth pursuing," not "what is my final model." If the results look promising, a custom pipeline with careful feature engineering and domain-informed design will typically outperform AutoGluon's defaults on your specific problem.
 
-On compute and data privacy: AutoGluon can be run locally, on the Great Lakes cluster, or in the MIDAS AI Sandbox. For any data covered by HIPAA or other data governance policies, make sure you are using an approved environment. Do not upload sensitive data to a public Colab notebook or a shared Binder instance. Chapter 8 covers data access policies and approved computing environments in more detail.
+On data privacy: for any data covered by HIPAA or other governance policies, use an approved environment — Great Lakes, the MIDAS AI Sandbox, or a local installation. Do not upload sensitive data to a public Colab notebook. Chapter 8 covers approved computing environments in more detail.
 
 ---
 
