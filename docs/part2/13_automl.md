@@ -28,45 +28,17 @@ AutoGluon handles three problem types that come up regularly in research.
 
 ---
 
-## Hands-On Tutorial: Predicting House Prices
+## Tutorial: Predicting House Prices
 
-The tutorial below uses a 500-row sample based on the California Housing dataset, originally from Pace and Barry (1997) {cite}`statlib_ca_housing`. Each row represents a census block group, and the task is to predict median house value from neighborhood characteristics — a regression problem. The workflow is identical for classification; only the label column and evaluation metric differ.
+The tutorial uses a 500-row sample based on the California Housing dataset, originally from Pace and Barry (1997) {cite}`statlib_ca_housing`. Each row represents a census block group, and the task is to predict median house value from neighborhood characteristics — a regression problem. The workflow is identical for classification; only the label column and evaluation metric differ.
 
-All explanatory notes and hands-on exercises live in the Colab notebook. The chapter below shows the key steps and what to look for in the results. Clicking the badge opens a temporary Colab session — click "Copy to Drive" inside Colab to save your own copy.
+All code, explanatory notes, and hands-on exercises live in the Colab notebook. Clicking the badge opens a temporary session — click "Copy to Drive" inside Colab to save your own copy.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/autogluon_tabular_demo.ipynb)
 
----
+### The Core Call
 
-### Install and Load Data
-
-```python
-!pip install autogluon.tabular -q
-
-import pandas as pd
-
-DATA_URL = "https://raw.githubusercontent.com/xiaosuhu/midas-ai-in-research/v1.0-dev/docs/data/ca_housing_sample.csv"
-df = pd.read_csv(DATA_URL)
-df.head()
-```
-
----
-
-### Split Train and Test
-
-Hold back 20% of the data before any modeling begins. The test set is your independent check and should only be used once, at the end.
-
-```python
-from sklearn.model_selection import train_test_split
-
-train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
-```
-
-For data where samples are not independent — repeated measures, longitudinal data, multiple rows per participant — a random split is not appropriate. See Chapter 15 for alternatives.
-
----
-
-### Train
+The full training workflow comes down to a few lines. You tell AutoGluon which column is the target, what metric to optimize, and how much time it can use:
 
 ```python
 from autogluon.tabular import TabularPredictor
@@ -82,64 +54,33 @@ predictor = TabularPredictor(
 )
 ```
 
-AutoGluon infers the problem type from the label column and handles all preprocessing internally. The `time_limit` is the single most important lever — two minutes is sufficient for a first feasibility pass.
+AutoGluon infers the problem type from the label column and handles all preprocessing internally. The `time_limit` is the single most important lever — two minutes is enough for a first feasibility pass, and you can increase it later if the results look promising.
 
----
+### What the Leaderboard Shows
 
-### Inspect the Leaderboard
-
-```python
-leaderboard = predictor.leaderboard(test_df, silent=True)
-leaderboard
-```
-
-The leaderboard ranks every model and ensemble trained, showing test and validation scores side by side. Here is an example of what you would typically see:
+Once training finishes, the leaderboard ranks every model and ensemble that was trained, showing test and validation scores side by side. Here is an example of what you would typically see for a tabular regression task:
 
 ```{image} ../_static/autogluon_leaderboard_example.png
-:alt: Example AutoGluon leaderboard showing model rankings by RMSE score
+:alt: Example AutoGluon leaderboard for tabular regression, showing model rankings by RMSE score
 :width: 100%
 :align: center
 ```
 
-AutoGluon reports RMSE as a negative number so that higher values always mean better performance — a convention it applies across all metrics. The ensemble (`WeightedEnsemble_L2`) typically sits at the top. If a single model is close behind, that simpler model may be preferable when interpretability matters.
+AutoGluon reports RMSE as a negative number so that higher values always mean better performance — a convention it applies consistently across all metrics. The ensemble (`WeightedEnsemble_L2`) typically sits at the top. If a single model is close behind, that simpler model may be worth preferring when interpretability matters more than squeezing out the last bit of performance.
 
----
+### Interpreting the Metrics
 
-### Evaluate and Check Metrics
+For regression, the key metrics to look at are RMSE (average error in the same units as your target), R2 (proportion of variance explained, where 1.0 is perfect and 0 means no better than predicting the mean), and MAE (average absolute error, which is less sensitive to large individual mistakes). Together these give a more complete picture than any single number. Whether the results are good enough is a research judgment, not a statistical one.
 
-```python
-performance = predictor.evaluate(test_df, auxiliary_metrics=True)
-print(performance)
-```
-
-For regression, the key metrics are RMSE (average error in the target's units), R2 (proportion of variance explained, where 1.0 is perfect), and MAE (average absolute error, less sensitive to outliers). For classification, `auxiliary_metrics=True` also returns F1, precision, and recall alongside accuracy — important when classes are imbalanced, as is common in clinical datasets.
-
----
+For classification tasks, passing `auxiliary_metrics=True` to `predictor.evaluate()` also returns F1, precision, and recall alongside accuracy — especially important when classes are imbalanced, as is common in clinical and biomedical datasets.
 
 ### Feature Importance
 
-```python
-importance = predictor.feature_importance(test_df)
+For many research applications, knowing which variables drive the prediction is as valuable as the prediction itself. AutoGluon estimates importance by permuting each feature one at a time and measuring how much performance drops. A feature ranked far higher than domain knowledge would suggest is worth investigating — it could reflect a genuine signal or it could indicate data leakage. The notebook walks through how to generate and visualize this output.
 
-import matplotlib.pyplot as plt
-importance["importance"].sort_values().plot(kind="barh", figsize=(7, 5), color="steelblue")
-plt.xlabel("Permutation Importance")
-plt.title("Feature Importance — AutoGluon Best Model")
-plt.tight_layout()
-plt.show()
-```
+### Before Training: Data Splits
 
-AutoGluon estimates importance by permuting each feature and measuring the resulting performance drop. Unexpected results here — a feature ranked far higher than domain knowledge would suggest — are worth investigating before drawing conclusions.
-
----
-
-### Save and Reload
-
-```python
-# Model is already saved to the path set in TabularPredictor()
-reloaded_predictor = TabularPredictor.load("autogluon_housing_model")
-predictions = reloaded_predictor.predict(test_df)
-```
+One step that happens before `fit()` is splitting the data into training and test sets. The model sees only the training set. The test set is held back entirely and used once at the end to measure real-world performance — it is your independent check, not a tuning tool. For datasets where samples are not independent (repeated measures, longitudinal data, multiple rows per participant) a random split is not appropriate. Chapter 15 covers validation strategies for those situations.
 
 ---
 
@@ -147,11 +88,11 @@ predictions = reloaded_predictor.predict(test_df)
 
 This chapter focused on tabular prediction, which is the right starting point for most research datasets. Two additional notebooks are planned to extend the same feasibility-testing workflow to other data types.
 
-The **time series notebook** will walk through `TimeSeriesPredictor` using a longitudinal research dataset, covering how to specify the time column and item ID, set a forecast horizon, and interpret the resulting metrics. It will also show how to handle irregular time intervals and missing observations, which are common in clinical and social science data.
+The **time series notebook** will walk through `TimeSeriesPredictor` using a longitudinal research dataset, covering how to specify the time column and item ID, set a forecast horizon, and interpret the resulting metrics. It will also address how to handle irregular time intervals and missing observations, which are common in clinical and social science data.
 
 The **multimodal notebook** will demonstrate `MultiModalPredictor` combining structured fields with text, using a dataset that pairs tabular features with short text descriptions. It will include a GPU-enabled example using MNIST image classification, taking advantage of the free GPU runtime available in Colab, to show how the same interface scales to image data with minimal code changes.
 
-Both notebooks will follow the same structure as the tabular tutorial above: load data, split, fit, inspect the leaderboard, evaluate, and check feature importance — so once you are comfortable with one, the others will feel familiar.
+Both notebooks will follow the same structure as the tabular tutorial: load data, split, fit, inspect the leaderboard, evaluate, and check feature importance — so once you are comfortable with one, the others will feel familiar.
 
 ---
 
@@ -165,7 +106,7 @@ The test set is a one-time measurement. Once you evaluate on it, any subsequent 
 
 AutoGluon is a starting point, not an endpoint. The feasibility test answers "is there signal here worth pursuing," not "what is my final model." If the results look promising, a custom pipeline with careful feature engineering and domain-informed design will typically outperform AutoGluon's defaults on your specific problem.
 
-On data privacy: for any data covered by HIPAA or other governance policies, use an approved environment — Great Lakes, the MIDAS AI Sandbox, or a local installation. Do not upload sensitive data to a public Colab notebook. Chapter 8 covers approved computing environments in more detail.
+On data privacy: for any data covered by HIPAA or other governance policies, use an approved environment — **the Armis2 HPC Cluster**, or a **local installation**. Do not upload sensitive data to a public Colab notebook. Chapter 8 covers approved computing environments in more detail.
 
 ---
 
