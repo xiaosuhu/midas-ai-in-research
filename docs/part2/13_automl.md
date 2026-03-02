@@ -68,19 +68,7 @@ Once training finishes, the leaderboard ranks every model and ensemble that was 
 
 AutoGluon reports RMSE as a negative number so that higher values always mean better performance — a convention it applies consistently across all metrics. The ensemble (`WeightedEnsemble_L2`) typically sits at the top. If a single model is close behind, that simpler model may be worth preferring when interpretability matters more than squeezing out the last bit of performance.
 
-### Interpreting the Metrics
-
-For regression, the key metrics to look at are RMSE (average error in the same units as your target), R2 (proportion of variance explained, where 1.0 is perfect and 0 means no better than predicting the mean), and MAE (average absolute error, which is less sensitive to large individual mistakes). Together these give a more complete picture than any single number. Whether the results are good enough is a research judgment, not a statistical one.
-
-For classification tasks, passing `auxiliary_metrics=True` to `predictor.evaluate()` also returns F1, precision, and recall alongside accuracy — especially important when classes are imbalanced, as is common in clinical and biomedical datasets.
-
-### Feature Importance
-
-For many research applications, knowing which variables drive the prediction is as valuable as the prediction itself. AutoGluon estimates importance by permuting each feature one at a time and measuring how much performance drops. A feature ranked far higher than domain knowledge would suggest is worth investigating — it could reflect a genuine signal or it could indicate data leakage. The notebook walks through how to generate and visualize this output.
-
-### Before Training: Data Splits
-
-One step that happens before `fit()` is splitting the data into training and test sets. The model sees only the training set. The test set is held back entirely and used once at the end to measure real-world performance — it is your independent check, not a tuning tool. For datasets where samples are not independent (repeated measures, longitudinal data, multiple rows per participant) a random split is not appropriate. Chapter 15 covers validation strategies for those situations.
+The notebook walks through each step in detail — data splits, metric selection, training, the leaderboard, evaluation, and feature importance — with explanatory notes and hands-on exercises at the end.
 
 ---
 
