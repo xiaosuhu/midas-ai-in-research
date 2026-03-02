@@ -57,8 +57,7 @@ part1/08_validation
 :caption: Part II — AI in Data Analysis
 :hidden:
 
-part2/08_data_access
-part2/09_data_example
+part2/09_data_access
 part2/10_data_preparation
 part2/11_computing_resources
 part2/12_exploratory_analysis
