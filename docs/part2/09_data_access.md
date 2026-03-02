@@ -5,17 +5,22 @@
 
 - How to evaluate whether a dataset is appropriate for your research question
 - What compliance requirements apply before you access or share data
+- When public datasets like Kaggle require — and do not require — IRB review
 - Where to find data through University of Michigan resources
 - Where to find publicly available datasets for prototyping and method development
 :::
 
 ---
 
-## Why Data Access Deserves Its Own Chapter
+## The Pilot Data Problem
 
-It is tempting to treat data access as a logistics problem — find the file, download it, get on with the analysis. In practice, it is often the phase where research projects stall or go wrong. Researchers discover mid-project that a dataset requires an institutional agreement they did not anticipate, that a public repository they planned to use prohibits their intended use case, or that the data they assumed were deidentified turn out to carry re-identification risk. These are not edge cases; they come up regularly.
+Imagine you are a biomedical researcher with a compelling hypothesis. You have done the background work, you have a clear question, and you want to apply for a small NIH grant — an R03 or R21 — to collect the pilot data that would let you build toward a larger R01. There is just one problem: to be competitive, your application needs preliminary data. And to get preliminary data, you need to run a study. And to run a study, you need funding.
 
-This chapter is about getting ahead of those problems. Before you open a data portal or submit an access request, it helps to be clear about what you actually need, what rules govern the data you are considering, and which sources are genuinely well-suited to your situation. That groundwork pays off.
+This is one of the most frustrating loops in academic research, and it is more common than the grant literature tends to acknowledge. Experienced researchers navigate it by being creative about data sources: using existing cohorts, collaborating with groups who have relevant data, or — increasingly — turning to public repositories to find datasets that are close enough to their target population and measurement structure to generate credible feasibility results.
+
+This is one of the most legitimate and underappreciated uses of public research data. A well-chosen publicly available dataset can let you estimate effect sizes, test analytical pipelines, identify methodological challenges, and demonstrate that your proposed approach is tractable — all before you have collected a single observation. That kind of preliminary work can be the difference between a fundable and an unfundable application.
+
+This chapter is a practical guide to finding that data, understanding what you can actually do with it, and avoiding the compliance mistakes that researchers most commonly make in the process.
 
 ---
 
@@ -43,7 +48,7 @@ Data access decisions in research are never purely practical. Before you use any
 
 Most human subjects research requires Institutional Review Board (IRB) review, even when data are not collected directly by the researcher. Using an existing dataset does not automatically exempt a project from review; the key question is whether the data contain identifiable information about living individuals. When in doubt, contact your institution's IRB office before proceeding.
 
-Data use agreements (DUAs) are common when accessing restricted or licensed datasets. A DUA typically specifies permitted uses, storage requirements, publication restrictions, and how data must be destroyed at the end of a project. Violating a DUA has serious professional and legal consequences, and DUAs sometimes run to many pages of technical requirements. Read them carefully and store a copy with your project documentation.
+Data use agreements (DUAs) are common when accessing restricted or licensed datasets. A DUA typically specifies permitted uses, storage requirements, publication restrictions, and the procedures for secure disposal of the data at the end of a project. Violating a DUA has serious professional and legal consequences, and DUAs sometimes run to many pages of technical requirements. Read them carefully and store a copy with your project documentation.
 
 ### HIPAA, FERPA, and GDPR
 
@@ -58,6 +63,24 @@ For research involving individuals in the European Union, the General Data Prote
 The University of Michigan maintains institutional policies on data classification and permissible use that apply regardless of external regulatory requirements. Sensitive data categories — including health information, financial records, and personally identifiable information — must be stored and processed on approved systems. Tools that involve uploading data to third-party platforms, including some AI systems, are subject to specific review. When working with sensitive research data, check whether the tools and platforms you plan to use are covered under a U-M institutional agreement.
 
 The U-M Safe Computing website and the Research Technology Stewardship program are the right starting points for questions about data classification and approved platforms.
+
+### What About Kaggle, UCI, or Other Fully Public Datasets?
+
+This is a question researchers often hesitate to ask out loud: if I am downloading a dataset that is already publicly available — something from Kaggle, the UCI repository, or a government open data portal — do I still need to worry about IRB approval, HIPAA, or a DUA?
+
+The short answer is: usually not, but it depends on the data, not just the source.
+
+Most datasets on platforms like Kaggle and UCI have been either fully deidentified, synthetically generated, or sourced from domains with no human subjects component at all — house prices, sensor readings, benchmark classification tasks. For those datasets, there is no IRB trigger and no HIPAA relevance. You are not dealing with protected health information, and the data carry no obligations beyond whatever license terms the repository specifies.
+
+That said, a few situations still require attention even with public data:
+
+**Licensing terms.** Every dataset on Kaggle and most other repositories carries a license — Creative Commons, CC BY-NC, custom terms of service, and so on. Some restrict commercial use, redistribution, or derivative works. For academic research publication these restrictions rarely apply, but you should confirm before including results in a paper or sharing derived datasets.
+
+**Health-related public datasets.** Some publicly available datasets contain health information that was originally collected under HIPAA and released in a deidentified form. Using them for research purposes — particularly if your analysis could re-identify individuals, if you plan to link them with other datasets, or if your institution has specific policies on health data — may still require IRB review. PhysioNet, for instance, asks researchers to sign a credentialing agreement and a data use agreement even though the underlying data are openly hosted.
+
+**Secondary analysis of survey or human behavior data.** If a public dataset contains responses from identifiable individuals — even without names — some IRBs consider secondary analysis of that data to require at minimum an exemption determination. It is worth checking with your IRB office rather than assuming.
+
+The cleanest practical rule: if the data has no connection to human subjects, no health information, and a permissive license, you can usually treat it as you would any other publicly available resource. If any of those conditions is uncertain, spend ten minutes confirming before you invest weeks of analysis.
 
 ---
 
@@ -87,9 +110,13 @@ The Michigan Institute for Data and AI in Society (MIDAS) coordinates access to 
 
 Kaggle hosts a large collection of community-contributed datasets across domains including healthcare, finance, text, images, and time series {cite}`kaggle_datasets`. Many are lightweight and competition-oriented, which makes them well-suited for benchmarking and for testing AutoML workflows quickly. The quality varies considerably, so checking whether a dataset has active discussion threads and well-maintained documentation is worth your time before committing to it.
 
+### Zenodo
+
+Zenodo is an open-access repository operated by CERN that allows researchers to deposit and share datasets, software, preprints, and other research outputs {cite}`zenodo`. Unlike Kaggle, which is primarily competition-oriented, Zenodo is designed for scientific archival — datasets deposited here are assigned a DOI and are meant to be citable, stable, and reproducible. It is a particularly good place to look for datasets associated with published papers, since many journals now encourage or require data deposition at the time of publication.
+
 ### PhysioNet
 
-PhysioNet offers freely accessible physiological and clinical time-series datasets, including ECG, EEG, ICU monitoring records, and wearable sensor data {cite}`physionet`. It is widely used for signal processing, time-series modeling, and benchmarking predictive models in health research. Access to some datasets requires signing a data use agreement, which PhysioNet manages through its online platform.
+PhysioNet offers freely accessible physiological and clinical time-series datasets, including ECG, EEG, ICU monitoring records, and wearable sensor data {cite}`physionet`. It is widely used for signal processing, time-series modeling, and benchmarking predictive models in health research. Access to some datasets requires signing a credentialing agreement and data use agreement, which PhysioNet manages through its online platform.
 
 ### OpenNeuro
 
@@ -130,3 +157,11 @@ Check the licensing terms before you invest time. Some datasets that appear open
 Pick a dataset from one of the sources listed in this chapter that is relevant to your research domain. Before you download or access it, work through these questions: What is the unit of analysis? What time period does it cover? What are the licensing and use restrictions? Does it require a data use agreement or IRB review before you can use it in a publication? Does the structure of the data match what your research question actually requires, or would you need to reshape it substantially?
 
 That due-diligence habit — running through those questions before committing — is one of the most practical things you can build into your data workflow.
+
+---
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+```
