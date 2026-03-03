@@ -35,11 +35,19 @@ With that framing established, here is what each category of resource actually o
 
 Before choosing a resource, it helps to have a realistic sense of what your analysis requires. The most important distinction is between CPU-bound and GPU-bound work.
 
-**CPU computing** is what your laptop or desktop does. Modern machines have multiple cores — typically 8 to 16 on a research workstation — which means they can run several tasks in parallel. For most data analysis work involving tabular data, statistical modeling, text processing at moderate scale, and exploratory analysis, a multicore CPU is entirely sufficient. AutoGluon running on CPU can train a competitive ensemble on a moderately sized tabular dataset in a few minutes. You do not need a GPU for this.
+**CPU computing** is what your laptop or desktop does. Modern machines have multiple cores — typically 8 to 16 on a research workstation — which means they can run several tasks in parallel. A wide range of research computing is CPU-bound by nature: statistical modeling, matrix operations on neuroimaging data, cross-validation loops, mixed-effects models, and most tabular data workflows fall into this category. These tasks can sometimes run for hours or days on a laptop — a generalized linear model applied to a large fNIRS dataset computing residuals across many channels and subjects is a good example — and the right solution is usually more CPU cores or HPC time, not a GPU.
 
-**GPU computing** becomes relevant when you are working with tasks that require processing large numbers of operations simultaneously — training deep learning models on images, fine-tuning large language models, or handling very large neural networks. A GPU has thousands of smaller cores designed for exactly this kind of parallel arithmetic. If you are training a convolutional network on medical images, running inference on tens of thousands of documents, or working with any modern large-scale deep learning workflow, GPU access matters considerably.
+**GPU computing** becomes relevant when your task involves processing a very large number of simple arithmetic operations simultaneously, which is the computational signature of deep learning. Training a convolutional neural network on medical images, fine-tuning a large language model on text corpora, or running inference across tens of thousands of documents are tasks where a GPU's architecture — thousands of smaller cores designed for parallel arithmetic — provides a qualitative speedup over even a powerful CPU. If you are working with modern deep learning frameworks like PyTorch or TensorFlow and training neural networks of meaningful size, GPU access will make a real difference.
 
-A practical way to think about it: if your analysis could in principle run overnight on your laptop and produce usable results by morning, you probably do not need GPU access. If you are waiting days for results or running out of memory entirely, it is time to scale up.
+The practical distinction is about the type of parallelism your task requires, not its duration. A week-long GLM computation is CPU-bound and benefits from more cores and memory. A neural network training run that would take a week on CPU might take hours on a GPU, because the math is structured differently.
+
+If your machine has a dedicated NVIDIA GPU, you can check whether it is visible to your environment and actively being used with:
+
+```bash
+nvidia-smi
+```
+
+This command shows the GPU model, memory usage, and any running processes. If your deep learning code is running but `nvidia-smi` shows no active processes, your framework is likely falling back to CPU — worth catching early before a long training run.
 
 ---
 
@@ -121,7 +129,7 @@ Once you have installed your packages, saving a record of them takes one additio
 pip freeze > requirements.txt
 ```
 
-That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. It is one of the simplest reproducibility habits you can build into your workflow.
+That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. Chapter 17 covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
 
 For Great Lakes specifically, ARC-TS maintains documentation on loading modules, creating environments, and submitting jobs through the SLURM scheduler. Rather than reproducing those instructions here, the ARC-TS user guide is the authoritative and up-to-date source: https://arc.umich.edu/greatlakes/user-guide/
 
@@ -129,8 +137,8 @@ For Great Lakes specifically, ARC-TS maintains documentation on loading modules,
 
 ## Try This
 
-Before your next analysis, take five minutes to answer three questions: Does my data contain any sensitive, identifiable, or restricted information? How large is my dataset, and will it fit comfortably in my laptop's memory? Does my planned analysis involve training a deep learning model, or is it primarily tabular or statistical work?
+Before your next analysis, take five minutes to answer three questions: Does my data contain any sensitive, identifiable, or restricted information? How large is my dataset, and will it fit comfortably in my laptop's memory? Does my planned analysis involve training a deep learning model, or is it primarily statistical or matrix-based computation?
 
-Your answers will point you directly to the right resource. If the data is sensitive and HIPAA-covered, the answer is Armis2 regardless of anything else. If the data is clean and public and the task is tabular, your laptop is probably fine to start. If you are training a neural network on a large image dataset, Colab or Great Lakes GPU nodes are your natural starting point.
+Your answers will point you directly to the right resource. If the data is sensitive and HIPAA-covered, the answer is Armis2 regardless of anything else. If the data is clean and public and the task is statistical or tabular, your laptop or Great Lakes CPU nodes are the right starting point. If you are training a neural network on a large image or text dataset, Colab or Great Lakes GPU nodes are where to begin.
 
 That three-question habit takes less time than any setup step, and it avoids the more serious problem of discovering a compliance issue after weeks of analysis.

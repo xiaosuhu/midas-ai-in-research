@@ -65,6 +65,7 @@ part2/13_feature_engineering
 part2/14_automl
 part2/15_ai_sandbox
 part2/16_validation_interpretation
+part2/17_reproducibility
 ```
 ```{toctree}
 :maxdepth: 2
