@@ -58,12 +58,13 @@ part1/08_validation
 :hidden:
 
 part2/09_data_access
-part2/10_data_preparation
-part2/11_computing_resources
+part2/10_computing_resources
+part2/11_data_preparation
 part2/12_exploratory_analysis
-part2/13_automl
-part2/14_case_studies
-part2/15_validation_interpretation
+part2/13_feature_engineering
+part2/14_automl
+part2/15_ai_sandbox
+part2/16_validation_interpretation
 ```
 ```{toctree}
 :maxdepth: 2
