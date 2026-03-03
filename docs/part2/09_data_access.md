@@ -84,7 +84,22 @@ The cleanest practical rule: if the data has no connection to human subjects, no
 
 ---
 
+## Finding the Right Source
+
+Not every dataset suits every purpose, and spending a few minutes thinking through what you actually need before browsing repositories will save you considerable time. Three questions are worth asking before you commit to a source.
+
+First, does the data structure match your use case? If your research ultimately involves clinical time series, testing a pipeline on a tidy tabular benchmark will not surface the preprocessing or modeling issues that will actually matter. The closer the test dataset is to your real data in structure, the more useful the validation.
+
+Second, is the ground truth well-understood? When you are checking whether a pipeline is working correctly rather than discovering something new, you want a dataset where the expected behavior is established. Sources with a long publication history and documented benchmarks give you that anchor.
+
+Third, are the licensing terms compatible with your intended use? Some datasets that appear open carry restrictions on redistribution or derivative works. For academic research this rarely poses a problem, but confirming before you invest weeks of analysis is much easier than discovering a constraint afterward.
+
+With those questions in mind, the sources below cover the most practical options for researchers at U-M. If you are a U-M affiliate, the institutional resources in the next section are often the best starting point — they come with support, documentation, and in some cases direct access that external platforms do not offer. The national and global sources that follow are better suited for benchmarking, method development, and cases where your domain is not well-served by what U-M has locally.
+
+---
+
 ## University of Michigan Data Resources
+
 
 ### U-M Library Data Services
 
@@ -105,6 +120,9 @@ The Michigan Institute for Data and AI in Society (MIDAS) coordinates access to 
 ---
 
 ## National and Global Public Sources
+
+Beyond U-M, a number of well-maintained public repositories are worth knowing about. The sources below are widely used in research and teaching across disciplines, and most are freely accessible without institutional affiliation.
+
 
 ### Kaggle
 
@@ -137,18 +155,6 @@ The arXiv metadata dataset includes titles, abstracts, authorship, and subject c
 ### U.S. Government Open Data
 
 Several U.S. federal agencies maintain open data portals that are particularly useful for structured tabular analysis and policy-oriented research. Data.gov aggregates datasets from across the federal government {cite}`datagov`. NOAA provides climate, weather, and atmospheric data {cite}`noaa`. The U.S. Census Bureau publishes demographic, economic, and housing data at multiple geographic levels {cite}`uscensus`. These sources are generally stable, well-maintained, and carry permissive terms for research use.
-
----
-
-## Choosing the Right Dataset for Quick Testing
-
-When the goal is to test a method or validate a workflow before applying it to your actual research data, a few principles help narrow the choice.
-
-Favor datasets where the ground truth is well-understood. If you are using a dataset to check whether your pipeline is working correctly, you want to be able to verify the output. Datasets with a long publication history and established benchmarks give you that anchor.
-
-Match the data structure to your eventual use case. If your research ultimately involves clinical time series, testing on tabular survey data will not catch the preprocessing or modeling issues that will matter in production. The closer the test dataset is to your real data in structure, the more useful the test.
-
-Check the licensing terms before you invest time. Some datasets that appear open carry restrictions on commercial use, redistribution, or derivative works. For academic research this rarely poses a problem, but it is worth confirming rather than discovering a constraint after the fact.
 
 ---
 
