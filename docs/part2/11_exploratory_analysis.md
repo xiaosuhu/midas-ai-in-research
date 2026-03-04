@@ -3,6 +3,7 @@
 :::{admonition} What You'll Learn
 :class: tip
 - How to use AI to accelerate your first pass through data
+- What questions to answer before you touch a single row
 - Generating visualizations and summary statistics to understand what you're working with
 - Identifying data quality issues that will guide your cleaning strategy
 - The iterative nature of EDA: initial exploration before prep, deep exploration after
@@ -10,26 +11,41 @@
 
 ## The Two-Pass Journey
 
-You just received your dataset. You haven't touched it yet, but you need to know what you're working with. This chapter covers the initial exploration, your first pass through the data. You'll discover its shape, its gaps, its quirks, and its quality issues. These discoveries will guide your cleaning strategy in the next chapter.
+You just received your dataset. Before you run a single model or write a cleaning script, you need to answer a few basic questions: What is each column? Which one are you trying to predict or explain? Where are the gaps, and are those gaps random or concentrated in a way that matters?
 
-Here's the story: A researcher gets a dataset from a collaborative project. The first thing they do is ask an AI to generate a quick summary. Fifteen minutes later, they know there are 8,000 rows, 42 columns, and about 12% of one critical variable is missing. They also notice that dates are stored in three different formats. These findings are gold. They now know exactly what to fix.
+This is what EDA is really about. It is not just running `.describe()` and moving on. It is taking the time to build a mental model of your data, column by column, before you trust it with anything important.
 
-After they clean and prepare the data based on these discoveries, they'll return for a deeper exploration. In that second pass, they can confidently investigate relationships, patterns, and distributions on data they trust.
+This chapter covers the first pass, the initial exploration you do when the data is still unfamiliar. You will discover its shape, its gaps, its quirks, and its quality issues. These discoveries will guide your cleaning strategy in the next chapter.
+
+After cleaning and preparing the data, you will return for a second, deeper exploration. That is when you investigate relationships, test assumptions about distributions, and look for patterns with confidence, because by then you will trust what you are working with.
+
+## A Quick Example
+
+Imagine a public health researcher who just received a dataset from a multi-site collaborative study. It has 8,000 rows and 42 columns, and they have never seen it before.
+
+The first thing they do is ask an AI to generate a quick summary. Within 15 minutes, they know the row and column counts, the data types for each variable, and where missingness is concentrated. One critical variable is missing in about 12% of rows, and those rows turn out to be disproportionately from one study site. Dates are stored in three different formats across sites. Two columns have identical names but different scales.
+
+None of this is catastrophic. But all of it would have caused silent errors if left unchecked. Now they know what to fix, and why.
+
+That is the value of a careful first-pass EDA. It takes maybe an hour. It saves days.
+
+## Starting With the Right Questions
+
+Before generating a single plot, it helps to get grounded in what the data is supposed to represent. Some questions worth answering at the start:
+
+**What does each column actually mean?** Column names are often abbreviations, legacy labels, or ambiguous shorthand. If you have a data dictionary, read it. If you do not, ask a collaborator or use AI to help you infer meaning from context. You should be able to describe every column in plain language before you start modeling.
+
+**Which column is your outcome or target?** Whether you are doing supervised learning, regression, or just building summary statistics for a paper, you need to identify your dependent variable clearly. What are its values? Is it continuous or categorical? How is it distributed? How much missing data does it have?
+
+**What are the known gaps, and do they matter?** Missing data is normal. But missing data that is correlated with your outcome, or with a particular subgroup, is a problem that no amount of imputation will fully solve. You want to flag this early.
+
+**Are there columns you should exclude outright?** Some variables are leakage risks (information that would not be available at prediction time), near-duplicates, or simply too sparse to be useful. Better to identify those now than after you have built features from them.
 
 ## When AI Enhances EDA
 
-**AI is particularly useful for:**
-- Generating visualization code quickly
-- Computing comprehensive summary statistics
-- Suggesting relevant plots based on your data type
-- Identifying potential outliers and anomalies
-- Flagging data quality issues early
+AI is useful for generating visualization code quickly, computing summary statistics across many columns at once, suggesting relevant plots based on data types, and flagging potential outliers or anomalies. It is also good at writing the boilerplate you would otherwise copy from Stack Overflow: the missing value heatmap, the correlation matrix, the histogram grid.
 
-**Your expertise is essential for:**
-- Interpreting what patterns mean
-- Deciding which relationships matter for your research
-- Avoiding spurious correlations
-- Understanding whether something is a data error or a real phenomenon
+Where AI falls short is interpretation. AI can tell you that 23% of a column is missing. It cannot tell you whether that is a problem for your research question, whether you should impute it, or whether the missingness is systematic in a way that undermines your design. That judgment requires your domain knowledge.
 
 ## Recommended First-Pass EDA Workflow
 
@@ -37,45 +53,41 @@ After they clean and prepare the data based on these discoveries, they'll return
 
 Ask AI to give you the big picture. What are the dimensions? What are the data types? Where are the obvious gaps?
 
-You might prompt an AI like this: "I have a CSV file with patient data. Give me a high-level summary: how many rows and columns, what data types, how many missing values, and any obvious data quality issues."
+You might prompt an AI like this: "I have a CSV file with patient data. Give me a high-level summary: how many rows and columns, what data types, how many missing values per column, and any obvious data quality issues."
 
-AI can generate code to check:
-- Basic statistics (count, mean, median, standard deviation, min, max)
-- Missing value patterns and percentages
-- Data type information
-- Value ranges and distributions
-- Duplicate records
+AI can generate code to check basic statistics (count, mean, median, standard deviation, min, max), missing value patterns and percentages, data type information, value ranges and distributions, and duplicate records.
 
-### Step 2: Create Standard Visualizations
+### Step 2: Understand What Each Column Is
 
-Use AI to quickly generate common plots that show you the shape of your data:
+Once you have the structural overview, go a level deeper. Review the column names against any available documentation. For columns where you are unsure, ask AI to help you interpret them from context. Make sure you can map every column to either a feature, a target variable, a metadata field, or something to exclude.
 
-- Distributions (histograms, density plots, box plots)
-- Missing value patterns (heatmaps showing which columns have gaps)
-- Data type consistency (categorical value counts)
-- Outliers (values that sit far outside the typical range)
+This step is easy to skip. Do not skip it.
 
-Don't aim for publication-quality graphics here. Aim for speed and coverage. You want to see everything at least once.
+### Step 3: Create Standard Visualizations
 
-### Step 3: Flag Data Quality Issues
+Use AI to quickly generate common plots that show you the shape of your data: distributions (histograms, density plots, box plots), missing value patterns (heatmaps showing which columns have gaps), categorical value counts, and outlier flags.
 
-Based on what you see, list the issues that need addressing:
-- Are dates formatted inconsistently?
-- Are there impossible values (negative ages, future dates)?
-- Are categories misspelled or inconsistent?
-- Are numbers stored as text?
-- Are some columns mostly empty?
+Do not aim for publication-quality graphics here. Aim for speed and coverage. You want to see everything at least once.
+
+### Step 4: Flag Data Quality Issues
+
+Based on what you see, list the issues that need addressing. Are dates formatted inconsistently? Are there impossible values like negative ages or future dates? Are categories misspelled or inconsistent? Are numbers stored as text? Are some columns mostly empty?
 
 Write these down. This list becomes your cleaning to-do list for the next chapter.
 
-### Step 4: Decide on Your Cleaning Strategy
+### Step 5: Decide on Your Cleaning Strategy
 
-Before you touch your data, think about what needs to be fixed and why. For each issue, jot down a quick decision:
-- Missing values: delete rows, impute, or flag?
-- Inconsistent dates: standardize to one format?
-- Outliers: investigate, cap, or remove?
+Before you touch your data, think about what needs to be fixed and why. For each issue, jot down a quick decision: missing values (delete rows, impute, or flag?), inconsistent dates (standardize to one format?), outliers (investigate, cap, or remove?).
 
-You don't need to decide everything perfectly now. You're planning ahead.
+You do not need to decide everything perfectly now. You are planning ahead.
+
+## After Cleaning: The Second Pass
+
+Once you have cleaned and prepared your data, you come back for a deeper look. The second-pass EDA is where the real analysis begins. Now you can examine relationships between variables with confidence, build correlation matrices and scatter plots, test whether distributions match your assumptions, and explore subgroup differences.
+
+In the first pass, you are asking "can I trust this data?" In the second pass, you are asking "what does this data tell me?" The separation matters because trying to do both at once usually means doing neither well.
+
+It is also worth noting that EDA is not a one-time event. Plan to revisit your data after each major transformation. If you impute a large block of missing values or re-encode a categorical variable, take another look at the distributions before moving forward. Chapter 12 covers the cleaning and preparation steps, and Chapter 16 addresses validation, but each of those stages benefits from looping back to visualization before you commit to your final dataset.
 
 ## Common AI-Assisted EDA Tasks
 
@@ -95,38 +107,42 @@ AI can visualize which columns have missing data and whether missingness is rand
 
 ### Spotting Outliers
 
-AI can flag statistical outliers, but you decide whether they're errors or real phenomena that matter to your research.
+AI can flag statistical outliers, but you decide whether they are errors or real phenomena that matter to your research.
 
 ## Validation Checklist: Before Moving to Data Prep
 
 Before you write down your cleaning strategy:
 
-✅ Have you reviewed a sample of raw data yourself (not just summaries)?  
-✅ Do the summary statistics match what you expect?  
-✅ Have you identified all major data quality issues?  
-✅ Do you understand where missing values are concentrated?  
-✅ Have you caught any obviously incorrect values?  
+✅ Have you reviewed a sample of raw data yourself (not just summaries)?
+✅ Can you name and describe every column in plain language?
+✅ Have you identified which column is your outcome or target variable?
+✅ Do the summary statistics match what you expect?
+✅ Have you identified all major data quality issues?
+✅ Do you understand where missing values are concentrated?
+✅ Have you caught any obviously incorrect values?
 
 ## Why This Matters
 
-Rushing through initial EDA means you'll miss important context. You might clean your data beautifully according to the wrong assumptions. By investing 30 minutes to an hour in this first pass, you'll make smarter cleaning decisions. AI makes this fast.
+Rushing through initial EDA means you will miss important context. You might clean your data beautifully according to the wrong assumptions. By investing 30 minutes to an hour in this first pass, you will make smarter cleaning decisions. AI makes this fast.
 
 ## Key Takeaways
 
 - 🎯 First-pass EDA is about getting your bearings, not deep analysis
+- 🎯 Start by understanding what each column means and which is your target variable
 - 🎯 AI accelerates summary statistics and visualization generation
 - 🎯 Data quality issues you find here guide your cleaning strategy
-- 🎯 You'll return for deeper exploration after cleaning
-- 🎯 Speed matters here; perfection doesn't
+- 🎯 You will return for a deeper second pass after cleaning
+- 🎯 Speed matters here; perfection does not
 
 ## Try This
 
 **For your next dataset:**
-1. Ask AI to generate a complete data quality report
-2. Spend 10 minutes reviewing the outputs
-3. Create a list of 3-5 data quality issues that need fixing
-4. For each issue, write a one-line plan (what you'll do about it)
-5. Move to Chapter 12 with your findings in hand
+1. Before generating any plots, write a one-sentence description of each column
+2. Ask AI to generate a complete data quality report
+3. Spend 10 minutes reviewing the outputs
+4. Create a list of 3 to 5 data quality issues that need fixing
+5. For each issue, write a one-line plan (what you will do about it)
+6. Move to Chapter 12 with your findings in hand
 
 ## Resources for Hands-On Learning
 
@@ -134,10 +150,14 @@ Kaggle Learn offers free micro-courses with practical examples that align well w
 
 ## Related Chapters
 
-- [Data Access](08_data_access.md) - Getting your data ready
+- [Data Access](09_data_access.md) - Getting your data ready
 - [Data Preparation](12_data_preparation.md) - Cleaning data based on what you found
 - [Validation](16_validation_interpretation.md) - Ensuring your findings are robust
 
 ---
 
 **Questions or feedback?** [Open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues)
+
+```{bibliography}
+:filter: docname in docnames
+```
