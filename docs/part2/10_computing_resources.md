@@ -9,7 +9,6 @@
 - How to set up a basic Python environment for data analysis work
 :::
 
----
 
 ## The Decision Is About Data Before It Is About Power
 
@@ -21,7 +20,7 @@ So the right starting point is a simple decision: is my data sensitive or restri
 
 A rough guide to that decision:
 
-If your data is fully public, synthetic, or contains no human subjects information, you can use essentially any resource — local, cloud, or university systems — subject to whatever license terms apply.
+If your data is fully public, synthetic, or contains no human subjects information, you can use essentially any resource, including local, cloud, or university systems, subject to whatever license terms apply.
 
 If your data is identifiable, covered by a data use agreement, or classified as sensitive under U-M policy, you need to stay within approved university systems. Commercial cloud platforms and free notebook services are generally not approved for this data without a specific institutional agreement in place.
 
@@ -29,15 +28,14 @@ If your data is protected health information under HIPAA, you need a HIPAA-compl
 
 With that framing established, here is what each category of resource actually offers.
 
----
 
 ## What Kind of Compute Does Your Task Actually Need?
 
 Before choosing a resource, it helps to have a realistic sense of what your analysis requires. The most important distinction is between CPU-bound and GPU-bound work.
 
-**CPU computing** is what your laptop or desktop does. Modern machines have multiple cores — typically 8 to 16 on a research workstation — which means they can run several tasks in parallel. A wide range of research computing is CPU-bound by nature: statistical modeling, matrix operations on neuroimaging data, cross-validation loops, mixed-effects models, and most tabular data workflows fall into this category. These tasks can sometimes run for hours or days on a laptop — a generalized linear model applied to a large fNIRS dataset computing residuals across many channels and subjects is a good example — and the right solution is usually more CPU cores or HPC time, not a GPU.
+**CPU computing** is what your laptop or desktop does. Modern machines have multiple cores — typically 8 to 16 on a research workstation — which means they can run several tasks in parallel. A wide range of research computing is CPU-bound by nature: statistical modeling, matrix operations on neuroimaging data, cross-validation loops, mixed-effects models, and most tabular data workflows fall into this category. These tasks can sometimes run for hours or days on a laptop. A general linear model (GLM) applied to a large neuroimaging dataset, for instance, computing residuals across many channels and subjects, is a good example of this. The right solution is usually more CPU cores or HPC time, not a GPU.
 
-**GPU computing** becomes relevant when your task involves processing a very large number of simple arithmetic operations simultaneously, which is the computational signature of deep learning. Training a convolutional neural network on medical images, fine-tuning a large language model on text corpora, or running inference across tens of thousands of documents are tasks where a GPU's architecture — thousands of smaller cores designed for parallel arithmetic — provides a qualitative speedup over even a powerful CPU. If you are working with modern deep learning frameworks like PyTorch or TensorFlow and training neural networks of meaningful size, GPU access will make a real difference.
+**GPU computing** becomes relevant when your task involves processing a very large number of simple arithmetic operations simultaneously, which is the computational signature of deep learning. Training a convolutional neural network on medical images, fine-tuning a large language model on text corpora, or running inference across tens of thousands of documents are tasks where a GPU's architecture (thousands of smaller cores designed for parallel arithmetic) provides a qualitative speedup over even a powerful CPU. If you are working with modern deep learning frameworks like PyTorch or TensorFlow and training neural networks of meaningful size, GPU access will make a real difference.
 
 The practical distinction is about the type of parallelism your task requires, not its duration. A week-long GLM computation is CPU-bound and benefits from more cores and memory. A neural network training run that would take a week on CPU might take hours on a GPU, because the math is structured differently.
 
@@ -47,9 +45,8 @@ If your machine has a dedicated NVIDIA GPU, you can check whether it is visible 
 nvidia-smi
 ```
 
-This command shows the GPU model, memory usage, and any running processes. If your deep learning code is running but `nvidia-smi` shows no active processes, your framework is likely falling back to CPU — worth catching early before a long training run.
+This command shows the GPU model, memory usage, and any running processes. If your deep learning code is running but `nvidia-smi` shows no active processes, your framework is likely falling back to CPU. It is worth catching this early before a long training run.
 
----
 
 ## Local Computing
 
@@ -57,31 +54,29 @@ Your own machine is almost always the right place to start. It is immediately av
 
 The main limitations are memory and, for deep learning, the absence of a dedicated GPU. Most laptops have 16 to 32 GB of RAM, which is adequate for datasets up to several gigabytes. If your dataset is larger than what fits comfortably in memory, or if you are training a neural network and want reasonable training times, you will want to move to a cloud or HPC resource.
 
-One practical note: if your machine does have a dedicated GPU — common in gaming computers and some workstations — libraries like PyTorch and TensorFlow can use it automatically, which meaningfully accelerates deep learning workflows without any additional infrastructure.
+One practical note: if your machine does have a dedicated GPU, which is common in gaming computers and some workstations, libraries like PyTorch and TensorFlow can use it automatically, which meaningfully accelerates deep learning workflows without any additional infrastructure.
 
----
 
 ## Cloud Computing
 
 Cloud platforms offer on-demand access to powerful hardware, including GPUs, without requiring you to own or maintain the equipment. The tradeoff is that your data and code leave your local machine, which matters for sensitive data as discussed above.
 
-### Free Options: Google Colab and Kaggle Notebooks
+### Notebook Environments for Pilot Testing: Google Colab and Kaggle Notebooks
 
-For researchers who want GPU access without any cost, two platforms stand out.
+Before committing cluster allocations or cloud budgets to a new workflow, it is worth running a small-scale pilot first to confirm that your approach actually works. Google Colab and Kaggle Notebooks are well-suited for exactly this: they let you test code, explore unfamiliar libraries, and run modest experiments without requesting HPC time or incurring cloud charges.
 
-Google Colab provides a hosted Jupyter notebook environment with free access to GPUs on a shared basis. Sessions are temporary — your runtime resets after a period of inactivity and files do not persist by default — but for experimentation, learning, and moderate-scale analysis it is highly practical. The handbook's AutoGluon tutorial notebook runs in Colab. For persistent storage, you can connect Colab to your Google Drive. The free tier GPU availability varies and is not guaranteed during peak times; a paid Colab Pro tier offers more reliable access.
+Google Colab provides a hosted Jupyter notebook environment with on-demand access to GPUs on a shared basis. Sessions are temporary: your runtime resets after a period of inactivity and files do not persist by default. But for experimentation, learning, and moderate-scale analysis, it is highly practical. The handbook's AutoGluon tutorial notebook runs in Colab. For persistent storage, you can connect Colab to your Google Drive. GPU availability on the no-cost tier varies and is not guaranteed during peak times; a paid Colab Pro tier offers more reliable access.
 
-Kaggle Notebooks offer a similar environment with free weekly GPU hours, slightly more predictable availability than Colab's free tier, and the advantage of direct access to Kaggle's dataset library. If you are working with a dataset hosted on Kaggle, running your analysis there eliminates the need to download and re-upload data.
+Kaggle Notebooks offer a similar environment with a weekly GPU quota, slightly more predictable availability than Colab's no-cost tier, and the advantage of direct access to Kaggle's dataset library. If you are working with a dataset hosted on Kaggle, running your analysis there eliminates the need to download and re-upload data.
 
 Neither platform is appropriate for sensitive, identifiable, or HIPAA-covered data.
 
 ### Paid Cloud Platforms
 
-Amazon Web Services, Google Cloud Platform, and Microsoft Azure all offer scalable computing environments where you pay for what you use. These platforms provide far more flexibility than the free notebook services — you can configure machines with large amounts of RAM, multiple GPUs, and persistent storage precisely for your workflow.
+Amazon Web Services, Google Cloud Platform, and Microsoft Azure all offer scalable computing environments where you pay for what you use. These platforms provide far more flexibility than the notebook environments described above. You can configure machines with large amounts of RAM, multiple GPUs, and persistent storage precisely for your workflow.
 
 For most academic researchers, the free notebook options or university HPC resources will be sufficient. Paid cloud compute becomes relevant when a project requires sustained GPU access at a scale that exceeds what university allocations provide, or when a research group has cloud credits through an institutional agreement or grant. AWS SageMaker, Google Vertex AI, and Azure Machine Learning are the respective managed ML platforms on each cloud, but they carry meaningful learning curve and cost for occasional use.
 
----
 
 ## University of Michigan HPC Resources
 
@@ -105,7 +100,6 @@ Lighthouse is a newer ARC-TS resource designed for data-intensive and AI-focused
 
 More information: https://arc.umich.edu/lighthouse/
 
----
 
 ## Setting Up Your Environment
 
@@ -129,11 +123,10 @@ Once you have installed your packages, saving a record of them takes one additio
 pip freeze > requirements.txt
 ```
 
-That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. Chapter 17 covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
+That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. [Chapter 17](17_reproducibility.md) covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
 
 For Great Lakes specifically, ARC-TS maintains documentation on loading modules, creating environments, and submitting jobs through the SLURM scheduler. Rather than reproducing those instructions here, the ARC-TS user guide is the authoritative and up-to-date source: https://arc.umich.edu/greatlakes/user-guide/
 
----
 
 ## Try This
 
