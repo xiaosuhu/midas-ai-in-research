@@ -3,182 +3,189 @@
 :::{admonition} What You'll Learn
 :class: tip
 - How to make strategic decisions about data cleaning (not just how to code it)
-- A three-way framework: discuss with AI, let AI handle simple tasks, collaborate on complex ones
+- A three-way framework: discuss with AI, hand off simple tasks, collaborate on complex ones
 - How to validate transformations without blindly trusting AI output
 - The importance of documenting every cleaning decision
 :::
 
 ## The Real Work Begins
 
-You've completed your first pass through your data. You found issues: dates in three formats, missing values scattered across two columns, a few outliers that might be errors. Now comes the preparation phase. But here's the key insight: the hardest part isn't the coding. It's deciding *what to do* about each issue and *why*. That's where AI shines as a thinking partner, not just a code generator.
+In Chapter 11, you built a mental model of your dataset. You described every column in plain language, identified your target variable, and flagged the issues that need fixing before you can trust anything downstream. That checklist is your starting point here.
+
+Now comes the preparation phase. But the key insight is this: the hardest part of data prep is not the coding. It is deciding what to do about each issue and why. A survey dataset might have 15% of respondents leaving a key income question blank. Do you drop those rows, impute the median, or add a "not reported" category? The answer depends on your research design, not on what code is most convenient to write. That is where AI becomes genuinely useful as a thinking partner, not just a code generator.
 
 ## The Three-Way Framework
 
-Not all data cleaning tasks are created equal. Some require you to think carefully with AI as your guide. Others are straightforward and AI can do them with minimal oversight. A third group sits in the middle, where you and AI collaborate iteratively. Understanding which task falls into which category will save you time and protect your data integrity.
+Not all data cleaning tasks are created equal. Some require careful reasoning with AI as your guide. Others are mechanical and you can hand them off with minimal oversight. A third group sits in the middle, where you and AI work through the problem together. Knowing which task falls into which category will save you time and protect your data integrity.
+
+```{figure} ../_static/fig12_1_decision_flowchart.png
+:name: fig-data-prep-flowchart
+:alt: Decision flowchart for choosing between the three data cleaning approaches
+:align: center
+:width: 70%
+
+**Figure 12.1** Start with each issue from your EDA findings and work through these questions to decide how to approach it. The three Ways are not rigid categories -- think of them as a guide for allocating your attention.
+```
 
 ### Way 1: Discuss with AI (The Most Important)
 
-These are decisions where the stakes are high or your domain knowledge is critical. You're not asking AI to code something. You're asking AI to help you reason through options.
+These are decisions where the stakes are high or your domain knowledge is what matters. You are not asking AI to write code. You are asking AI to help you reason through options, because the decision itself requires you.
 
 **When to use this approach:**
-- Deciding how to handle missing data
-- Determining whether outliers are errors or real phenomena
-- Choosing how to standardize or transform variables
-- Deciding whether to merge, split, or create categories
+- Deciding how to handle missing data in a key variable
+- Determining whether outliers are measurement errors or real phenomena
+- Choosing how to standardize or transform a variable
+- Deciding whether to merge, split, or collapse categories
 
 **What a conversation looks like:**
 
-You tell AI about your situation: "I have a clinical dataset with blood pressure readings. About 6% of the systolic BP values are missing. These come from patients who didn't have vital signs recorded at that visit. Should I delete those rows, impute the values, or create a 'missing' indicator?"
+Say you are working with a longitudinal survey of household energy consumption. About 8% of the monthly usage readings are missing, and after checking you find they cluster in summer months for a specific region. You tell AI what you found: "I have monthly energy consumption data with 8% missing values. They are concentrated in July and August for households in the Southwest. Should I delete those rows, impute from neighboring months, or create a missing indicator?"
 
-AI doesn't just code a solution. It explores the options with you: What are the trade-offs of each approach? How would deletion affect your sample size? What assumptions does imputation make? If you impute, which method is appropriate for your research design?
+AI walks through the options with you. What assumptions does forward-fill make? How would listwise deletion affect regional representation in your sample? What would a missing indicator let you test that imputation would not? You then make the call, based on what you know about why those readings are missing and what your research question requires.
 
-You then make the decision based on your domain knowledge and your research goals. AI is the thinking partner. You are the decision-maker.
+**Examples of Way 1 conversations across domains:**
 
-**Examples of Way 1 conversations:**
+- *Economics:* "I have annual firm-level revenue data. Some small firms stopped reporting after 2019, which might reflect closure or just non-reporting. How should I handle these structural gaps without introducing survivorship bias?"
+- *Environmental science:* "My air quality sensor data has gaps at night, likely from a power issue at the monitoring station. When should I interpolate versus flag and exclude?"
+- *Social science:* "My survey has a sensitive question about household income that many respondents skipped. How do I choose between imputation and adding a 'declined to answer' category?"
 
-- "I have categorical variables with lots of misspellings and variations (e.g., 'USA', 'United States', 'US'). How should I standardize these, and should I combine rare categories or keep them separate?"
-- "My dataset has extreme outliers in income that are probably real but might be errors. What's a principled way to check if they're real?"
-- "I have time series data with gaps. When should I fill gaps forward, when should I drop them, and when should I flag them for investigation?"
+### Way 2: Hand It Off to AI (Simple, Low-Risk Tasks)
 
-### Way 2: Let AI Do It (Simple, Low-Risk Tasks)
-
-These are straightforward technical tasks where the risk of error is low and little judgment is required. You can give AI clear instructions and run the code with confidence.
+These are mechanical tasks where the logic is clear, the risk is low, and your judgment is not really needed. The approach is flexible depending on how you work. If you are comfortable with code, ask AI to write a script and run it yourself. If you would rather not touch code at all, many AI interfaces -- including Claude -- let you upload a file directly, describe what you need done, and download the corrected version. Both paths work; use whichever fits your workflow.
 
 **When to use this approach:**
-- Converting data types (text to numeric, strings to dates)
-- Standardizing date formats across a column
+- Converting data types (strings to numbers, text to dates)
+- Standardizing date or time formats across a column
 - Removing exact duplicate rows
-- Splitting or combining columns mechanically
-- Creating simple indicators or flags
+- Trimming whitespace or fixing capitalization inconsistencies
+- Splitting or combining columns in a straightforward way
+- Replacing non-standard missing value labels (like "N/A", "na", "--") with a consistent null marker
 
-**What this looks like:**
+**What this looks like (code path):**
 
-You give AI a clear instruction: "Write Python code to convert all dates in the 'visit_date' column from 'MM/DD/YYYY' format to 'YYYY-MM-DD' format. Handle any dates that don't match the expected format by flagging them in a new column."
+You give AI a clear instruction: "Write Python code to convert all timestamps in the 'event_date' column from MM/DD/YYYY format to ISO 8601 format. Flag any rows that do not match the expected pattern in a new 'date_flag' column."
 
-AI generates the code. You review it quickly (make sure it's doing what you asked), run it on a sample, and deploy it.
+AI generates the code. You review it, run it on a small sample, confirm it does what you intended, and apply it to the full dataset.
 
-**Examples of Way 2 tasks:**
+**What this looks like (upload path):**
 
-- "Convert all values in this column to lowercase for consistency."
-- "Remove leading and trailing whitespace from all text fields."
-- "Create a new column that extracts the year from the date column."
-- "Replace all instances of 'N/A', 'NA', and 'null' with a standard missing value indicator."
+Alternatively, you can upload the file directly to an AI interface, type something like "Standardize all values in the 'country' column to ISO 3166 two-letter country codes. Flag anything you are uncertain about." AI processes the file and returns a downloadable version with the changes applied. You open it, check a sample, and keep it if it looks right.
+
+Either way, you are still reviewing the output. Handing it off does not mean trusting it blindly.
+
+**Examples of Way 2 tasks across domains:**
+
+- *Linguistics:* "Convert all text in the 'response' column to lowercase and strip punctuation."
+- *Public policy:* "Standardize the 'state' column so all values use the two-letter postal abbreviation."
+- *Ecology:* "Extract the four-digit year from the 'collection_date' column and store it in a new 'year' column."
+- *Any domain:* "Replace all instances of 'N/A', 'na', 'n/a', and '--' with a standard null value."
 
 ### Way 3: Collaborate Iteratively (Complex Tasks)
 
-These tasks are more involved. They require some judgment, or the code needs to be tested and refined as you go. You and AI work together, with you validating each step.
+These tasks require more judgment, and the right approach often only becomes clear as you test things. You and AI work back and forth: AI proposes, you inspect and raise what does not look right, AI adjusts.
 
 **When to use this approach:**
-- Creating derived variables (calculating BMI from height and weight, age from birthdate)
-- Implementing domain-specific transformations
-- Building a data validation script with multiple checks
-- Combining or merging data from multiple sources
-- Handling complex missing value patterns
+- Building derived variables that involve multiple columns or conditional logic
+- Implementing domain-specific transformations that need to be verified against known examples
+- Writing a validation script with many interdependent checks
+- Joining or merging data from multiple sources where record linkage is imperfect
+- Handling complex missing value patterns with multiple interacting variables
 
 **What this looks like:**
 
-You describe your goal to AI: "I need to calculate BMI from height and weight columns. Height is in inches, weight is in pounds. I want to flag any calculated BMIs that seem implausible (below 10 or above 60), and I want to verify my calculation against a few manual examples."
+Imagine you are analyzing a dataset of research grants and need to calculate a "funding intensity" measure: total dollars per year of project duration, adjusted for the number of co-investigators. You describe the goal to AI and it writes a first version. You run it and spot that projects with no end date are getting dropped rather than flagged. You tell AI, it revises the handling. You run it again, check a few rows against the raw data by hand, and find the co-investigator adjustment is off for single-PI grants. Another round of revision. Eventually the logic is right and you document it.
 
-AI generates code. You review it, check the logic, run it on a sample, and inspect some results. You might ask: "What if height is missing but weight isn't? Should we flag those?" Then AI adjusts the code. You test again. This iterative back-and-forth continues until you're confident the approach is correct.
+**Examples of Way 3 tasks across domains:**
 
-**Examples of Way 3 tasks:**
-
-- "I need to merge three datasets by patient ID, keeping only patients who appear in all three files. Create a script that does this and reports how many records are retained."
-- "Create a script that checks for impossible value combinations (e.g., a person's discharge date before their admission date) and flags any inconsistencies."
-- "I need to aggregate daily measurements into weekly summaries. How should missing days be handled, and what should my summary statistics include?"
-
-## A Decision Flowchart
-
-Unsure which approach to use? Ask yourself:
-
-1. **Is this a strategic decision about your data?** (Way 1: Discuss)
-2. **Is this a simple, mechanical task with no domain judgment?** (Way 2: Let AI do it)
-3. **Is this more complex and requires testing as I go?** (Way 3: Collaborate)
+- *Political science:* "I need to merge election results data with demographic data by county FIPS code. Some counties changed boundaries between surveys. Write a script that does the merge and reports how many records could not be matched."
+- *Education research:* "Create a script that flags impossible combinations -- for example, a student with a graduation year earlier than their enrollment year, or a grade level that does not match the recorded school type."
+- *Climate science:* "I need to aggregate daily temperature readings into monthly summaries. If more than 10% of days in a month are missing, flag that month rather than computing a potentially misleading average."
 
 ## Recommended Data Prep Workflow
 
 ### Step 1: Start with Your First-Pass EDA Findings
 
-Pull out the list you made in Chapter 11. What issues need fixing? In what order?
+Open the list you made in Chapter 11. What issues need fixing? In roughly what order? Some fixes are prerequisites for others: you probably need to standardize date formats before you can calculate durations, for example.
 
 ### Step 2: For Each Issue, Choose Your Approach
 
-Go through your list one by one. For each issue, ask: Which of the three ways applies here?
+Go through your list one issue at a time. Use Figure 12.1 to decide:
 
-- Missing values in a key variable? Way 1 (discuss your strategy).
-- Dates in inconsistent formats? Way 2 (let AI standardize them).
-- Complex transformation based on clinical logic? Way 3 (collaborate).
+- Missing values in a key variable? Way 1 (discuss your strategy first).
+- Inconsistent capitalization in a label column? Way 2 (hand it off or ask for the code).
+- Derived variable with conditional logic across multiple fields? Way 3 (collaborate and test).
 
 ### Step 3: Execute and Validate
 
-For Way 1, take time to think and decide.
-For Way 2, review the code, test on a sample, deploy.
-For Way 3, iterate with AI until you're confident, then test on the full dataset.
+For Way 1, take the time to think and decide before you touch the data.
+For Way 2, review the output (code or downloaded file), test on a sample, deploy to the full dataset.
+For Way 3, iterate with AI until you are confident, then do a final check on the full dataset.
 
 ### Step 4: Document Every Decision
 
-Before moving on, write down what you did and why. This becomes part of your data documentation and is essential for reproducibility.
+Before you move on, write down what you did and why. One sentence is enough: "Imputed median monthly usage for rows with missing values in summer months; gaps concentrated in Southwest region, likely sensor outage rather than systematic missingness." This becomes part of your data documentation and is essential for reproducibility.
 
 ## Validation is Non-Negotiable
 
-Regardless of which approach you use, validation is critical.
+Regardless of which approach you used, validation is what keeps cleaning honest.
 
 **Essential validation steps:**
-- Compare data distributions before and after cleaning. Did something unexpected change?
-- Manually inspect a sample of transformed records. Does the output match your intention?
-- Check for introduced biases. Did your cleaning process systematically exclude or alter certain groups?
-- Verify that transformations are reproducible. Can you run the same code again and get identical results?
-- Ensure no data leakage between train and test sets (relevant when preparing data for modeling).
+- Compare distributions before and after. Did anything shift that should not have?
+- Manually inspect a sample of transformed records. Does the output match your intent?
+- Check for introduced bias. Did your cleaning process systematically remove certain groups or time periods?
+- Verify reproducibility. Can you run the same process again and get identical results?
+- Check for data leakage if you are preparing data for modeling (transformations based on the full dataset can leak information from test rows into training features).
 
 ## Validation Checklist
 
-Before considering your data "clean":
+Before you call your data clean:
 
-✅ Have you reviewed the code (whether AI-generated or not)?  
+✅ Have you reviewed the code or AI-generated output, not just accepted it?  
 ✅ Have you tested on a sample before applying to the full dataset?  
 ✅ Do the before-and-after distributions make sense?  
-✅ Have you manually spot-checked transformed records?  
+✅ Have you manually spot-checked a handful of transformed records?  
 ✅ Have you documented the reason for every transformation?  
-✅ Can you reproduce these transformations exactly?  
+✅ Can you reproduce these transformations exactly from scratch?  
 
 ## Common Pitfalls
 
 **Pitfall 1: Trusting AI without understanding the logic**
 
-AI can generate code that looks right but makes wrong assumptions. Always understand the approach before running it on your full dataset.
+AI can generate code that looks right but makes wrong assumptions. Always understand what the code is doing before you run it on your full dataset. If you cannot explain it in plain language, ask AI to explain it first.
 
 **Pitfall 2: Over-cleaning**
 
-Sometimes it's tempting to remove every unusual record or fill every gap. Resist this. Data is messy for a reason. Clean strategically, not obsessively.
+It is tempting to remove every unusual record or fill every gap. Resist this. Data is messy for reasons that sometimes matter. Clean strategically: fix what is wrong, preserve what is real, and be explicit about judgment calls.
 
 **Pitfall 3: Forgetting to document**
 
-Six months from now, you'll forget why you made certain decisions. Document them now.
+Six months from now, you will not remember why you made a particular decision. Document decisions as you go, not at the end.
 
 **Pitfall 4: Not validating on a sample first**
 
-Always test on a small subset before running code on your full dataset. This catches mistakes before they propagate.
+Always test on a small subset before running code on your full dataset. This is where you catch the case where AI got the logic slightly wrong, before it propagates.
 
 ## Key Takeaways
 
-- 🎯 Use AI as a thinking partner (Way 1) for strategic decisions, not just a code generator
-- 🎯 Leverage AI's speed on simple tasks (Way 2) where judgment isn't needed
-- 🎯 Collaborate iteratively (Way 3) on complex transformations
+- 🎯 Start with your EDA findings from Chapter 11; do not clean without a clear issue list
+- 🎯 Use AI as a thinking partner (Way 1) when the decision itself requires domain judgment
+- 🎯 Hand off or ask for code (Way 2) for simple mechanical tasks -- and review the output either way
+- 🎯 Collaborate iteratively (Way 3) when the logic is complex or needs testing to get right
 - 🎯 Always validate before trusting the output
-- 🎯 Document everything for reproducibility and integrity
+- 🎯 Document everything: what you did and why
 
 ## Try This
 
 **For your next cleaning project:**
 1. List the data quality issues you found in first-pass EDA
-2. For each issue, decide: Way 1, Way 2, or Way 3?
+2. For each issue, apply the three-question decision: Way 1, 2, or 3?
 3. Execute each approach using the framework above
-4. Validate your results
+4. Validate your results before moving to the next issue
 5. Write a one-paragraph summary of what you cleaned and why
 
 ## Resources for Hands-On Learning
 
-Kaggle Learn offers micro-courses on data cleaning with practical examples. The courses include guided notebooks where you can see the three-way framework in action: thinking through a strategy, executing simple transformations, and iteratively building complex validation scripts. {cite}`kaggle_learn`
+Kaggle Learn offers micro-courses on data cleaning with practical, worked examples. The courses include guided notebooks where you can see the three-way framework in action: thinking through a strategy, executing simple transformations, and iteratively building complex validation scripts. {cite}`kaggle_learn`
 
 ## Related Chapters
 
@@ -189,3 +196,7 @@ Kaggle Learn offers micro-courses on data cleaning with practical examples. The 
 ---
 
 **Questions or feedback?** [Open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues)
+
+```{bibliography}
+:filter: docname in docnames
+```
