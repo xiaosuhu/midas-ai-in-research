@@ -112,9 +112,7 @@ Go through your list one by one. For each issue, ask: Which of the three ways ap
 ### Step 3: Execute and Validate
 
 For Way 1, take time to think and decide.
-
 For Way 2, review the code, test on a sample, deploy.
-
 For Way 3, iterate with AI until you're confident, then test on the full dataset.
 
 ### Step 4: Document Every Decision
