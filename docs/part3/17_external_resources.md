@@ -1,216 +1,249 @@
 # External AI Resources for Research
 
-## 1. Overview
-The global AI community provides a wide range of open tools, datasets, and learning resources that can accelerate research. This chapter focuses on **carefully selected, high-value resources** that are widely used, well maintained, and directly useful for academic research.
+```{tip}
+This chapter focuses on carefully selected, high-value resources that are widely used, well maintained, and directly relevant to academic research. It is not meant to be exhaustive. New tools and platforms appear constantly, and the right question is always whether a resource is reliable and appropriate for your work, not simply whether it is popular.
+```
 
-These resources are grouped by purpose: learning, datasets, modeling tools, compute, and software ecosystems.
+## Overview
+
+Beyond what UM provides, the broader AI community offers a wide range of open tools, datasets, and learning resources that can meaningfully accelerate research. The sections below organize these by purpose: learning and training, open datasets, modeling frameworks and tools, compute options, and software ecosystems.
 
 ---
 
-## 2. Learning & Training Resources
+## Learning and Training Resources
 
-### 2.1 DeepLearning.AI (Andrew Ng)
-A leading provider of high-quality AI courses created by Andrew Ng and collaborators, covering machine learning foundations, deep learning, LLMs, prompt engineering, RAG, and applied courses in vision, NLP, and reinforcement learning.
+### DeepLearning.AI
+
+Founded by Andrew Ng, DeepLearning.AI offers a well-regarded library of courses covering machine learning foundations, deep learning, large language models, prompt engineering, RAG, and applied topics in computer vision, NLP, and reinforcement learning. The courses are structured for learners who want both conceptual grounding and hands-on practice.
 
 **Link:** https://www.deeplearning.ai/
 
 ---
 
-### 2.2 Kaggle Learn
-Short, hands-on micro-courses covering Python, Pandas, machine learning, deep learning, computer vision, time series, and LLM applications. A great starting point for researchers with limited coding experience.
+### Kaggle Learn
+
+Kaggle Learn provides short, practical micro-courses covering Python, pandas, machine learning, deep learning, computer vision, time series, and LLM applications. These are a good starting point for researchers who want to build hands-on fluency without a large time commitment.
 
 **Link:** https://www.kaggle.com/learn
 
 ---
 
-### 2.3 The Turing Way
-An open-source, community-driven handbook covering reproducible research, documentation and project management, and ethics and open science. Excellent for researchers building responsible and transparent workflows.
+### The Turing Way
+
+The Turing Way is an open-source, community-driven handbook covering reproducible research, project management and documentation, and ethics and open science. It is one of the direct inspirations for this handbook and remains an excellent reference for researchers building responsible, transparent workflows.
 
 **Link:** https://the-turing-way.netlify.app/
 
 ---
 
-### 2.4 Fast.ai
-Free courses emphasizing practical deep learning, covering deep learning from first principles, NLP, vision, tabular deep learning, and model interpretation.
+### Fast.ai
+
+Fast.ai offers free practical deep learning courses that start with working models and build conceptual understanding from there, rather than the other way around. Topics include NLP, vision, tabular learning, and model interpretation.
 
 **Link:** https://www.fast.ai/
 
 ---
 
-### 2.5 Dive into Deep Learning (D2L)
-A fully open-source deep learning textbook with runnable code in Jupyter notebooks. Widely used in academia for its combination of mathematical foundations and hands-on, experiment-ready implementations in PyTorch. Ideal for researchers who want both theory and executable models.
+### Dive into Deep Learning (D2L)
+
+D2L is a fully open-source deep learning textbook with runnable code in Jupyter notebooks. It is widely used in academic courses for combining mathematical foundations with hands-on, experiment-ready implementations in PyTorch. It is well suited for researchers who want both the theory and the code in one place.
 
 **Link:** https://d2l.ai/
 
 ---
 
-### 2.6 Google Machine Learning Crash Course
-A well-structured introduction to machine learning fundamentals.
+### Google Machine Learning Crash Course
+
+A structured, freely available introduction to machine learning fundamentals from Google. It covers core concepts like gradient descent, overfitting, and classification, and is a reasonable starting point for researchers with no prior ML background.
 
 **Link:** https://developers.google.com/machine-learning/crash-course
 
 ---
 
-### 2.7 Recommended Reading: Recent Research on AI in Science
-The following papers are worth reading if you want a grounded view of where generative AI stands in research contexts. Both are recent enough to reflect the current state of the field.
+### Recommended Reading
 
-Reddy, C. K., & Shojaee, P. (2025). *Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges*. This paper offers a broad and honest look at where generative AI is actually making a difference in scientific discovery and where the limitations remain.
-
-Prathner, J., et al. *Beyond the Hype: A Comprehensive Review of Current Trends in Generative AI Research, Teaching Practices, and Tools*. A useful corrective to overblown claims, with practical relevance for researchers and educators alike.
+If you want a grounded view of where generative AI actually stands in research contexts, this paper is worth the time: Reddy and Shojaee offer a broad and honest assessment of where generative AI is making a real difference in scientific discovery and where significant limitations remain ({cite}`reddy2025generative`).
 
 ---
 
-## 3. Open Datasets & Searchable Repositories
+## Open Datasets and Searchable Repositories
 
-### 3.1 Kaggle Datasets
-The single largest collection of queryable datasets across domains, including tabular, image, text, and time series data. Datasets come with metadata and community notebooks for immediate exploration.
+### Kaggle Datasets
+
+Kaggle hosts one of the largest collections of queryable datasets across domains, including tabular, image, text, and time series data. Most datasets include metadata and community notebooks that let you start exploring immediately.
 
 **Link:** https://www.kaggle.com/datasets
 
 ---
 
-### 3.2 HuggingFace Datasets
-A massive ecosystem of ML-ready datasets with a standardized API, covering NLP, vision, audio, multimodal, and scientific domains.
+### HuggingFace Datasets
+
+HuggingFace offers a massive ecosystem of machine learning-ready datasets with a standardized API, covering NLP, vision, audio, multimodal, and scientific domains.
 
 **Link:** https://huggingface.co/datasets
 
 ---
 
-### 3.3 UCI Machine Learning Repository
-Classic datasets ideal for rapid prototyping.
+### UCI Machine Learning Repository
+
+The UCI repository hosts a large collection of classic and benchmark datasets commonly used for prototyping and evaluation across a wide range of tasks.
 
 **Link:** https://archive.ics.uci.edu/
 
 ---
 
-### 3.4 PhysioNet
-Biomedical and physiological datasets, including synthetic and demo sets.
+### PhysioNet
+
+PhysioNet provides open access to biomedical and physiological datasets, including several synthetic and demo sets well suited for methods development without requiring IRB approval.
 
 **Link:** https://physionet.org/
 
 ---
 
-### 3.5 OpenNeuro
-Open neuroimaging datasets (fMRI, EEG, MEG, fNIRS).
+### OpenNeuro
+
+OpenNeuro is a free platform for sharing and accessing neuroimaging datasets, including fMRI, EEG, MEG, and fNIRS data.
 
 **Link:** https://openneuro.org/
 
 ---
 
-## 4. Modeling, Frameworks & Tools
+## Modeling, Frameworks, and Tools
 
-### 4.1 HuggingFace Transformers
-The central open-source hub for LLMs, vision models, audio models, multimodal architectures, and fine-tuning pipelines.
+### HuggingFace Transformers
+
+HuggingFace is the central open-source hub for pre-trained LLMs, vision models, audio models, multimodal architectures, and fine-tuning pipelines. If a published model has an open checkpoint available, it is almost certainly accessible through HuggingFace.
 
 **Link:** https://huggingface.co/models
 
 ---
 
-### 4.2 Papers with Code
-A searchable collection of machine learning and AI papers that link directly to their code implementations, datasets, and benchmark results. This is one of the most practical resources for seeing exactly how a method was implemented, not just described. Curated by the MIDAS generative AI resource hub as a recommended tool for researchers (MIDAS, n.d.).
+### Papers with Code
+
+Papers with Code is a searchable collection of machine learning papers that link directly to their code implementations, datasets, and benchmark results. It is one of the most practical resources for seeing exactly how a method was implemented, not just described. MIDAS includes it as a recommended tool in their generative AI resource hub ({cite}`midas_umich`).
 
 **Link:** https://paperswithcode.com/
 
 ---
 
-### 4.3 Stanford HELM (Holistic Evaluation of Language Models)
-A living benchmark developed at Stanford that evaluates large language models across a wide range of scenarios in a transparent and systematic way. If you need to compare models for a specific task — accuracy, fairness, calibration, robustness — HELM gives you a principled basis for doing so rather than relying on marketing claims (Liang et al., 2022).
+### Stanford HELM
+
+HELM (Holistic Evaluation of Language Models) is a living benchmark developed at Stanford that evaluates large language models across a wide range of scenarios in a transparent and systematic way. If you need to compare models for a specific task based on accuracy, fairness, calibration, or robustness, HELM provides a more principled basis for that comparison than relying on marketing claims ({cite}`liang2022helm`).
 
 **Link:** https://crfm.stanford.edu/helm/
 
 ---
 
-### 4.4 AutoGluon
-A powerful AutoML toolkit covering tabular prediction, NLP, vision, and multimodal learning. Ideal for rapid hypothesis testing without writing complex modeling code.
+### AutoGluon
+
+AutoGluon is the AutoML toolkit used throughout Part 2 of this handbook. It covers tabular prediction, NLP, vision, and multimodal learning, and is designed for rapid hypothesis testing without requiring you to write complex modeling code from scratch.
 
 **Link:** https://auto.gluon.ai/
 
 ---
 
-### 4.5 PyTorch
-The dominant deep learning framework for academic research.
+### Ollama
+
+Ollama makes it straightforward to run open-source LLMs locally on your own machine, with no data sent to external servers. This is particularly useful for researchers working with sensitive or unpublished data who need LLM capabilities but cannot use a cloud-based service. It supports a growing range of models including Llama, Mistral, and Gemma.
+
+**Link:** https://ollama.com/
+
+---
+
+### PyTorch
+
+PyTorch is the dominant deep learning framework in academic research, widely used for building, training, and deploying custom neural network models.
 
 **Link:** https://pytorch.org/
 
 ---
 
-### 4.6 TensorFlow / Keras
-Widely used deep learning framework with large community support.
+### TensorFlow and Keras
+
+TensorFlow and its high-level interface Keras are widely used in both research and production settings, with a large community and extensive documentation.
 
 **Link:** https://www.tensorflow.org/
 
 ---
 
-### 4.7 LangChain & LlamaIndex
-Frameworks for building retrieval-augmented generation (RAG) pipelines, LLM agents, and data-connected chatbots.
+### LangChain and LlamaIndex
 
-**LangChain:** https://www.langchain.com/  
+LangChain and LlamaIndex are the two most commonly used frameworks for building retrieval-augmented generation pipelines, LLM agents, and data-connected chatbots.
+
+**LangChain:** https://www.langchain.com/
 **LlamaIndex:** https://www.llamaindex.ai/
 
 ---
 
-## 5. Cloud Compute & Low-Cost GPU Resources
+## Cloud Compute and Low-Cost GPU Resources
 
-### 5.1 Google Colab
-Free or low-cost notebooks with GPU/TPU access.  
-Great for ML prototyping without local setup.
+### Google Colab
+
+Colab provides free or low-cost Jupyter notebooks with GPU and TPU access. It is one of the most accessible ways to run ML experiments without any local hardware setup, and the notebooks used throughout this handbook are designed to run on Colab.
 
 **Link:** https://colab.research.google.com/
 
 ---
 
-### 5.2 Kaggle Notebooks
-Free GPU notebooks with zero configuration.
+### Kaggle Notebooks
+
+Kaggle offers free GPU-enabled notebooks with zero configuration required. A useful fallback when Colab GPU availability is limited.
 
 **Link:** https://www.kaggle.com/code
 
 ---
 
-### 5.3 Vast.ai
-Low-cost GPU rental marketplace for large models and training jobs.
+### Vast.ai
+
+Vast.ai is a marketplace for renting GPU compute at relatively low cost, with a wide range of hardware configurations available. A practical option for larger training jobs that exceed what Colab or Kaggle provide.
 
 **Link:** https://vast.ai/
 
 ---
 
-### 5.4 Lambda Labs
-Enterprise-grade GPUs for short- or long-term research use.
+### Lambda Labs
+
+Lambda Labs provides cloud GPU infrastructure oriented toward research use, with options ranging from on-demand instances to reserved capacity.
 
 **Link:** https://lambdalabs.com/
 
 ---
 
-### 5.5 RunPod
-Simple GPU workspace setup with ready-made templates for Jupyter notebooks, workspaces, inference servers, and more.
+### RunPod
+
+RunPod offers easy-to-configure GPU workspaces with ready-made templates for Jupyter notebooks, inference servers, and custom environments.
 
 **Link:** https://runpod.io/
 
 ---
 
-## 6. Software & Notebook Ecosystems
+## Software and Notebook Ecosystems
 
-### 6.1 GitHub
-Essential for version control, collaboration, open-source workflows, and CI/CD pipelines.
+### GitHub
+
+GitHub is the standard platform for version control, open-source collaboration, and reproducibility in research software. This handbook's source is hosted there.
 
 **Link:** https://github.com/
 
 ---
 
-### 6.2 VS Code
-Widely used IDE for AI workflows.
+### VS Code
+
+VS Code is a widely used editor for AI and data science workflows, with strong support for Python, Jupyter notebooks, and remote development.
 
 **Link:** https://code.visualstudio.com/
 
 ---
 
-### 6.3 JupyterLab
-Notebook environment for data exploration, ML prototyping, and visualization.
+### JupyterLab
+
+JupyterLab is the standard interactive notebook environment for data exploration, ML prototyping, and visualization.
 
 **Link:** https://jupyter.org/
 
 ---
 
-## 7. Summary Table
+## Quick Reference Table
 
 | Category | Resource | Description | Link |
 |---------|----------|-------------|------|
@@ -218,19 +251,25 @@ Notebook environment for data exploration, ML prototyping, and visualization.
 | Learning | Kaggle Learn | Practical micro-courses | https://www.kaggle.com/learn |
 | Learning | Turing Way | Reproducible research handbook | https://the-turing-way.netlify.app/ |
 | Learning | Fast.ai | Practical deep learning | https://www.fast.ai/ |
-| Learning | D2L Book | Open-source deep learning textbook | https://d2l.ai/ |
+| Learning | D2L | Open-source deep learning textbook | https://d2l.ai/ |
 | Datasets | Kaggle Datasets | Largest open dataset library | https://www.kaggle.com/datasets |
-| Datasets | HF Datasets | ML-ready dataset hub | https://huggingface.co/datasets |
-| Datasets | PhysioNet | Biomedical datasets | https://physionet.org/ |
-| Datasets | OpenNeuro | Neuroimaging datasets | https://openneuro.org/ |
-| Tools | HF Transformers | LLM & model hub | https://huggingface.co/models |
-| Tools | Papers with Code | AI papers with code & benchmarks | https://paperswithcode.com/ |
+| Datasets | HuggingFace Datasets | ML-ready dataset hub | https://huggingface.co/datasets |
+| Datasets | UCI Repository | Classic benchmark datasets | https://archive.ics.uci.edu/ |
+| Datasets | PhysioNet | Biomedical and physiological datasets | https://physionet.org/ |
+| Datasets | OpenNeuro | Open neuroimaging datasets | https://openneuro.org/ |
+| Tools | HuggingFace Transformers | LLM and model hub | https://huggingface.co/models |
+| Tools | Papers with Code | AI papers with code and benchmarks | https://paperswithcode.com/ |
 | Tools | Stanford HELM | LLM evaluation benchmark | https://crfm.stanford.edu/helm/ |
 | Tools | AutoGluon | AutoML for rapid experiments | https://auto.gluon.ai/ |
+| Tools | Ollama | Run LLMs locally for sensitive data work | https://ollama.com/ |
 | Compute | Colab | Free GPU notebooks | https://colab.research.google.com/ |
 | Compute | Kaggle Notebooks | Free GPU compute | https://www.kaggle.com/code |
-| Compute | Vast.ai | Low-cost GPUs | https://vast.ai/ |
-| Compute | Lambda Labs | Research GPU cloud | https://lambdalabs.com/ |
-| Compute | RunPod | Easy GPU workspace | https://runpod.io/ |
+| Compute | Vast.ai | Low-cost GPU rental | https://vast.ai/ |
+| Compute | Lambda Labs | Research-oriented GPU cloud | https://lambdalabs.com/ |
+| Compute | RunPod | Easy GPU workspace setup | https://runpod.io/ |
 
 ---
+
+```{bibliography}
+:filter: docname in docnames
+```
