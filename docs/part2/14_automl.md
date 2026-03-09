@@ -84,6 +84,25 @@ Both notebooks will follow the same structure as the tabular tutorial: load data
 
 ---
 
+## Frequently Asked Questions
+
+**Does AutoGluon support R?**
+Not natively — AutoGluon is a Python-only framework. If your workflow is primarily in R, the most practical path is to run AutoGluon in Python for the modeling step, then export the predictions or feature importance as a CSV and continue your analysis in R. Technically, R users can call Python via the `reticulate` package, but this adds complexity and is not the recommended workflow.
+
+**Can I rank models by two metrics at the same time?**
+The leaderboard only ranks by the single `eval_metric` you set at training time. However, once you have the leaderboard as a DataFrame you can build a combined ranking yourself — normalize each metric to a 0-1 range and take a weighted average. The notebook's "Common Questions" section shows a working example of this.
+
+**The ensemble always wins — how do I evaluate individual models?**
+By default, `predictor.evaluate()` reports the performance of the best model (the ensemble). To evaluate any individual model, pass its name from the leaderboard using the `model` argument:
+
+```python
+predictor.evaluate(test_df, model="LightGBM_BAG_L1", auxiliary_metrics=True)
+```
+
+You can loop through all model names to build a full comparison table across multiple metrics, which lets you decide whether the ensemble's edge over a simpler model is worth the interpretability trade-off. The notebook walks through both approaches.
+
+---
+
 ## Research Considerations
 
 AutoML lowers the barrier to getting a model running, but it does not lower the bar for responsible research practice.
