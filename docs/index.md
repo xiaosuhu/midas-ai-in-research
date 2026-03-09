@@ -62,20 +62,22 @@ part2/10_computing_resources
 part2/11_exploratory_analysis
 part2/12_data_preparation
 part2/13_feature_engineering
-part2/14_automl
-part2/15_ai_sandbox
-part2/16_validation_interpretation
-part2/17_reproducibility
+part2/14_automl_tabular
+part2/15_automl_timeseries
+part2/16_automl_multimodal
+part2/17_ai_sandbox
+part2/18_validation_interpretation
+part2/19_reproducibility
 ```
 ```{toctree}
 :maxdepth: 2
 :caption: Part III — Resources & Getting Started
 :hidden:
 
-part3/16_um_resources
-part3/17_external_resources
-part3/18_templates
-part3/19_glossary
+part3/20_um_resources
+part3/21_external_resources
+part3/22_templates
+part3/23_glossary
 ```
 
 ---
