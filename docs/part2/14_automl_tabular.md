@@ -1,4 +1,4 @@
-# Testing ML Feasibility with AutoGluon
+# AutoGluon Fundamentals: Tabular Prediction
 
 Before committing significant time to building a custom machine learning pipeline, it helps to first ask a simpler question: is there a predictive signal in this data at all? AutoGluon is one of the most practical tools for answering that question quickly. It is an open-source AutoML framework developed by Amazon that trains and compares multiple models automatically, with almost no configuration required {cite}`erickson2020autogluon`.
 
