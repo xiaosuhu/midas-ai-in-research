@@ -85,7 +85,15 @@ The ensemble combines the best-performing models, weighting their forecasts to m
 
 ## Tutorial: Forecasting Monthly Time Series
 
-The tutorial uses a subset of the M4 forecasting competition dataset, specifically a collection of monthly series {cite}`makridakis2020m4`. The M4 dataset is a widely used benchmark in the forecasting literature, covering series from domains including demographics, finance, industry, and economics. Using a benchmark dataset here means you can compare AutoGluon's output against published results if you want to understand how it performs in context.
+The tutorial uses a 10-series subset of the M4 forecasting competition dataset, specifically a collection of monthly series {cite}`makridakis2020m4`. The M4 dataset is a widely used benchmark in the forecasting literature, covering series from domains including demographics, finance, industry, and economics. The figure below shows all ten series so you can see what you are working with before any code runs.
+
+```{figure} ../_static/m4_sample_series.png
+:alt: Ten M4-style monthly time series showing variety in scale, trend, seasonality, and length. Solid lines are the training history; dashed lines and gray shading mark the last 12 months held out for testing.
+:width: 100%
+:align: center
+
+The ten series in the tutorial dataset. Notice how they differ in scale (M3 reaches into the tens of thousands while M6 stays below 70), trend direction (M9 grows rapidly, M4 declines), and seasonal amplitude (M8 is dominated by seasonality while M2 shows very little). This variety is intentional — it mirrors the kind of heterogeneity you would see in a real panel of research series, and it is why AutoGluon's multi-model approach is useful here.
+```
 
 All code, explanatory notes, and exercises live in the companion notebook. Click the badge to open a temporary Colab session, then click "Copy to Drive" to save your own copy.
 
