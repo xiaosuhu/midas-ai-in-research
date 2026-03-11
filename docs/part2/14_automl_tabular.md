@@ -1,5 +1,11 @@
 # AutoGluon Fundamentals: Tabular Prediction
 
+:::{admonition} What you will learn
+:class: tip
+
+By the end of this chapter and its companion notebook, you will know how to quickly test whether there is a predictive signal in your tabular data, how `TabularPredictor` handles preprocessing and model selection automatically, how to read the leaderboard and evaluate model performance on a held-out test set, and how to use feature importance to interpret what the model is actually responding to.
+:::
+
 Before committing significant time to building a custom machine learning pipeline, it helps to first ask a simpler question: is there a predictive signal in this data at all? AutoGluon is one of the most practical tools for answering that question quickly. It is an open-source AutoML framework developed by Amazon that trains and compares multiple models automatically, with almost no configuration required {cite}`erickson2020autogluon`.
 
 In the context of research, AutoGluon is best understood as a rapid feasibility tool rather than a final modeling solution. The goal is to get a reliable performance baseline in minutes, so you can decide whether the problem is worth pursuing further, and if so, where to focus your attention {cite}`autogluon2024`.
