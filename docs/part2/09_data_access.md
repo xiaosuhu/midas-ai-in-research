@@ -58,11 +58,11 @@ Educational records at U.S. institutions fall under the Family Educational Right
 
 For research involving individuals in the European Union, the General Data Protection Regulation (GDPR) imposes substantial requirements on data collection, storage, transfer, and subject rights. If you are accessing European cohort data or collaborating with EU institutions, GDPR compliance is not optional.
 
-### University of Michigan Specific Requirements
+```{admonition} If You're at U-M
+:class: note
 
-The University of Michigan maintains institutional policies on data classification and permissible use that apply regardless of external regulatory requirements. Sensitive data categories — including health information, financial records, and personally identifiable information — must be stored and processed on approved systems. Tools that involve uploading data to third-party platforms, including some AI systems, are subject to specific review. When working with sensitive research data, check whether the tools and platforms you plan to use are covered under a U-M institutional agreement.
-
-The U-M Safe Computing website and the Research Technology Stewardship program are the right starting points for questions about data classification and approved platforms.
+The University of Michigan maintains institutional policies on data classification and permissible use that apply regardless of external regulatory requirements. Sensitive data categories — including health information, financial records, and personally identifiable information — must be stored and processed on approved systems. Tools that involve uploading data to third-party platforms, including some AI systems, are subject to specific review. The U-M Safe Computing website and the Research Technology Stewardship program are the right starting points for questions about data classification and approved platforms.
+```
 
 ### What About Kaggle, UCI, or Other Fully Public Datasets?
 
@@ -94,34 +94,19 @@ Second, is the ground truth well-understood? When you are checking whether a pip
 
 Third, are the licensing terms compatible with your intended use? Some datasets that appear open carry restrictions on redistribution or derivative works. For academic research this rarely poses a problem, but confirming before you invest weeks of analysis is much easier than discovering a constraint afterward.
 
-With those questions in mind, the sources below cover the most practical options for researchers at U-M. If you are a U-M affiliate, the institutional resources in the next section are often the best starting point — they come with support, documentation, and in some cases direct access that external platforms do not offer. The national and global sources that follow are better suited for benchmarking, method development, and cases where your domain is not well-served by what U-M has locally.
+With those questions in mind, here is an overview of well-maintained sources across a range of domains.
 
----
+```{admonition} If You're at U-M
+:class: note
 
-## University of Michigan Data Resources
-
-
-### U-M Library Data Services
-
-The University of Michigan Library maintains a searchable catalog of licensed and open datasets spanning social science, health, economics, education, and the humanities {cite}`umich_library_data`. Many datasets are directly accessible to U-M affiliates and come with documentation, codebooks, and subject librarian support. If you are not sure where to start for a particular domain, the Library's research data services team can point you toward appropriate sources and help you navigate access requirements.
-
-### ICPSR
-
-The Inter-university Consortium for Political and Social Research (ICPSR), headquartered at U-M, hosts thousands of curated social, behavioral, and health-related datasets, including longitudinal surveys, administrative records, and cross-national comparative studies {cite}`icpsr`. Data are typically accompanied by detailed codebooks and metadata, and many restricted-use datasets are accessible through a formal application process. ICPSR's data management practices make it one of the more reliable sources for reproducibility-focused work.
-
-### Michigan Medicine
-
-Michigan Medicine provides synthetic and simulated clinical datasets designed to resemble real electronic health record data without exposing protected health information {cite}`michigan_medicine`. These datasets are appropriate for testing analytical pipelines, exploring feature engineering strategies, and evaluating model deployment approaches without IRB constraints. They are particularly well-suited to researchers who want to develop clinical AI workflows before applying for access to real patient data.
-
-### MIDAS
-
-The Michigan Institute for Data and AI in Society (MIDAS) coordinates access to a growing collection of curated datasets used in pilot projects, training workshops, and AI Sandbox demonstrations {cite}`midas_umich`. These datasets are selected for pedagogical value and for quick experimentation, and they come with the practical advantage of local support — if you run into an issue, someone nearby has likely encountered it before.
+U-M maintains institutional policies on data classification and permissible use that apply regardless of external regulatory requirements. The U-M Safe Computing website and the Research Technology Stewardship program are good starting points for questions about data governance and approved platforms. For U-M-specific data repositories — including UM Library Data Services, ICPSR, Michigan Medicine synthetic datasets, and MIDAS curated datasets — see [AI Resources at the University of Michigan](../part3/20_um_resources.md).
+```
 
 ---
 
 ## National and Global Public Sources
 
-Beyond U-M, a number of well-maintained public repositories are worth knowing about. The sources below are widely used in research and teaching across disciplines, and most are freely accessible without institutional affiliation.
+A number of well-maintained public repositories are worth knowing about. The sources below are widely used in research and teaching across disciplines, and most are freely accessible without institutional affiliation.
 
 
 ### Kaggle

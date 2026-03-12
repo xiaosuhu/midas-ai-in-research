@@ -119,7 +119,13 @@ The test set is a one-time measurement. Once you evaluate on it, any subsequent 
 
 AutoGluon is a starting point, not an endpoint. The feasibility test answers "is there signal here worth pursuing," not "what is my final model." If the results look promising, a custom pipeline with careful feature engineering and domain-informed design will typically outperform AutoGluon's defaults on your specific problem.
 
-On data privacy: for any data covered by HIPAA or other governance policies, use an approved environment — **the Armis2 HPC Cluster**, or a **local installation**. Do not upload sensitive data to a public Colab notebook. Chapter 8 covers approved computing environments in more detail.
+For any data covered by HIPAA or other governance policies, do not upload sensitive data to a public Colab notebook. Use an approved institutional computing environment or a local installation instead. [Chapter 10](10_computing_resources.md) covers how to choose a resource.
+
+```{admonition} If You're at U-M
+:class: note
+
+Approved options at U-M include Armis2 for HIPAA-covered data and Great Lakes for other sensitive workloads. See [AI Resources at the University of Michigan](../part3/20_um_resources.md).
+```
 
 ---
 

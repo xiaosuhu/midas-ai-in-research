@@ -44,17 +44,21 @@ There are three meaningfully different categories of AI tools, and choosing the 
 
 The first category is public commercial tools on their free tiers — the default version of ChatGPT, Gemini, Claude, and similar products when accessed without a paid or enterprise account. Some providers in this category may retain your inputs and use them to improve their models unless you explicitly opt out, and opt-out mechanisms vary by platform and can change over time. These tools do not deliberately share your content with other users, but your inputs may become part of training data in ways you cannot fully control. Unpublished results, grant ideas, confidential collaborator information, and anything covered by the regulations above should not go into these tools {cite}`Carlini2021Extracting`.
 
-The second category is enterprise or institutionally governed AI tools — UM-GPT, Maizey, Microsoft Azure OpenAI through U-M's enterprise agreement, and Google Gemini through U-M's institutional subscription. In these environments, your inputs are contractually not used for model training, data is stored within enterprise-controlled infrastructure, and the tools are governed by institutional agreements that include privacy protections. This is the appropriate environment for most research-related AI use at U-M, including working with draft manuscripts, grant materials, and research ideas.
+The second category is enterprise or institutionally governed AI tools — products accessed through your institution's agreements rather than a personal account. In these environments, your inputs are contractually not used for model training, data is stored within enterprise-controlled infrastructure, and the tools are governed by institutional agreements that include privacy protections. This is the appropriate environment for most research-related AI use, including working with draft manuscripts, grant materials, and research ideas.
 
-The third category is local or self-hosted models — tools like LM Studio or Ollama running on your own machine, or on-premise LLMs deployed on secure institutional clusters like Armis2. In these environments, nothing leaves your machine or your institution's network. This offers the highest level of confidentiality and is the right choice when working with genuinely sensitive data that cannot go anywhere outside a controlled environment, even in an enterprise system.
+The third category is local or self-hosted models — tools like LM Studio or Ollama running on your own machine, or on-premise LLMs deployed on secure institutional clusters. In these environments, nothing leaves your machine or your institution's network. This offers the highest level of confidentiality and is the right choice when working with genuinely sensitive data that cannot go anywhere outside a controlled environment, even in an enterprise system.
 
 ```{admonition} A Practical Decision Rule
 :class: note
 
-Before pasting anything into an AI tool, ask yourself: would I be comfortable if this text appeared in a training dataset used by a commercial AI company? If the answer is no — because it contains patient data, unpublished findings, confidential grant information, or personally identifiable information about study participants — use UM-GPT or a local model instead of a public tool.
+Before pasting anything into an AI tool, ask yourself: would I be comfortable if this text appeared in a training dataset used by a commercial AI company? If the answer is no — because it contains patient data, unpublished findings, confidential grant information, or personally identifiable information about study participants — use an institutionally governed tool or a local model instead of a public tool.
 ```
 
-For researchers at U-M handling particularly sensitive data, the following institutional computing environments are designed for compliance-sensitive work. Armis2 is the HIPAA-aligned secure research cluster. Lighthouse is Michigan Medicine's secure analytics environment. Great Lakes is the general HPC cluster with data governance controls for broader research use. If your work involves controlled data and you are unsure which environment or tool applies, the MIDAS AI Sandbox, Maizey, and U-M Research Computing are good starting points for guidance.
+```{admonition} If You're at U-M
+:class: note
+
+U-M's institutionally governed tools include UM-GPT, Maizey, Microsoft Azure OpenAI through U-M's enterprise agreement, and Google Gemini through U-M's institutional subscription. For compliance-sensitive data, U-M provides secure computing environments including Armis2 for HIPAA-covered data and Great Lakes for broader sensitive research use. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for details on each option and when to use them.
+```
 
 ---
 

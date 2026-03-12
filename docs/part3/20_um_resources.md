@@ -10,6 +10,31 @@ The University of Michigan supports AI-assisted research through a range of camp
 
 ---
 
+## Data Sensitivity and Approved Computing Environments
+
+Not all data can go everywhere, and choosing the wrong environment for sensitive research data is one of the more consequential mistakes a researcher can make. At U-M, tools and computing environments fall into three broad tiers based on what level of data protection they provide.
+
+The first tier is public commercial tools on their free tiers — the default version of ChatGPT, Gemini, Claude, and similar products when accessed without a paid or enterprise account. Some providers may retain your inputs and use them to improve their models. Unpublished results, grant ideas, confidential collaborator information, and anything covered by HIPAA or other data governance regulations should not go into these tools.
+
+The second tier is institutionally governed tools — UM-GPT, Maizey, Microsoft Azure OpenAI through U-M's enterprise agreement, and Google Gemini through U-M's institutional subscription. In these environments, your inputs are contractually not used for model training, and data is stored within enterprise-controlled infrastructure. This is the appropriate environment for most research-related AI use at U-M, including working with draft manuscripts, grant materials, and research ideas that are not yet public.
+
+The third tier is local or self-hosted models — tools like Ollama running on your own machine, or on-premise LLMs deployed on secure institutional clusters like Armis2. Nothing leaves your machine or your institution's network. This is the right choice when working with genuinely sensitive data that cannot go anywhere outside a controlled environment, even in an enterprise system.
+
+For choosing between U-M's HPC clusters specifically, the decision usually comes down to data sensitivity:
+
+| Data Type | Appropriate Environment |
+|-----------|------------------------|
+| Public or synthetic data | Great Lakes, local machine, or Colab |
+| Sensitive but not HIPAA-covered | Great Lakes (with data governance controls) |
+| HIPAA-covered (e.g., EHR data) | Armis2 |
+| Large-scale AI with big data storage needs | Lighthouse |
+
+If you are unsure where your data falls, the U-M Safe Computing website and the Research Technology Stewardship program are the right starting points. MIDAS and U-M Research Computing are also available for guidance.
+
+**U-M Safe Computing:** https://safecomputing.umich.edu/
+
+---
+
 ## Campus AI Tools and Platforms
 
 ### UMGPT
@@ -90,9 +115,17 @@ The UM Library offers a searchable data catalog, access to licensed datasets, an
 
 ### ICPSR
 
-UM is home to ICPSR, one of the world's largest curated data archives. ICPSR datasets span the social sciences, economics, education, public health, and behavioral science, and are cleaned, documented, and suitable for both research and teaching purposes.
+The Inter-university Consortium for Political and Social Research (ICPSR), headquartered at U-M, hosts thousands of curated social, behavioral, and health-related datasets, including longitudinal surveys, administrative records, and cross-national comparative studies {cite}`icpsr`. Data are typically accompanied by detailed codebooks and metadata, and many restricted-use datasets are accessible through a formal application process. ICPSR's data management practices make it one of the more reliable sources for reproducibility-focused work.
 
 **Link:** https://www.icpsr.umich.edu/
+
+---
+
+### Michigan Medicine Synthetic Datasets
+
+Michigan Medicine provides synthetic and simulated clinical datasets designed to resemble real electronic health record data without exposing protected health information {cite}`michigan_medicine`. These datasets are appropriate for testing analytical pipelines, exploring feature engineering strategies, and evaluating model deployment approaches without IRB constraints. They are particularly well-suited to researchers who want to develop clinical AI workflows before applying for access to real patient data.
+
+**Link:** https://www.michiganmedicine.org/
 
 ---
 
@@ -185,6 +218,7 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 | Storage | Lighthouse | Shared research storage | https://arc.umich.edu/lighthouse/ |
 | Data Access | Deep Blue Data | UM research data repository | https://deepblue.lib.umich.edu/data |
 | Data Access | ICPSR | Curated research datasets | https://www.icpsr.umich.edu/ |
+| Data Access | Michigan Medicine | Synthetic clinical datasets | https://www.michiganmedicine.org/ |
 | Data Access | UM Library | Data catalog and consultations | https://guides.lib.umich.edu/data |
 | Consulting | MIDAS | AI and ML guidance | https://midas.umich.edu/consulting/ |
 | Consulting | ARC | HPC and workflow support | https://arc.umich.edu/consulting/ |

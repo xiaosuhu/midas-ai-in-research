@@ -55,11 +55,11 @@ For highly sensitive content, university-managed or on-premise deployments offer
 
 Trusting AI is not an all-or-nothing judgment. It means understanding what safeguards are in place, using the right tool for the right task, and documenting your process.
 
-## AI at the University of Michigan
+```{admonition} If You're at U-M
+:class: note
 
-At U-M, the institutional investment in AI for research is substantial and deliberate. The university has established AI consulting services, expanded infrastructure for AI-ready computing, and developed guidelines for responsible use across research contexts {cite}`umich_going_all_in_2024`. The emphasis is explicitly on equitable, inclusive AI. The goal is making these tools work "with, for, and by everyone," not just researchers who already have a technical background {cite}`umor_ai_guidance_2024`.
-
-For you as a U-M researcher, this means there are real resources available: computing infrastructure through Great Lakes, consulting support through MIDAS and other centers, and university-approved tool platforms that you may not be fully aware of. There are also institutional expectations around ethics, reproducibility, and transparent documentation that apply whenever AI is part of your research workflow. Part III of this handbook walks through those resources in detail.
+The University of Michigan has made substantial investments in AI for research, including campus-hosted tools, secure computing infrastructure, and expert consulting services {cite}`umich_going_all_in_2024,umor_ai_guidance_2024`. Part III of this handbook walks through those resources in detail. See [AI Resources at the University of Michigan](../part3/20_um_resources.md).
+```
 
 ## What's in the Rest of This Handbook
 

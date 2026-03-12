@@ -42,7 +42,13 @@ When you receive a manuscript or a grant proposal for formal peer review, you ar
 
 This confidentiality constraint is the first and most immediate concern with using AI as a reviewer. If you feed manuscript text into any AI system, including an institutionally governed one like UM-GPT, you are potentially exposing unpublished intellectual work in ways the authors never consented to. Even if the data are technically protected within an enterprise environment, the authors did not agree to their work being processed by that system. The confidentiality obligation you accepted when you agreed to review the paper covers AI tools just as it covers human third parties.
 
-NIH makes this explicit: AI is prohibited in peer review under NOT-OD-23-149 {cite}`NIH_NOT_OD_23_149`. NSF takes the same position {cite}`NSF_AI_notice_2023`. Most major journals have adopted similar policies, and the ones that have not yet done so are likely to follow. The U-M OVPR specifically discourages AI use in internal peer review for the same reasons {cite}`UM_OVPR_AI_guidelines_2025`.
+NIH makes this explicit: AI is prohibited in peer review under NOT-OD-23-149 {cite}`NIH_NOT_OD_23_149`. NSF takes the same position {cite}`NSF_AI_notice_2023`. Most major journals have adopted similar policies, and the ones that have not yet done so are likely to follow.
+
+```{admonition} If You're at U-M
+:class: note
+
+The U-M OVPR specifically discourages AI use in internal peer review for the same confidentiality and bias reasons {cite}`UM_OVPR_AI_guidelines_2025`. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for current UM policy guidance.
+```
 
 But confidentiality is only part of the problem. Even a completely private, local AI system running on your own computer — where nothing ever leaves your machine — raises a second and deeper issue.
 

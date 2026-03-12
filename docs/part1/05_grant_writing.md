@@ -78,11 +78,11 @@ NOT-OD-25-132 does not ban all AI assistance outright. The notice states that AI
 
 ## Institutional and Funder Policies
 
-### University of Michigan
+```{admonition} If You're at U-M
+:class: note
 
-U-M's approach centers on two concerns: confidentiality and accountability. The OVPR discourages AI use in internal peer review processes due to confidentiality and bias risks {cite}`UM_OVPR_AI_guidelines_2025`. For grant writing specifically, U-M guidance emphasizes using institutionally governed tools rather than public AI platforms, not uploading sensitive or unpublished research material to commercial systems, and documenting AI use when required by funders or journals {cite}`UM_GenAI_resources`.
-
-The practical implication is that if you are using AI to help develop a grant proposal, you should be working within UM-GPT or a similarly governed environment rather than a public tool like the free tier of ChatGPT. Preliminary data, unpublished findings, and confidential collaborator information should not enter any system that could retain or use that content.
+U-M guidance emphasizes using institutionally governed tools rather than public AI platforms when developing proposals, not uploading sensitive or unpublished research material to commercial systems, and documenting AI use when required by funders or journals {cite}`UM_OVPR_AI_guidelines_2025,UM_GenAI_resources`. In practice, this means working within UM-GPT or a similarly governed environment when handling preliminary data, unpublished findings, or confidential collaborator information. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for a full list of approved platforms.
+```
 
 ### NIH
 

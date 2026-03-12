@@ -22,9 +22,9 @@ A rough guide to that decision:
 
 If your data is fully public, synthetic, or contains no human subjects information, you can use essentially any resource, including local, cloud, or university systems, subject to whatever license terms apply.
 
-If your data is identifiable, covered by a data use agreement, or classified as sensitive under U-M policy, you need to stay within approved university systems. Commercial cloud platforms and free notebook services are generally not approved for this data without a specific institutional agreement in place.
+If your data is identifiable, covered by a data use agreement, or otherwise classified as sensitive, you need to stay within approved institutional systems. Commercial cloud platforms and free notebook services are generally not approved for this data without a specific institutional agreement in place.
 
-If your data is protected health information under HIPAA, you need a HIPAA-compliant environment. At U-M, that means Armis2. Great Lakes is not appropriate for HIPAA data.
+If your data is protected health information under HIPAA, you need a HIPAA-compliant environment. Check with your institution's research computing office for approved options.
 
 With that framing established, here is what each category of resource actually offers.
 
@@ -78,27 +78,11 @@ Amazon Web Services, Google Cloud Platform, and Microsoft Azure all offer scalab
 For most academic researchers, the free notebook options or university HPC resources will be sufficient. Paid cloud compute becomes relevant when a project requires sustained GPU access at a scale that exceeds what university allocations provide, or when a research group has cloud credits through an institutional agreement or grant. AWS SageMaker, Google Vertex AI, and Azure Machine Learning are the respective managed ML platforms on each cloud, but they carry meaningful learning curve and cost for occasional use.
 
 
-## University of Michigan HPC Resources
+```{admonition} If You're at U-M
+:class: note
 
-For researchers at U-M, the university provides high-performance computing infrastructure through Advanced Research Computing (ARC). The three clusters differ primarily in their data governance requirements and hardware focus.
-
-### Great Lakes
-
-Great Lakes is the university's general-purpose HPC cluster, managed by ARC-TS. It provides access to both CPU and GPU nodes, supports standard research workflows, and is appropriate for most research data that is not protected health information. Researchers receive an allocation of compute hours and can request additional time as needed. Great Lakes runs the standard SLURM job scheduler, and ARC-TS provides documentation and support for getting started. For most U-M researchers whose data does not have special sensitivity requirements, Great Lakes is the right HPC choice.
-
-More information and access: https://arc.umich.edu/greatlakes/
-
-### Armis2
-
-Armis2 is a HIPAA-compliant secure computing environment designed specifically for research involving protected health information. If your project involves electronic health records, clinical data, or any data covered under HIPAA, Armis2 is the appropriate cluster. It operates under stricter data governance controls than Great Lakes, including restrictions on data transfer and network access, and access requires additional approval steps. Researchers working with Michigan Medicine data will typically be directed here.
-
-More information: https://arc.umich.edu/armis2/
-
-### Lighthouse
-
-Lighthouse is a newer ARC-TS resource designed for data-intensive and AI-focused research workflows. It provides access to modern GPU hardware and is oriented toward research groups running large-scale machine learning workloads. If you are scaling beyond what your Great Lakes allocation provides, or you need access to more recent GPU hardware, Lighthouse is worth looking into.
-
-More information: https://arc.umich.edu/lighthouse/
+U-M researchers have access to three HPC systems through Advanced Research Computing (ARC): Great Lakes for general CPU and GPU computing, Armis2 for HIPAA-covered and other compliance-sensitive data, and Lighthouse for large-scale AI and data-intensive workflows. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for details on each cluster, hardware specs, and how to request access.
+```
 
 
 ## Setting Up Your Environment
@@ -125,13 +109,13 @@ pip freeze > requirements.txt
 
 That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. [Chapter 17](17_reproducibility.md) covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
 
-For Great Lakes specifically, ARC-TS maintains documentation on loading modules, creating environments, and submitting jobs through the SLURM scheduler. Rather than reproducing those instructions here, the ARC-TS user guide is the authoritative and up-to-date source: https://arc.umich.edu/greatlakes/user-guide/
+For university HPC systems generally, your institution's research computing office will have documentation on loading modules, creating environments, and submitting batch jobs. Using their official guides rather than reproducing instructions here ensures you always have the most current information.
 
 
 ## Try This
 
 Before your next analysis, take five minutes to answer three questions: Does my data contain any sensitive, identifiable, or restricted information? How large is my dataset, and will it fit comfortably in my laptop's memory? Does my planned analysis involve training a deep learning model, or is it primarily statistical or matrix-based computation?
 
-Your answers will point you directly to the right resource. If the data is sensitive and HIPAA-covered, the answer is Armis2 regardless of anything else. If the data is clean and public and the task is statistical or tabular, your laptop or Great Lakes CPU nodes are the right starting point. If you are training a neural network on a large image or text dataset, Colab or Great Lakes GPU nodes are where to begin.
+Your answers will point you directly to the right resource. If the data is sensitive and HIPAA-covered, the answer is a HIPAA-compliant institutional cluster regardless of anything else. If the data is clean and public and the task is statistical or tabular, your laptop or a university HPC cluster is the right starting point. If you are training a neural network on a large image or text dataset, Colab or a university GPU cluster is where to begin.
 
 That three-question habit takes less time than any setup step, and it avoids the more serious problem of discovering a compliance issue after weeks of analysis.
