@@ -203,31 +203,19 @@ That last step is not just a reflection exercise. It is the beginning of the nex
 
 ---
 
-## Resources and Links
+## Tools Referenced in This Chapter
 
-**Deep Research Tools**
+**Discovery and deep research:** [Asta](https://asta.allen.ai/) · [OpenAI Deep Research](https://openai.com/index/deep-research/) · [Perplexity](https://www.perplexity.ai) · [Consensus](https://consensus.app) · [Google Gemini Deep Research](https://gemini.google.com)
 
-- **Asta**: https://asta.allen.ai/
-- **OpenAI Deep Research**: https://openai.com/index/deep-research/
-- **Perplexity Research Mode**: https://www.perplexity.ai
-- **Consensus**: https://consensus.app
-- **Google Gemini Deep Research**: https://gemini.google.com
+**Document synthesis:** [NotebookLM](https://notebooklm.google.com) (available to UM researchers via Google Workspace)
 
-**Document Synthesis**
+**Reference databases:** [PubMed](https://pubmed.ncbi.nlm.nih.gov/) · [Google Scholar](https://scholar.google.com/) · [Semantic Scholar](https://www.semanticscholar.org/)
 
-- **NotebookLM**: https://notebooklm.google.com (UM Google Workspace access)
+## Related Chapters
 
-**Reference Databases**
-
-- **PubMed**: https://pubmed.ncbi.nlm.nih.gov/
-- **Google Scholar**: https://scholar.google.com/
-- **Semantic Scholar**: https://www.semanticscholar.org/
-
-**Related Handbook Chapters**
-
-- When to Use AI in Research
-- Research Planning with AI
-- Validation and Reproducibility
+- [When to Use AI in Research](01_when_to_use_ai.md) — deciding where AI fits in your workflow
+- [Research Planning with AI](03_research_planning.md) — turning what you found into a research question
+- [Validation and Reproducibility](08_validation.md) — verifying AI outputs in your work
 
 ---
 
