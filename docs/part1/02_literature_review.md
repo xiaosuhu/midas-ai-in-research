@@ -26,7 +26,6 @@ Deep research systems extend large language models with capabilities specificall
 - **Ai2 Asta** (https://asta.allen.ai/): Precision academic search powered by Allen Institute's Semantic Scholar
 - **OpenAI Deep Research** (https://openai.com/index/deep-research/): Multi step reasoning integrated into ChatGPT
 - **Perplexity Research Mode** (https://www.perplexity.ai): Fast, transparent cited answers across web and academic sources
-- **OpenRead** (https://openread.academy): Deep PDF understanding and paper to paper comparison
 - **Consensus** (https://consensus.app): Evidence synthesis focused on peer reviewed studies
 - **Google Gemini Deep Research** (https://gemini.google.com): Long form analytic reports with Google integration
 
@@ -74,7 +73,7 @@ You do not have to choose between PubMed and Deep Research. Run both in parallel
 
 - Use a deep research tool like Asta or Perplexity to find related work and cross disciplinary connections. You discover what might be overlooked by standard search.
 
-- If you have relevant papers, upload them to OpenRead or Gemini Deep Research to extract methods, find similar work, and build a network view.
+- If you have relevant papers, upload them to Gemini Deep Research to extract methods, find similar work, and build a network view.
 
 **Stage 3: Human Synthesis and Validation**
 
@@ -103,7 +102,7 @@ You have a specific research question in a field with rich academic indexing. Yo
 
 **When Asta has limits:**
 
-Asta cannot reason deeply about the PDF content of papers you upload the way OpenRead can. Its coverage depends on how well Semantic Scholar has indexed your specific subdomain. If you work in a very new field or at the intersection of multiple disciplines, you may need to supplement with broader tools like Perplexity.
+Asta cannot reason deeply about the PDF content of papers you upload. Its coverage depends on how well Semantic Scholar has indexed your specific subdomain. If you work in a very new field or at the intersection of multiple disciplines, you may need to supplement with broader tools like Perplexity.
 
 ---
 
@@ -114,7 +113,6 @@ Asta cannot reason deeply about the PDF content of papers you upload the way Ope
 | **Asta** | Precision scientific retrieval | Semantic Scholar based search; metadata driven retrieval; grounded in real papers |
 | **OpenAI Deep Research** | Integrated multi step reasoning | Sequential searches plus synthesis; supports document uploads; works inside ChatGPT |
 | **Perplexity** | Fast, transparent cited answers | Parallel searches across web and academic sources; aggregated results with linked sources |
-| **OpenRead** | Deep PDF understanding and comparison | Paper Q&A; Paper Compare feature; network graph visualization; extracts methods and results |
 | **Consensus** | Evidence synthesis from peer reviewed studies | Retrieves peer reviewed findings; produces summary cards with effect sizes and confidence |
 | **Google Gemini** | Long form analytic reports | Multi source synthesis; integrates with Google Scholar; supports document uploads |
 
@@ -144,11 +142,38 @@ Asta cannot reason deeply about the PDF content of papers you upload the way Ope
 
 **Validate sources immediately.** Before relying on a citation or quote, check the original paper. This takes minutes and saves you from propagating errors downstream.
 
-**Upload PDFs when possible.** Tools like OpenRead and Gemini Deep Research become more accurate when you provide the papers you care about most. This grounds the search in your domain and reduces hallucination.
+**Upload PDFs when possible.** Gemini Deep Research becomes more accurate when you provide the papers you care about most. This grounds the search in your domain and reduces hallucination.
 
 **Use iterative refinement.** Deep research is not a one shot activity. After seeing initial results, refine your query. Focus on specific populations, time periods, methodologies, or geographies. Treat the tool as an interactive collaborator, not an answer engine.
 
 **Always combine with human verification.** This is the non negotiable step. AI can summarize and map the literature. Humans must interpret statistical validity, methodological quality, relevance to the research question, and ethical or contextual considerations.
+
+---
+
+## Going Deeper: Working with Papers You Already Have
+
+There is a different kind of challenge that comes after the initial search. You have found a set of papers that seem relevant, but now you need to actually understand them — across methods, findings, and gaps — without spending days in close reading before you can form a view. This is where a different category of tool becomes useful.
+
+[NotebookLM](https://notebooklm.google.com) is Google's document-grounded research assistant. Unlike the discovery tools described earlier, it does not go out and search the web. Instead, you upload your own sources — PDFs, Google Docs, URLs, even YouTube videos — and it works only within that set. Every response it gives you is grounded in those sources, with inline citations you can click to verify against the original text {cite}`NotebookLM2024`. This makes it a useful partner for the synthesis stage of a literature review, once you have already done the work of identifying which papers matter.
+
+:::{admonition} University of Michigan Access
+:class: tip
+NotebookLM is available to all UM researchers through the university's Google Workspace subscription. No separate sign-up is needed — just log in with your @umich.edu account at [notebooklm.google.com](https://notebooklm.google.com). For a full list of UM-supported AI tools, see the [UM AI Resources](../part3/20_um_resources.md) chapter.
+:::
+
+**What NotebookLM does well**
+
+The most practical use is asking cross-document questions: "What methods do these papers use to measure X?" or "Which of these studies report conflicting findings, and what might explain the discrepancy?" Rather than reading each paper looking for the answer, you get a synthesized response with pointers back to the exact passages that support it. You can then go verify those passages directly — which you should always do — but the initial orientation is much faster.
+
+A second use case is getting feedback on your own draft. If you upload an early manuscript draft alongside a set of relevant papers, you can ask NotebookLM whether your argument is missing something the literature has already addressed, or whether you have accurately characterized the findings of a particular study. It is a useful sanity check before asking a colleague.
+
+NotebookLM also offers an Audio Overview feature that generates a two-person conversational summary of your uploaded sources {cite}`NotebookLM2024`. This can be a reasonable way to get a first orientation to an unfamiliar set of papers, particularly if you absorb material better by listening. It is worth knowing about, though for detailed analytical work you will want the text-based question and answer interface instead.
+
+**What to keep in mind**
+
+NotebookLM works only with what you give it. If you upload five papers, its answers reflect those five papers. It has no way of knowing what you left out, and it will not tell you that a study you should have included exists. This means the quality of what you get is directly tied to the quality of your initial selection — which is why the discovery phase, using the tools described earlier in this chapter, still matters.
+
+As with all AI tools in the research context, you should verify anything you plan to rely on. The citations NotebookLM provides make this easier than with tools that only cite at the level of a full document, but the verification step is still yours to do.
 
 ---
 
@@ -158,7 +183,7 @@ Asta cannot reason deeply about the PDF content of papers you upload the way Ope
 |---|---|---|
 | Rapidly scope an unfamiliar area | Perplexity or Google Gemini | Fast, transparent, and good at breadth. Results appear in minutes rather than hours. |
 | Need precision scientific retrieval in a well indexed field | Asta | Built specifically for academic discovery and excels at finding papers that are thematically related but use different keywords. |
-| Want to deeply understand a specific set of papers | OpenRead | Upload your key papers and let it extract methods, find similar work, and build a network visualization. |
+| Want to deeply understand a specific set of papers | NotebookLM | Upload your papers and ask cross-document questions. Responses are grounded in your sources with inline citations you can verify. |
 | Synthesizing evidence for a clinical or policy decision | Consensus | Filters for peer reviewed studies and provides summary cards with effect sizes, reducing the risk of citing low evidence work. |
 | Want everything integrated into your writing workflow | OpenAI Deep Research | Integrates with ChatGPT and supports document uploads, making it convenient for drafting alongside research. |
 
@@ -185,9 +210,12 @@ That last step is not just a reflection exercise. It is the beginning of the nex
 - **Asta**: https://asta.allen.ai/
 - **OpenAI Deep Research**: https://openai.com/index/deep-research/
 - **Perplexity Research Mode**: https://www.perplexity.ai
-- **OpenRead**: https://openread.academy
 - **Consensus**: https://consensus.app
 - **Google Gemini Deep Research**: https://gemini.google.com
+
+**Document Synthesis**
+
+- **NotebookLM**: https://notebooklm.google.com (UM Google Workspace access)
 
 **Reference Databases**
 

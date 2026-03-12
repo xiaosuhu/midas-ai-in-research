@@ -61,6 +61,16 @@ UM has an institutional subscription to Google Gemini, which gives researchers a
 
 ---
 
+### NotebookLM (UM Google Workspace)
+
+NotebookLM is Google's document-grounded research assistant. You upload your own sources — PDFs, Google Docs, URLs, or YouTube videos — and it answers questions grounded exclusively in those materials, with inline citations linking back to the original text. This makes it well suited for the synthesis stage of a literature review, for checking whether a draft argument is consistent with the papers you have read, or for getting a fast orientation to an unfamiliar set of documents.
+
+Because NotebookLM is part of Google's product suite, UM researchers can access it directly through their institutional Google Workspace account. No separate sign-up is needed.
+
+**Link:** https://notebooklm.google.com (sign in with your @umich.edu account)
+
+---
+
 ### MIDAS AI Sandbox
 
 The AI Sandbox is MIDAS's curated platform for exploring generative AI workflows, evaluating LLM outputs, and browsing UM-approved AI resources. It is updated as new institutional AI services come online and serves as a good first stop when you are not sure which tool is right for a particular task.
@@ -212,6 +222,7 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 | AI Tools | UMGPT | Secure UM-hosted LLM service | https://its.umich.edu/computing/ai/umgpt |
 | AI Tools | Maizey | Build custom RAG systems | https://maizey.ai.umich.edu/ |
 | AI Tools | Google Gemini | Multimodal AI via UM institutional access | https://gemini.google.com/ |
+| AI Tools | NotebookLM | Document-grounded research assistant via UM Google Workspace | https://notebooklm.google.com |
 | AI Tools | AI Sandbox | UM-approved GenAI tools and examples | https://midas.umich.edu/ai-sandbox/ |
 | HPC | Great Lakes | Large-scale compute for ML | https://arc.umich.edu/greatlakes/ |
 | Secure HPC | Armis2 | HIPAA-aligned secure compute | https://arc.umich.edu/armis2/ |
