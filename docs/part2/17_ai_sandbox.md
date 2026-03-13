@@ -1,24 +1,27 @@
-# MIDAS AI Sandbox
-*Author: Dr. Nathan Fox*
+# Pre-trained Models for Text and Vision
 
-This chapter presents two applied AI Sandbox modules used at the University of Michigan: one focused on **text analysis** and one focused on **computer vision**. These modules introduce researchers to practical, domain-agnostic AI tools that accelerate exploratory analysis, help organize large datasets, and lower the barrier to experimenting with modern machine-learning workflows.
+The previous chapters focused on AutoML workflows where you bring your own labeled dataset and AutoGluon handles the modeling. That approach makes sense when your task is prediction and you have the data to train on. But a lot of research work does not look like that. Sometimes you need to make sense of interview transcripts, or classify field photographs, or translate survey responses collected in three different languages. For these kinds of tasks, the most practical first question is not "how do I train a model?" but rather "is there already a model that does this?"
+
+The answer is often yes. The machine learning community has produced a large ecosystem of pre-trained models, many of them freely available on platforms like Hugging Face, that can be applied to common research tasks without any training at all. You point the model at your data and it works. Some can be tested directly in a browser before you write a single line of code.
+
+This chapter introduces a set of these models across two modalities: text and vision. The goal is partly to show you what is out there, and partly to build the habit of checking for a pre-trained solution before committing to building your own. That instinct will save you considerable time.
 
 ---
 
-## Part 1: AI Sandbox for Text Analysis
+## Text Analysis with Pre-trained Models
 
 ### 1. Introduction
 
 Researchers across education, health, policy, humanities, and social sciences routinely work with large amounts of unstructured text: interviews, survey responses, reports, patient narratives, archival material, or multilingual documents. Manually reviewing such data is time-consuming due to volume, not conceptual difficulty.
 
-Modern AI language models can support—though not replace—expert interpretation by helping researchers:
+Modern AI language models can support, though not replace, expert interpretation by helping researchers:
 
 - Organize and compare text  
 - Assign custom labels  
 - Translate multilingual materials  
 - Summarize long documents  
 
-This module introduces four foundational model types:
+This section introduces four foundational model types:
 
 - **EmbeddingGemma-300M** – semantic similarity & clustering  
 - **BART-Large-MNLI** – zero-shot classification into custom thematic labels  
@@ -42,7 +45,7 @@ EmbeddingGemma-300M maps sentences and documents into a high-dimensional embeddi
 - Measuring conceptual distance  
 
 **Example:**  
-In education research, embeddings can automatically group thousands of student reflections into clusters such as “motivation,” “barriers,” or “learning environment,” allowing faster qualitative review.
+In education research, embeddings can automatically group thousands of student reflections into clusters such as "motivation," "barriers," or "learning environment," allowing faster qualitative review.
 
 ---
 
@@ -51,7 +54,7 @@ In education research, embeddings can automatically group thousands of student r
 **Model type:** Zero-shot classifier  
 **Purpose:** Assigns user-defined labels without training.
 
-BART-Large-MNLI uses natural-language inference to match text with categories you provide (e.g., “economic concerns,” “climate policy,” “mental health”). It is flexible, fast, and requires no annotated dataset.
+BART-Large-MNLI uses natural-language inference to match text with categories you provide (e.g., "economic concerns," "climate policy," "mental health"). It is flexible, fast, and requires no annotated dataset.
 
 **Strengths:**  
 - Works immediately with any label set  
@@ -72,7 +75,7 @@ Policy researchers can sort hundreds of interview excerpts into themes to guide 
 **Model type:** Open-access machine translation  
 **Purpose:** Cross-lingual research workflows.
 
-OPUS-MT models are trained entirely on public multilingual corpora and optimized for specific language pairs (e.g., English ↔ Finnish; English ↔ Swahili). This makes them ideal for:
+OPUS-MT models are trained entirely on public multilingual corpora and optimized for specific language pairs (e.g., English to Finnish; English to Swahili). This makes them ideal for:
 
 - Normalizing multilingual datasets  
 - Translating interviews or field-site documents  
@@ -124,11 +127,11 @@ A sentiment model trained on millions of tweets to handle informal language, sla
 
 ---
 
-## Part 2: AI Sandbox for Computer Vision
+## Computer Vision with Pre-trained Models
 
 ### 1. Introduction
 
-This module introduces how AI “sees” and interprets images. You will explore four models that represent a progression from **recognition → localization → segmentation → reasoning**:
+This section introduces how AI "sees" and interprets images. You will explore four models that represent a progression from recognition to localization to segmentation to reasoning:
 
 - **Segment Anything (SAM)** – outlines objects  
 - **Grounding DINO** – finds objects using text prompts  
@@ -169,7 +172,7 @@ Microbiologists use SAM to automatically outline cells, replacing hours of manua
 **Model type:** Text-guided object detection  
 **Demo:** https://huggingface.co/spaces/merve/Grounding_DINO_demo
 
-Grounding DINO connects **language ↔ vision**: you describe an object (“find solar panels”) and it locates it in the image.
+Grounding DINO connects language and vision: you describe an object ("find solar panels") and it locates it in the image.
 
 **Strengths:**  
 - Accepts free-form natural language  
@@ -206,10 +209,10 @@ Researchers rapidly categorize large sets of lab or field images before deeper m
 
 ### 5. Qwen-VL (Qwen3)
 
-**Model type:** Vision–language reasoning  
+**Model type:** Vision-language reasoning
 **Demo:** https://huggingface.co/spaces/Qwen/Qwen3-VL-Demo
 
-Qwen-VL can describe images, answer questions, and explain relationships (“Which buildings look like temples?” “Is the person wearing protective equipment?”).
+Qwen-VL can describe images, answer questions, and explain relationships ("Which buildings look like temples?" "Is the person wearing protective equipment?").
 
 **Strengths:**  
 - Open-ended question answering  
