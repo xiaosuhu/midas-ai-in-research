@@ -151,7 +151,7 @@ A production RAG system for a real research project involves a few additional de
 ```{admonition} If You're at U-M
 :class: note
 
-For sensitive or IRB-covered documents, Maizey is the first option to explore, since it operates within U-M's approved infrastructure. For situations where you need more control over the pipeline, such as custom chunking, specific embedding models, or integration with a larger analysis workflow, then Great Lakes is the right compute environment. The Armis2 cluster is available for HIPAA-covered data. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for details on access and data classification.
+For sensitive or IRB-covered documents, Maizey is the first option to explore, since it operates within U-M's approved infrastructure. For situations where you need more control over the pipeline, such as custom chunking, specific embedding models, or integration with a larger analysis workflow, then Great Lakes is the right compute environment. The Armis2 cluster is available for HIPAA-covered data. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on access and data classification.
 ```
 
 ---
@@ -172,10 +172,10 @@ Lewis et al. (2020) is the paper that introduced and named retrieval-augmented g
 
 ## Related Chapters
 
-- [NLP with Pre-trained Language Models](17b_nlp_with_bert.md): embeddings and semantic similarity, which are the foundation of the retrieval step
-- [Pre-trained Models for Text and Vision](17_ai_sandbox.md): browser-based exploration of language models without writing code
-- [Computing Resources](10_computing_resources.md): where to run to run local pipelines for sensitive data at U-M
-- [Validation and Interpretation](18_validation_interpretation.md): evaluating outputs before using them in research
+- [NLP with Pre-trained Language Models](ch23_nlp_with_bert.md): embeddings and semantic similarity, which are the foundation of the retrieval step
+- [Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): browser-based exploration of language models without writing code
+- [Computing Resources](../part2/ch13_computing_resources.md): where to run to run local pipelines for sensitive data at U-M
+- [Validation and Interpretation](../part2/ch21_validation_interpretation.md): evaluating outputs before using them in research
 
 ```{bibliography}
 :filter: docname in docnames

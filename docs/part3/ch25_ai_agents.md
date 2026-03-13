@@ -75,7 +75,7 @@ Both are free, require no account to read, and are written for a technical but n
 ```{admonition} If You're at U-M
 :class: note
 
-The MIDAS AI Sandbox sessions include modules on agentic workflows as part of the ongoing series on applied AI in research. These sessions are updated as the tool landscape evolves and are a good way to see current implementations demonstrated on research-relevant tasks. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for details on how to access these sessions.
+The MIDAS AI Sandbox sessions include modules on agentic workflows as part of the ongoing series on applied AI in research. These sessions are updated as the tool landscape evolves and are a good way to see current implementations demonstrated on research-relevant tasks. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on how to access these sessions.
 ```
 
 ---
@@ -94,10 +94,10 @@ You do not need to build anything right now. The exercise is about developing th
 
 ## Related Chapters
 
-- [Building a Research Knowledge Base with RAG](17c_rag.md): the retrieval layer that many agent workflows use to give a model access to a specific document collection
-- [NLP with Pre-trained Language Models](17b_nlp_with_bert.md): foundational understanding of how language models represent and process text
-- [Pre-trained Models for Text and Vision](17_ai_sandbox.md): hands-on exploration of language and vision models without writing code
-- [Validation and Interpretation](18_validation_interpretation.md): how to evaluate outputs you did not produce entirely yourself
+- [Building a Research Knowledge Base with RAG](ch24_rag.md): the retrieval layer that many agent workflows use to give a model access to a specific document collection
+- [NLP with Pre-trained Language Models](ch23_nlp_with_bert.md): foundational understanding of how language models represent and process text
+- [Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): hands-on exploration of language and vision models without writing code
+- [Validation and Interpretation](../part2/ch21_validation_interpretation.md): how to evaluate outputs you did not produce entirely yourself
 
 ```{bibliography}
 :filter: docname in docnames

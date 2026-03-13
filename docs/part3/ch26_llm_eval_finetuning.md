@@ -113,7 +113,7 @@ The four steps in the notebook follow the logic of this chapter.
 ```{admonition} If You're at U-M
 :class: note
 
-For larger fine-tuning experiments or datasets that do not fit comfortably in Colab, Great Lakes provides GPU nodes with more memory and no session time limits. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for access and allocation information.
+For larger fine-tuning experiments or datasets that do not fit comfortably in Colab, Great Lakes provides GPU nodes with more memory and no session time limits. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for access and allocation information.
 ```
 
 ---
@@ -148,10 +148,10 @@ Hu et al. (2022) is the original LoRA paper and is readable without a deep machi
 
 ## Related Chapters
 
-- [NLP with Pre-trained Language Models](17b_nlp_with_bert.md) — using pre-trained models out of the box, which this chapter builds from
-- [Prompt Engineering](../part1/00b_prompt_engineering.md) — often the right first step to try before considering fine-tuning
-- [Validation and Interpretation](18_validation_interpretation.md) — evaluating model outputs more broadly across task types
-- [Reproducibility](19_reproducibility.md) — versioning and documenting fine-tuned model adapters
+- [NLP with Pre-trained Language Models](ch23_nlp_with_bert.md) — using pre-trained models out of the box, which this chapter builds from
+- [Prompt Engineering](../part1/ch03_prompt_engineering.md) — often the right first step to try before considering fine-tuning
+- [Validation and Interpretation](../part2/ch21_validation_interpretation.md) — evaluating model outputs more broadly across task types
+- [Reproducibility](../part2/ch22_reproducibility.md) — versioning and documenting fine-tuned model adapters
 
 ```{bibliography}
 :filter: docname in docnames

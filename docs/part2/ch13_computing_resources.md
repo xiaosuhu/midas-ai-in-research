@@ -81,7 +81,7 @@ For most academic researchers, the free notebook options or university HPC resou
 ```{admonition} If You're at U-M
 :class: note
 
-U-M researchers have access to three HPC systems through Advanced Research Computing (ARC): Great Lakes for general CPU and GPU computing, Armis2 for HIPAA-covered and other compliance-sensitive data, and Lighthouse for large-scale AI and data-intensive workflows. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for details on each cluster, hardware specs, and how to request access.
+U-M researchers have access to three HPC systems through Advanced Research Computing (ARC): Great Lakes for general CPU and GPU computing, Armis2 for HIPAA-covered and other compliance-sensitive data, and Lighthouse for large-scale AI and data-intensive workflows. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on each cluster, hardware specs, and how to request access.
 ```
 
 
@@ -107,7 +107,7 @@ Once you have installed your packages, saving a record of them takes one additio
 pip freeze > requirements.txt
 ```
 
-That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. [Chapter 17](17_reproducibility.md) covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
+That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. [Chapter 17](ch22_reproducibility.md) covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
 
 For university HPC systems generally, your institution's research computing office will have documentation on loading modules, creating environments, and submitting batch jobs. Using their official guides rather than reproducing instructions here ensures you always have the most current information.
 

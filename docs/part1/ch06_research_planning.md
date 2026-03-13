@@ -84,7 +84,7 @@ By the end of the session you should have something considerably more specific t
 
 ## Related Chapters
 
-- [Literature Review with AI](02_literature_review.md) — understanding the landscape before you plan
-- [Grant Writing with AI](05_grant_writing.md) — translating your question into a fundable proposal
-- [Ethics and Privacy](06_ethics_privacy.md) — considerations that should shape your design from the start
-- [Validation and Reproducibility](07_validation.md) — how to evaluate AI outputs in your workflow
+- [Literature Review with AI](ch05_literature_review.md) — understanding the landscape before you plan
+- [Grant Writing with AI](ch08_grant_writing.md) — translating your question into a fundable proposal
+- [Ethics and Privacy](ch10_ethics_privacy.md) — considerations that should shape your design from the start
+- [Validation and Reproducibility](ch11_validation.md) — how to evaluate AI outputs in your workflow

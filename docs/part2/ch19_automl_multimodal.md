@@ -144,12 +144,12 @@ Pretrained language models have a token limit, typically 512 tokens for BERT-fam
 
 **Can I run this on a university HPC cluster instead of Colab?**
 
-Yes, and for sensitive data you should. The process is essentially the same: request a GPU node, load your data from a secure storage location, and run the same code. [Chapter 10](10_computing_resources.md) covers how to get started with university HPC resources.
+Yes, and for sensitive data you should. The process is essentially the same: request a GPU node, load your data from a secure storage location, and run the same code. [Chapter 10](ch13_computing_resources.md) covers how to get started with university HPC resources.
 
 ```{admonition} If You're at U-M
 :class: note
 
-Great Lakes provides GPU nodes well suited to multimodal training. For HIPAA-covered data, use Armis2 instead. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for access details.
+Great Lakes provides GPU nodes well suited to multimodal training. For HIPAA-covered data, use Armis2 instead. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for access details.
 ```
 
 ---
@@ -166,7 +166,7 @@ The same cautions from the tabular chapter apply here, and multimodal modeling a
 
 **Interpretability is limited.** Feature importance from a tabular model is relatively straightforward to communicate. For a multimodal model that fuses a fine-tuned language model with tabular features, explaining which specific inputs drove a prediction is considerably harder. AutoGluon provides some gradient-based attribution tools, but these should be treated as exploratory rather than definitive.
 
-**On data privacy.** For data covered by HIPAA, IRB restrictions, or other governance policies, do not use a public Colab notebook. This is especially important if your text columns contain clinical notes or any individually identifying content. Run in an approved institutional environment or a local installation instead. [Chapter 10](10_computing_resources.md) covers computing options in more detail.
+**On data privacy.** For data covered by HIPAA, IRB restrictions, or other governance policies, do not use a public Colab notebook. This is especially important if your text columns contain clinical notes or any individually identifying content. Run in an approved institutional environment or a local installation instead. [Chapter 10](ch13_computing_resources.md) covers computing options in more detail.
 
 ---
 

@@ -87,7 +87,7 @@ The same principles apply across all of these: you supply the intellectual conte
 ```{admonition} If You're at U-M
 :class: note
 
-The University of Michigan has published guidance through the Office of Research and the U-M Library emphasizing that AI tools may be used for drafting and editing as long as authors maintain responsibility for accuracy and originality {cite}`umor_ai_guidance_2024,um_library_ai_2024`. Sensitive or proprietary data must not be uploaded to public AI platforms unless approved through appropriate institutional channels. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for a full list of approved tools and platforms.
+The University of Michigan has published guidance through the Office of Research and the U-M Library emphasizing that AI tools may be used for drafting and editing as long as authors maintain responsibility for accuracy and originality {cite}`umor_ai_guidance_2024,um_library_ai_2024`. Sensitive or proprietary data must not be uploaded to public AI platforms unless approved through appropriate institutional channels. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for a full list of approved tools and platforms.
 ```
 
 ### What Major Journals Say

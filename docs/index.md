@@ -21,7 +21,7 @@ What sets this handbook apart is its human-centered approach. We put domain know
 
 The handbook follows the research lifecycle, from the earliest stage of framing a research question through data work, analysis, and finally sharing your findings. **You do not need to read it from beginning to end**. Each chapter is designed to stand on its own, so you can jump to whatever is most relevant to you right now.
 
-Part I covers how AI fits into the broader research process, including literature review, writing, grant development, and ethics. Part II focuses on the hands-on side of data analysis, from accessing and preparing data to running models. Part III is a reference section with tools, resources, and templates you can put to use right away.
+Part I covers how AI fits into the broader research process, including literature review, writing, grant development, and ethics. Part II focuses on the hands-on side of data analysis, from accessing and preparing data to running models. Part III goes deeper into building with modern AI, covering language model applications, retrieval-augmented generation, agents, and fine-tuning. Part IV is a reference section with tools, resources, and templates you can put to use right away.
 
 ## The AI-Augmented Research Lifecycle
 
@@ -42,47 +42,54 @@ This handbook is a living document. The field of AI moves quickly, and we update
 :caption: Part I — AI Across the Research Lifecycle
 :hidden:
 
-part1/00_introduction
-part1/00a_how_ai_works
-part1/00b_prompt_engineering
-part1/01_when_to_use_ai
-part1/02_literature_review
-part1/03_research_planning
-part1/04_writing_communication
-part1/05_grant_writing
-part1/06_reviewing_with_ai
-part1/07_ethics_privacy
-part1/08_validation
+part1/ch01_introduction
+part1/ch02_how_ai_works
+part1/ch03_prompt_engineering
+part1/ch04_when_to_use_ai
+part1/ch05_literature_review
+part1/ch06_research_planning
+part1/ch07_writing_communication
+part1/ch08_grant_writing
+part1/ch09_reviewing_with_ai
+part1/ch10_ethics_privacy
+part1/ch11_validation
 ```
 ```{toctree}
 :maxdepth: 2
 :caption: Part II — AI in Data Analysis
 :hidden:
 
-part2/09_data_access
-part2/10_computing_resources
-part2/11_exploratory_analysis
-part2/12_data_preparation
-part2/13_feature_engineering
-part2/14_automl_tabular
-part2/15_automl_timeseries
-part2/16_automl_multimodal
-part2/17_ai_sandbox
-part2/17b_nlp_with_bert
-part2/17c_rag
-part2/17d_ai_agents
-part2/18_validation_interpretation
-part2/19_reproducibility
+part2/ch12_data_access
+part2/ch13_computing_resources
+part2/ch14_exploratory_analysis
+part2/ch15_data_preparation
+part2/ch16_feature_engineering
+part2/ch17_automl_tabular
+part2/ch18_automl_timeseries
+part2/ch19_automl_multimodal
+part2/ch20_pretrained_text_vision
+part2/ch21_validation_interpretation
+part2/ch22_reproducibility
 ```
 ```{toctree}
 :maxdepth: 2
-:caption: Part III — Resources & Getting Started
+:caption: Part III — Building with Modern AI
 :hidden:
 
-part3/20_um_resources
-part3/21_external_resources
-part3/22_templates
-part3/23_glossary
+part3/ch23_nlp_with_bert
+part3/ch24_rag
+part3/ch25_ai_agents
+part3/ch26_llm_eval_finetuning
+```
+```{toctree}
+:maxdepth: 2
+:caption: Part IV — Resources & Reference
+:hidden:
+
+part4/ch27_um_resources
+part4/ch28_external_resources
+part4/ch29_templates
+part4/ch30_glossary
 ```
 
 ---

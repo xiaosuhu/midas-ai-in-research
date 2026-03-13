@@ -148,10 +148,10 @@ A practical introduction to the full range of feature engineering techniques acr
 
 ## Related Chapters
 
-- [Exploratory Data Analysis](11_exploratory_analysis.md) - Understanding your data before transforming it
-- [Data Preparation](12_data_preparation.md) - Cleaning decisions that precede feature engineering
-- [AutoML with AutoGluon](14_automl.md) - Baseline modeling that uses your engineered features
-- [AI Sandbox](15_ai_sandbox.md) - Hands-on tools for text and image feature extraction
+- [Exploratory Data Analysis](ch14_exploratory_analysis.md) - Understanding your data before transforming it
+- [Data Preparation](ch15_data_preparation.md) - Cleaning decisions that precede feature engineering
+- [AutoML with AutoGluon](ch17_automl_tabular.md) - Baseline modeling that uses your engineered features
+- [AI Sandbox](ch20_pretrained_text_vision.md) - Hands-on tools for text and image feature extraction
 
 ---
 

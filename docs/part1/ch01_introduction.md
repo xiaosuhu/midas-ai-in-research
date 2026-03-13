@@ -58,7 +58,7 @@ Trusting AI is not an all-or-nothing judgment. It means understanding what safeg
 ```{admonition} If You're at U-M
 :class: note
 
-The University of Michigan has made substantial investments in AI for research, including campus-hosted tools, secure computing infrastructure, and expert consulting services {cite}`umich_going_all_in_2024,umor_ai_guidance_2024`. Part III of this handbook walks through those resources in detail. See [AI Resources at the University of Michigan](../part3/20_um_resources.md).
+The University of Michigan has made substantial investments in AI for research, including campus-hosted tools, secure computing infrastructure, and expert consulting services {cite}`umich_going_all_in_2024,umor_ai_guidance_2024`. Part IV of this handbook walks through those resources in detail. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md).
 ```
 
 ## What's in the Rest of This Handbook
@@ -69,7 +69,7 @@ This chapter has given you the landscape. The chapters that follow get progressi
 
 **Part II: AI in Data Analysis** is the hands-on section. It starts with how to access and work with data (Chapters 8 and 9), moves through data preparation and computing resources (Chapters 10 and 11), and then gets into analysis workflows: exploratory analysis, AutoML for rapid model testing, case studies, and validation and interpretation (Chapters 12 through 15). These chapters assume basic familiarity with Python but are designed to be accessible even if you are not primarily a data scientist.
 
-**Part III: Resources and Reference** is where you will find the U-M-specific resource guide, curated external tools and readings, templates you can adapt directly, and a glossary of key terms.
+**Part IV: Resources and Reference** is where you will find the U-M-specific resource guide, curated external tools and readings, templates you can adapt directly, and a glossary of key terms.
 
 You do not need to read this handbook from beginning to end. Each chapter is designed to stand on its own, so if you already have a specific task in mind, like working through a data analysis pipeline, preparing a grant with AI assistance, or thinking through the ethics of a particular project, you can jump straight to the relevant chapter and get what you need.
 

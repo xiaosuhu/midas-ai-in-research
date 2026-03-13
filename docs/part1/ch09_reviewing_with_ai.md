@@ -47,7 +47,7 @@ NIH makes this explicit: AI is prohibited in peer review under NOT-OD-23-149 {ci
 ```{admonition} If You're at U-M
 :class: note
 
-The U-M OVPR specifically discourages AI use in internal peer review for the same confidentiality and bias reasons {cite}`UM_OVPR_AI_guidelines_2025`. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for current UM policy guidance.
+The U-M OVPR specifically discourages AI use in internal peer review for the same confidentiality and bias reasons {cite}`UM_OVPR_AI_guidelines_2025`. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for current UM policy guidance.
 ```
 
 But confidentiality is only part of the problem. Even a completely private, local AI system running on your own computer — where nothing ever leaves your machine — raises a second and deeper issue.

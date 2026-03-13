@@ -202,12 +202,12 @@ The same cautions from the tabular chapter apply here, and time series adds a fe
 
 **Forecasts are not causal.** A model that forecasts well does not tell you why the series behaves as it does. If the goal is to evaluate an intervention or understand a mechanism, forecasting tools alone are not sufficient.
 
-**On data privacy.** For any data covered by HIPAA or other governance policies, run in an approved institutional environment or a local installation, and do not upload sensitive data to a public Colab notebook. [Chapter 10](10_computing_resources.md) covers computing options in more detail.
+**On data privacy.** For any data covered by HIPAA or other governance policies, run in an approved institutional environment or a local installation, and do not upload sensitive data to a public Colab notebook. [Chapter 10](ch13_computing_resources.md) covers computing options in more detail.
 
 ```{admonition} If You're at U-M
 :class: note
 
-Approved options include Great Lakes for general sensitive workloads and Armis2 for HIPAA-covered data. See [AI Resources at the University of Michigan](../part3/20_um_resources.md).
+Approved options include Great Lakes for general sensitive workloads and Armis2 for HIPAA-covered data. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md).
 ```
 
 ---

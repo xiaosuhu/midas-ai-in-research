@@ -99,7 +99,7 @@ With those questions in mind, here is an overview of well-maintained sources acr
 ```{admonition} If You're at U-M
 :class: note
 
-U-M maintains institutional policies on data classification and permissible use that apply regardless of external regulatory requirements. The U-M Safe Computing website and the Research Technology Stewardship program are good starting points for questions about data governance and approved platforms. For U-M-specific data repositories — including UM Library Data Services, ICPSR, Michigan Medicine synthetic datasets, and MIDAS curated datasets — see [AI Resources at the University of Michigan](../part3/20_um_resources.md).
+U-M maintains institutional policies on data classification and permissible use that apply regardless of external regulatory requirements. The U-M Safe Computing website and the Research Technology Stewardship program are good starting points for questions about data governance and approved platforms. For U-M-specific data repositories — including UM Library Data Services, ICPSR, Michigan Medicine synthetic datasets, and MIDAS curated datasets — see [AI Resources at the University of Michigan](../part4/ch27_um_resources.md).
 ```
 
 ---

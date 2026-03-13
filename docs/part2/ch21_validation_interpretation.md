@@ -115,9 +115,9 @@ Before you run your next AI-assisted analysis, write down what result you expect
 
 ## Related Chapters
 
-- [Validation Modes and Study Design](../part1/08_validation.md) - General principles on validation from Part 1
-- [AutoML](14_automl.md) - Validating automated modeling pipelines
-- [Reproducibility](17_reproducibility.md) - How to make your analysis reproducible
+- [Validation Modes and Study Design](../part1/ch11_validation.md) - General principles on validation from Part 1
+- [AutoML](ch17_automl_tabular.md) - Validating automated modeling pipelines
+- [Reproducibility](ch22_reproducibility.md) - How to make your analysis reproducible
 
 ```{bibliography}
 :filter: docname in docnames

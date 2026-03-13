@@ -81,7 +81,7 @@ NOT-OD-25-132 does not ban all AI assistance outright. The notice states that AI
 ```{admonition} If You're at U-M
 :class: note
 
-U-M guidance emphasizes using institutionally governed tools rather than public AI platforms when developing proposals, not uploading sensitive or unpublished research material to commercial systems, and documenting AI use when required by funders or journals {cite}`UM_OVPR_AI_guidelines_2025,UM_GenAI_resources`. In practice, this means working within UM-GPT or a similarly governed environment when handling preliminary data, unpublished findings, or confidential collaborator information. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for a full list of approved platforms.
+U-M guidance emphasizes using institutionally governed tools rather than public AI platforms when developing proposals, not uploading sensitive or unpublished research material to commercial systems, and documenting AI use when required by funders or journals {cite}`UM_OVPR_AI_guidelines_2025,UM_GenAI_resources`. In practice, this means working within UM-GPT or a similarly governed environment when handling preliminary data, unpublished findings, or confidential collaborator information. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for a full list of approved platforms.
 ```
 
 ### NIH
@@ -102,7 +102,7 @@ For DOE, DOD, NASA, NOAA, and most other federal agencies, explicit AI-use polic
 
 ## A Note on Transparency
 
-Whatever tools you use, document them. Keep a record of which AI tools you used, at what stages, and for what purposes. Some funders are beginning to require disclosure, and even where disclosure is not yet required, having that documentation protects you if questions arise later. The AI Usage Cards framework provides a structured way to do this {cite}`Wahle_2023_AI_Usage_Cards`. Chapter 8 covers how to maintain a Usage Card throughout your project and how to translate it into a methods disclosure at submission (see [Checking AI Output](08_validation.md)).
+Whatever tools you use, document them. Keep a record of which AI tools you used, at what stages, and for what purposes. Some funders are beginning to require disclosure, and even where disclosure is not yet required, having that documentation protects you if questions arise later. The AI Usage Cards framework provides a structured way to do this {cite}`Wahle_2023_AI_Usage_Cards`. Chapter 8 covers how to maintain a Usage Card throughout your project and how to translate it into a methods disclosure at submission (see [Checking AI Output](ch11_validation.md)).
 
 Transparency also means being honest with yourself about where the intellectual work is coming from. If you find yourself accepting AI-generated aims without being sure why they are structured the way they are, that is a signal to step back and do more of the thinking yourself before moving forward.
 

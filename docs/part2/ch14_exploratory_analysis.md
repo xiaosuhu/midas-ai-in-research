@@ -150,9 +150,9 @@ Kaggle Learn offers free micro-courses with practical examples that align well w
 
 ## Related Chapters
 
-- [Data Access](09_data_access.md) - Getting your data ready
-- [Data Preparation](12_data_preparation.md) - Cleaning data based on what you found
-- [Validation](16_validation_interpretation.md) - Ensuring your findings are robust
+- [Data Access](ch12_data_access.md) - Getting your data ready
+- [Data Preparation](ch15_data_preparation.md) - Cleaning data based on what you found
+- [Validation](ch21_validation_interpretation.md) - Ensuring your findings are robust
 
 ---
 

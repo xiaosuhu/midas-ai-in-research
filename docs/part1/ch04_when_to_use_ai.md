@@ -89,9 +89,9 @@ If yes to all three, that's a great candidate for AI assistance.
 
 ## Related Chapters
 
-- [Introduction](00_introduction.md) - Overview of human-centered AI in research
-- [Ethics & Privacy](06_ethics_privacy.md) - Ethical considerations for AI use
-- [Validation & Reproducibility](07_validation.md) - How to verify AI outputs
+- [Introduction](ch01_introduction.md) - Overview of human-centered AI in research
+- [Ethics & Privacy](ch10_ethics_privacy.md) - Ethical considerations for AI use
+- [Validation & Reproducibility](ch11_validation.md) - How to verify AI outputs
 
 ---
 

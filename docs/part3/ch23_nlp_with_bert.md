@@ -166,7 +166,7 @@ A few things are worth thinking through before you apply these models at scale.
 ```{admonition} If You're at U-M
 :class: note
 
-For text corpora that are too large for Colab or that contain sensitive data, Great Lakes is the right environment. You can request GPU nodes through the Open OnDemand portal. For HIPAA-covered text, Armis2 is the approved option. See [AI Resources at the University of Michigan](../part3/20_um_resources.md) for details.
+For text corpora that are too large for Colab or that contain sensitive data, Great Lakes is the right environment. You can request GPU nodes through the Open OnDemand portal. For HIPAA-covered text, Armis2 is the approved option. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details.
 ```
 
 ---
@@ -187,9 +187,9 @@ Devlin et al. (2019) is the original BERT paper and is accessible even without a
 
 ## Related Chapters
 
-- [Pre-trained Models for Text and Vision](17_ai_sandbox.md) — browser-based exploration of the same model families without writing code
-- [Computing Resources](10_computing_resources.md) — choosing where to run GPU workloads at scale
-- [Validation and Interpretation](18_validation_interpretation.md) — checking model outputs before using them in research
+- [Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md) — browser-based exploration of the same model families without writing code
+- [Computing Resources](../part2/ch13_computing_resources.md) — choosing where to run GPU workloads at scale
+- [Validation and Interpretation](../part2/ch21_validation_interpretation.md) — checking model outputs before using them in research
 
 ```{bibliography}
 :filter: docname in docnames

@@ -189,9 +189,9 @@ Kaggle Learn offers micro-courses on data cleaning with practical, worked exampl
 
 ## Related Chapters
 
-- [Exploratory Data Analysis](11_exploratory_analysis.md) - Understanding your data before cleaning
-- [Feature Engineering](13_feature_engineering.md) - Creating new variables from cleaned data
-- [Validation](16_validation_interpretation.md) - Ensuring your results are robust
+- [Exploratory Data Analysis](ch14_exploratory_analysis.md) - Understanding your data before cleaning
+- [Feature Engineering](ch16_feature_engineering.md) - Creating new variables from cleaned data
+- [Validation](ch21_validation_interpretation.md) - Ensuring your results are robust
 
 ---
 

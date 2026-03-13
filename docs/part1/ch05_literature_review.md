@@ -158,7 +158,7 @@ There is a different kind of challenge that comes after the initial search. You 
 
 :::{admonition} University of Michigan Access
 :class: tip
-NotebookLM is available to all UM researchers through the university's Google Workspace subscription. No separate sign-up is needed — just log in with your @umich.edu account at [notebooklm.google.com](https://notebooklm.google.com). For a full list of UM-supported AI tools, see the [UM AI Resources](../part3/20_um_resources.md) chapter.
+NotebookLM is available to all UM researchers through the university's Google Workspace subscription. No separate sign-up is needed — just log in with your @umich.edu account at [notebooklm.google.com](https://notebooklm.google.com). For a full list of UM-supported AI tools, see the [UM AI Resources](../part4/ch27_um_resources.md) chapter.
 :::
 
 **What NotebookLM does well**
@@ -213,9 +213,9 @@ That last step is not just a reflection exercise. It is the beginning of the nex
 
 ## Related Chapters
 
-- [When to Use AI in Research](01_when_to_use_ai.md) — deciding where AI fits in your workflow
-- [Research Planning with AI](03_research_planning.md) — turning what you found into a research question
-- [Validation and Reproducibility](08_validation.md) — verifying AI outputs in your work
+- [When to Use AI in Research](ch04_when_to_use_ai.md) — deciding where AI fits in your workflow
+- [Research Planning with AI](ch06_research_planning.md) — turning what you found into a research question
+- [Validation and Reproducibility](ch11_validation.md) — verifying AI outputs in your work
 
 ---
 
