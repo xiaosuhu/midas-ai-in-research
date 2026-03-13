@@ -44,6 +44,7 @@ This handbook is a living document. The field of AI moves quickly, and we update
 
 part1/00_introduction
 part1/00a_how_ai_works
+part1/00b_prompt_engineering
 part1/01_when_to_use_ai
 part1/02_literature_review
 part1/03_research_planning
