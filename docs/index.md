@@ -67,6 +67,7 @@ part2/14_automl_tabular
 part2/15_automl_timeseries
 part2/16_automl_multimodal
 part2/17_ai_sandbox
+part2/17b_nlp_with_bert
 part2/18_validation_interpretation
 part2/19_reproducibility
 ```
