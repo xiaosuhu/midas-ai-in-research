@@ -10,10 +10,10 @@ if os.environ.get('READTHEDOCS') == 'True':
     
 # -- Project info -----------------------------------------------------
 project = 'MIDAS AI in Research'
-copyright = '2025, Michigan Institute for Data and AI in Society'
+copyright = '2026, Michigan Institute for Data and AI in Society'
 author = 'MIDAS Research Team'
-version = '0.1'
-release = '0.1'
+version = '1.0.0'
+release = '1.0.0'
 
 # -- General config ---------------------------------------------------
 extensions = [

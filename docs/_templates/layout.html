@@ -47,31 +47,40 @@
 
 {% block body %}
   {{ super() }}
+{% endblock %}
 
-  <div class="feedback-bar">
-    <strong>Was this chapter helpful?</strong><br>
-    We would love to hear what worked, what was confusing, or what you wish we had covered.
-    <br>
-    <a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLScs6AgwkxBUSF3K1QJQys1Apm6E_ypJNTvxwHSDtJHGY0Nktw/viewform" target="_blank">Share feedback via Google Form</a>
-  </div>
+{% block scripts %}
+  {{ super() }}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var content = document.querySelector('.rst-content');
+      if (!content) return;
 
-  <div class="giscus-section">
-    <h3>Comments and discussion</h3>
-    <script src="https://giscus.app/client.js"
-            data-repo="xiaosuhu/midas-ai-in-research"
-            data-repo-id="R_kgDOQPKJnA"
-            data-category="General"
-            data-category-id="DIC_kwDOQPKJnM4C4iIv"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="bottom"
-            data-theme="preferred_color_scheme"
-            data-lang="en"
-            crossorigin="anonymous"
-            async>
-    </script>
-  </div>
+      var feedbackHTML = '<div class="feedback-bar" style="margin-top:2rem;padding:1rem 1.25rem;background:#f8f9fa;border:1px solid #e1e4e8;border-radius:6px;font-size:0.9rem;color:#24292f;">'
+        + '<strong>Was this chapter helpful?</strong><br>'
+        + 'We would love to hear what worked, what was confusing, or what you wish we had covered.<br>'
+        + '<a href="https://docs.google.com/forms/d/e/1FAIpQLScs6AgwkxBUSF3K1QJQys1Apm6E_ypJNTvxwHSDtJHGY0Nktw/viewform" target="_blank" '
+        + 'style="display:inline-block;margin-top:0.5rem;padding:6px 14px;background:#1D9E75;color:#fff;border-radius:4px;text-decoration:none;font-weight:500;">'
+        + 'Share feedback via Google Form</a></div>';
 
+      var giscusHTML = '<div style="margin-top:2.5rem;">'
+        + '<p style="font-size:1rem;color:#57606a;font-weight:500;margin-bottom:1rem;">Comments and discussion</p>'
+        + '<script src="https://giscus.app/client.js"'
+        + ' data-repo="xiaosuhu/midas-ai-in-research"'
+        + ' data-repo-id="R_kgDOQPKJnA"'
+        + ' data-category="General"'
+        + ' data-category-id="DIC_kwDOQPKJnM4C4iIv"'
+        + ' data-mapping="pathname"'
+        + ' data-strict="0"'
+        + ' data-reactions-enabled="1"'
+        + ' data-emit-metadata="0"'
+        + ' data-input-position="bottom"'
+        + ' data-theme="preferred_color_scheme"'
+        + ' data-lang="en"'
+        + ' crossorigin="anonymous"'
+        + ' async><\/script></div>';
+
+      content.insertAdjacentHTML('beforeend', feedbackHTML + giscusHTML);
+    });
+  </script>
 {% endblock %}
