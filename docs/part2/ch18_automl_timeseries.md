@@ -202,7 +202,7 @@ The same cautions from the tabular chapter apply here, and time series adds a fe
 
 **Forecasts are not causal.** A model that forecasts well does not tell you why the series behaves as it does. If the goal is to evaluate an intervention or understand a mechanism, forecasting tools alone are not sufficient.
 
-**On data privacy.** For any data covered by HIPAA or other governance policies, run in an approved institutional environment or a local installation, and do not upload sensitive data to a public Colab notebook. [Chapter 10](ch13_computing_resources.md) covers computing options in more detail.
+**On data privacy.** For any data covered by HIPAA or other governance policies, run in an approved institutional environment or a local installation, and do not upload sensitive data to a public Colab notebook. [Chapter 13](ch13_computing_resources.md) covers computing options in more detail.
 
 ```{admonition} If You're at U-M
 :class: note

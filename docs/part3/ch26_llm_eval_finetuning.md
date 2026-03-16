@@ -32,7 +32,7 @@ Once you have a concrete picture of where the model is failing, you are in a pos
 
 ## Recognizing When the Out-of-the-Box Model Is Not Enough
 
-Sometimes better prompting is the right first step. If the model is applying the wrong categories because your prompt is ambiguous, adding a few labeled examples through few-shot prompting often helps substantially. Chapter 00b in this handbook covers prompt engineering in detail. If you have not tried systematic prompt improvement yet, it is worth doing before considering fine-tuning. The effort is much lower, and it often gets you most of the way there.
+Sometimes better prompting is the right first step. If the model is applying the wrong categories because your prompt is ambiguous, adding a few labeled examples through few-shot prompting often helps substantially. Chapter 3 in this handbook covers prompt engineering in detail. If you have not tried systematic prompt improvement yet, it is worth doing before considering fine-tuning. The effort is much lower, and it often gets you most of the way there.
 
 But prompting has limits, and there are situations where no amount of prompt crafting will close the gap. The most common ones in research contexts follow a few recognizable patterns.
 
@@ -128,7 +128,7 @@ A few things are worth keeping in mind before you fine-tune a model for research
 
 **The base model matters.** If your domain has a specialized pretrained model available, it is usually better to start from that than from a general-purpose one. Fine-tuning SciBERT with LoRA on scientific abstracts will typically outperform fine-tuning vanilla BERT with LoRA on the same data, because the starting point already has better representations for the domain {cite}`beltagy2019scibert`.
 
-**Adapters are easy to version.** Because LoRA adapters are small, you can store a fine-tuned adapter alongside your code in a repository, which makes reproducibility much more tractable than managing full model checkpoints. Chapter 19 covers reproducibility practices in more detail.
+**Adapters are easy to version.** Because LoRA adapters are small, you can store a fine-tuned adapter alongside your code in a repository, which makes reproducibility much more tractable than managing full model checkpoints. Chapter 22 covers reproducibility practices in more detail.
 
 ---
 

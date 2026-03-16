@@ -14,7 +14,7 @@
 
 ## Where You Are in the Pipeline
 
-You spent Chapter 11 learning what your data actually contains, column by column. Chapter 12 walked through the decisions that turned raw, messy data into something clean and trustworthy. Now the question is: what shape should that cleaned data be in before a model sees it?
+You spent Chapter 14 learning what your data actually contains, column by column. Chapter 15 walked through the decisions that turned raw, messy data into something clean and trustworthy. Now the question is: what shape should that cleaned data be in before a model sees it?
 
 That is what feature engineering is about. At its core, it is the process of transforming your cleaned variables into representations that are more useful for learning. Sometimes that means applying a mathematical transformation to a skewed distribution. Sometimes it means combining two columns into a single, more informative one. Sometimes it means converting raw text into a structured numeric representation. In each case, the idea is the same: you are helping the model see what you already know.
 
@@ -24,7 +24,7 @@ This chapter covers the most common patterns across four data types: tabular, te
 
 ## Does This Still Matter If You Are Using AutoML?
 
-This is a fair question to ask before going further. Chapter 14 introduces AutoGluon, which handles quite a lot of preprocessing automatically. It encodes categorical variables, manages missing values, and in some cases generates additional features without any input from you. So why spend time on this chapter at all?
+This is a fair question to ask before going further. Chapter 17 introduces AutoGluon, which handles quite a lot of preprocessing automatically. It encodes categorical variables, manages missing values, and in some cases generates additional features without any input from you. So why spend time on this chapter at all?
 
 The short answer is that AutoML works with what you give it. It cannot know that a raw measurement in your dataset should be log-transformed because the underlying biological process is multiplicative, not additive. It does not know that two date columns in your clinical dataset together capture time since last hospitalization, which turns out to be more meaningful than either column alone. It does not know that "rural" and "suburban" should be collapsed into a single category for your research question, even though they appear distinct in the raw data.
 
@@ -78,7 +78,7 @@ The conceptual spectrum runs from simple to rich. On the simple end is bag-of-wo
 
 On the richer end are embeddings. These are dense vector representations, typically hundreds of numbers per word or document, that capture semantic relationships. Words with similar meanings end up with similar vectors. Documents on similar topics end up in similar regions of the vector space. These representations come from pretrained language models, and in most practical research applications you are using them rather than training them from scratch.
 
-The practical implication is that for most text feature engineering tasks today, you are choosing a pretrained model and extracting its representations, not engineering raw features by hand. Chapter 15 covers this in much more detail, including how to use the AI Sandbox tools for text-based modeling tasks. What is worth understanding here is the conceptual distinction: simple count-based features are interpretable and fast; embedding-based features are richer but require more infrastructure and produce representations that are harder to inspect directly.
+The practical implication is that for most text feature engineering tasks today, you are choosing a pretrained model and extracting its representations, not engineering raw features by hand. Chapter 20 covers this in much more detail, including how to use the AI Sandbox tools for text-based modeling tasks. What is worth understanding here is the conceptual distinction: simple count-based features are interpretable and fast; embedding-based features are richer but require more infrastructure and produce representations that are harder to inspect directly.
 
 ---
 
@@ -102,7 +102,7 @@ Raw images are high-dimensional objects: a 224x224 pixel image has nearly 50,000
 
 The standard approach today is transfer learning: take a convolutional neural network that has already been trained on a large image dataset, feed your images through it, and use the learned representations as your features. These representations are much more compact and semantically meaningful than raw pixel values. The model has already learned to detect useful visual patterns; you are borrowing that knowledge for your specific task.
 
-As with text embeddings, the practical question in most research contexts is which pretrained model to use and how to extract representations from it. Chapter 15 covers this in the context of the AI Sandbox, including worked examples for image-based tasks. What belongs here is the principle: resist the impulse to start with raw pixels, and resist the impulse to train a vision model from scratch unless you have a very large labeled dataset and a compelling reason.
+As with text embeddings, the practical question in most research contexts is which pretrained model to use and how to extract representations from it. Chapter 20 covers this in the context of the AI Sandbox, including worked examples for image-based tasks. What belongs here is the principle: resist the impulse to start with raw pixels, and resist the impulse to train a vision model from scratch unless you have a very large labeled dataset and a compelling reason.
 
 ---
 
@@ -124,7 +124,7 @@ A practical workflow: start with clean data and let AutoGluon run first as a bas
 
 - Feature engineering is about encoding domain knowledge into the structure of your data, which is something AutoML cannot do for you
 - For tabular data, focus on correcting skewed distributions, choosing the right encoding for categorical variables, and building derived features that carry conceptual meaning
-- For text and images, the most practical path in most research settings is using pretrained representations rather than building features from scratch; Chapter 15 covers the hands-on details
+- For text and images, the most practical path in most research settings is using pretrained representations rather than building features from scratch; Chapter 20 covers the hands-on details
 - For time series, lag features and rolling aggregates are the core tools; getting the leakage boundary right is more important than getting the window size perfect
 - Start with a baseline AutoGluon run, then use the feature importance output to decide where manual engineering is worth the effort
 

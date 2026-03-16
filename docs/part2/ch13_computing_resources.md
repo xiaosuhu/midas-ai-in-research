@@ -107,7 +107,7 @@ Once you have installed your packages, saving a record of them takes one additio
 pip freeze > requirements.txt
 ```
 
-That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. [Chapter 17](ch22_reproducibility.md) covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
+That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. [Chapter 22](ch22_reproducibility.md) covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
 
 For university HPC systems generally, your institution's research computing office will have documentation on loading modules, creating environments, and submitting batch jobs. Using their official guides rather than reproducing instructions here ensures you always have the most current information.
 

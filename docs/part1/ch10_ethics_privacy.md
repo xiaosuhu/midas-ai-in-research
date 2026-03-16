@@ -94,7 +94,7 @@ Several of the preceding chapters have mentioned documenting your AI use. This c
 
 Good documentation of AI use serves three purposes. It makes your work reproducible — someone following your methods section should be able to understand what role AI played, with which tools, and at which stages. It protects you — if questions arise later about the provenance of your work, documentation is your evidence that you used AI appropriately. And it contributes to an emerging shared understanding of norms — as a field, we are still working out what responsible AI use in research looks like, and transparent documentation is how those norms get established.
 
-At minimum, documentation should include which tools you used, for what purpose, at what stage of the research process, and what human review or verification you applied to AI outputs. Part IV of this handbook includes ready-to-use templates you can adapt for your own work, including an AI usage statement and a preprocessing log. Chapter 8 explains how to use the Card as a working record throughout a project, and how it connects to the methods disclosure you will eventually write (see [Checking AI Output](ch11_validation.md)).
+At minimum, documentation should include which tools you used, for what purpose, at what stage of the research process, and what human review or verification you applied to AI outputs. Part IV of this handbook includes ready-to-use templates you can adapt for your own work, including an AI usage statement and a preprocessing log. Chapter 11 explains how to use the Card as a working record throughout a project, and how it connects to the methods disclosure you will eventually write (see [Checking AI Output](ch11_validation.md)).
 
 ---
 

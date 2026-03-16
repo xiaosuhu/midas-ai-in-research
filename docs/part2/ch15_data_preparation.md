@@ -10,7 +10,7 @@
 
 ## The Real Work Begins
 
-In Chapter 11, you built a mental model of your dataset. You described every column in plain language, identified your target variable, and flagged the issues that need fixing before you can trust anything downstream. That checklist is your starting point here.
+In Chapter 14, you built a mental model of your dataset. You described every column in plain language, identified your target variable, and flagged the issues that need fixing before you can trust anything downstream. That checklist is your starting point here.
 
 Now comes the preparation phase. But the key insight is this: the hardest part of data prep is not the coding. It is deciding what to do about each issue and why. A survey dataset might have 15% of respondents leaving a key income question blank. Do you drop those rows, impute the median, or add a "not reported" category? The answer depends on your research design, not on what code is most convenient to write. That is where AI becomes genuinely useful as a thinking partner, not just a code generator.
 
@@ -105,7 +105,7 @@ Imagine you are analyzing a dataset of research grants and need to calculate a "
 
 ### Step 1: Start with Your First-Pass EDA Findings
 
-Open the list you made in Chapter 11. What issues need fixing? In roughly what order? Some fixes are prerequisites for others: you probably need to standardize date formats before you can calculate durations, for example.
+Open the list you made in Chapter 14. What issues need fixing? In roughly what order? Some fixes are prerequisites for others: you probably need to standardize date formats before you can calculate durations, for example.
 
 ### Step 2: For Each Issue, Choose Your Approach
 
@@ -167,7 +167,7 @@ Always test on a small subset before running code on your full dataset. This is 
 
 ## Key Takeaways
 
-- 🎯 Start with your EDA findings from Chapter 11; do not clean without a clear issue list
+- 🎯 Start with your EDA findings from Chapter 14; do not clean without a clear issue list
 - 🎯 Use AI as a thinking partner (Way 1) when the decision itself requires domain judgment
 - 🎯 Hand off or ask for code (Way 2) for simple mechanical tasks -- and review the output either way
 - 🎯 Collaborate iteratively (Way 3) when the logic is complex or needs testing to get right

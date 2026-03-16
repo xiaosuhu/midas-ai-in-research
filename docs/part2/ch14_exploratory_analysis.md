@@ -87,7 +87,7 @@ Once you have cleaned and prepared your data, you come back for a deeper look. T
 
 In the first pass, you are asking "can I trust this data?" In the second pass, you are asking "what does this data tell me?" The separation matters because trying to do both at once usually means doing neither well.
 
-It is also worth noting that EDA is not a one-time event. Plan to revisit your data after each major transformation. If you impute a large block of missing values or re-encode a categorical variable, take another look at the distributions before moving forward. Chapter 12 covers the cleaning and preparation steps, and Chapter 16 addresses validation, but each of those stages benefits from looping back to visualization before you commit to your final dataset.
+It is also worth noting that EDA is not a one-time event. Plan to revisit your data after each major transformation. If you impute a large block of missing values or re-encode a categorical variable, take another look at the distributions before moving forward. Chapter 15 covers the cleaning and preparation steps, and Chapter 21 addresses validation, but each of those stages benefits from looping back to visualization before you commit to your final dataset.
 
 ## Common AI-Assisted EDA Tasks
 
@@ -142,7 +142,7 @@ Rushing through initial EDA means you will miss important context. You might cle
 3. Spend 10 minutes reviewing the outputs
 4. Create a list of 3 to 5 data quality issues that need fixing
 5. For each issue, write a one-line plan (what you will do about it)
-6. Move to Chapter 12 with your findings in hand
+6. Move to Chapter 15 with your findings in hand
 
 ## Resources for Hands-On Learning
 
