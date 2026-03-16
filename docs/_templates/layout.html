@@ -10,4 +10,68 @@
     gtag('js', new Date());
     gtag('config', 'G-7XPKKEN3C0');
   </script>
+  <style>
+    .feedback-bar {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      background: #f8f9fa;
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #24292f;
+    }
+    .feedback-bar a.feedback-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 6px 14px;
+      background: #1D9E75;
+      color: #fff !important;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .feedback-bar a.feedback-link:hover {
+      background: #178a65;
+    }
+    .giscus-section {
+      margin-top: 2.5rem;
+    }
+    .giscus-section h3 {
+      font-size: 1rem;
+      color: #57606a;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+  </style>
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+
+  <div class="feedback-bar">
+    <strong>Was this chapter helpful?</strong><br>
+    We would love to hear what worked, what was confusing, or what you wish we had covered.
+    <br>
+    <a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLScs6AgwkxBUSF3K1QJQys1Apm6E_ypJNTvxwHSDtJHGY0Nktw/viewform" target="_blank">Share feedback via Google Form</a>
+  </div>
+
+  <div class="giscus-section">
+    <h3>Comments and discussion</h3>
+    <script src="https://giscus.app/client.js"
+            data-repo="xiaosuhu/midas-ai-in-research"
+            data-repo-id="R_kgDOQPKJnA"
+            data-category="General"
+            data-category-id="DIC_kwDOQPKJnM4C4iIv"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
 {% endblock %}
