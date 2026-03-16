@@ -10,39 +10,6 @@
     gtag('js', new Date());
     gtag('config', 'G-7XPKKEN3C0');
   </script>
-  <style>
-    .feedback-bar {
-      margin-top: 2rem;
-      padding: 1rem 1.25rem;
-      background: #f8f9fa;
-      border: 1px solid #e1e4e8;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      color: #24292f;
-    }
-    .feedback-bar a.feedback-link {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 6px 14px;
-      background: #1D9E75;
-      color: #fff !important;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .feedback-bar a.feedback-link:hover {
-      background: #178a65;
-    }
-    .giscus-section {
-      margin-top: 2.5rem;
-    }
-    .giscus-section h3 {
-      font-size: 1rem;
-      color: #57606a;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-  </style>
 {% endblock %}
 
 {% block body %}
@@ -56,20 +23,15 @@
       var content = document.querySelector('.rst-content');
       if (!content) return;
 
-      var feedbackHTML = '<div class="feedback-bar" style="margin-top:2rem;padding:1rem 1.25rem;background:#f8f9fa;border:1px solid #e1e4e8;border-radius:6px;font-size:0.9rem;color:#24292f;">'
-        + '<strong>Was this chapter helpful?</strong><br>'
-        + 'We would love to hear what worked, what was confusing, or what you wish we had covered.<br>'
+      var feedbackHTML = '<div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid #e1e4e8;font-size:0.9rem;color:#57606a;">'
         + '<a href="https://docs.google.com/forms/d/e/1FAIpQLScs6AgwkxBUSF3K1QJQys1Apm6E_ypJNTvxwHSDtJHGY0Nktw/viewform" target="_blank" '
-        + 'style="display:inline-block;margin-top:0.5rem;padding:6px 14px;background:#1D9E75;color:#fff;border-radius:4px;text-decoration:none;font-weight:500;">'
-        + 'Share feedback via Google Form</a></div>';
+        + 'style="display:inline-block;padding:6px 14px;background:#1D9E75;color:#fff;border-radius:4px;text-decoration:none;font-weight:500;font-size:0.85rem;">'
+        + 'Share private feedback</a>'
+        + '&nbsp;&nbsp;<span style="color:#57606a;">or leave a public comment below to discuss with other readers.</span>'
+        + '</div>';
 
       var giscusWrapper = document.createElement('div');
-      giscusWrapper.style.marginTop = '2.5rem';
-
-      var giscusLabel = document.createElement('p');
-      giscusLabel.textContent = 'Comments and discussion';
-      giscusLabel.style.cssText = 'font-size:1rem;color:#57606a;font-weight:500;margin-bottom:1rem;';
-      giscusWrapper.appendChild(giscusLabel);
+      giscusWrapper.style.marginTop = '1.5rem';
 
       var giscusScript = document.createElement('script');
       giscusScript.src = 'https://giscus.app/client.js';
