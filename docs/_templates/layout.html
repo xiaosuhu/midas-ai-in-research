@@ -63,24 +63,33 @@
         + 'style="display:inline-block;margin-top:0.5rem;padding:6px 14px;background:#1D9E75;color:#fff;border-radius:4px;text-decoration:none;font-weight:500;">'
         + 'Share feedback via Google Form</a></div>';
 
-      var giscusHTML = '<div style="margin-top:2.5rem;">'
-        + '<p style="font-size:1rem;color:#57606a;font-weight:500;margin-bottom:1rem;">Comments and discussion</p>'
-        + '<script src="https://giscus.app/client.js"'
-        + ' data-repo="xiaosuhu/midas-ai-in-research"'
-        + ' data-repo-id="R_kgDOQPKJnA"'
-        + ' data-category="General"'
-        + ' data-category-id="DIC_kwDOQPKJnM4C4iIv"'
-        + ' data-mapping="pathname"'
-        + ' data-strict="0"'
-        + ' data-reactions-enabled="1"'
-        + ' data-emit-metadata="0"'
-        + ' data-input-position="bottom"'
-        + ' data-theme="preferred_color_scheme"'
-        + ' data-lang="en"'
-        + ' crossorigin="anonymous"'
-        + ' async><\/script></div>';
+      var giscusWrapper = document.createElement('div');
+      giscusWrapper.style.marginTop = '2.5rem';
 
-      content.insertAdjacentHTML('beforeend', feedbackHTML + giscusHTML);
+      var giscusLabel = document.createElement('p');
+      giscusLabel.textContent = 'Comments and discussion';
+      giscusLabel.style.cssText = 'font-size:1rem;color:#57606a;font-weight:500;margin-bottom:1rem;';
+      giscusWrapper.appendChild(giscusLabel);
+
+      var giscusScript = document.createElement('script');
+      giscusScript.src = 'https://giscus.app/client.js';
+      giscusScript.setAttribute('data-repo', 'xiaosuhu/midas-ai-in-research');
+      giscusScript.setAttribute('data-repo-id', 'R_kgDOQPKJnA');
+      giscusScript.setAttribute('data-category', 'General');
+      giscusScript.setAttribute('data-category-id', 'DIC_kwDOQPKJnM4C4iIv');
+      giscusScript.setAttribute('data-mapping', 'pathname');
+      giscusScript.setAttribute('data-strict', '0');
+      giscusScript.setAttribute('data-reactions-enabled', '1');
+      giscusScript.setAttribute('data-emit-metadata', '0');
+      giscusScript.setAttribute('data-input-position', 'bottom');
+      giscusScript.setAttribute('data-theme', 'preferred_color_scheme');
+      giscusScript.setAttribute('data-lang', 'en');
+      giscusScript.setAttribute('crossorigin', 'anonymous');
+      giscusScript.async = true;
+      giscusWrapper.appendChild(giscusScript);
+
+      content.insertAdjacentHTML('beforeend', feedbackHTML);
+      content.appendChild(giscusWrapper);
     });
   </script>
 {% endblock %}
