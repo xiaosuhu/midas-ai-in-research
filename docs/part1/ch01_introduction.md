@@ -1,6 +1,6 @@
 # Overview: Artificial Intelligence in Research
 
-If you've been paying attention to conversations in your department lately, you've probably noticed that AI keeps coming up. It shows up in seminars, in grant discussions, in conversations about what your students are submitting. This chapter is meant to give you a grounded starting point: what AI actually is, why researchers across disciplines are adopting it, what it genuinely does well and what it doesn't, and how to think about using it responsibly. It also gives you a map of the rest of this handbook so you can navigate straight to whatever is most useful to you right now.
+If you've been paying attention to conversations in your department lately, you've probably noticed that AI keeps coming up. Whether you are a faculty member, a postdoc, or a graduate student, you are likely hearing about it in seminars, in lab meetings, and in discussions about how research itself is changing. This chapter is meant to give you a grounded starting point: what AI actually is, why researchers across disciplines are adopting it, what it genuinely does well and what it doesn't, and how to think about using it responsibly. It also gives you a map of the rest of this handbook so you can navigate straight to whatever is most useful to you right now.
 
 ## What Is "AI," Anyway?
 
@@ -20,7 +20,7 @@ What made all of this possible at scale was an architectural breakthrough from 2
 
 ## Why Researchers Are Turning to AI
 
-The short answer is that research has a scale problem. Scientific literature is growing faster than any individual researcher can track. PubMed alone adds more than 100,000 new biomedical articles every month {cite}`NLM_PubMed_Stats`. Datasets are larger, more complex, and more heterogeneous than ever. The pressure to move quickly has not let up. AI doesn't solve all of that, but it does genuinely change the equation in several ways.
+The short answer is that research has a scale problem. Scientific literature is growing faster than any individual researcher can track, datasets are larger and more complex than ever, and the pressure to move quickly has not let up. AI doesn't solve all of that, but it does genuinely change the equation in several ways.
 
 The most obvious change is speed. AI can scan, summarize, and surface patterns across bodies of text or data that would take a human researcher weeks to process manually. Research has found that papers using AI-assisted methods tend to receive higher citation impact, and the share of AI-driven work has grown sharply since around 2015 {cite}`hao2025artificialintelligencetoolsexpand`. But the more interesting shift is qualitative. AI can reveal patterns in complex, multimodal datasets (genomics, medical imaging, social media streams, environmental sensors) that classical statistical approaches might not detect. It opens up research questions that were previously intractable not because they weren't worth asking, but because the data was too complex to work with.
 
