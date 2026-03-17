@@ -74,6 +74,8 @@ When you are using an API or a development environment directly, you have contro
 
 For most researchers using consumer AI tools, the practical implication is narrower but still worth knowing: the tool's behavior is partly shaped by instructions you did not write. If a model seems to be avoiding a topic or responding in a constrained way, that is usually the system prompt at work rather than a capability limitation of the underlying model.
 
+For researchers who move beyond single-turn interactions into more automated, multi-step workflows, the question of what the model sees at any given moment becomes considerably more complex. This is sometimes called context engineering: designing not just a single prompt but the full set of inputs the model receives across an entire workflow, including retrieved documents, conversation history, tool outputs, and injected memory. Beyond that, building reliable AI agents in production environments involves what practitioners now call harness engineering: structuring the constraints, feedback loops, and environment around the model so that it behaves consistently over many steps and interactions. These ideas are covered in depth in [Chapter 25: AI Agents and Multi-Step Research Workflows](ch25_ai_agents.md).
+
 ## Iterating Toward a Better Prompt
 
 One of the more useful things to understand about prompting is that you rarely get the best version on the first try, and that is completely normal. Experienced practitioners treat prompt writing as an iterative process, not a one-shot task.
