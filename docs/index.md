@@ -29,7 +29,7 @@ AI can play a useful role at many points in a research project, but knowing wher
 
 ```{image} _static/research_lifecycle.png
 :alt: The AI-Augmented Research Lifecycle showing nine phases from Research Design through Knowledge Sharing
-:width: 70%
+:width: 50%
 :align: center
 ```
 
