@@ -10,15 +10,15 @@ Research data rarely comes in just one form. A psychology study might collect bo
 
 The conventional approach is to handle each type separately: build one model on the numeric features, another on the text, maybe extract some hand-crafted features from the images, and then figure out how to combine the outputs. That works, but it is tedious and it throws away the relationships between modalities that might carry genuine predictive signal.
 
-AutoGluon's `MultiModalPredictor` takes a different approach. You give it a DataFrame where some columns are numeric, some are text, and some contain image file paths, and it handles the rest. The same call works whether you are running a text-only task, an image-only task, or a fully mixed dataset. That is the organizing idea of this chapter: one tool, three uses {cite}`autogluon2024`.
+AutoGluon's `MultiModalPredictor` takes a different approach. You give it a DataFrame where some columns are numeric, some are text, and some contain image file paths, and it handles the rest. The same call works whether you are running a text-only task, an image-only task, or a fully mixed dataset. That is the organizing idea of this chapter: one tool, three uses.
 
 ---
 
 ## What MultiModalPredictor Handles
 
-`MultiModalPredictor` works with three types of columns {cite}`autogluon2024`:
+`MultiModalPredictor` works with three types of columns:
 
-**Text columns** contain natural language strings. AutoGluon processes these through a pretrained language model, typically from the BERT family, which converts each string into a dense representation that captures semantic meaning {cite}`devlin2019bert`. You do not need to tokenize, vectorize, or otherwise preprocess your text. AutoGluon fine-tunes the language model on your prediction task as part of training.
+**Text columns** contain natural language strings. AutoGluon processes these through a pretrained language model, typically from the BERT family, which converts each string into a dense representation that captures semantic meaning. You do not need to tokenize, vectorize, or otherwise preprocess your text. AutoGluon fine-tunes the language model on your prediction task as part of training.
 
 **Image columns** contain file paths pointing to images on disk. AutoGluon processes these through a pretrained vision model, extracting features before fine-tuning on your labels. The images themselves stay on disk during training; AutoGluon reads and preprocesses them in batches.
 

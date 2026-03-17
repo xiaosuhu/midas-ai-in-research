@@ -88,7 +88,7 @@ Time series data shows up across many research domains: longitudinal cohort stud
 
 The most important feature engineering patterns for time series are lag features and rolling aggregates.
 
-A lag feature is simply the value of a variable at a previous time step. If you are trying to predict a patient outcome at time T, the patient's measurement at time T-1, T-2, and T-3 might all be informative. Creating these as explicit columns gives the model access to recent history. How many lags to include depends on your domain knowledge about how far back the relevant signal extends {cite}`hyndman2021forecasting`.
+A lag feature is simply the value of a variable at a previous time step. If you are trying to predict a patient outcome at time T, the patient's measurement at time T-1, T-2, and T-3 might all be informative. Creating these as explicit columns gives the model access to recent history. How many lags to include depends on your domain knowledge about how far back the relevant signal extends.
 
 Rolling aggregates summarize a window of recent values. A 7-day rolling mean of daily temperature. A 30-day rolling maximum of hospital admissions. A 4-week rolling standard deviation of a sensor reading. These features smooth over noise and capture trends at different timescales. They are often more informative than raw lagged values, especially when the underlying signal is noisy.
 
@@ -142,7 +142,7 @@ For a dataset you are currently working with or planning to use:
 
 ## Resources for Further Reading
 
-A practical introduction to the full range of feature engineering techniques across data types, including more advanced methods not covered here, is available in Zheng and Casari's work on feature engineering for machine learning {cite}`zheng2018feature`. For time series feature engineering in particular, Hyndman and Athanasopoulos offer a thorough and freely available treatment of lag structures, rolling features, and decomposition methods {cite}`hyndman2021forecasting`.
+A practical introduction to the full range of feature engineering techniques across data types, including more advanced methods not covered here, is available in Zheng and Casari's work on feature engineering for machine learning {cite}`zheng2018feature`. For time series feature engineering in particular, Hyndman and Athanasopoulos offer a thorough and freely available treatment of lag structures, rolling features, and decomposition methods.
 
 ---
 

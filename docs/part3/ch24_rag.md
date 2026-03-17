@@ -42,7 +42,7 @@ This is what distinguishes RAG from asking a general-purpose chatbot the same qu
 
 Before building anything yourself, it is worth knowing what already exists. For documents that are not sensitive, two tools are worth trying right away.
 
-**NotebookLM** is a Google product that lets you upload PDFs, Google Docs, websites, and other sources, then ask questions across all of them in a single interface {cite}`NotebookLM2024`. It handles the embedding and retrieval automatically, cites its sources in the responses, and lets you generate structured summaries and briefing documents. The interface is genuinely easy to use and works well for literature reviews, project planning documents, and other collections of publicly available or non-sensitive material. The constraint is that your documents are uploaded to Google's servers, which rules it out for anything IRB-restricted or confidential.
+**NotebookLM** is a Google product that lets you upload PDFs, Google Docs, websites, and other sources, then ask questions across all of them in a single interface. It handles the embedding and retrieval automatically, cites its sources in the responses, and lets you generate structured summaries and briefing documents. The interface is genuinely easy to use and works well for literature reviews, project planning documents, and other collections of publicly available or non-sensitive material. The constraint is that your documents are uploaded to Google's servers, which rules it out for anything IRB-restricted or confidential.
 
 **Maizey** is the University of Michigan's institutional option, available to students, staff, and faculty through ITS {cite}`maizey2024`. It works similarly to NotebookLM: you build a knowledge base from uploaded documents and query it in natural language, but it operates within U-M's approved infrastructure, which makes it appropriate for a wider range of research materials. If your documents fall within what your data governance framework allows on U-M systems, Maizey is worth exploring before you write a single line of code.
 
@@ -86,7 +86,7 @@ She is not using RAG to generate summaries of her interviews. She is using the r
 
 ## Tutorial: A Simple RAG Pipeline
 
-The companion notebook walks through a complete, working RAG pipeline using public data and no proprietary services. It runs entirely in Google Colab and uses two libraries you have already encountered in this handbook: `sentence-transformers` for creating embeddings and `transformers` for the generation step {cite}`reimers2019sentence`.
+The companion notebook walks through a complete, working RAG pipeline using public data and no proprietary services. It runs entirely in Google Colab and uses two libraries you have already encountered in this handbook: `sentence-transformers` for creating embeddings and `transformers` for the generation step.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/rag_demo.ipynb)
 
@@ -166,7 +166,7 @@ Ask yourself a question you would genuinely want answered, then look at what the
 
 ## Further Reading
 
-Lewis et al. (2020) is the paper that introduced and named retrieval-augmented generation as a formal architecture {cite}`lewis2020retrieval`. The introduction is accessible to readers without a deep NLP background and gives useful framing for why grounding generation in retrieved documents matters. Google's 5-Day Gen AI Intensive whitepaper on embeddings and vector stores provides a practical technical overview of how embeddings work, how vector stores are organized, and the engineering considerations for different retrieval strategies {cite}`google2024embeddings`. It is particularly useful if you want to go beyond the numpy-based approach in the companion notebook and think about production-grade retrieval systems. Reimers and Gurevych (2019) explains why sentence-level embeddings from models like `all-MiniLM-L6-v2` outperform averaged token embeddings for retrieval, and is the foundational paper behind the `sentence-transformers` library used throughout this chapter {cite}`reimers2019sentence`.
+Lewis et al. (2020) is the paper that introduced and named retrieval-augmented generation as a formal architecture {cite}`lewis2020retrieval`. The introduction is accessible to readers without a deep NLP background and gives useful framing for why grounding generation in retrieved documents matters. Google's 5-Day Gen AI Intensive whitepaper on embeddings and vector stores provides a practical technical overview of how embeddings work, how vector stores are organized, and the engineering considerations for different retrieval strategies {cite}`google2024embeddings`. It is particularly useful if you want to go beyond the numpy-based approach in the companion notebook and think about production-grade retrieval systems. Reimers and Gurevych (2019) explains why sentence-level embeddings from models like `all-MiniLM-L6-v2` outperform averaged token embeddings for retrieval, and is the foundational paper behind the `sentence-transformers` library used throughout this chapter.
 
 ---
 

@@ -56,7 +56,7 @@ For drafting, the most practical approach is to use AI to generate rough first-p
 
 Even if the draft is not usable, it will almost certainly get you moving. And in research writing, momentum matters.
 
-A few important cautions here. First, AI tools like ChatGPT and Gemini regularly fabricate citations. They will confidently generate a reference that does not exist, or that exists but says something completely different from what was claimed {cite}`bender2021stochastic`. Always verify every citation independently, using a tool like Semantic Scholar, Zotero, or direct journal search. Second, never paste AI-generated text directly into a manuscript without substantial revision. You need to ensure the content is accurate, that it reflects your actual data and findings, and that it reads in your voice.
+A few important cautions here. First, AI tools like ChatGPT and Gemini regularly fabricate citations. They will confidently generate a reference that does not exist, or that exists but says something completely different from what was claimed. Always verify every citation independently, using a tool like Semantic Scholar, Zotero, or direct journal search. Second, never paste AI-generated text directly into a manuscript without substantial revision. You need to ensure the content is accurate, that it reflects your actual data and findings, and that it reads in your voice.
 
 ### Editing and Polishing
 
@@ -87,7 +87,7 @@ The same principles apply across all of these: you supply the intellectual conte
 ```{admonition} If You're at U-M
 :class: note
 
-The University of Michigan has published guidance through the Office of Research and the U-M Library emphasizing that AI tools may be used for drafting and editing as long as authors maintain responsibility for accuracy and originality {cite}`umor_ai_guidance_2024,um_library_ai_2024`. Sensitive or proprietary data must not be uploaded to public AI platforms unless approved through appropriate institutional channels. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for a full list of approved tools and platforms.
+The University of Michigan has published guidance through the Office of Research and the U-M Library emphasizing that AI tools may be used for drafting and editing as long as authors maintain responsibility for accuracy and originality {cite}`um_library_ai_2024`. Sensitive or proprietary data must not be uploaded to public AI platforms unless approved through appropriate institutional channels. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for a full list of approved tools and platforms.
 ```
 
 ### What Major Journals Say

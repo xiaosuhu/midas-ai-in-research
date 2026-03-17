@@ -26,7 +26,7 @@ BERT learned this bidirectional reading through a training procedure called mask
 
 The practical output of all this pretraining is a model that produces **contextual embeddings**: dense numerical vectors where each word is represented not by a single fixed vector, but by a vector that changes based on surrounding context. "Bank" in a financial passage gets a different embedding from "bank" in a geographical passage, and that distinction is encoded in the representation itself. This is what makes BERT such a strong foundation for downstream research tasks.
 
-The architecture that makes all of this possible is the Transformer, introduced in a 2017 paper by Vaswani and colleagues {cite}`vaswani2017attention`. You do not need to know the full technical details to use these models effectively, but it helps to know that the attention mechanism at the core of the Transformer is what allows the model to relate every word to every other word in the sequence, which is what bidirectionality really means in practice.
+The architecture that makes all of this possible is the Transformer, introduced in a 2017 paper by Vaswani and colleagues. You do not need to know the full technical details to use these models effectively, but it helps to know that the attention mechanism at the core of the Transformer is what allows the model to relate every word to every other word in the sequence, which is what bidirectionality really means in practice.
 
 ---
 

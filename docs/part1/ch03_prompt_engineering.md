@@ -44,7 +44,7 @@ None of this requires that every prompt be long. A well-targeted three-sentence 
 
 ## Zero-Shot and Few-Shot Prompting
 
-The terms zero-shot and few-shot come from the research literature on how language models generalize to new tasks {cite}`Brown2020gpt3`, but the ideas behind them are intuitive enough to apply without knowing the technical background.
+The terms zero-shot and few-shot come from the research literature on how language models generalize to new tasks, but the ideas behind them are intuitive enough to apply without knowing the technical background.
 
 Zero-shot prompting means giving the model a task with no examples. You describe what you want and ask it to produce the output directly. This works well for tasks the model has encountered many versions of during training, such as summarizing an abstract, translating a sentence, or suggesting synonyms for a word. For these everyday tasks, the model's prior experience covers a wide enough range of inputs that no examples are needed.
 

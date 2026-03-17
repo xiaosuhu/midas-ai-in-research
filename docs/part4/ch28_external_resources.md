@@ -120,7 +120,7 @@ HuggingFace is the central open-source hub for pre-trained LLMs, vision models, 
 
 ### Papers with Code
 
-Papers with Code is a searchable collection of machine learning papers that link directly to their code implementations, datasets, and benchmark results. It is one of the most practical resources for seeing exactly how a method was implemented, not just described. MIDAS includes it as a recommended tool in their generative AI resource hub ({cite}`midas_umich`).
+Papers with Code is a searchable collection of machine learning papers that link directly to their code implementations, datasets, and benchmark results. It is one of the most practical resources for seeing exactly how a method was implemented, not just described. MIDAS includes it as a recommended tool in their generative AI resource hub.
 
 **Link:** https://paperswithcode.com/
 
