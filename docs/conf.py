@@ -25,7 +25,7 @@ extensions = [
 # BibTeX configuration
 bibtex_bibfiles = ['references.bib']
 bibtex_default_style = 'unsrt'
-bibtex_reference_style = 'label'
+bibtex_reference_style = 'author_year'
 
 myst_enable_extensions = [
     "colon_fence", "deflist", "substitution", "tasklist"
