@@ -21,7 +21,7 @@ What sets this handbook apart is its human-centered approach. We put domain know
 
 The handbook follows the research lifecycle, from the earliest stage of framing a research question through data work, analysis, and finally sharing your findings. **You do not need to read it from beginning to end**. Each chapter is designed to stand on its own, so you can jump to whatever is most relevant to you right now.
 
-Part I covers how AI fits into the broader research process, including literature review, writing, grant development, and ethics. Part II focuses on the hands-on side of data analysis, from accessing and preparing data to running models. Part III goes deeper into building with modern AI, covering language model applications, retrieval-augmented generation, agents, and fine-tuning. Part IV is a reference section with tools, resources, and templates you can put to use right away.
+Part I covers how AI fits into the broader research process, including how modern AI works, prompt engineering, literature review, writing, grant development, and ethics. Part II focuses on the hands-on side of data analysis, from accessing and preparing data to running models. Part III goes deeper into building with modern AI, covering language model applications, retrieval-augmented generation, agents, and fine-tuning. Part IV is a reference section with tools, resources, and templates you can put to use right away.
 
 ## The AI-Augmented Research Lifecycle
 
@@ -96,7 +96,7 @@ part4/ch30_glossary
 
 ## Resources
 
-The resources below were selected to give you a **broader picture of where AI in research** stands today and where it is heading. They pair well with the themes in this handbook, from understanding the overall landscape to thinking through the risks.
+The resources below were selected to give you a broader picture of where AI in research stands today and where it is heading. They pair well with the themes in this handbook, from understanding the overall landscape to thinking through the risks.
 
 [Stanford HAI AI Index Report (2025)](https://hai.stanford.edu/ai-index/2025-ai-index-report) is one of the most comprehensive annual overviews of AI progress, adoption, and societal impact. It is a good starting point if you want data-driven context for the conversations happening in your field.
 
