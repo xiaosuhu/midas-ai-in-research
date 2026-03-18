@@ -3,12 +3,20 @@
 :::{admonition} What you will learn
 :class: tip
 
-By the end of this chapter and its companion notebook, you will know how to evaluate an out-of-the-box language model on a specific research task, recognize the patterns that suggest a model is not well-suited for your problem, understand the trade-offs involved in fine-tuning, and apply LoRA fine-tuning using Hugging Face's PEFT library as a computationally practical alternative to full fine-tuning.
+By the end of this chapter and its companion notebook, you will be able to:
+
+- Evaluate an out-of-the-box language model on a specific research task and interpret the results
+- Recognize the patterns that indicate a model is not well-suited for your problem
+- Explain what fine-tuning is for and when it is the right tool for a downstream task
+- Describe the trade-offs between full fine-tuning and parameter-efficient approaches
+- Apply Low-Rank Adaptation (LoRA) fine-tuning using Hugging Face's Parameter-Efficient Fine-Tuning (PEFT) library as a computationally practical alternative to full fine-tuning
 :::
 
 Imagine you are studying how different scientific communities adopted machine learning methods over the past two decades. You have assembled several thousand research abstracts from fields like economics, environmental science, and computational biology, and your goal is to sort them by primary research domain so you can trace how terminology and framing shifted over time. You try a general-purpose language model. For the bulk of the corpus it does reasonably well, but when you start checking outputs against your own judgment you notice consistent errors: the model conflates applied statistics with econometrics, splits what you consider one category into two, and places a cluster of environmental modeling papers under physics. The errors are not random. They follow a pattern, and the pattern is meaningful. The model's internal sense of disciplinary boundaries comes from contemporary usage, not from how these fields understood themselves ten or twenty years ago.
 
 This is a common situation. The model is not broken. It was trained on text from a different context than the problem you are trying to solve. The question is what to do about it, and in what order.
+
+This chapter is organized around a specific goal: adapting a pre-trained language model to perform well on a **downstream task** — a concrete, domain-specific problem that is different from what the model was originally trained on. Pre-trained models learn general representations of language from large text corpora. Fine-tuning is the process of taking those representations and adjusting them for your particular task, whether that is classifying research abstracts by discipline, labeling sentences in interview transcripts, or scoring the sentiment of open-ended survey responses. Understanding that fine-tuning is always in service of a downstream task — not an end in itself — shapes every decision in this chapter: what to evaluate, when prompting is enough, and when the effort of fine-tuning is actually justified.
 
 ---
 
@@ -18,7 +26,7 @@ The first thing to do when a model is not performing as expected is to measure e
 
 **Building a reference set.** You need a collection of examples where you already know the right answer. For a classification task, that means a set of texts you or a knowledgeable colleague have labeled by hand. A hundred examples is often enough to detect systematic problems. Five hundred or more will give you more stable per-category estimates. The labels do not need to be exhaustive, but they need to be honest. If you are uncertain about a particular case, set it aside rather than labeling it arbitrarily and contaminating your evaluation.
 
-**Measuring performance on your task.** For classification, the core metrics are accuracy and per-class F1 score. Accuracy tells you the overall fraction of correct predictions. Per-class F1 breaks that down by category, which matters because a model can look acceptable in aggregate while being essentially useless on a minority class that is important to your research question. If your label distribution is uneven, macro-averaged F1 is more informative than raw accuracy.
+**Measuring performance on your task.** For classification, the core metrics are accuracy and per-class F1 score. Accuracy tells you the overall fraction of correct predictions. Per-class F1 breaks that down by category, which matters because a model can look acceptable in aggregate while being essentially useless on a minority class that is important to your research question. If your label distribution is uneven, macro-averaged F1 is more informative than raw accuracy. For a fuller explanation of these metrics, including the precision and recall they are built from, see the "Choosing the Right Metrics" section in [Chapter 21](../part2/ch21_validation_interpretation.md).
 
 For generation tasks like summarization or question answering, common automated metrics include ROUGE for summarization and BLEU for translation {cite}`papineni2002bleu`. These measure textual overlap between a model's output and a human-written reference. They are useful for getting a rough picture at scale, but they are not reliable indicators of factual correctness. A sentence can score well on ROUGE while being subtly wrong in ways that matter for research.
 
@@ -32,7 +40,7 @@ Once you have a concrete picture of where the model is failing, you are in a pos
 
 ## Recognizing When the Out-of-the-Box Model Is Not Enough
 
-Sometimes better prompting is the right first step. If the model is applying the wrong categories because your prompt is ambiguous, adding a few labeled examples through few-shot prompting often helps substantially. Chapter 3 in this handbook covers prompt engineering in detail. If you have not tried systematic prompt improvement yet, it is worth doing before considering fine-tuning. The effort is much lower, and it often gets you most of the way there.
+Sometimes better prompting is the right first step. If the model is applying the wrong categories because your prompt is ambiguous, adding a few labeled examples through few-shot prompting often helps substantially. [Chapter 3](../part1/ch03_prompt_engineering.md) in this handbook covers prompt engineering in detail. If you have not tried systematic prompt improvement yet, it is worth doing before considering fine-tuning. The effort is much lower, and it often gets you most of the way there.
 
 But prompting has limits, and there are situations where no amount of prompt crafting will close the gap. The most common ones in research contexts follow a few recognizable patterns.
 
@@ -62,15 +70,15 @@ For most academic researchers working on individual or small-team projects, the 
 
 ## LoRA: Getting Most of the Benefit at a Fraction of the Cost
 
-The key insight behind parameter-efficient fine-tuning is that you probably do not need to update all of a model's weights to teach it a new task. A large language model has already learned a great deal about language and structure. What it needs for your specific task is a relatively small adjustment on top of that foundation.
+The key insight behind parameter-efficient fine-tuning is that you probably do not need to update all of a model's weights to adapt it to a new downstream task. A large language model has already learned a great deal about language and structure during pretraining. What it needs for your specific task is a relatively small adjustment on top of that foundation — enough to shift its behavior toward the distinctions your task requires, without overwriting the general knowledge that makes it useful in the first place.
 
-LoRA, which stands for Low-Rank Adaptation, is the most widely used approach in this family {cite}`hu2022lora`. The intuition is geometric. When you fine-tune a model on a new task, the changes to any given weight matrix tend to have low intrinsic dimensionality. Even though the matrix may be very large, the adjustments that are actually needed can be well-approximated by a much lower-dimensional structure.
+Low-Rank Adaptation (LoRA) is the most widely used approach in this family {cite}`hu2022lora`. The intuition is geometric. When you fine-tune a model on a downstream task, the changes to any given weight matrix tend to have low intrinsic dimensionality. Even though the matrix may be very large, the adjustments that are actually needed can be well-approximated by a much lower-dimensional structure.
 
 LoRA takes advantage of this by not modifying the original weight matrices at all. Instead, it introduces pairs of small trainable matrices alongside the frozen original ones. One matrix is tall and narrow, the other is short and wide, and their product approximates the update that full fine-tuning would have learned. If an original weight matrix has dimensions 768 by 768 (about 590,000 values), a LoRA adapter with rank 16 represents that update with two matrices totaling roughly 25,000 values. You train those small matrices, and the original weights stay frozen.
 
-The result is that LoRA typically trains less than one percent of a model's total parameters, while achieving performance that is competitive with full fine-tuning on many tasks {cite}`hu2022lora`. The original model weights are never changed, which means you can save an adapter as a file of a few megabytes rather than a full model checkpoint of several gigabytes, and you can swap adapters in and out for different tasks without maintaining separate full copies of the model.
+The result is that LoRA typically trains less than one percent of a model's total parameters, while achieving performance that is competitive with full fine-tuning on many downstream tasks {cite}`hu2022lora`. The original model weights are never changed, which means you can save an adapter as a file of a few megabytes rather than a full model checkpoint of several gigabytes, and you can swap adapters in and out for different tasks without maintaining separate full copies of the model.
 
-Hugging Face's PEFT library makes this practical in a few lines of code {cite}`mangrulkar2022peft`. You define a `LoraConfig` specifying the rank and which layers to apply adapters to, wrap your model with the `get_peft_model` function, and train as you normally would. The training loop does not change. Only the parameter count does.
+Hugging Face's Parameter-Efficient Fine-Tuning (PEFT) library makes this practical in a few lines of code {cite}`mangrulkar2022peft`. You define a `LoraConfig` specifying the rank and which layers to apply adapters to, wrap your model with the `get_peft_model` function, and train as you normally would. The training loop does not change. Only the parameter count does.
 
 ```python
 from peft import LoraConfig, get_peft_model, TaskType
