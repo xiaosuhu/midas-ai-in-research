@@ -73,7 +73,7 @@ Because NotebookLM is part of Google's product suite, UM researchers can access 
 
 ### MIDAS AI Sandbox
 
-The AI Sandbox is MIDAS's curated platform for exploring generative AI workflows, evaluating LLM outputs, and browsing UM-approved AI resources. It is updated as new institutional AI services come online and serves as a good first stop when you are not sure which tool is right for a particular task.
+The AI Sandbox is MIDAS's weekly, drop-in learning space where researchers across campus can explore AI tools hands-on, without needing any prior experience. Each session focuses on a specific model or workflow, from image segmentation to text classification, and walks participants through running it live in a browser. Sessions are small by design so that everyone gets guided support, and you are welcome to bring your own data to explore alongside the example materials. Registration is required due to popular demand.
 
 **Link:** https://midas.umich.edu/ai-sandbox/
 
@@ -165,6 +165,18 @@ MIDAS runs a formal program connecting faculty with graduate and undergraduate s
 
 ---
 
+## Grant and Proposal Support
+
+### MIDAS Grant Support
+
+If you are preparing a grant proposal that involves AI or data science methods, MIDAS offers direct support that goes beyond a quick email exchange. The team can conduct red team reviews of your proposal, flagging methodological weak points and anticipating reviewer concerns before submission. They can also help you draft Letters of Support and connect you with data science collaborators on campus. If your proposal needs to describe MIDAS facilities or resources, you can request boilerplate language through a Google Form rather than writing it from scratch.
+
+This is a genuinely underused service. If you are putting together an NSF, NIH, or foundation proposal with any computational or AI component, it is worth reaching out early, not just before the deadline ({cite}`midas_umich`).
+
+**Link:** https://midas.umich.edu/research/
+
+---
+
 ## Training, Workshops, and Education
 
 ### MIDAS Workshops
@@ -223,7 +235,7 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 | AI Tools | Maizey | Build custom RAG systems | https://maizey.ai.umich.edu/ |
 | AI Tools | Google Gemini | Multimodal AI via UM institutional access | https://gemini.google.com/ |
 | AI Tools | NotebookLM | Document-grounded research assistant via UM Google Workspace | https://notebooklm.google.com |
-| AI Tools | AI Sandbox | UM-approved GenAI tools and examples | https://midas.umich.edu/ai-sandbox/ |
+| AI Tools | AI Sandbox | Weekly hands-on AI workshop for researchers | https://midas.umich.edu/ai-sandbox/ |
 | HPC | Great Lakes | Large-scale compute for ML | https://arc.umich.edu/greatlakes/ |
 | Secure HPC | Armis2 | HIPAA-aligned secure compute | https://arc.umich.edu/armis2/ |
 | Storage | Lighthouse | Shared research storage | https://arc.umich.edu/lighthouse/ |
@@ -237,6 +249,7 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 | Training | MIDAS Workshops | General AI and ML workshops | https://midas.umich.edu/workshops/ |
 | Training | GenAI Tutorial Series | Monthly GenAI tutorials for researchers | https://midas.umich.edu/research/research-resources/generative-ai-hub/generative-ai-tutorials/ |
 | Training | UM Library Workshops | Data management and coding workshops | https://ttc.iss.lsa.umich.edu/ |
+| Grant Support | MIDAS Grant Support | Red team reviews, Letters of Support, proposal boilerplate | https://midas.umich.edu/research/ |
 | Funding | MIDAS Pilot Grants | Interdisciplinary research seed funding | https://midas.umich.edu/funding/ |
 | Funding | OVPR Programs | UM research funding programs | https://research.umich.edu/funding/ |
 

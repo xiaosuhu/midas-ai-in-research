@@ -52,11 +52,35 @@ D2L is a fully open-source deep learning textbook with runnable code in Jupyter 
 
 ---
 
+### Hugging Face NLP Course
+
+Hugging Face offers a free, interactive NLP course that walks through using transformers for text classification, named entity recognition, question answering, and summarization. It is built around the same `transformers` library used throughout Part 3 of this handbook, so the examples map directly to what you would do in practice. A good next step after reading the BERT and RAG chapters if you want to go deeper on implementation.
+
+**Link:** https://huggingface.co/learn/nlp-course/
+
+---
+
+### MIT Introduction to Generative AI
+
+A freely available series of video lectures from MIT covering foundation models, generative AI architectures, and practical applications across research domains. The videos are pitched at a conceptual level rather than a heavy math level, which makes them accessible to researchers coming from outside computer science.
+
+**Link:** https://mit-genai.pubpub.org/
+
+---
+
 ### Google Machine Learning Crash Course
 
 A structured, freely available introduction to machine learning fundamentals from Google. It covers core concepts like gradient descent, overfitting, and classification, and is a reasonable starting point for researchers with no prior ML background.
 
 **Link:** https://developers.google.com/machine-learning/crash-course
+
+---
+
+### Anthropic Prompt Library
+
+A curated collection of ready-to-use prompts for research and professional tasks, covering literature review, data analysis, writing, coding assistance, and more. Useful for getting a feel for how to structure prompts for different kinds of work, and for benchmarking your own prompts against examples that have been tested across domains. Pairs well with Chapter 3 of this handbook on prompt engineering.
+
+**Link:** https://docs.anthropic.com/en/prompt-library/library
 
 ---
 
@@ -131,6 +155,22 @@ Papers with Code is a searchable collection of machine learning papers that link
 HELM (Holistic Evaluation of Language Models) is a living benchmark developed at Stanford that evaluates large language models across a wide range of scenarios in a transparent and systematic way. If you need to compare models for a specific task based on accuracy, fairness, calibration, or robustness, HELM provides a more principled basis for that comparison than relying on marketing claims ({cite}`liang2022helm`).
 
 **Link:** https://crfm.stanford.edu/helm/
+
+---
+
+### spaCy
+
+spaCy is a fast, production-ready NLP library for applied tasks like named entity recognition, dependency parsing, part-of-speech tagging, and text classification. It is a lighter-weight alternative to the full Hugging Face transformers stack when you need something that runs quickly on a laptop and does not require a GPU. Particularly well suited for researchers processing large volumes of text where raw extraction and annotation matter more than generative capability.
+
+**Link:** https://spacy.io/
+
+---
+
+### Microsoft AutoGen
+
+AutoGen is an open framework from Microsoft Research for building multi-agent AI systems, where multiple LLM-powered agents collaborate to complete tasks. It is the framework most directly relevant to the concepts introduced in the AI Agents chapter of this handbook. The documentation includes working examples for research-relevant scenarios like code generation, literature search, and data analysis pipelines.
+
+**Link:** https://microsoft.github.io/autogen/
 
 ---
 
@@ -252,6 +292,9 @@ JupyterLab is the standard interactive notebook environment for data exploration
 | Learning | Turing Way | Reproducible research handbook | https://the-turing-way.netlify.app/ |
 | Learning | Fast.ai | Practical deep learning | https://www.fast.ai/ |
 | Learning | D2L | Open-source deep learning textbook | https://d2l.ai/ |
+| Learning | HuggingFace NLP Course | Free interactive NLP and transformers course | https://huggingface.co/learn/nlp-course/ |
+| Learning | MIT Intro to Generative AI | Conceptual video lectures on foundation models | https://mit-genai.pubpub.org/ |
+| Learning | Anthropic Prompt Library | Curated prompts for research tasks | https://docs.anthropic.com/en/prompt-library/library |
 | Datasets | Kaggle Datasets | Largest open dataset library | https://www.kaggle.com/datasets |
 | Datasets | HuggingFace Datasets | ML-ready dataset hub | https://huggingface.co/datasets |
 | Datasets | UCI Repository | Classic benchmark datasets | https://archive.ics.uci.edu/ |
@@ -262,6 +305,8 @@ JupyterLab is the standard interactive notebook environment for data exploration
 | Tools | Stanford HELM | LLM evaluation benchmark | https://crfm.stanford.edu/helm/ |
 | Tools | AutoGluon | AutoML for rapid experiments | https://auto.gluon.ai/ |
 | Tools | Ollama | Run LLMs locally for sensitive data work | https://ollama.com/ |
+| Tools | spaCy | Fast NLP for extraction and annotation | https://spacy.io/ |
+| Tools | Microsoft AutoGen | Multi-agent AI framework | https://microsoft.github.io/autogen/ |
 | Compute | Colab | Free GPU notebooks | https://colab.research.google.com/ |
 | Compute | Kaggle Notebooks | Free GPU compute | https://www.kaggle.com/code |
 | Compute | Vast.ai | Low-cost GPU rental | https://vast.ai/ |
