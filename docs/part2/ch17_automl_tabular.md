@@ -129,6 +129,10 @@ Approved options at U-M include Armis2 for HIPAA-covered data and Great Lakes fo
 
 ---
 
+*Last reviewed: March 2025. Tool-specific content in this chapter refers to AutoGluon 1.x. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+
+---
+
 ## References
 
 ```{bibliography}

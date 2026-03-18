@@ -161,6 +161,8 @@ Hu et al. (2022) is the original LoRA paper and is readable without a deep machi
 - [Validation and Interpretation](../part2/ch21_validation_interpretation.md) — evaluating model outputs more broadly across task types
 - [Reproducibility](../part2/ch22_reproducibility.md) — versioning and documenting fine-tuned model adapters
 
+*Last reviewed: March 2025. Tool-specific content in this chapter refers to Hugging Face Transformers (4.x) and PEFT. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+
 ```{bibliography}
 :filter: docname in docnames
 ```

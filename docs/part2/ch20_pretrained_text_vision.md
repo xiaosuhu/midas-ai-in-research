@@ -236,3 +236,7 @@ Museum researchers use it to analyze historical photographs quickly.
 | **Grounding DINO** | Text-guided detection | Understands natural language; zero-shot | Needs clear prompts | Mapping solar panels; locating wildlife; historical analysis |
 | **ViT** | Image classification | Strong baseline; efficient | Only single-label | Rapid labeling of large image datasets |
 | **Qwen-VL** | Visual Q&A | Explains image content; flexible | Variable accuracy | Documentation, cultural heritage research, interactive assistants |
+
+---
+
+*Last reviewed: March 2025. Tool-specific content in this chapter refers to the Hugging Face Transformers ecosystem. Model availability and browser interfaces on platforms like Hugging Face Spaces change frequently. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
