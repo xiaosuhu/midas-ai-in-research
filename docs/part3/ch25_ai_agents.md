@@ -3,9 +3,13 @@
 :::{admonition} What you will learn
 :class: tip
 
-By the end of this chapter, you will understand what distinguishes an AI agent from a plain language model, why that distinction matters for research workflows that require more than a single answer, what kinds of multi-step tasks agents are already being used for in academic research, and how to think about this space without getting lost in the rapidly changing tool landscape.
+By the end of this chapter, you will be able to:
 
-This chapter does not include a companion notebook or implementation tutorial. The goal is conceptual clarity, because the tools in this area change quickly enough that the most durable investment you can make right now is understanding what agents are and what they can do.
+- Explain what distinguishes an AI agent from a plain language model interaction
+- Describe what context engineering means and why it matters for agent design
+- Recognize which kinds of multi-step research tasks are good candidates for agent automation
+- Evaluate the current tool landscape without getting lost in rapidly changing frameworks
+- Identify where human oversight is essential in any agent workflow
 :::
 
 Imagine you are conducting a systematic review of the literature on community-based interventions for food insecurity. You have a clear research question, a set of inclusion and exclusion criteria, and a list of databases to search. Now think about what the next several days actually look like. You run searches across PubMed, Scopus, and Google Scholar. You download a few hundred abstracts. You read through them manually to flag which ones meet your inclusion criteria. You pull the full texts of the ones that pass the first screen. You extract the relevant variables from each paper: study design, sample size, intervention type, outcome measures, and so on. You organize all of this into a spreadsheet. Then you check your own work because you know how easy it is to miss something when you are reading abstract number 217 at 11 at night.
@@ -13,6 +17,10 @@ Imagine you are conducting a systematic review of the literature on community-ba
 Every step in that list is something you understand completely. None of it requires expert judgment that only you can provide. And yet the whole process takes weeks, and a great deal of that time is spent on tasks that feel more like logistics than scholarship.
 
 This is exactly the kind of situation that AI agents are designed to help with.
+
+A companion notebook for this chapter demonstrates the core agent loop in minimal Python, without any framework, so you can see exactly what is happening at each step. Rather than abstracting the mechanics behind a library, it shows how a model decides to call a tool, receives the result, and decides what to do next.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/agent_loop_demo.ipynb)
 
 ---
 
@@ -33,6 +41,18 @@ Three things make an agent different from a plain language model:
 These three capabilities together are what allow an agent to work through a task like the systematic review example above, rather than stopping after a single answer {cite}`kaggle2025agents_day1`.
 
 One more thing worth noting: agents are not autonomous in the sense of being unsupervised. The goal, the constraints, and the tools are all specified by you. A well-designed agent workflow has checkpoints where a human reviews what has been done before proceeding. Thinking of an agent as a capable research assistant who works on your behalf, rather than as a system that operates independently, is a more accurate and safer mental model.
+
+---
+
+## Context Engineering: Designing What the Model Sees
+
+You have probably heard the phrase "prompt engineering" before, and you may have a sense that writing good prompts involves being clear and specific. That framing is useful for simple, one-off interactions. But for agent workflows, a more precise concept applies: context engineering.
+
+Context engineering is the practice of deliberately designing everything that goes into the model's context window at each step of a multi-step task {cite}`kaggle2025agents_day1`. In a single-turn chat, the context is essentially just your message. In an agent workflow, the context at any given step might include a system prompt defining the agent's role and constraints, the original task description, a summary of what has already been done, the results of tool calls made in previous steps, retrieved passages from a document collection, and instructions about what output format is expected next. Every one of these elements is a design decision that affects what the model can and cannot do.
+
+The reason this matters in practice is that models have no memory between steps except what you explicitly give them. If step three of a workflow needs to know what was found in step one, that information has to be passed forward in the context. If it is not there, the model cannot use it. If the context becomes so long that early instructions get pushed out, the model may lose track of its original goal. And if the retrieved passages or tool results that the model is working from are irrelevant or poorly formatted, the model will generate answers based on the wrong information no matter how capable it is.
+
+For researchers building or evaluating agent workflows, this means the most important question is often not "which framework should I use?" but rather "what information does the model actually need at each step, and is that information reliably getting there?" A well-designed context at each step, with the right task description, the right retrieved documents, and a clear summary of prior actions, will outperform a technically sophisticated framework with a poorly designed information flow.
 
 ---
 
@@ -58,13 +78,15 @@ If you search for AI agent frameworks today, you will find a long and growing li
 
 This is an honest description of where the field is, not a criticism of any particular tool. The underlying concepts, planning, tool use, and memory, are stable enough that understanding them will serve you well regardless of which implementation eventually settles into common use. The specific APIs and configuration details are not worth memorizing right now. If you have a concrete use case in mind, the right approach is to look at what is currently well-maintained, well-documented, and used by people working on similar problems to yours, rather than trying to pick a long-term winner in an unsettled landscape.
 
-For U-M researchers, the AI Sandbox sessions run by MIDAS cover emerging tools in this space as they mature, which is a more reliable way to stay current than trying to track the ecosystem on your own.
-
 ---
 
-## Further Reading and Learning Resources
+## Companion Notebook and Further Reading
 
-The most accessible entry point into this topic is the material produced by Google and Kaggle as part of their free intensive courses on generative AI and agents.
+The companion notebook for this chapter is a minimal, framework-free agent loop built with the Google Gemini API, which has a free tier that requires no payment to use. It defines a simple `search_documents` tool, shows how the model decides whether to call it, and walks through the full loop of a multi-step agent interaction. The notebook includes step-by-step instructions for getting a free API key and storing it securely in Colab. Because it uses direct API calls rather than a framework layer, the mechanics of each step are visible rather than abstracted away.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/agent_loop_demo.ipynb)
+
+The most accessible entry point into the broader conceptual landscape is the material produced by Google and Kaggle as part of their free intensive courses on generative AI and agents.
 
 The 5-Day Gen AI Intensive course includes a Day 5 whitepaper on agents that gives a clear conceptual overview of how agent systems are structured and how they differ from standalone language model calls {cite}`kaggle2024genai_agents`. The full course is available at [kaggle.com/learn-guide/5-day-genai](https://www.kaggle.com/learn-guide/5-day-genai).
 
@@ -75,7 +97,7 @@ Both are free, require no account to read, and are written for a technical but n
 ```{admonition} If You're at U-M
 :class: note
 
-The MIDAS AI Sandbox sessions include modules on agentic workflows as part of the ongoing series on applied AI in research. These sessions are updated as the tool landscape evolves and are a good way to see current implementations demonstrated on research-relevant tasks. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on how to access these sessions.
+The MIDAS AI Sandbox sessions include modules on agentic workflows as part of the ongoing series on applied AI in research. Because the agent tool landscape shifts quickly, these sessions are a more reliable way to stay current with what is actually being used in practice than trying to track the ecosystem on your own. Sessions are updated as the tools evolve and are open to researchers across disciplines. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on how to access these sessions and the broader MIDAS program.
 ```
 
 ---
