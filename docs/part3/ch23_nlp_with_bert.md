@@ -3,7 +3,13 @@
 :::{admonition} What you will learn
 :class: tip
 
-By the end of this chapter and its companion notebook, you will understand what makes BERT different from earlier language models, how to use the Hugging Face `transformers` library to apply pre-trained models to your own text, how to extract named entities from documents, how to measure semantic similarity between passages, and how to reason about model selection and validation before applying these tools to your research data.
+By the end of this chapter and its companion notebook, you will be able to:
+
+- Explain what makes BERT different from earlier language models
+- Use the Hugging Face `transformers` library to apply pre-trained models to your own text
+- Extract named entities from a document collection
+- Measure semantic similarity between passages
+- Reason about model selection and validation before applying these tools to your research data
 :::
 
 Imagine you are studying how regional newspapers covered air quality regulations over a fifteen-year period. You have collected about 3,000 articles, which is far too many to read systematically, but not so many that you can afford to ignore what is actually in them. What you really want to know is which government agencies and companies appear most often, how the language shifts before and after specific legislative events, and which articles are genuinely about regulatory enforcement versus those that merely mention it in passing.
@@ -11,6 +17,8 @@ Imagine you are studying how regional newspapers covered air quality regulations
 Until recently, answering any one of those questions computationally would have required a separate model, a substantial labeled training dataset, and weeks of engineering time. The situation is quite different now. You can address all of them in a single afternoon using pre-trained language models and about fifty lines of Python, running free in a Colab notebook with a GPU.
 
 Chapter 20 showed you these same model families through the browser, with no code at all. This chapter goes one level deeper. You will write the Python yourself, understand what the model is doing at each step, and see how to interpret the outputs in a way that is actually useful for research.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/bert_nlp_demo.ipynb)
 
 ---
 
@@ -26,13 +34,15 @@ BERT learned this bidirectional reading through a training procedure called mask
 
 The practical output of all this pretraining is a model that produces **contextual embeddings**: dense numerical vectors where each word is represented not by a single fixed vector, but by a vector that changes based on surrounding context. "Bank" in a financial passage gets a different embedding from "bank" in a geographical passage, and that distinction is encoded in the representation itself. This is what makes BERT such a strong foundation for downstream research tasks.
 
-The architecture that makes all of this possible is the Transformer, introduced in a 2017 paper by Vaswani and colleagues. You do not need to know the full technical details to use these models effectively, but it helps to know that the attention mechanism at the core of the Transformer is what allows the model to relate every word to every other word in the sequence, which is what bidirectionality really means in practice.
+The architecture that makes all of this possible is the Transformer, introduced in a 2017 paper by Vaswani and colleagues {cite}`vaswani2017attention`. If you want a fuller picture of how the Transformer works, including attention mechanisms and token representations, [Chapter 2](../part1/ch02_how_ai_works.md) walks through those ideas in detail. For now, the key intuition is that attention allows the model to relate every word to every other word in the sequence simultaneously, which is what bidirectionality really means in practice.
+
+BERT is also one of the earliest examples of what researchers now call a foundation model: a large model pretrained at scale on broad data that can then be adapted to many different downstream tasks with relatively little additional effort. [Chapter 2](../part1/ch02_how_ai_works.md) introduces this concept if you want to understand the broader landscape before diving into the code here.
 
 ---
 
 ## From Understanding to Doing: The Transformers Library
 
-The practical starting point for working with BERT is the Hugging Face `transformers` library {cite}`wolf2020transformers`. It provides a consistent Python interface to thousands of pre-trained models, all downloadable from the Hugging Face Model Hub. The library is designed around the idea that you should be able to go from "I need to run NER on my text" to working code in just a few lines.
+The practical starting point for working with BERT is the Hugging Face `transformers` library {cite}`wolf2020transformers`. It provides a consistent Python interface to thousands of pre-trained models, all downloadable from the Hugging Face Model Hub. The library is designed around the idea that you should be able to go from "I need to run named entity recognition (NER) on my text" to working code in just a few lines.
 
 The simplest interface is the `pipeline`. You specify the task, optionally name a specific model, and the library handles tokenization, the forward pass, and post-processing of the output:
 
@@ -104,7 +114,7 @@ Cosine similarity produces a value between 0 and 1. In the example above, the fi
 
 The notebook works through applying this to a set of policy-related excerpts, visualizing the pairwise similarity matrix as a heatmap, and using the most similar pairs as a check on whether the model is behaving sensibly on your type of text.
 
-One important caveat: sentence similarity models measure semantic closeness, not factual agreement or sentiment alignment. Two sentences expressing opposite positions on the same topic can still score moderately high because they share thematic vocabulary and conceptual focus. Whether this is useful or misleading depends on what you are trying to do. If you want to separate "supports the policy" from "opposes the policy," you need a classifier, not a similarity model. If you want to find all articles that are substantively about the policy regardless of stance, similarity is the right tool. Thinking through this distinction before you build a pipeline will save you a round of confusion later.
+**One important caveat: sentence similarity models measure semantic closeness, not factual agreement or sentiment alignment.** Two sentences expressing opposite positions on the same topic can still score moderately high because they share thematic vocabulary and conceptual focus. Whether this is useful or misleading depends on what you are trying to do. If you want to separate "supports the policy" from "opposes the policy," you need a classifier, not a similarity model. If you want to find all articles that are substantively about the policy regardless of stance, similarity is the right tool. Thinking through this distinction before you build a pipeline will save you a round of confusion later.
 
 ---
 

@@ -49,6 +49,14 @@ The important thing is that attention is flexible and context-sensitive. In one 
 
 Modern large language models are Transformers with many layers, each one refining the representations further. They are trained on text from books, websites, academic papers, code repositories, and much else. The training objective is simple: predict the next token given all the tokens that came before {cite}`Brown2020gpt3`. Through that process of massive repeated prediction, the model picks up an enormous amount of statistical structure about language and, as a byproduct, about the world as it is described in language.
 
+## Foundation Models: Train Once, Adapt Many Times
+
+Running this prediction objective over hundreds of billions of tokens is extraordinarily expensive. It requires thousands of specialized processors running for weeks or months, and the resulting model develops a broad, general understanding of language and knowledge that would be impractical to reproduce from scratch for every new task. This creates a design principle that now shapes almost all of applied AI: train once at enormous scale, then adapt many times for specific purposes.
+
+A model built this way is called a foundation model {cite}`bommasani2021opportunities`. The term captures the idea that a single large pretrained model can serve as the starting point for a wide range of downstream tasks, rather than each task requiring its own specialized model built from nothing. BERT {cite}`devlin2019bert`, introduced by Google in 2018, was one of the earliest examples, focused on language understanding. GPT-3 {cite}`Brown2020gpt3` demonstrated the same principle at larger scale and for text generation. More recently, the idea has extended well beyond text to images, audio, video, and combinations of modalities.
+
+The practical consequence for researchers is a shift in how you engage with these tools. With earlier approaches, adapting a model to a new task meant collecting thousands of labeled examples and retraining a specialized system from scratch. Foundation models change that. You can describe a task in plain language and often get useful results right away, or fine-tune on a much smaller set of examples than before. This is why the landscape of AI tools available to researchers changed so rapidly between 2020 and 2024. Much of what this handbook covers, from literature review assistance to automated data labeling to NLP pipelines, follows the same underlying logic: a large pretrained model, adapted to a specific research problem with varying amounts of additional effort.
+
 ## Why Hallucinations Happen
 
 This is where the sociology student's missing citations come from, and where the conceptual picture becomes most important for researchers to understand.
