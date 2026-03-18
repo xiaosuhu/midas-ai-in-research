@@ -3,7 +3,13 @@
 :::{admonition} What you will learn
 :class: tip
 
-By the end of this chapter and its companion notebook, you will understand what retrieval-augmented generation is and why it matters for working with research documents, when it makes more sense to use an existing tool like NotebookLM or Maizey versus building your own pipeline, how to construct a local RAG system for sensitive documents that cannot leave your environment, and how to recognize when retrieval quality is the weak link in a pipeline.
+By the end of this chapter and its companion notebook, you will be able to:
+
+- Explain what retrieval-augmented generation (RAG) is and why it matters for working with research documents
+- Decide when an existing tool like NotebookLM is the right choice versus building your own pipeline
+- Recognize the scenarios where a custom RAG pipeline is the only option
+- Construct a simple local RAG system and run it on your own documents
+- Identify retrieval quality as the most common point of failure in a RAG system
 :::
 
 Imagine you have just joined a research lab six months into a three-year project. Your advisor is generous with their time, but you feel guilty asking the same logistical questions every week. Where is the IRB-approved interview protocol? What does the lab's coding manual say about this edge case? How did the team decide to handle missing data in the second wave? The answers are almost certainly written down somewhere. The problem is that "somewhere" is spread across a shared drive with four years of folders, a Slack archive, a handful of PDFs, and a few Word documents nobody remembers naming.
@@ -38,13 +44,11 @@ This is what distinguishes RAG from asking a general-purpose chatbot the same qu
 
 ---
 
-## Ready-Made Tools: NotebookLM and Maizey
+## Ready-Made Tools: Start Here
 
-Before building anything yourself, it is worth knowing what already exists. For documents that are not sensitive, two tools are worth trying right away.
+Before building anything yourself, it is worth knowing what already exists. For documents that are not sensitive, **NotebookLM** is the most accessible starting point. It is a Google product that lets you upload PDFs, Google Docs, websites, and other sources, then ask questions across all of them in a single interface. It handles embedding and retrieval automatically, cites its sources in the responses, and lets you generate structured summaries and briefing documents. The interface is easy to use and works well for literature reviews, project planning documents, and other collections of publicly available or non-sensitive material.
 
-**NotebookLM** is a Google product that lets you upload PDFs, Google Docs, websites, and other sources, then ask questions across all of them in a single interface. It handles the embedding and retrieval automatically, cites its sources in the responses, and lets you generate structured summaries and briefing documents. The interface is genuinely easy to use and works well for literature reviews, project planning documents, and other collections of publicly available or non-sensitive material. The constraint is that your documents are uploaded to Google's servers, which rules it out for anything IRB-restricted or confidential.
-
-**Maizey** is the University of Michigan's institutional option, available to students, staff, and faculty through ITS {cite}`maizey2024`. It works similarly to NotebookLM: you build a knowledge base from uploaded documents and query it in natural language, but it operates within U-M's approved infrastructure, which makes it appropriate for a wider range of research materials. If your documents fall within what your data governance framework allows on U-M systems, Maizey is worth exploring before you write a single line of code.
+The one constraint that matters for researchers is that your documents are uploaded to Google's servers. That rules NotebookLM out for anything covered by an IRB protocol, a data use agreement, or a confidentiality commitment to participants. If your documents fall into that category, see the U-M note at the end of this chapter before deciding what to use.
 
 Both tools are doing RAG under the hood. Understanding that connection matters because it helps you know what these tools are good at, where they will struggle, and why sometimes you need to build something yourself.
 
@@ -52,13 +56,15 @@ Both tools are doing RAG under the hood. Understanding that connection matters b
 
 ## When to Build Your Own
 
-There is a point where existing tools are not enough, and that point usually involves data that cannot leave a specific environment.
+There is a point where existing tools are not enough. That point usually comes from one of two directions: data that cannot leave a specific environment, or a workflow that requires more control than a conversational interface allows.
 
-Consider a team studying housing instability who conducted 180 in-depth interviews with participants who were asked directly whether their conversations would remain confidential. The IRB protocol is explicit: transcripts stay on approved institutional servers. Uploading them to any external platform, even one that promises not to train on user data, is not permitted under the terms of data collection.
+**Data governance.** Consider a team studying housing instability who conducted 180 in-depth interviews with participants who were told their conversations would remain confidential. The IRB protocol is explicit: transcripts stay on approved institutional servers. Uploading them to any external platform, even one that promises not to train on user data, is not permitted under the terms of data collection. Or consider a clinical research group with five years of patient case notes, de-identified but still covered by a data use agreement that prohibits transmission to third-party services. In both cases, a local RAG pipeline is the answer. Everything, including embedding, retrieval, and generation, runs on your own machine or on an approved institutional environment, and nothing leaves.
 
-Or consider a clinical research group that has five years of patient case notes, de-identified but still covered by a data use agreement that prohibits transmission to third-party services. They want to search for patients who described specific symptom patterns across their notes, but the only tools that can do that at scale are cloud-hosted.
+**Pipeline integration and structured output.** The second reason to build your own is less obvious but equally important. Tools like NotebookLM are designed for conversation: you ask a question, you get an answer. That works well for exploration, but it is not designed for systematic, repeatable extraction across a large corpus.
 
-In both cases, a local RAG pipeline is the answer. You run the embedding model on your own machine, store the vectors locally, run the retrieval locally, and pipe the results to whatever language model you have access to on-premises or through an approved API. Nothing leaves the machine. The capability is the same as a hosted tool; the difference is the infrastructure.
+Imagine a political scientist who wants to identify every mention of a specific fiscal policy position across 800 newspaper articles from five countries, and output the results as a structured dataset with article metadata, the retrieved passage, and a relevance score. She is not exploring; she is building a dataset. A custom RAG pipeline can loop through all 800 documents, embed and retrieve relevant chunks for each, write the results to a CSV, and run the same extraction again if the query needs refinement. NotebookLM has no way to do this automatically and no mechanism to produce machine-readable output for downstream analysis. The same applies to any workflow where RAG output needs to feed into a statistical model, a qualitative codebook, or any analysis step that expects structured data rather than a chat response.
+
+This kind of automation is also where you gain control over the retrieval itself. You can experiment with chunk size, overlap, and embedding models. You can combine semantic retrieval with keyword filters, so that your search returns only passages from a specific date range or document type. And you can inspect the raw retrieval scores to audit why the pipeline surfaced what it did, rather than trusting a black-box interface.
 
 ---
 
@@ -151,7 +157,9 @@ A production RAG system for a real research project involves a few additional de
 ```{admonition} If You're at U-M
 :class: note
 
-For sensitive or IRB-covered documents, Maizey is the first option to explore, since it operates within U-M's approved infrastructure. For situations where you need more control over the pipeline, such as custom chunking, specific embedding models, or integration with a larger analysis workflow, then Great Lakes is the right compute environment. The Armis2 cluster is available for HIPAA-covered data. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on access and data classification.
+If your documents are sensitive but fall within U-M's data governance framework, **Maizey** is the first option to explore before writing any code {cite}`maizey2024`. It is U-M ITS's institutional RAG tool, available to students, staff, and faculty. It works similarly to NotebookLM: you build a knowledge base from uploaded documents and query it in natural language, but it operates within U-M's approved infrastructure rather than a commercial cloud. For many research use cases involving non-public or IRB-adjacent materials, Maizey is the right starting point.
+
+When Maizey is not enough, whether because the data requires a stricter environment, the pipeline needs to be automated, or you need structured output for downstream analysis, Great Lakes is the right compute environment for building a custom pipeline. The Armis2 cluster is available for HIPAA-covered data. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on access and data classification.
 ```
 
 ---
