@@ -7,7 +7,6 @@ build:
 
 sphinx:
   configuration: docs/conf.py
-  # Remove the duplicate sphinx section and the builder line
 
 python:
   install:
