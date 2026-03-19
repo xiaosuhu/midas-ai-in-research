@@ -35,6 +35,10 @@ each run, so it is safe to run whenever the channel is updated.
 The topic classification is keyword-based and operates at the playlist level.
 If a playlist does not match any keyword group it falls into the "Annual Events
 and Symposia" bucket. You can adjust TOPIC_GROUPS below to tune the mapping.
+
+Standalone videos (uploaded to the channel but not added to any curated
+playlist) are fetched via the channel's hidden "uploads" playlist and listed
+separately at the end of the generated chapter, grouped by year.
 """
 
 import os
@@ -295,6 +299,17 @@ def get_playlist_videos(service, playlist_id: str) -> list:
     return videos
 
 
+def get_uploads_playlist_id(channel_id: str) -> str:
+    """
+    Every YouTube channel has a hidden 'uploads' playlist that contains every
+    video ever uploaded, including those not in any curated playlist.
+    Its ID is always the channel ID with the 'UC' prefix replaced by 'UU'.
+    """
+    if channel_id.startswith("UC"):
+        return "UU" + channel_id[2:]
+    raise ValueError(f"Unexpected channel ID format: {channel_id}")
+
+
 # --------------------------------------------------------------------------- #
 # Fetch + cache
 # --------------------------------------------------------------------------- #
@@ -322,10 +337,26 @@ def fetch_and_cache(use_cache: bool = True) -> dict:
               f"({pl['video_count']} videos)")
         pl["videos"] = get_playlist_videos(service, pl["id"])
 
+    # Collect all video IDs that appear in at least one curated playlist.
+    playlist_video_ids: set[str] = set()
+    for pl in playlists:
+        for v in pl.get("videos", []):
+            if v["video_id"]:
+                playlist_video_ids.add(v["video_id"])
+
+    # Fetch ALL uploads and find the ones not in any curated playlist.
+    uploads_id = get_uploads_playlist_id(channel_id)
+    print("Fetching uploads playlist to find standalone videos...")
+    all_uploads = get_playlist_videos(service, uploads_id)
+    standalone  = [v for v in all_uploads if v["video_id"] not in playlist_video_ids]
+    print(f"Found {len(all_uploads)} total uploads, "
+          f"{len(standalone)} not in any curated playlist.")
+
     data = {
-        "channel_id": channel_id,
-        "fetched_at": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "playlists":  playlists,
+        "channel_id":        channel_id,
+        "fetched_at":        datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "playlists":         playlists,
+        "standalone_videos": standalone,
     }
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
@@ -367,13 +398,26 @@ def _playlist_row(pl: dict) -> str:
 
 
 def generate_markdown(data: dict) -> str:
-    playlists    = data["playlists"]
-    fetched_date = data.get("fetched_at", "")[:10]
-    total_videos = sum(pl.get("video_count", len(pl.get("videos", [])))
-                       for pl in playlists)
+    playlists        = data["playlists"]
+    standalone       = data.get("standalone_videos", [])
+    fetched_date     = data.get("fetched_at", "")[:10]
+    total_in_plists  = sum(pl.get("video_count", len(pl.get("videos", [])))
+                           for pl in playlists)
+    total_videos     = total_in_plists + len(standalone)
 
-    # Sort newest first
+    # Sort playlists newest first
     sorted_pls = sorted(playlists, key=lambda p: extract_year(p), reverse=True)
+
+    # Sort standalone newest first, then group by year
+    sorted_standalone = sorted(
+        standalone,
+        key=lambda v: v.get("published_at", ""),
+        reverse=True,
+    )
+    standalone_by_year: dict[str, list] = {}
+    for v in sorted_standalone:
+        year = v.get("published_at", "")[:4] or "Unknown"
+        standalone_by_year.setdefault(year, []).append(v)
 
     # Build topic bucket -> [playlists]
     buckets: dict[str, list] = {g["label"]: [] for g in TOPIC_GROUPS}
@@ -389,7 +433,7 @@ def generate_markdown(data: dict) -> str:
         "",
         "```{note}",
         f"This index was last generated on {fetched_date}. "
-        f"To refresh it with the latest playlists, run "
+        f"To refresh it with the latest videos, run "
         f"`python scripts/generate_video_index.py` from the repository root "
         f"after setting your `YOUTUBE_API_KEY` environment variable.",
         "```",
@@ -397,20 +441,24 @@ def generate_markdown(data: dict) -> str:
     ]
 
     # ---- Intro ----
+    standalone_note = (
+        f" Another {len(standalone)} videos sit outside any playlist."
+        if standalone else ""
+    )
     L += [
         "MIDAS maintains a growing YouTube library of recorded workshops, "
         "tutorial series, symposia, and invited lectures. As of this writing, "
-        f"the channel holds {total_videos} videos across {len(playlists)} playlists. "
+        f"the channel holds {total_videos} videos across {len(playlists)} playlists.{standalone_note} "
         "This index helps you find recordings that connect to what you are "
         "reading in the handbook, whether you want to see a concept explained "
         "live, hear researchers talk through how they apply a method in their "
         "own work, or work through a full workshop from start to finish.",
         "",
-        "The index is organized in two ways. The first part groups playlists "
+        "The index is organized in three parts. The first groups playlists "
         "by handbook topic, so you can jump directly to recordings that pair "
-        "with a chapter you are working through. The second part lists every "
-        "playlist on the channel in one place, sorted by year, for when you "
-        "want to browse more freely.",
+        "with a chapter you are working through. The second covers standalone "
+        "videos not collected into a playlist. The third lists every playlist "
+        "in one place, sorted by year, for when you want to browse more freely.",
         "",
     ]
 
@@ -454,13 +502,40 @@ def generate_markdown(data: dict) -> str:
             L.append(_playlist_row(pl))
         L.append("")
 
+    # ---- Standalone videos ----
+    if sorted_standalone:
+        L += [
+            "## Other Recordings",
+            "",
+            "The videos below are on the MIDAS channel but have not been "
+            "collected into a playlist. Many of them are recordings of "
+            "individual talks, short demos, or event highlights. They are "
+            "grouped by year and listed with direct links.",
+            "",
+        ]
+        for year in sorted(standalone_by_year.keys(), reverse=True):
+            vids = standalone_by_year[year]
+            L += [
+                f"### {year}",
+                "",
+                "| Video | Date |",
+                "|-------|------|",
+            ]
+            for v in vids:
+                date  = v.get("published_at", "")[:10]
+                title = v["title"].replace("|", "-")
+                url   = v.get("url", "")
+                link  = f"[{title}]({url})" if url else title
+                L.append(f"| {link} | {date} |")
+            L.append("")
+
     # ---- Full playlist table ----
     L += [
         "## All Playlists",
         "",
-        "The table below lists every playlist on the channel in one place, "
-        "sorted from newest to oldest. Use it to browse by year or to look up "
-        "a specific workshop series you have heard about.",
+        "The table below lists every curated playlist on the channel in one "
+        "place, sorted from newest to oldest. Use it to browse by year or to "
+        "look up a specific workshop series you have heard about.",
         "",
         "| Playlist | Videos | Year |",
         "|----------|:------:|:----:|",
@@ -503,8 +578,10 @@ def main():
     total  = sum(pl.get("video_count", len(pl.get("videos", [])))
                  for pl in data["playlists"])
     n_pl   = len(data["playlists"])
+    n_sa   = len(data.get("standalone_videos", []))
     print(f"\nWrote {OUTPUT_FILE.relative_to(REPO_ROOT)}")
-    print(f"Index covers {total} videos across {n_pl} playlists.")
+    print(f"Index covers {total + n_sa} videos: "
+          f"{total} in {n_pl} playlists, {n_sa} standalone.")
 
 
 if __name__ == "__main__":
