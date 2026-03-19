@@ -6,7 +6,7 @@ This chapter is a starting point, not a complete inventory. UM's AI landscape is
 
 ## Overview
 
-The University of Michigan supports AI-assisted research through a range of campus-hosted tools, high-performance computing systems, secure data environments, and expert consulting services. This chapter walks through the key resources available to UM researchers, organized by what you are trying to do.
+The University of Michigan supports AI-assisted research through a range of campus-hosted tools, high-performance computing systems, secure data environments, and expert consulting services. This chapter walks through the key resources available to UM researchers, organized in two parts: what MIDAS offers directly, followed by the broader set of U-M infrastructure and services.
 
 ---
 
@@ -35,41 +35,9 @@ If you are unsure where your data falls, the U-M Safe Computing website and the 
 
 ---
 
-## Campus AI Tools and Platforms
+## Part 1: MIDAS Resources
 
-### UMGPT
-
-UMGPT is the university's secure, institution-hosted large language model service, available to all UM faculty, staff, and students. Because it runs within UM's infrastructure, it is appropriate for working with non-public research materials that you would not want to send to an external commercial service. Researchers use it for drafting and revising writing, summarizing literature, explaining concepts, generating and debugging code, and a range of other day-to-day tasks.
-
-**Link:** https://its.umich.edu/computing/ai/umgpt
-
----
-
-### Maizey
-
-Maizey allows researchers to upload documents and build custom Retrieval-Augmented Generation (RAG) systems without writing any code. This is particularly useful for literature review assistance, creating lab onboarding or SOP chatbots, building course material Q&A assistants, and summarizing large policy or documentation collections.
-
-**Link:** https://maizey.ai.umich.edu/
-
----
-
-### Google Gemini (UM Institutional Access)
-
-UM has an institutional subscription to Google Gemini, which gives researchers access to Gemini through their UM Google Workspace account. This provides a capable multimodal model, including text, image, and document understanding, within an enterprise agreement that offers additional data protections compared to consumer-tier access. Log in through your UM Google account to access it.
-
-**Link:** https://gemini.google.com/ (sign in with your UM account)
-
----
-
-### NotebookLM (UM Google Workspace)
-
-NotebookLM is Google's document-grounded research assistant. You upload your own sources — PDFs, Google Docs, URLs, or YouTube videos — and it answers questions grounded exclusively in those materials, with inline citations linking back to the original text. This makes it well suited for the synthesis stage of a literature review, for checking whether a draft argument is consistent with the papers you have read, or for getting a fast orientation to an unfamiliar set of documents.
-
-Because NotebookLM is part of Google's product suite, UM researchers can access it directly through their institutional Google Workspace account. No separate sign-up is needed.
-
-**Link:** https://notebooklm.google.com (sign in with your @umich.edu account)
-
----
+MIDAS is the Michigan Institute for Data and AI in Society, and it is the home of this handbook. Beyond publishing resources like this one, MIDAS offers a range of direct services to U-M researchers, from hands-on workshops and consulting to grant support and pilot funding. If you are not sure where to start, MIDAS is usually the right first contact.
 
 ### MIDAS AI Sandbox
 
@@ -79,81 +47,11 @@ The AI Sandbox is MIDAS's weekly, drop-in learning space where researchers acros
 
 ---
 
-## High-Performance Computing Resources
-
-### Great Lakes Cluster
-
-Great Lakes is UM's primary HPC system for large-scale computing. It provides GPU and CPU nodes for ML training, a SLURM scheduler, and pre-installed software modules for PyTorch, TensorFlow, and JAX. It is well suited for AutoGluon training, deep learning experiments, and large simulations where a laptop or Colab session is not enough.
-
-**Link:** https://arc.umich.edu/greatlakes/
-
----
-
-### Armis2 (HIPAA-Aligned Secure HPC)
-
-Armis2 supports computation involving sensitive or clinical data, including electronic health records, restricted research datasets, and data subject to HIPAA or similar regulations. It includes GPU support for machine learning workflows and is the right environment when your data cannot leave a compliant infrastructure.
-
-**Link:** https://arc.umich.edu/armis2/
-
----
-
-### Lighthouse (Research Storage and HPC Integration)
-
-Lighthouse provides large-scale research data storage with direct integration with UM's HPC systems and shared access for collaborative projects. It is especially useful for research generating large volumes of data, such as neuroimaging, high-density sensor streams, and multimodal datasets.
-
-**Link:** https://arc.umich.edu/lighthouse/
-
----
-
-## Data Access Resources
-
-### Deep Blue Data
-
-Deep Blue Data is UM's institutional research data repository, hosted by the UM Library. Researchers can deposit and publish their datasets here to support open science and reproducibility, and can also discover datasets deposited by other UM researchers.
-
-**Link:** https://deepblue.lib.umich.edu/data
-
----
-
-### UM Library Data Services
-
-The UM Library offers a searchable data catalog, access to licensed datasets, and consultations covering metadata, data management planning, and reproducibility. This is a particularly valuable resource for researchers in the social sciences, public policy, and health-related fields.
-
-**Link:** https://guides.lib.umich.edu/data
-
----
-
-### ICPSR
-
-The Inter-university Consortium for Political and Social Research (ICPSR), headquartered at U-M, hosts thousands of curated social, behavioral, and health-related datasets, including longitudinal surveys, administrative records, and cross-national comparative studies {cite}`icpsr`. Data are typically accompanied by detailed codebooks and metadata, and many restricted-use datasets are accessible through a formal application process. ICPSR's data management practices make it one of the more reliable sources for reproducibility-focused work.
-
-**Link:** https://www.icpsr.umich.edu/
-
----
-
-### Michigan Medicine Synthetic Datasets
-
-Michigan Medicine provides synthetic and simulated clinical datasets designed to resemble real electronic health record data without exposing protected health information {cite}`michigan_medicine`. These datasets are appropriate for testing analytical pipelines, exploring feature engineering strategies, and evaluating model deployment approaches without IRB constraints. They are particularly well-suited to researchers who want to develop clinical AI workflows before applying for access to real patient data.
-
-**Link:** https://www.michiganmedicine.org/
-
----
-
-## Expert Consulting and Support Services
-
 ### MIDAS Consulting
 
 MIDAS provides free AI and data science consulting for UM researchers. Common topics include machine learning and deep learning, feature engineering, model selection, responsible AI practices, and designing AI-enabled research workflows. This is a good first call when you are not sure where to start with an analysis.
 
 **Link:** https://midas.umich.edu/consulting/
-
----
-
-### ARC Consulting
-
-ARC supports researchers in getting their computational workloads running efficiently on UM's systems. Their team helps with HPC onboarding, GPU access, SLURM scripting and job optimization, and data movement and storage workflows.
-
-**Link:** https://arc.umich.edu/consulting/
 
 ---
 
@@ -165,8 +63,6 @@ MIDAS runs a formal program connecting faculty with graduate and undergraduate s
 
 ---
 
-## Grant and Proposal Support
-
 ### MIDAS Grant Support
 
 If you are preparing a grant proposal that involves AI or data science methods, MIDAS offers direct support that goes beyond a quick email exchange. The team can conduct red team reviews of your proposal, flagging methodological weak points and anticipating reviewer concerns before submission. They can also help you draft Letters of Support and connect you with data science collaborators on campus. If your proposal needs to describe MIDAS facilities or resources, you can request boilerplate language through a Google Form rather than writing it from scratch.
@@ -176,8 +72,6 @@ This is a genuinely underused service. If you are putting together an NSF, NIH, 
 **Link:** https://midas.umich.edu/research/
 
 ---
-
-## Training, Workshops, and Education
 
 ### MIDAS Workshops
 
@@ -195,16 +89,6 @@ MIDAS runs an ongoing monthly tutorial series for researchers who want to unders
 
 ---
 
-### UM Library Workshops
-
-The UM Library's Technology Training Center offers workshops on reproducible research, data management, Python and R fundamentals, and data visualization and cleaning.
-
-**Link:** https://ttc.iss.lsa.umich.edu/
-
----
-
-## Funding and Institutional Support
-
 ### MIDAS Pilot Funding
 
 MIDAS offers competitive pilot grants to support data science-driven interdisciplinary research at UM.
@@ -213,7 +97,125 @@ MIDAS offers competitive pilot grants to support data science-driven interdiscip
 
 ---
 
-### OVPR Funding Programs
+## Part 2: Other U-M Resources
+
+Beyond MIDAS, the university offers a broad set of tools, computing infrastructure, data resources, and support services. This section covers the most relevant ones for researchers working with AI and data science methods.
+
+### Campus AI Tools and Platforms
+
+#### UMGPT
+
+UMGPT is the university's secure, institution-hosted large language model service, available to all UM faculty, staff, and students. Because it runs within UM's infrastructure, it is appropriate for working with non-public research materials that you would not want to send to an external commercial service. Researchers use it for drafting and revising writing, summarizing literature, explaining concepts, generating and debugging code, and a range of other day-to-day tasks.
+
+**Link:** https://its.umich.edu/computing/ai/umgpt
+
+---
+
+#### Maizey
+
+Maizey allows researchers to upload documents and build custom Retrieval-Augmented Generation (RAG) systems without writing any code. This is particularly useful for literature review assistance, creating lab onboarding or SOP chatbots, building course material Q&A assistants, and summarizing large policy or documentation collections.
+
+**Link:** https://maizey.ai.umich.edu/
+
+---
+
+#### Google Gemini (UM Institutional Access)
+
+UM has an institutional subscription to Google Gemini, which gives researchers access to Gemini through their UM Google Workspace account. This provides a capable multimodal model, including text, image, and document understanding, within an enterprise agreement that offers additional data protections compared to consumer-tier access. Log in through your UM Google account to access it.
+
+**Link:** https://gemini.google.com/ (sign in with your UM account)
+
+---
+
+#### NotebookLM (UM Google Workspace)
+
+NotebookLM is Google's document-grounded research assistant. You upload your own sources — PDFs, Google Docs, URLs, or YouTube videos — and it answers questions grounded exclusively in those materials, with inline citations linking back to the original text. This makes it well suited for the synthesis stage of a literature review, for checking whether a draft argument is consistent with the papers you have read, or for getting a fast orientation to an unfamiliar set of documents.
+
+Because NotebookLM is part of Google's product suite, UM researchers can access it directly through their institutional Google Workspace account. No separate sign-up is needed.
+
+**Link:** https://notebooklm.google.com (sign in with your @umich.edu account)
+
+---
+
+### High-Performance Computing Resources
+
+#### Great Lakes Cluster
+
+Great Lakes is UM's primary HPC system for large-scale computing. It provides GPU and CPU nodes for ML training, a SLURM scheduler, and pre-installed software modules for PyTorch, TensorFlow, and JAX. It is well suited for AutoGluon training, deep learning experiments, and large simulations where a laptop or Colab session is not enough.
+
+**Link:** https://arc.umich.edu/greatlakes/
+
+---
+
+#### Armis2 (HIPAA-Aligned Secure HPC)
+
+Armis2 supports computation involving sensitive or clinical data, including electronic health records, restricted research datasets, and data subject to HIPAA or similar regulations. It includes GPU support for machine learning workflows and is the right environment when your data cannot leave a compliant infrastructure.
+
+**Link:** https://arc.umich.edu/armis2/
+
+---
+
+#### Lighthouse (Research Storage and HPC Integration)
+
+Lighthouse provides large-scale research data storage with direct integration with UM's HPC systems and shared access for collaborative projects. It is especially useful for research generating large volumes of data, such as neuroimaging, high-density sensor streams, and multimodal datasets.
+
+**Link:** https://arc.umich.edu/lighthouse/
+
+---
+
+### Data Access Resources
+
+#### Deep Blue Data
+
+Deep Blue Data is UM's institutional research data repository, hosted by the UM Library. Researchers can deposit and publish their datasets here to support open science and reproducibility, and can also discover datasets deposited by other UM researchers.
+
+**Link:** https://deepblue.lib.umich.edu/data
+
+---
+
+#### UM Library Data Services
+
+The UM Library offers a searchable data catalog, access to licensed datasets, and consultations covering metadata, data management planning, and reproducibility. This is a particularly valuable resource for researchers in the social sciences, public policy, and health-related fields.
+
+**Link:** https://guides.lib.umich.edu/data
+
+---
+
+#### ICPSR
+
+The Inter-university Consortium for Political and Social Research (ICPSR), headquartered at U-M, hosts thousands of curated social, behavioral, and health-related datasets, including longitudinal surveys, administrative records, and cross-national comparative studies {cite}`icpsr`. Data are typically accompanied by detailed codebooks and metadata, and many restricted-use datasets are accessible through a formal application process. ICPSR's data management practices make it one of the more reliable sources for reproducibility-focused work.
+
+**Link:** https://www.icpsr.umich.edu/
+
+---
+
+#### Michigan Medicine Synthetic Datasets
+
+Michigan Medicine provides synthetic and simulated clinical datasets designed to resemble real electronic health record data without exposing protected health information {cite}`michigan_medicine`. These datasets are appropriate for testing analytical pipelines, exploring feature engineering strategies, and evaluating model deployment approaches without IRB constraints. They are particularly well-suited to researchers who want to develop clinical AI workflows before applying for access to real patient data.
+
+**Link:** https://www.michiganmedicine.org/
+
+---
+
+### ARC Consulting
+
+ARC supports researchers in getting their computational workloads running efficiently on UM's systems. Their team helps with HPC onboarding, GPU access, SLURM scripting and job optimization, and data movement and storage workflows.
+
+**Link:** https://arc.umich.edu/consulting/
+
+---
+
+### UM Library Workshops
+
+The UM Library's Technology Training Center offers workshops on reproducible research, data management, Python and R fundamentals, and data visualization and cleaning.
+
+**Link:** https://ttc.iss.lsa.umich.edu/
+
+---
+
+### Other Funding Programs
+
+#### OVPR Funding Programs
 
 The Office of the Vice President for Research administers several funding programs, including the Research Catalyst and Innovation Fund, bridge support programs, and multidisciplinary research seed grants.
 
@@ -221,7 +223,7 @@ The Office of the Vice President for Research administers several funding progra
 
 ---
 
-### Unit-Level Resources
+#### Unit-Level Resources
 
 Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azure, and student support for data projects. Check with your departmental research office to find out what is available in your unit.
 
@@ -231,11 +233,17 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 
 | Category | Resource | Description | Link |
 |---------|----------|-------------|------|
+| **MIDAS** | AI Sandbox | Weekly hands-on AI workshop for researchers | https://midas.umich.edu/ai-sandbox/ |
+| **MIDAS** | MIDAS Consulting | AI and ML guidance | https://midas.umich.edu/consulting/ |
+| **MIDAS** | Faculty-Student Connection | Match with student data scientists | https://midas.umich.edu/research/research-resources/faculty-student-research-connection/ |
+| **MIDAS** | Grant Support | Red team reviews, Letters of Support, proposal boilerplate | https://midas.umich.edu/research/ |
+| **MIDAS** | MIDAS Workshops | General AI and ML workshops | https://midas.umich.edu/workshops/ |
+| **MIDAS** | GenAI Tutorial Series | Monthly GenAI tutorials for researchers | https://midas.umich.edu/research/research-resources/generative-ai-hub/generative-ai-tutorials/ |
+| **MIDAS** | MIDAS Pilot Grants | Interdisciplinary research seed funding | https://midas.umich.edu/funding/ |
 | AI Tools | UMGPT | Secure UM-hosted LLM service | https://its.umich.edu/computing/ai/umgpt |
 | AI Tools | Maizey | Build custom RAG systems | https://maizey.ai.umich.edu/ |
 | AI Tools | Google Gemini | Multimodal AI via UM institutional access | https://gemini.google.com/ |
 | AI Tools | NotebookLM | Document-grounded research assistant via UM Google Workspace | https://notebooklm.google.com |
-| AI Tools | AI Sandbox | Weekly hands-on AI workshop for researchers | https://midas.umich.edu/ai-sandbox/ |
 | HPC | Great Lakes | Large-scale compute for ML | https://arc.umich.edu/greatlakes/ |
 | Secure HPC | Armis2 | HIPAA-aligned secure compute | https://arc.umich.edu/armis2/ |
 | Storage | Lighthouse | Shared research storage | https://arc.umich.edu/lighthouse/ |
@@ -243,14 +251,8 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 | Data Access | ICPSR | Curated research datasets | https://www.icpsr.umich.edu/ |
 | Data Access | Michigan Medicine | Synthetic clinical datasets | https://www.michiganmedicine.org/ |
 | Data Access | UM Library | Data catalog and consultations | https://guides.lib.umich.edu/data |
-| Consulting | MIDAS | AI and ML guidance | https://midas.umich.edu/consulting/ |
 | Consulting | ARC | HPC and workflow support | https://arc.umich.edu/consulting/ |
-| Consulting | Faculty-Student Connection | Match with student data scientists | https://midas.umich.edu/research/research-resources/faculty-student-research-connection/ |
-| Training | MIDAS Workshops | General AI and ML workshops | https://midas.umich.edu/workshops/ |
-| Training | GenAI Tutorial Series | Monthly GenAI tutorials for researchers | https://midas.umich.edu/research/research-resources/generative-ai-hub/generative-ai-tutorials/ |
 | Training | UM Library Workshops | Data management and coding workshops | https://ttc.iss.lsa.umich.edu/ |
-| Grant Support | MIDAS Grant Support | Red team reviews, Letters of Support, proposal boilerplate | https://midas.umich.edu/research/ |
-| Funding | MIDAS Pilot Grants | Interdisciplinary research seed funding | https://midas.umich.edu/funding/ |
 | Funding | OVPR Programs | UM research funding programs | https://research.umich.edu/funding/ |
 
 ---
