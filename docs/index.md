@@ -90,6 +90,7 @@ part4/ch27_um_resources
 part4/ch28_external_resources
 part4/ch29_templates
 part4/ch30_glossary
+part4/ch31_video_index
 ```
 
 ---
