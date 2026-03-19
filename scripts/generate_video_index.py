@@ -388,7 +388,10 @@ def fetch_and_cache(use_cache: bool = True) -> dict:
 
 def classify_playlist(playlist: dict) -> str:
     """Return the topic group label that best matches this playlist."""
-    haystack = (playlist["title"] + " " + playlist.get("description", "")).lower()
+    # Match against title only — descriptions often contain incidental keywords
+    # that cause false positives (e.g. a biodiversity playlist describing its
+    # methods with words like "retrieval" or "agent").
+    haystack = playlist["title"].lower()
     for group in TOPIC_GROUPS:
         for kw in group["keywords"]:
             if kw in haystack:
@@ -417,7 +420,12 @@ def _playlist_row(pl: dict) -> str:
 
 def generate_markdown(data: dict) -> str:
     playlists        = data["playlists"]
-    standalone       = data.get("standalone_videos", [])
+    # Apply exclude filter here (not just at fetch time) so cached data is
+    # also filtered correctly after STANDALONE_EXCLUDE_KEYWORDS are updated.
+    standalone       = [
+        v for v in data.get("standalone_videos", [])
+        if not any(kw in v["title"].lower() for kw in STANDALONE_EXCLUDE_KEYWORDS)
+    ]
     fetched_date     = data.get("fetched_at", "")[:10]
     total_in_plists  = sum(pl.get("video_count", len(pl.get("videos", [])))
                            for pl in playlists)

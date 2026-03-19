@@ -4,7 +4,7 @@
 This index was last generated on 2026-03-19. To refresh it with the latest videos, run `python scripts/generate_video_index.py` from the repository root after setting your `YOUTUBE_API_KEY` environment variable.
 ```
 
-MIDAS maintains a growing YouTube library of recorded workshops, tutorial series, symposia, and invited lectures. As of this writing, the channel holds 280 videos across 19 playlists. Another 134 videos sit outside any playlist. This index helps you find recordings that connect to what you are reading in the handbook, whether you want to see a concept explained live, hear researchers talk through how they apply a method in their own work, or work through a full workshop from start to finish.
+MIDAS maintains a growing YouTube library of recorded workshops, tutorial series, symposia, and invited lectures. As of this writing, the channel holds 279 videos across 19 playlists. Another 133 videos sit outside any playlist. This index helps you find recordings that connect to what you are reading in the handbook, whether you want to see a concept explained live, hear researchers talk through how they apply a method in their own work, or work through a full workshop from start to finish.
 
 The index is organized in three parts. The first groups playlists by handbook topic, so you can jump directly to recordings that pair with a chapter you are working through. The second covers standalone videos not collected into a playlist. The third lists every playlist in one place, sorted by year, for when you want to browse more freely.
 
@@ -32,8 +32,6 @@ Related chapters: [NLP with BERT](../part3/ch23_nlp_with_bert), [Retrieval-Augme
 | Playlist | Videos | Year |
 |----------|:------:|:----:|
 | [Generative AI: From Theory to Scientific Applications Mini-Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEct2Q-h0RM_Q2N1gRrpD88) | 8 | 2025 |
-| [Vesuvius Scrolls: From Ancient Manuscripts to Artificial Intelligence](https://www.youtube.com/playlist?list=PL0iUdEecI6UHn_MAmz6I1VcU93Ch5xxLH) | 9 | 2025 |
-| [MIDAS mini-symposium March 2024: Understanding Biodiversity in a Changing Planet](https://www.youtube.com/playlist?list=PL0iUdEecI6UGLX-smK6TOfkGuQ-X9hWI5) | 6 | 2024 |
 
 ### Understanding How AI Works
 
@@ -46,6 +44,17 @@ Related chapters: [How Modern AI Works](../part1/ch02_how_ai_works), [Prompt Eng
 | [Generative AI Tutorial Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFbj3A3UR0ApyEmO07vkrS3) | 15 | 2023 |
 | [MIDAS mini-symposium Sept 2023: Generative AI: Diffusion Models for Scientific Machine Learning](https://www.youtube.com/playlist?list=PL0iUdEecI6UELzywyQUu_DOLMB_kjYBsy) | 7 | 2023 |
 | [Generative AI Coast-to-Coast Webinars 2023](https://www.youtube.com/playlist?list=PL0iUdEecI6UGURBY1qOP0-zwJr2-jTXtY) | 4 | 2023 |
+
+### Data Analysis and Applied Machine Learning
+
+Hands-on workshop recordings covering data science workflows, applied modeling, and domain-specific ML use cases. These map closely to the chapters in Part II.
+
+Related chapters: [Exploratory Data Analysis](../part2/ch14_exploratory_analysis), [AutoML for Tabular Data](../part2/ch17_automl_tabular), [Pretrained Models for Text and Vision](../part2/ch20_pretrained_text_vision)
+
+| Playlist | Videos | Year |
+|----------|:------:|:----:|
+| [Vesuvius Scrolls: From Ancient Manuscripts to Artificial Intelligence](https://www.youtube.com/playlist?list=PL0iUdEecI6UHn_MAmz6I1VcU93Ch5xxLH) | 9 | 2025 |
+| [MIDAS mini-symposium March 2024: Understanding Biodiversity in a Changing Planet](https://www.youtube.com/playlist?list=PL0iUdEecI6UGLX-smK6TOfkGuQ-X9hWI5) | 6 | 2024 |
 
 ### AI Across the Research Lifecycle
 
@@ -227,7 +236,6 @@ The videos below are on the MIDAS channel but have not been collected into a pla
 | [MIDAS COVID-19 Seminar Series: If the outbreak ended, does that mean the interventions worked?](https://www.youtube.com/watch?v=tDaVQRm6HQI) | 2020-06-02 |
 | [CSCAR/MIDAS workhops on data, methodology, and Covid (Session 1)](https://www.youtube.com/watch?v=4EvyJUZOtTk) | 2020-06-02 |
 | [Careers in Data Science Virtual Summer Series](https://www.youtube.com/watch?v=SpHiWcJ_YL4) | 2020-05-26 |
-| [Blue Angels Flyover](https://www.youtube.com/watch?v=Id-nsS9heuc) | 2020-05-13 |
 | [Siqian Shen A Summary of Operations Research and Industrial Engineering Tools for Fighting COVID-19](https://www.youtube.com/watch?v=pIm5QGnXIXY) | 2020-05-05 |
 | [Qianying Lin - COVID-19 outbreak in Wuhan, China: in retrospect and in prospect](https://www.youtube.com/watch?v=tOkTc4ZDTFc) | 2020-03-17 |
 | [Nicholas Diakopoulos - The Role of Algorithmic Intermediaries in Shaping Attention to News](https://www.youtube.com/watch?v=A-B6T2Ispfg) | 2020-03-12 |
