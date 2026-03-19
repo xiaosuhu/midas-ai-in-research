@@ -79,6 +79,55 @@ PLAYLISTS_URL  = "https://www.youtube.com/@UM_MIDAS/playlists"
 # --------------------------------------------------------------------------- #
 
 TOPIC_GROUPS = [
+    # NOTE: Groups are checked top-to-bottom. More specific groups must come
+    # before groups with generic keywords (e.g. "symposium", "colloquium")
+    # to avoid false matches.
+    {
+        "label": "Ethics, Society, and Responsible AI",
+        "description": (
+            "A direct complement to the ethics and validation chapters. These "
+            "playlists explore fairness, accountability, and the societal consequences "
+            "of deploying AI in research and in practice."
+        ),
+        "chapter_refs": [
+            ("Ethics and Privacy", "part1/ch10_ethics_privacy"),
+            ("Validation and Interpretation", "part2/ch21_validation_interpretation"),
+        ],
+        "keywords": [
+            "ethical ai",
+            "ethics",
+            "responsible data",
+            "responsible ai",
+            "implementing ai in health",
+            "lhs colloquium",
+            "society lecture",
+            "data and ai in society",
+        ],
+    },
+    {
+        "label": "Language Models and Generative AI Applications",
+        "description": (
+            "Recordings focused on applying large language models to real research "
+            "tasks, including retrieval-augmented generation, agentic workflows, and "
+            "fine-tuning. These connect closely to the chapters in Part III."
+        ),
+        "chapter_refs": [
+            ("NLP with BERT", "part3/ch23_nlp_with_bert"),
+            ("Retrieval-Augmented Generation", "part3/ch24_rag"),
+            ("AI Agents", "part3/ch25_ai_agents"),
+            ("LLM Evaluation and Fine-Tuning", "part3/ch26_llm_eval_finetuning"),
+        ],
+        "keywords": [
+            "from theory to scientific",
+            "generative ai: from theory",
+            "language model application",
+            "nlp",
+            "rag",
+            "retrieval",
+            "fine-tun",
+            "agent",
+        ],
+    },
     {
         "label": "Understanding How AI Works",
         "description": (
@@ -98,6 +147,28 @@ TOPIC_GROUPS = [
             "diffusion model",
             "large language model",
             "tutorial series",
+        ],
+    },
+    {
+        "label": "Data Analysis and Applied Machine Learning",
+        "description": (
+            "Hands-on workshop recordings covering data science workflows, "
+            "applied modeling, and domain-specific ML use cases. These map closely "
+            "to the chapters in Part II."
+        ),
+        "chapter_refs": [
+            ("Exploratory Data Analysis", "part2/ch14_exploratory_analysis"),
+            ("AutoML for Tabular Data", "part2/ch17_automl_tabular"),
+            ("Pretrained Models for Text and Vision", "part2/ch20_pretrained_text_vision"),
+        ],
+        "keywords": [
+            "computer vision",
+            "biodiversity",
+            "vesuvius",
+            "imaging",
+            "scientific instruments",
+            "machine learning workshop",
+            "data science workshop",
         ],
     },
     {
@@ -125,77 +196,17 @@ TOPIC_GROUPS = [
             "lecture series",
         ],
     },
-    {
-        "label": "Ethics, Society, and Responsible AI",
-        "description": (
-            "A direct complement to the ethics and validation chapters. These "
-            "playlists explore fairness, accountability, and the societal consequences "
-            "of deploying AI in research and in practice."
-        ),
-        "chapter_refs": [
-            ("Ethics and Privacy", "part1/ch10_ethics_privacy"),
-            ("Validation and Interpretation", "part2/ch21_validation_interpretation"),
-        ],
-        "keywords": [
-            "ethical ai",
-            "ethics",
-            "responsible data",
-            "responsible ai",
-            "implementing ai in health",
-            "lhs colloquium",
-            "society lecture",
-            "data and ai in society",
-        ],
-    },
-    {
-        "label": "Data Analysis and Applied Machine Learning",
-        "description": (
-            "Hands-on workshop recordings covering data science workflows, "
-            "applied modeling, and domain-specific ML use cases. These map closely "
-            "to the chapters in Part II."
-        ),
-        "chapter_refs": [
-            ("Exploratory Data Analysis", "part2/ch14_exploratory_analysis"),
-            ("AutoML for Tabular Data", "part2/ch17_automl_tabular"),
-            ("Pretrained Models for Text and Vision", "part2/ch20_pretrained_text_vision"),
-        ],
-        "keywords": [
-            "computer vision",
-            "biodiversity",
-            "vesuvius",
-            "imaging",
-            "scientific instruments",
-            "machine learning workshop",
-            "data science workshop",
-        ],
-    },
-    {
-        "label": "Language Models and Generative AI Applications",
-        "description": (
-            "Recordings focused on applying large language models to real research "
-            "tasks, including retrieval-augmented generation, agentic workflows, and "
-            "fine-tuning. These connect closely to the chapters in Part III."
-        ),
-        "chapter_refs": [
-            ("NLP with BERT", "part3/ch23_nlp_with_bert"),
-            ("Retrieval-Augmented Generation", "part3/ch24_rag"),
-            ("AI Agents", "part3/ch25_ai_agents"),
-            ("LLM Evaluation and Fine-Tuning", "part3/ch26_llm_eval_finetuning"),
-        ],
-        "keywords": [
-            "generative ai: from theory",
-            "from theory to scientific",
-            "language model application",
-            "nlp",
-            "rag",
-            "retrieval",
-            "fine-tun",
-            "agent",
-        ],
-    },
 ]
 
 FALLBACK_GROUP = "Annual Events and Symposia"
+
+# Standalone videos whose titles contain any of these strings (case-insensitive)
+# are excluded from the index. Use this for non-research uploads that are not
+# relevant to handbook readers.
+STANDALONE_EXCLUDE_KEYWORDS = [
+    "blue angels",
+    "flyover",
+]
 FALLBACK_DESC  = (
     "These playlists capture MIDAS annual summits, symposia, panel discussions, "
     "and other community events. They offer a broad view of the research "
@@ -348,7 +359,14 @@ def fetch_and_cache(use_cache: bool = True) -> dict:
     uploads_id = get_uploads_playlist_id(channel_id)
     print("Fetching uploads playlist to find standalone videos...")
     all_uploads = get_playlist_videos(service, uploads_id)
-    standalone  = [v for v in all_uploads if v["video_id"] not in playlist_video_ids]
+    standalone  = [
+        v for v in all_uploads
+        if v["video_id"] not in playlist_video_ids
+        and not any(
+            kw in v["title"].lower()
+            for kw in STANDALONE_EXCLUDE_KEYWORDS
+        )
+    ]
     print(f"Found {len(all_uploads)} total uploads, "
           f"{len(standalone)} not in any curated playlist.")
 

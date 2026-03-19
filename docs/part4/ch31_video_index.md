@@ -10,6 +10,31 @@ The index is organized in three parts. The first groups playlists by handbook to
 
 ## Finding Videos by Handbook Topic
 
+### Ethics, Society, and Responsible AI
+
+A direct complement to the ethics and validation chapters. These playlists explore fairness, accountability, and the societal consequences of deploying AI in research and in practice.
+
+Related chapters: [Ethics and Privacy](../part1/ch10_ethics_privacy), [Validation and Interpretation](../part2/ch21_validation_interpretation)
+
+| Playlist | Videos | Year |
+|----------|:------:|:----:|
+| [Data and AI in Society Lecture Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFUypet8fns8r7g8zhS5_9L) | 12 | 2023 |
+| [MIDAS Ethical AI Forum: "From Theory to Practice: Building Ethical and Trustworthy AI"](https://www.youtube.com/playlist?list=PL0iUdEecI6UFewelccsbGL1OJfT31yS-e) | 6 | 2023 |
+| [MIDAS: Responsible Data Science and AI mini-symposium, 4/13/23](https://www.youtube.com/playlist?list=PL0iUdEecI6UGl2Gy4NQo14LSV0CFfsahO) | 4 | 2023 |
+| [MIDAS / LHS Colloquium  April 2023: Implementing AI in Health](https://www.youtube.com/playlist?list=PL0iUdEecI6UGWCE8WrBLz2LkUMjELznTv) | 2 | 2023 |
+
+### Language Models and Generative AI Applications
+
+Recordings focused on applying large language models to real research tasks, including retrieval-augmented generation, agentic workflows, and fine-tuning. These connect closely to the chapters in Part III.
+
+Related chapters: [NLP with BERT](../part3/ch23_nlp_with_bert), [Retrieval-Augmented Generation](../part3/ch24_rag), [AI Agents](../part3/ch25_ai_agents), [LLM Evaluation and Fine-Tuning](../part3/ch26_llm_eval_finetuning)
+
+| Playlist | Videos | Year |
+|----------|:------:|:----:|
+| [Generative AI: From Theory to Scientific Applications Mini-Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEct2Q-h0RM_Q2N1gRrpD88) | 8 | 2025 |
+| [Vesuvius Scrolls: From Ancient Manuscripts to Artificial Intelligence](https://www.youtube.com/playlist?list=PL0iUdEecI6UHn_MAmz6I1VcU93Ch5xxLH) | 9 | 2025 |
+| [MIDAS mini-symposium March 2024: Understanding Biodiversity in a Changing Planet](https://www.youtube.com/playlist?list=PL0iUdEecI6UGLX-smK6TOfkGuQ-X9hWI5) | 6 | 2024 |
+
 ### Understanding How AI Works
 
 These recordings pair well with the early chapters in Part I, especially the overview of how modern AI systems work and how to use them effectively through prompting.
@@ -18,7 +43,6 @@ Related chapters: [How Modern AI Works](../part1/ch02_how_ai_works), [Prompt Eng
 
 | Playlist | Videos | Year |
 |----------|:------:|:----:|
-| [Generative AI: From Theory to Scientific Applications Mini-Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEct2Q-h0RM_Q2N1gRrpD88) | 8 | 2025 |
 | [Generative AI Tutorial Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFbj3A3UR0ApyEmO07vkrS3) | 15 | 2023 |
 | [MIDAS mini-symposium Sept 2023: Generative AI: Diffusion Models for Scientific Machine Learning](https://www.youtube.com/playlist?list=PL0iUdEecI6UELzywyQUu_DOLMB_kjYBsy) | 7 | 2023 |
 | [Generative AI Coast-to-Coast Webinars 2023](https://www.youtube.com/playlist?list=PL0iUdEecI6UGURBY1qOP0-zwJr2-jTXtY) | 4 | 2023 |
@@ -35,35 +59,11 @@ Related chapters: [When to Use AI](../part1/ch04_when_to_use_ai), [Research Plan
 | [2025 AI in S&E Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEaABOmJn0tT5YkL1xPMHo7) | 20 | 2025 |
 | [2024 MIDAS x ADSA](https://www.youtube.com/playlist?list=PL0iUdEecI6UHP4t2Imbgbutd56Lu-_5Gu) | 4 | 2024 |
 | [MIDAS mini-symposium 2024: Interdisciplinary Open Science in Social and Behavioral Research](https://www.youtube.com/playlist?list=PL0iUdEecI6UH_bH-blVmqEbUvS7H3bMdJ) | 5 | 2024 |
-| [MIDAS mini-symposium March 2024: Understanding Biodiversity in a Changing Planet](https://www.youtube.com/playlist?list=PL0iUdEecI6UGLX-smK6TOfkGuQ-X9hWI5) | 6 | 2024 |
 | [MIDAS Symposium: The Future of Discovery in the Age of Human-AI Collaboration](https://www.youtube.com/playlist?list=PL0iUdEecI6UHLsLv5kM18uTNLIX777B7d) | 4 | 2024 |
 | [MIDAS mini-symposium Oct 2023: AI-driven Research Workflows](https://www.youtube.com/playlist?list=PL0iUdEecI6UFmo23poV3XEJvJAvdngjb3) | 5 | 2023 |
-| [Data and AI in Society Lecture Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFUypet8fns8r7g8zhS5_9L) | 12 | 2023 |
-| [MIDAS: Responsible Data Science and AI mini-symposium, 4/13/23](https://www.youtube.com/playlist?list=PL0iUdEecI6UGl2Gy4NQo14LSV0CFfsahO) | 4 | 2023 |
-| [MIDAS / LHS Colloquium  April 2023: Implementing AI in Health](https://www.youtube.com/playlist?list=PL0iUdEecI6UGWCE8WrBLz2LkUMjELznTv) | 2 | 2023 |
 | [AI in Science and Engineering Day 2023](https://www.youtube.com/playlist?list=PL0iUdEecI6UE5YaRR3YpjLzD_4DyV8mn1) | 7 | 2023 |
 | [MIDAS Colloquium Jan. 2023: Automated Research Workflow](https://www.youtube.com/playlist?list=PL0iUdEecI6UHqAaN6vQgrgtcSCIDaeo7C) | 5 | 2023 |
 | [2022 Data Science and AI Summit](https://www.youtube.com/playlist?list=PL0iUdEecI6UHYnECu_GYkHyj0501ly8cK) | 12 | 2022 |
-
-### Ethics, Society, and Responsible AI
-
-A direct complement to the ethics and validation chapters. These playlists explore fairness, accountability, and the societal consequences of deploying AI in research and in practice.
-
-Related chapters: [Ethics and Privacy](../part1/ch10_ethics_privacy), [Validation and Interpretation](../part2/ch21_validation_interpretation)
-
-| Playlist | Videos | Year |
-|----------|:------:|:----:|
-| [MIDAS Ethical AI Forum: "From Theory to Practice: Building Ethical and Trustworthy AI"](https://www.youtube.com/playlist?list=PL0iUdEecI6UFewelccsbGL1OJfT31yS-e) | 6 | 2023 |
-
-### Data Analysis and Applied Machine Learning
-
-Hands-on workshop recordings covering data science workflows, applied modeling, and domain-specific ML use cases. These map closely to the chapters in Part II.
-
-Related chapters: [Exploratory Data Analysis](../part2/ch14_exploratory_analysis), [AutoML for Tabular Data](../part2/ch17_automl_tabular), [Pretrained Models for Text and Vision](../part2/ch20_pretrained_text_vision)
-
-| Playlist | Videos | Year |
-|----------|:------:|:----:|
-| [Vesuvius Scrolls: From Ancient Manuscripts to Artificial Intelligence](https://www.youtube.com/playlist?list=PL0iUdEecI6UHn_MAmz6I1VcU93Ch5xxLH) | 9 | 2025 |
 
 ## Other Recordings
 
