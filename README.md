@@ -1,6 +1,6 @@
 # MIDAS AI in Research Handbook
 
-[![Documentation Status](https://readthedocs.org/projects/midas-ai-tutorial/badge/?version=latest)](https://midas-ai-tutorial.readthedocs.io/)
+[![Documentation Status](https://readthedocs.org/projects/midas-ai-in-research/badge/)](https://midas-ai-in-research.readthedocs.io/)
 
 A practical, open handbook for researchers who want to bring AI into their work in a thoughtful and responsible way. Developed by the [Michigan Institute for Data and AI in Society (MIDAS)](https://midas.umich.edu) at the University of Michigan.
 
