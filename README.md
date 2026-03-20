@@ -1,95 +1,47 @@
-# MIDAS AI in Research Tutorial
+# MIDAS AI in Research Handbook
 
 [![Documentation Status](https://readthedocs.org/projects/midas-ai-tutorial/badge/?version=latest)](https://midas-ai-tutorial.readthedocs.io/)
 
-A living tutorial on applying artificial intelligence in academic research, maintained by the Michigan Institute for Data Science (MIDAS) at the University of Michigan.
+A practical, open handbook for researchers who want to bring AI into their work in a thoughtful and responsible way. Developed by the [Michigan Institute for Data and AI in Society (MIDAS)](https://midas.umich.edu) at the University of Michigan.
 
-## About This Tutorial
+**Read the handbook online:** [midas-ai-tutorial.readthedocs.io](https://midas-ai-tutorial.readthedocs.io/)
 
-This handbook began with a simple curiosity — how do our questions as researchers evolve in the era of artificial intelligence? Each advance in AI reshapes not only *how* we analyze data or write code, but *what* we ask, *why* we ask it, and *how* we validate answers.
+---
 
-Through this living tutorial, we aim to gather and organize the essential **questions and answers** that researchers across disciplines face when integrating AI into their work — from literature review and grant writing, to ethical practice, reproducibility, and responsible deployment.
+## What This Handbook Is
 
-Rather than a static guide, this is an evolving space to **collect insights, examples, and reflections** about using AI as a true collaborator in research.
+This handbook is for researchers, faculty, and graduate students across all disciplines who want to use AI tools effectively without losing sight of what good research actually requires: domain expertise, careful judgment, and honest reflection on what AI can and cannot do.
 
-## Citation System
+You do not need a technical background to get started. The early chapters are accessible to anyone, and the later chapters go deeper for those who want to build their own models or pipelines.
 
-We use a hybrid citation approach to balance academic rigor with practical usability:
+The handbook follows the research lifecycle from beginning to end, covering literature review, grant writing, data preparation, statistical analysis, and reproducibility, as well as more advanced topics like language models, retrieval-augmented generation, and fine-tuning. But you do not need to read it from start to finish. Each chapter is designed to stand on its own, so feel free to jump to whatever is most relevant to you right now.
 
-### For Academic Papers
-Use **BibTeX references** in `references.bib`:
+## How the Handbook Is Organized
 
-```bibtex
-@article{vaswani2017attention,
-  title={Attention is all you need},
-  author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and others},
-  journal={Advances in neural information processing systems},
-  volume={30},
-  year={2017}
-}
-```
+**Part I: AI Across the Research Lifecycle** covers the fundamentals of working with AI in research, from understanding how modern AI works to prompt engineering, literature review, writing support, grant development, ethics, and validation.
 
-### In content:
+**Part II: AI in Data Analysis** focuses on the hands-on work of data science, including accessing data, exploratory analysis, feature engineering, AutoML, and reproducibility.
 
-markdown
-The transformer architecture [@vaswani2017attention] revolutionized NLP...
-For Websites & Online Reports
-Use direct links:
+**Part III: Building with Modern AI** goes deeper into applied AI development, covering NLP with BERT, retrieval-augmented generation, AI agents, and LLM evaluation and fine-tuning.
 
-markdown
-- [State of AI Report (2024)](https://www.stateof.ai/)
-- [Stanford HAI AI Index Report (2025)](https://hai.stanford.edu/ai-index/2025-ai-index-report)
+**Part IV: Resources and Reference** is a practical reference section with tools, templates, a glossary, and links to further reading.
 
-## How to Contribute
-We welcome contributions from the research community!
+## This Is a Living Document
 
-Reporting Issues
-Found a typo or error? Open an issue
+The field of AI moves quickly. We update the handbook regularly to reflect new tools, emerging practices, and lessons learned from the researchers and students who use this material. If you are returning after some time away, it is worth checking back.
 
-Spot outdated information? Let us know
+## Contributing
 
-Have suggestions for new content? We'd love to hear
+We welcome contributions from the research community. If you find a typo, spot outdated information, or have suggestions for new content, please open an issue on this repository. If you would like to contribute a chapter or section, reach out to us first so we can coordinate.
 
-Content Contributions
-Fork the repository (if public) or request collaborator access
+## License
 
-Create a new branch for your changes
+This handbook is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
-Follow our citation guidelines above
+You are free to share and adapt this material for any purpose, as long as you give appropriate credit to the original authors. Please cite it as:
 
-Submit a pull request with a clear description
+> Hu, X., & MIDAS Research Team. (2025). *MIDAS AI in Research Handbook*. Michigan Institute for Data and AI in Society, University of Michigan. https://midas-ai-tutorial.readthedocs.io/
 
-Content Areas We're Looking For
-Discipline-specific AI use cases
+## Contact
 
-Ethical considerations in your field
-
-Reproducibility best practices
-
-Grant writing examples with AI
-
-Data analysis workflows
-
-Style Guidelines
-Use clear, accessible language for interdisciplinary audiences
-
-Include practical examples when possible
-
-Balance technical depth with approachability
-
-Follow the existing citation format (hybrid system)
-
-
-# Install dependencies
-```bash
-pip install sphinx sphinx-rtd-theme myst-parser
-```
-# Acknowledgments
-This tutorial is maintained by the Michigan Institute for Data Science (MIDAS) research team at the University of Michigan.
-
-# Contact
-For questions or suggestions about this tutorial:
-
-Open an issue in this repository
-Contact MIDAS at midas-research@umich.edu
-This is a living document — we welcome your insights and experiences to help this resource grow and evolve with the AI research landscape.
+For questions or feedback, open an issue in this repository or reach out to MIDAS at [midas-research@umich.edu](mailto:midas-research@umich.edu).
