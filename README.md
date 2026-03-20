@@ -4,7 +4,7 @@
 
 A practical, open handbook for researchers who want to bring AI into their work in a thoughtful and responsible way. Developed by the [Michigan Institute for Data and AI in Society (MIDAS)](https://midas.umich.edu) at the University of Michigan.
 
-**Read the handbook online:** [midas-ai-tutorial.readthedocs.io](https://midas-ai-in-research.readthedocs.io/)
+**Read the handbook online:** [midas-ai-in-research.readthedocs.io](https://midas-ai-in-research.readthedocs.io/)
 
 ---
 
