@@ -40,7 +40,6 @@ This handbook is a living document. The field of AI moves quickly, and we update
 ```{toctree}
 :maxdepth: 2
 :caption: Part I — AI Across the Research Lifecycle
-:numbered:
 :hidden:
 
 part1/ch01_introduction
@@ -58,7 +57,6 @@ part1/ch11_validation
 ```{toctree}
 :maxdepth: 2
 :caption: Part II — AI in Data Analysis
-:numbered:
 :hidden:
 
 part2/ch12_data_access
@@ -76,7 +74,6 @@ part2/ch22_reproducibility
 ```{toctree}
 :maxdepth: 2
 :caption: Part III — Building with Modern AI
-:numbered:
 :hidden:
 
 part3/ch23_nlp_with_bert
@@ -87,7 +84,6 @@ part3/ch26_llm_eval_finetuning
 ```{toctree}
 :maxdepth: 2
 :caption: Part IV — Resources & Reference
-:numbered:
 :hidden:
 
 part4/ch27_um_resources
