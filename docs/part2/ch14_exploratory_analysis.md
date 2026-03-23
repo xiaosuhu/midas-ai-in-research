@@ -13,7 +13,7 @@
 
 You just received your dataset. Before you run a single model or write a cleaning script, you need to answer a few basic questions: What is each column? Which one are you trying to predict or explain? Where are the gaps, and are those gaps random or concentrated in a way that matters?
 
-This is what EDA is really about. It is not just running `.describe()` and moving on. It is taking the time to build a mental model of your data, column by column, before you trust it with anything important.
+This is what EDA is really about. It is not just generating a quick summary and moving on. It is taking the time to build a mental model of your data, column by column, before you trust it with anything important.
 
 This chapter covers the first pass, the initial exploration you do when the data is still unfamiliar. You will discover its shape, its gaps, its quirks, and its quality issues. These discoveries will guide your cleaning strategy in the next chapter.
 
@@ -89,6 +89,8 @@ In the first pass, you are asking "can I trust this data?" In the second pass, y
 
 It is also worth noting that EDA is not a one-time event. Plan to revisit your data after each major transformation. If you impute a large block of missing values or re-encode a categorical variable, take another look at the distributions before moving forward. [Chapter 15](ch15_data_preparation.md) covers the cleaning and preparation steps, and [Chapter 21](ch21_validation_interpretation.md) addresses validation, but each of those stages benefits from looping back to visualization before you commit to your final dataset.
 
+Rushing through initial EDA means you will miss important context. You might clean your data beautifully according to the wrong assumptions. By investing 30 minutes to an hour in this first pass, you will make smarter cleaning decisions, and AI makes that time go a long way.
+
 ## Common AI-Assisted EDA Tasks
 
 ### Generating an Initial Data Quality Report
@@ -113,17 +115,13 @@ AI can flag statistical outliers, but you decide whether they are errors or real
 
 Before you write down your cleaning strategy:
 
-✅ Have you reviewed a sample of raw data yourself (not just summaries)?
-✅ Can you name and describe every column in plain language?
-✅ Have you identified which column is your outcome or target variable?
-✅ Do the summary statistics match what you expect?
-✅ Have you identified all major data quality issues?
-✅ Do you understand where missing values are concentrated?
-✅ Have you caught any obviously incorrect values?
-
-## Why This Matters
-
-Rushing through initial EDA means you will miss important context. You might clean your data beautifully according to the wrong assumptions. By investing 30 minutes to an hour in this first pass, you will make smarter cleaning decisions. AI makes this fast.
+- ✅ Have you reviewed a sample of raw data yourself (not just summaries)?
+- ✅ Can you name and describe every column in plain language?
+- ✅ Have you identified which column is your outcome or target variable?
+- ✅ Do the summary statistics match what you expect?
+- ✅ Have you identified all major data quality issues?
+- ✅ Do you understand where missing values are concentrated?
+- ✅ Have you caught any obviously incorrect values?
 
 ## Key Takeaways
 
