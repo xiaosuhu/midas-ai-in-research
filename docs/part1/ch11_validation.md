@@ -48,7 +48,7 @@ For manuscript and report writing, validation splits into two concerns. The firs
 
 The second concern is voice drift, which accumulates gradually and is easy to miss. AI tends to rephrase arguments in ways that are cleaner but slightly different, and those differences sometimes matter. The best protection is to write a rough version of key sections yourself first, then use AI to improve specific elements, rather than starting from AI output. When you do edit AI-generated text, read for whether the argument is still yours, not just whether the grammar is correct.
 
-The journal disclosure statement (discussed in Chapter 7) is the public record of your writing process. If you are maintaining an AI Usage Card (see below), translating it into a disclosure statement at submission time becomes straightforward.
+The journal disclosure statement (discussed in [Chapter 7](ch07_writing_communication.md)) is the public record of your writing process. If you are maintaining an AI Usage Card (see below), translating it into a disclosure statement at submission time becomes straightforward.
 
 ### Grant Writing
 
@@ -58,7 +58,7 @@ The validation rule here is firm: never rely on AI for agency-specific informati
 
 Cross-check prompting is worth doing on your specific aims page and significance section, where framing matters most. Ask a different model or a fresh session to play the role of a skeptical reviewer and identify weaknesses. If you have colleagues who have reviewed grants in your funding space, their read of the narrative is also worth more than any AI cross-check.
 
-As noted in Chapter 8, some funders are beginning to require disclosure of AI use. Keeping a running AI Usage Card as you work (see below) means you will have that documentation ready.
+As noted in [Chapter 8](ch08_grant_writing.md), some funders are beginning to require disclosure of AI use. Keeping a running AI Usage Card as you work (see below) means you will have that documentation ready.
 
 ### Peer Review
 
@@ -66,11 +66,11 @@ The validation concern in peer review is different in kind from the others: it i
 
 The practical habit is to read the paper yourself and form an initial reaction before engaging AI. Write down your own preliminary assessment, then use AI to help you articulate and develop it. If AI surfaces a concern you agree with upon reflection, that is useful. If AI generates a critique you find unpersuasive, you should not include it in your review just because the model said so. Your name is on the review.
 
-Also be aware that most journals do not permit uploading manuscript content to AI tools without editor approval, given confidentiality requirements. Chapter 10 covers this in more detail.
+Also be aware that most journals do not permit uploading manuscript content to AI tools without editor approval, given confidentiality requirements. [Chapter 10](ch10_ethics_privacy.md) covers this in more detail.
 
 ## Documentation: From AI Usage Card to Methods Statement
 
-Chapter 10 introduced the AI Usage Cards framework {cite}`Wahle_2023_AI_Usage_Cards` as a way to document AI use for transparency and reproducibility. Validation and documentation are closely connected: when you verify an AI output, that verification step is part of what the Usage Card records.
+[Chapter 10](ch10_ethics_privacy.md) introduced the AI Usage Cards framework {cite}`Wahle_2023_AI_Usage_Cards` as a way to document AI use for transparency and reproducibility. Validation and documentation are closely connected: when you verify an AI output, that verification step is part of what the Usage Card records.
 
 The relationship between the Usage Card and your eventual methods disclosure is practical. The Card is the working record you maintain throughout the project, capturing which tools you used, for what tasks, at what stages, and what verification you applied. The methods statement is the condensed version you write for journal submission. If you have kept a Card, the methods statement writes itself: you already have the information organized.
 
@@ -86,7 +86,7 @@ The specificity of the Card protects you and makes your work reproducible. The m
 
 ## A Note on Ethics
 
-Validation and ethics are related but distinct. Validation asks whether AI output is accurate and whether your process is transparent. Ethics asks whether AI use was appropriate in the first place. Chapter 10 covers the latter. A technically well-validated AI workflow can still raise ethical concerns, and some ethically uncomplicated uses of AI do not require heavy validation. This chapter addresses the former; they work together but should not be conflated.
+Validation and ethics are related but distinct. Validation asks whether AI output is accurate and whether your process is transparent. Ethics asks whether AI use was appropriate in the first place. [Chapter 10](ch10_ethics_privacy.md) covers the latter. A technically well-validated AI workflow can still raise ethical concerns, and some ethically uncomplicated uses of AI do not require heavy validation. This chapter addresses the former; they work together but should not be conflated.
 
 ---
 

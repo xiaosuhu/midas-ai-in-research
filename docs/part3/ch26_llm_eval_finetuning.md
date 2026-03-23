@@ -136,7 +136,7 @@ A few things are worth keeping in mind before you fine-tune a model for research
 
 **The base model matters.** If your domain has a specialized pretrained model available, it is usually better to start from that than from a general-purpose one. Fine-tuning SciBERT with LoRA on scientific abstracts will typically outperform fine-tuning vanilla BERT with LoRA on the same data, because the starting point already has better representations for the domain {cite}`beltagy2019scibert`.
 
-**Adapters are easy to version.** Because LoRA adapters are small, you can store a fine-tuned adapter alongside your code in a repository, which makes reproducibility much more tractable than managing full model checkpoints. Chapter 22 covers reproducibility practices in more detail.
+**Adapters are easy to version.** Because LoRA adapters are small, you can store a fine-tuned adapter alongside your code in a repository, which makes reproducibility much more tractable than managing full model checkpoints. [Chapter 22](../part2/ch22_reproducibility.md) covers reproducibility practices in more detail.
 
 ---
 
@@ -156,10 +156,10 @@ Hu et al. (2022) is the original LoRA paper and is readable without a deep machi
 
 ## Related Chapters
 
-- [NLP with Pre-trained Language Models](ch23_nlp_with_bert.md) — using pre-trained models out of the box, which this chapter builds from
-- [Prompt Engineering](../part1/ch03_prompt_engineering.md) — often the right first step to try before considering fine-tuning
-- [Validation and Interpretation](../part2/ch21_validation_interpretation.md) — evaluating model outputs more broadly across task types
-- [Reproducibility](../part2/ch22_reproducibility.md) — versioning and documenting fine-tuned model adapters
+- [Chapter 23: NLP with Pre-trained Language Models](ch23_nlp_with_bert.md) — using pre-trained models out of the box, which this chapter builds from
+- [Chapter 3: Prompt Engineering](../part1/ch03_prompt_engineering.md) — often the right first step to try before considering fine-tuning
+- [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md) — evaluating model outputs more broadly across task types
+- [Chapter 22: Reproducibility](../part2/ch22_reproducibility.md) — versioning and documenting fine-tuned model adapters
 
 *Last reviewed: March 2026. Tool-specific content in this chapter refers to Hugging Face Transformers (4.x) and PEFT. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 

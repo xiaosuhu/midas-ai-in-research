@@ -91,8 +91,8 @@ For a broader treatment of reproducibility across the full research lifecycle, T
 
 ## Related Chapters
 
-- [Computing Resources](ch13_computing_resources.md) - Choosing where to run your analysis
-- [Validation and Interpretation](ch21_validation_interpretation.md) - Checking that your analysis is correct before sharing it
+- [Chapter 13: Computing Resources](ch13_computing_resources.md) - Choosing where to run your analysis
+- [Chapter 21: Validation and Interpretation](ch21_validation_interpretation.md) - Checking that your analysis is correct before sharing it
 
 ```{bibliography}
 :filter: docname in docnames

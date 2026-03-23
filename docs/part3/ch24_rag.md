@@ -180,10 +180,10 @@ Lewis et al. (2020) is the paper that introduced and named retrieval-augmented g
 
 ## Related Chapters
 
-- [NLP with Pre-trained Language Models](ch23_nlp_with_bert.md): embeddings and semantic similarity, which are the foundation of the retrieval step
-- [Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): browser-based exploration of language models without writing code
-- [Computing Resources](../part2/ch13_computing_resources.md): where to run to run local pipelines for sensitive data at U-M
-- [Validation and Interpretation](../part2/ch21_validation_interpretation.md): evaluating outputs before using them in research
+- [Chapter 23: NLP with Pre-trained Language Models](ch23_nlp_with_bert.md): embeddings and semantic similarity, which are the foundation of the retrieval step
+- [Chapter 20: Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): browser-based exploration of language models without writing code
+- [Chapter 13: Computing Resources](../part2/ch13_computing_resources.md): where to run local pipelines for sensitive data at U-M
+- [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md): evaluating outputs before using them in research
 
 *Last reviewed: March 2026. Tool-specific content in this chapter refers to the sentence-transformers library and FAISS. The RAG tooling ecosystem evolves quickly. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 

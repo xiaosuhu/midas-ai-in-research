@@ -16,7 +16,7 @@ Imagine you are studying how regional newspapers covered air quality regulations
 
 Until recently, answering any one of those questions computationally would have required a separate model, a substantial labeled training dataset, and weeks of engineering time. The situation is quite different now. You can address all of them in a single afternoon using pre-trained language models and about fifty lines of Python, running free in a Colab notebook with a GPU.
 
-Chapter 20 showed you these same model families through the browser, with no code at all. This chapter goes one level deeper. You will write the Python yourself, understand what the model is doing at each step, and see how to interpret the outputs in a way that is actually useful for research.
+[Chapter 20](../part2/ch20_pretrained_text_vision.md) showed you these same model families through the browser, with no code at all. This chapter goes one level deeper. You will write the Python yourself, understand what the model is doing at each step, and see how to interpret the outputs in a way that is actually useful for research.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/bert_nlp_demo.ipynb)
 
@@ -137,7 +137,7 @@ results = classifier([
 # [{'label': 'NEGATIVE', 'score': 0.998}, {'label': 'POSITIVE', 'score': 0.997}]
 ```
 
-The reason to introduce a fine-tuned classifier here, alongside the zero-shot approach from Chapter 20, is to make the trade-off concrete. A fine-tuned model is generally more accurate for the specific task it was trained on. A zero-shot model is more flexible because you supply your own category labels without any retraining. When a pre-existing fine-tuned model matches your research question closely, it is almost always the better choice. When your classification problem is unusual or domain-specific, zero-shot is a reasonable first step, and you can collect a small set of hand-labeled examples to measure how well it actually performs.
+The reason to introduce a fine-tuned classifier here, alongside the zero-shot approach from [Chapter 20](../part2/ch20_pretrained_text_vision.md), is to make the trade-off concrete. A fine-tuned model is generally more accurate for the specific task it was trained on. A zero-shot model is more flexible because you supply your own category labels without any retraining. When a pre-existing fine-tuned model matches your research question closely, it is almost always the better choice. When your classification problem is unusual or domain-specific, zero-shot is a reasonable first step, and you can collect a small set of hand-labeled examples to measure how well it actually performs.
 
 The notebook includes a comparison exercise where you run the same short texts through both approaches and look at where they agree and where they diverge. That comparison is a quick way to build intuition for when each tool is appropriate.
 
@@ -169,7 +169,7 @@ A few things are worth thinking through before you apply these models at scale.
 
 **Confidence scores.** The scores returned by pipeline models are softmax outputs, which tend to be overconfident. A score of 0.99 does not mean the model is correct 99% of the time on your specific data. Before using model predictions as if they were ground truth, evaluate on a hand-labeled sample drawn from your actual corpus. Even fifty to one hundred labeled examples is enough to get a meaningful sense of precision and recall.
 
-**Data privacy.** Running these models locally or in a private Colab notebook means your text stays on your machine. Third-party APIs are a different story. Do not send confidential or sensitive research data to any external service without confirming how they handle input data. For research covered by IRB protocols, HIPAA, or other governance requirements, use an approved institutional computing environment. Chapter 13 covers the options available at U-M and more broadly.
+**Data privacy.** Running these models locally or in a private Colab notebook means your text stays on your machine. Third-party APIs are a different story. Do not send confidential or sensitive research data to any external service without confirming how they handle input data. For research covered by IRB protocols, HIPAA, or other governance requirements, use an approved institutional computing environment. [Chapter 13](../part2/ch13_computing_resources.md) covers the options available at U-M and more broadly.
 
 **Computational scale.** For a few hundred to a few thousand documents, Colab is perfectly adequate. For larger corpora, batching your inputs improves throughput substantially, and running overnight on Great Lakes with a GPU node becomes more practical than repeated Colab sessions. The notebook shows how to pass lists of texts to the pipeline rather than processing one at a time.
 
@@ -197,9 +197,9 @@ Devlin et al. (2019) is the original BERT paper and is accessible even without a
 
 ## Related Chapters
 
-- [Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md) — browser-based exploration of the same model families without writing code
-- [Computing Resources](../part2/ch13_computing_resources.md) — choosing where to run GPU workloads at scale
-- [Validation and Interpretation](../part2/ch21_validation_interpretation.md) — checking model outputs before using them in research
+- [Chapter 20: Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md) — browser-based exploration of the same model families without writing code
+- [Chapter 13: Computing Resources](../part2/ch13_computing_resources.md) — choosing where to run GPU workloads at scale
+- [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md) — checking model outputs before using them in research
 
 *Last reviewed: March 2026. Tool-specific content in this chapter refers to Hugging Face Transformers (4.x). If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 

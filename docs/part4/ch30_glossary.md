@@ -78,10 +78,10 @@ A small unit of text that LLMs process, typically a word fragment or a punctuati
 Data organized in rows and columns, where each row is an observation and each column is a variable or feature. Spreadsheets, databases, and most survey or sensor datasets are tabular. Tabular data remains the most common data format in research outside of vision and NLP.
 
 **Exploratory Data Analysis (EDA)**
-The practice of examining a dataset before modeling, using summary statistics, visualizations, and distribution checks to understand its structure, detect problems, and generate hypotheses. EDA is covered in Chapter 14.
+The practice of examining a dataset before modeling, using summary statistics, visualizations, and distribution checks to understand its structure, detect problems, and generate hypotheses. EDA is covered in [Chapter 14](../part2/ch14_exploratory_analysis.md).
 
 **Feature Engineering**
-The process of selecting, transforming, or constructing input variables to improve model performance. Good feature engineering encodes domain knowledge into a form the model can use. It is covered in depth in Chapter 16.
+The process of selecting, transforming, or constructing input variables to improve model performance. Good feature engineering encodes domain knowledge into a form the model can use. It is covered in depth in [Chapter 16](../part2/ch16_feature_engineering.md).
 
 **Feature**
 A single input variable used by a model. In a survey dataset, each question response might be a feature. In an image, pixel values or extracted descriptors might be features.
@@ -122,7 +122,7 @@ Models that process and connect multiple data types, such as text and images tog
 ## AutoML and Model Evaluation
 
 **AutoML**
-Automated machine learning. Frameworks that automate parts of the model development pipeline, including model selection, hyperparameter tuning, and ensembling. AutoGluon, covered in Chapter 17, is an example.
+Automated machine learning. Frameworks that automate parts of the model development pipeline, including model selection, hyperparameter tuning, and ensembling. AutoGluon, covered in [Chapter 17](../part2/ch17_automl_tabular.md), is an example.
 
 **Hyperparameter**
 A setting that controls how a model is trained, such as learning rate or the number of trees in a random forest. Hyperparameters are chosen by the researcher before training, not learned from the data.

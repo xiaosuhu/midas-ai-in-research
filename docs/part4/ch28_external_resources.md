@@ -78,7 +78,7 @@ A structured, freely available introduction to machine learning fundamentals fro
 
 ### Anthropic Prompt Library
 
-A curated collection of ready-to-use prompts for research and professional tasks, covering literature review, data analysis, writing, coding assistance, and more. Useful for getting a feel for how to structure prompts for different kinds of work, and for benchmarking your own prompts against examples that have been tested across domains. Pairs well with Chapter 3 of this handbook on prompt engineering.
+A curated collection of ready-to-use prompts for research and professional tasks, covering literature review, data analysis, writing, coding assistance, and more. Useful for getting a feel for how to structure prompts for different kinds of work, and for benchmarking your own prompts against examples that have been tested across domains. Pairs well with [Chapter 3](../part1/ch03_prompt_engineering.md) of this handbook on prompt engineering.
 
 **Link:** https://docs.anthropic.com/en/prompt-library/library
 

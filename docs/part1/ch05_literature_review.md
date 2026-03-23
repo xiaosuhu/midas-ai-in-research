@@ -213,9 +213,9 @@ That last step is not just a reflection exercise. It is the beginning of the nex
 
 ## Related Chapters
 
-- [When to Use AI in Research](ch04_when_to_use_ai.md) — deciding where AI fits in your workflow
-- [Research Planning with AI](ch06_research_planning.md) — turning what you found into a research question
-- [Validation and Reproducibility](ch11_validation.md) — verifying AI outputs in your work
+- [Chapter 4: When to Use AI in Research](ch04_when_to_use_ai.md) — deciding where AI fits in your workflow
+- [Chapter 6: Research Planning with AI](ch06_research_planning.md) — turning what you found into a research question
+- [Chapter 11: Validation and Reproducibility](ch11_validation.md) — verifying AI outputs in your work
 
 ---
 
