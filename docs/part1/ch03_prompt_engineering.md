@@ -1,4 +1,4 @@
-# Prompt Engineering: Talking to AI More Effectively
+# Chapter 3: Prompt Engineering
 
 :::{admonition} What You Will Learn
 :class: tip

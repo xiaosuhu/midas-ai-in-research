@@ -1,4 +1,4 @@
-# AI Agents: From Single Answers to Multi-Step Research Tasks
+# Chapter 25: AI Agents: From Single Answers to Multi-Step Research Tasks
 
 :::{admonition} What you will learn
 :class: tip

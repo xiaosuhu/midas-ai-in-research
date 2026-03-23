@@ -1,4 +1,4 @@
-# Exploratory Data Analysis with AI
+# Chapter 14: Exploratory Data Analysis with AI
 
 :::{admonition} What You'll Learn
 :class: tip

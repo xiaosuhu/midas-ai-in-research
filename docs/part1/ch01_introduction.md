@@ -1,4 +1,4 @@
-# Overview: Artificial Intelligence in Research
+# Chapter 1: Overview: Artificial Intelligence in Research
 
 If you've been paying attention to conversations in your department lately, you've probably noticed that AI keeps coming up. Whether you are a faculty member, a postdoc, or a graduate student, you are likely hearing about it in seminars, in lab meetings, and in discussions about how research itself is changing. This chapter is meant to give you a grounded starting point: what AI actually is, why researchers across disciplines are adopting it, what it genuinely does well and what it doesn't, and how to think about using it responsibly. It also gives you a map of the rest of this handbook so you can navigate straight to whatever is most useful to you right now.
 

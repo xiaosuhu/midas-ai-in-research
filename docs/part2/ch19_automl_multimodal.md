@@ -1,4 +1,4 @@
-# Multimodal Learning with AutoGluon
+# Chapter 19: Multimodal Learning with AutoGluon
 
 :::{admonition} What you will learn
 :class: tip

@@ -1,4 +1,4 @@
-# Data Preparation with AI Assistance
+# Chapter 15: Data Preparation with AI Assistance
 
 :::{admonition} What You'll Learn
 :class: tip

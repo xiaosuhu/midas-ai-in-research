@@ -1,4 +1,4 @@
-# When to Use AI in Research
+# Chapter 4: When to Use AI in Research
 
 :::{admonition} What You'll Learn
 :class: tip

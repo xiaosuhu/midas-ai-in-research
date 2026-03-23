@@ -1,4 +1,4 @@
-# MIDAS Video Resources
+# Chapter 31: MIDAS Video Resources
 
 ```{note}
 This index was last generated on 2026-03-19. To refresh it with the latest videos, run `python scripts/generate_video_index.py` from the repository root after setting your `YOUTUBE_API_KEY` environment variable.

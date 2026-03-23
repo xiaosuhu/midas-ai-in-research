@@ -1,4 +1,4 @@
-# Grant Writing with AI
+# Chapter 8: Grant Writing with AI
 
 ```{admonition} What You Will Learn
 :class: tip

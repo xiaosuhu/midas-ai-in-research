@@ -1,4 +1,4 @@
-# Literature Review with AI
+# Chapter 5: Literature Review with AI
 
 :::{admonition} What You'll Learn
 :class: tip

@@ -1,4 +1,4 @@
-# AI-Assisted Writing and Research Communication
+# Chapter 7: AI-Assisted Writing and Research Communication
 *Using Generative AI as a Writing Partner, Not a Ghostwriter*
 
 ```{admonition} What You Will Learn

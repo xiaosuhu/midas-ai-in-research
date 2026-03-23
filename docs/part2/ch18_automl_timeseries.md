@@ -1,4 +1,4 @@
-# Time Series Forecasting with AutoGluon
+# Chapter 18: Time Series Forecasting with AutoGluon
 
 :::{admonition} What you will learn
 :class: tip

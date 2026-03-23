@@ -1,4 +1,4 @@
-# AI Resources at the University of Michigan
+# Chapter 27: AI Resources at the University of Michigan
 
 ```{tip}
 This chapter is a starting point, not a complete inventory. UM's AI landscape is moving fast, and new tools, services, and funding programs come online regularly. When something here looks out of date, check directly with MIDAS or ARC, or visit the links listed in each section.

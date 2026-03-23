@@ -1,4 +1,4 @@
-# External AI Resources for Research
+# Chapter 28: External AI Resources for Research
 
 ```{tip}
 This chapter focuses on carefully selected, high-value resources that are widely used, well maintained, and directly relevant to academic research. It is not meant to be exhaustive. New tools and platforms appear constantly, and the right question is always whether a resource is reliable and appropriate for your work, not simply whether it is popular.

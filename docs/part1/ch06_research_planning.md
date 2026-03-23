@@ -1,4 +1,4 @@
-# Research Planning and Hypothesis Development with AI
+# Chapter 6: Research Planning and Hypothesis Development with AI
 
 :::{admonition} What You'll Learn
 :class: tip

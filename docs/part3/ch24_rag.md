@@ -1,4 +1,4 @@
-# Building a Research Knowledge Base with RAG
+# Chapter 24: Building a Research Knowledge Base with RAG
 
 :::{admonition} What you will learn
 :class: tip

@@ -1,4 +1,4 @@
-# Validation and Interpretation of AI-Assisted Analysis
+# Chapter 21: Validation and Interpretation of AI-Assisted Analysis
 
 :::{admonition} What You'll Learn
 :class: tip

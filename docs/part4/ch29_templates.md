@@ -1,4 +1,4 @@
-# Quick Reference Templates
+# Chapter 29: Quick Reference Templates
 
 ```{important}
 The templates in this chapter are starting points, not compliance checklists. What counts as adequate documentation varies by institution, journal, and funding agency. Before submitting work that involved AI tools or sensitive data, check the specific requirements from your journal, IRB, and department. When in doubt, document more rather than less.

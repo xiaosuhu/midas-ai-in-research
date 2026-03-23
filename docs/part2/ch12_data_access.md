@@ -1,4 +1,4 @@
-# Getting Your Data: Access, Sources, and Compliance
+# Chapter 12: Getting Your Data: Access, Sources, and Compliance
 
 :::{admonition} What You Will Learn
 :class: tip

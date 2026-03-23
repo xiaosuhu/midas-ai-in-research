@@ -1,4 +1,4 @@
-# Reproducibility in AI-Assisted Research
+# Chapter 22: Reproducibility in AI-Assisted Research
 
 :::{admonition} What You Will Learn
 :class: tip

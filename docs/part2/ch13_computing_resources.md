@@ -1,4 +1,4 @@
-# Computing Resources for AI Research
+# Chapter 13: Computing Resources for AI Research
 
 :::{admonition} What You Will Learn
 :class: tip

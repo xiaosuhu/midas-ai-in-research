@@ -1,4 +1,4 @@
-# AI Literacy Glossary
+# Chapter 30: AI Literacy Glossary
 
 ```{note}
 This glossary covers terms as they appear in this handbook. It is intentionally scoped to the book rather than trying to cover the full breadth of the AI field. If you encounter a term in the text that is not defined here, the MIDAS AI Literacy Glossary at https://midas.umich.edu/ maintains a more comprehensive version.

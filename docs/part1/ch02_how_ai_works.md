@@ -1,4 +1,4 @@
-# How Modern AI Works: A Conceptual Guide for Researchers
+# Chapter 2: How Modern AI Works
 
 :::{admonition} What You Will Learn
 :class: tip

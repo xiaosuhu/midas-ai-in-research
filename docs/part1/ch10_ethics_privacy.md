@@ -1,4 +1,4 @@
-# Ethics, Privacy, and Compliance
+# Chapter 10: Ethics, Privacy, and Compliance
 
 ```{admonition} What You Will Learn
 :class: tip

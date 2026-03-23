@@ -1,4 +1,4 @@
-# Checking AI Output: A Practical Validation Framework
+# Chapter 11: Checking AI Output
 
 :::{admonition} What You'll Learn
 :class: tip

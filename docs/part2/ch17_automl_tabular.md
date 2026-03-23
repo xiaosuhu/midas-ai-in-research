@@ -1,4 +1,4 @@
-# AutoGluon Fundamentals: Tabular Prediction
+# Chapter 17: AutoGluon Fundamentals: Tabular Prediction
 
 :::{admonition} What you will learn
 :class: tip

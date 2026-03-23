@@ -1,4 +1,4 @@
-# AI-Assisted Reviewing
+# Chapter 9: AI-Assisted Reviewing
 
 ```{admonition} What You Will Learn
 :class: tip
