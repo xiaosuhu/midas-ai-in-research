@@ -239,4 +239,4 @@ Museum researchers use it to analyze historical photographs quickly.
 
 ---
 
-*Last reviewed: March 2025. Tool-specific content in this chapter refers to the Hugging Face Transformers ecosystem. Model availability and browser interfaces on platforms like Hugging Face Spaces change frequently. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: March 2026. Tool-specific content in this chapter refers to the Hugging Face Transformers ecosystem. Model availability and browser interfaces on platforms like Hugging Face Spaces change frequently. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*

@@ -201,7 +201,7 @@ Devlin et al. (2019) is the original BERT paper and is accessible even without a
 - [Computing Resources](../part2/ch13_computing_resources.md) — choosing where to run GPU workloads at scale
 - [Validation and Interpretation](../part2/ch21_validation_interpretation.md) — checking model outputs before using them in research
 
-*Last reviewed: March 2025. Tool-specific content in this chapter refers to Hugging Face Transformers (4.x). If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: March 2026. Tool-specific content in this chapter refers to Hugging Face Transformers (4.x). If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ```{bibliography}
 :filter: docname in docnames

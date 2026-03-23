@@ -121,7 +121,7 @@ You do not need to build anything right now. The exercise is about developing th
 - [Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): hands-on exploration of language and vision models without writing code
 - [Validation and Interpretation](../part2/ch21_validation_interpretation.md): how to evaluate outputs you did not produce entirely yourself
 
-*Last reviewed: March 2025. The agent framework landscape changes quickly; specific tool recommendations in this chapter may have evolved since this review. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: March 2026. The agent framework landscape changes quickly; specific tool recommendations in this chapter may have evolved since this review. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ```{bibliography}
 :filter: docname in docnames

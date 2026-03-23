@@ -185,7 +185,7 @@ Lewis et al. (2020) is the paper that introduced and named retrieval-augmented g
 - [Computing Resources](../part2/ch13_computing_resources.md): where to run to run local pipelines for sensitive data at U-M
 - [Validation and Interpretation](../part2/ch21_validation_interpretation.md): evaluating outputs before using them in research
 
-*Last reviewed: March 2025. Tool-specific content in this chapter refers to the sentence-transformers library and FAISS. The RAG tooling ecosystem evolves quickly. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: March 2026. Tool-specific content in this chapter refers to the sentence-transformers library and FAISS. The RAG tooling ecosystem evolves quickly. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ```{bibliography}
 :filter: docname in docnames
