@@ -6,7 +6,7 @@
 - The difference between CPU and GPU computing, and which tasks require which
 - How to decide which computing environment is appropriate for your data
 - What local, cloud, and University of Michigan resources are available and when to use each
-- How to set up a basic Python environment for data analysis work
+- What a software environment is and why managing it matters across different computing resources
 :::
 
 
@@ -87,29 +87,15 @@ U-M researchers have access to three HPC systems through Advanced Research Compu
 
 ## Setting Up Your Environment
 
-Regardless of which resource you use, keeping your software environment organized and reproducible matters. The standard approach in Python is to create a virtual environment for each project, which isolates that project's dependencies from everything else on your system.
-```python
-# Create a virtual environment
-python -m venv my_project_env
+When you move between computing resources, one practical challenge comes up consistently: making sure the software your analysis depends on is actually available and working the way you expect. This is what researchers mean when they talk about a software environment.
 
-# Activate it (Mac/Linux)
-source my_project_env/bin/activate
+A software environment is the collection of packages, libraries, and their specific versions that a piece of code needs in order to run. When you install a package on your laptop, it is only installed there. If you move to a cloud notebook or an HPC cluster, or hand your code to a collaborator, that package may not be present, or a different version may be installed that behaves differently. Managing your environment means making sure the right software is in place wherever your analysis runs.
 
-# Activate it (Windows)
-my_project_env\Scripts\activate
+This matters more than it might seem at first. A package update can quietly change how a function behaves. A collaborator running a slightly older version of a library can get different results from the same code. An HPC cluster may have its own default software versions that conflict with what your project needs. None of these are catastrophic on their own, but they are exactly the kind of thing that wastes hours of debugging time if you are not paying attention to it from the start.
 
-# Install packages
-pip install pandas numpy scikit-learn jupyter autogluon
-```
+Each computing resource has its own way of handling this. On your local machine, the standard Python approach is to create a virtual environment for each project, keeping its dependencies separate from everything else on the system. Cloud notebook environments like Colab and Kaggle Notebooks come with many popular packages pre-installed, and you can install additional ones within a session. HPC systems typically use a module system, where you load specific software versions before running your jobs. Your institution's research computing office will have documentation on how this works for their particular cluster, and following their official guides is the most reliable approach.
 
-Once you have installed your packages, saving a record of them takes one additional command:
-```python
-pip freeze > requirements.txt
-```
-
-That file lets you or a collaborator recreate the same environment later with `pip install -r requirements.txt`. [Chapter 22](ch22_reproducibility.md) covers reproducibility practices in more depth, including environment management, random seeds, and run logging.
-
-For university HPC systems generally, your institution's research computing office will have documentation on loading modules, creating environments, and submitting batch jobs. Using their official guides rather than reproducing instructions here ensures you always have the most current information.
+The details of setting up and managing environments, including how to record your dependencies so a collaborator or your future self can reproduce your setup, are covered in [Chapter 22](ch22_reproducibility.md).
 
 
 ## Try This
