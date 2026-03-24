@@ -101,7 +101,21 @@ Policies are evolving quickly, but as of early 2025 the major journals have conv
 | **PLOS** | Allows AI for language editing; requires disclosure; prohibits AI-generated data or results without verification. | [PLOS Research Integrity and Publication Ethics](https://plos.org/research-integrity-and-ethics/) |
 | **Elsevier** | AI cannot be listed as author; use must be disclosed; authors remain responsible for accuracy. | [Elsevier Generative AI Policies for Journals](https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals) |
 
-Because policies change frequently, always check your target journal's author guidelines directly before submitting. The Committee on Publication Ethics (COPE) has also published position statements that many journals follow, which you can find at https://publicationethics.org/.
+Because policies change frequently, always check your target journal's author guidelines directly before submitting.
+
+### When Your Journal Has a Restrictive Policy
+
+Some journals, particularly in clinical fields such as radiology, oncology, and surgery, have adopted policies that go further than disclosure requirements. A growing number prohibit AI-generated text from appearing in manuscripts at all {cite}`smeds2023ai_manuscript_prep`. If you are writing for a journal with a policy like this, here is how to think through it practically.
+
+The first step is to read the policy carefully. A prohibition on "AI-generated text in the manuscript" is not the same as a prohibition on using AI at any stage of your research process. Most restrictive policies are focused on what appears in the submitted document, not on how you planned your study, organized your thinking, or worked through your literature review. If the policy is specifically about manuscript text, you still have room to use AI as a planning and thinking tool throughout earlier stages of the project, and none of that would violate the policy.
+
+If the policy restricts AI involvement more broadly, the honest path is to draft without it. AI can still play a role before writing begins, helping you refine your research question, stress-test your design, or organize your notes, without any of that becoming text in the manuscript itself.
+
+Whatever the policy says, disclose accurately. If your journal requires an AI use statement and you did not use AI in the writing process, say so directly. If you used AI in earlier stages but not in drafting, a brief and honest description of that is the right approach. The guiding principle is transparency, not minimizing what you report.
+
+It is also worth knowing that the major international bodies that set standards for publication ethics have taken positions that are more nuanced than some individual journal policies. The Committee on Publication Ethics (COPE) and the International Committee of Medical Journal Editors (ICMJE) both emphasize that AI tools cannot be listed as authors and that use must be disclosed, but neither calls for blanket prohibition of AI assistance in the research process {cite}`cope_ai_2023` {cite}`icmje_ai_2023`. Policies in this space are still evolving, and individual journals are making different calls about where to draw the line. Reading your journal's policy against that broader context can help you understand what the underlying concern is and how to respond to it honestly.
+
+If you are genuinely uncertain whether a particular use of AI is permitted under your journal's policy, the right move is to contact the editorial office and ask. Journals are generally willing to clarify, and getting a clear answer before you submit is far better than a disclosure question arising during peer review. The Committee on Publication Ethics (COPE) has also published position statements that many journals follow, which you can find at https://publicationethics.org/.
 
 ### A Note on Disclosure Language
 

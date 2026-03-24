@@ -58,6 +58,20 @@ None of these conversations replace expert peer feedback, a statistician's revie
 
 It is also worth knowing when to stop. AI conversations in this phase can become circular, especially if you are genuinely uncertain about your direction. If you find yourself going in circles, that is usually a signal to step back and talk to a person — a colleague, an advisor, someone with domain expertise who can cut through the ambiguity in ways an AI cannot.
 
+## Tools for Research Planning
+
+The conversational AI tools that appear throughout this handbook, such as ChatGPT, Claude, Gemini, and UM-GPT, are useful starting points for the brainstorming and question-development work described above. But a few more specialized tools are worth knowing about, because they are designed specifically around research workflows and can add something that a general chatbot cannot.
+
+Elicit (https://elicit.com) is built around research questions rather than general conversation. You give it a rough version of your question and it surfaces relevant papers, extracts key variables from those papers, and helps you see what has already been tested in the space. This makes it especially useful during the stress-testing phase, when you want to check whether your planned question has solid empirical precedent or is genuinely novel.
+
+ResearchRabbit (https://www.researchrabbit.ai) and Connected Papers (https://www.connectedpapers.com) let you visualize clusters of related work as a graph, starting from one or two seed papers. Rather than giving you a list of citations, they show you how papers relate to each other, which research groups are working in the same space, and where your planned question sits in the landscape. These are particularly helpful when you suspect your question might have been asked before, just by different people working in a different field.
+
+Consensus (https://consensus.app) synthesizes findings across a large body of literature and gives you a quick read on what the evidence says about a particular relationship or claim. It is not a replacement for a systematic literature review, but as a feasibility check it can quickly tell you whether an assumption underlying your research question has broad empirical support or is actively contested.
+
+NotebookLM (https://notebooklm.google.com) works differently from all of these because it reasons specifically from documents you have uploaded rather than from the open web {cite}`NotebookLM2024`. If you have already assembled a reading pile of key papers, you can load them into NotebookLM and have a conversation about gaps, tensions, and open questions grounded specifically in that set of literature. This is a more controlled version of the thinking-out-loud workflow described earlier in this chapter, and it reduces the risk that the AI will draw on papers you have not actually read.
+
+None of these tools replace your judgment or your domain expertise. Think of them as different lenses on the same landscape. Using more than one of them at different points in the planning process is often more useful than sticking with any single tool throughout.
+
 ## A Note on Ownership and Judgment
 
 One thing worth being explicit about: the intellectual ownership of a research question developed through this kind of process is yours. AI assisted in the articulation and refinement, but the question emerged from your knowledge of the field, your sense of what matters, and your judgment about what is feasible in your context. That is not a trivial contribution.
