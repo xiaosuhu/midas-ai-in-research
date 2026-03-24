@@ -24,7 +24,7 @@ Not all data cleaning tasks are created equal. Some require careful reasoning wi
 :align: center
 :width: 70%
 
-**Figure 12.1** Start with each issue from your EDA findings and work through these questions to decide how to approach it. The three Ways are not rigid categories -- think of them as a guide for allocating your attention.
+**Figure 15.1** Start with each issue from your EDA findings and work through these questions to decide how to approach it. The three Ways are not rigid categories -- think of them as a guide for allocating your attention.
 ```
 
 ### Way 1: Discuss with AI (The Most Important)
