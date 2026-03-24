@@ -119,7 +119,7 @@ If you are genuinely uncertain whether a particular use of AI is permitted under
 
 ### A Note on Disclosure Language
 
-Most journals now ask authors to include a statement describing how AI was or was not used. A simple, honest disclosure might look like: "The authors used ChatGPT (OpenAI) to assist with initial drafting of the introduction and to suggest alternative phrasings during editing. All content was reviewed and revised by the authors, who take full responsibility for the accuracy and integrity of the work." Some journals have specific templates; check the author instructions.
+Most journals now ask authors to include a statement describing how AI was or was not used. A simple, honest disclosure might look like: "The authors used ChatGPT (OpenAI) to assist with initial drafting of the introduction and to suggest alternative phrasings during editing. All content was reviewed and revised by the authors, who take full responsibility for the accuracy and integrity of the work." Some journals have specific templates; check the author instructions. If you would like a more structured starting point, see the AI Usage Statement template in [Chapter 29: Quick Reference Templates](../part4/ch29_templates.md).
 
 ---
 
