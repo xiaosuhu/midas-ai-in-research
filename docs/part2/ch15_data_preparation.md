@@ -18,7 +18,7 @@ Now comes the preparation phase. But the key insight is this: the hardest part o
 
 Not all data cleaning tasks are created equal. Some require careful reasoning with AI as your guide. Others are mechanical and you can hand them off with minimal oversight. A third group sits in the middle, where you and AI work through the problem together. Knowing which task falls into which category will save you time and protect your data integrity.
 
-```{figure} ../_static/fig12_1_decision_flowchart.png
+```{figure} ../_static/fig15_1_decision_flowchart.png
 :name: fig-data-prep-flowchart
 :alt: Decision flowchart for choosing between the three data cleaning approaches
 :align: center
@@ -109,7 +109,7 @@ Open the list you made in [Chapter 14](ch14_exploratory_analysis.md). What issue
 
 ### Step 2: For Each Issue, Choose Your Approach
 
-Go through your list one issue at a time. Use Figure 12.1 to decide:
+Go through your list one issue at a time. Use Figure 15.1 to decide:
 
 - Missing values in a key variable? Way 1 (discuss your strategy first).
 - Inconsistent capitalization in a label column? Way 2 (hand it off or ask for the code).
@@ -169,7 +169,7 @@ Always test on a small subset before running code on your full dataset. This is 
 
 - 🎯 Start with your EDA findings from [Chapter 14](ch14_exploratory_analysis.md); do not clean without a clear issue list
 - 🎯 Use AI as a thinking partner (Way 1) when the decision itself requires domain judgment
-- 🎯 Hand off or ask for code (Way 2) for simple mechanical tasks -- and review the output either way
+- 🎯 Hand off or ask for code (Way 2) for simple mechanical tasks, and review the output either way
 - 🎯 Collaborate iteratively (Way 3) when the logic is complex or needs testing to get right
 - 🎯 Always validate before trusting the output
 - 🎯 Document everything: what you did and why
@@ -185,7 +185,7 @@ Always test on a small subset before running code on your full dataset. This is 
 
 ## Resources for Hands-On Learning
 
-Kaggle Learn offers micro-courses on data cleaning with practical, worked examples. The courses include guided notebooks where you can see the three-way framework in action: thinking through a strategy, executing simple transformations, and iteratively building complex validation scripts.
+Kaggle Learn offers micro-courses on data cleaning with practical, worked examples. The courses include guided notebooks where you can see the three-way framework in action: thinking through a strategy, executing simple transformations, and iteratively building complex validation scripts. {cite}`kaggle_learn`
 
 ## Related Chapters
 
