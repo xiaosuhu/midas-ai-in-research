@@ -9,7 +9,7 @@
 
 **Primary Author:** Xiaosu (Frank) Hu, Research Data Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan
 
-**Contributors:** Nathan Fox, AI Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan (AI Sandbox materials, Chapter 20)
+**Contributors:** Nathan Fox, AI Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan (AI Sandbox materials, adapted for Chapter 20)
 
 A practical guide for researchers integrating AI tools into their work responsibly and effectively.
 
@@ -113,7 +113,7 @@ part4/ch31_video_index
 
 This handbook is published under a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license. You are welcome to share, adapt, and build on this material for any purpose, as long as you give appropriate credit. The suggested citation is:
 
-> Hu, X. *MIDAS AI in Research Handbook*. Michigan Institute for Data and AI in Society, University of Michigan. Retrieved from https://midas-ai-in-research.readthedocs.io
+> Hu, X. (2026). *MIDAS AI in Research Handbook*. Michigan Institute for Data and AI in Society, University of Michigan. Retrieved from https://midas-ai-in-research.readthedocs.io
 
 ---
 
