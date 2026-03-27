@@ -7,7 +7,7 @@
 :target: https://midas.umich.edu
 ```
 
-**Primary Author:** Xiaosu (Frank) Hu, Research Data Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan
+**Primary Author:** Xiao-Su Hu (Frank), Research Data Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan
 
 **Contributors:** Nathan Fox, AI Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan (AI Sandbox materials, adapted for Chapter 20)
 
