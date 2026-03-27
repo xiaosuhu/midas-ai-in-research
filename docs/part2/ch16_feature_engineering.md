@@ -46,7 +46,7 @@ The most common fix is a log transformation. If your variable is right-skewed an
 
 Standardization is a separate transformation with a different purpose. When you subtract the mean and divide by the standard deviation, you rescale a variable so it has a mean of zero and a standard deviation of one. This does not change the shape of the distribution. What it does is put variables on a common scale, which matters for any model that is sensitive to the magnitude of inputs, including most neural networks and regularized regression methods. Gradient boosting models like the ones AutoGluon uses by default are less sensitive to scale, but it is still good practice when you are mixing variables with very different units.
 
-One thing to be careful about: if you are building a model you will eventually validate on held-out data, fit any scaling parameters (mean, standard deviation) on your training data only, and apply them to your test data. Fitting on the full dataset before splitting is a form of data leakage, and it leads to overly optimistic performance estimates.
+**One thing to be careful about**: if you are building a model you will eventually validate on held-out data, fit any scaling parameters (mean, standard deviation) on your training data only, and apply them to your test data. Fitting on the full dataset before splitting is a form of data leakage, and it leads to overly optimistic performance estimates.
 
 ### Encoding Categorical Variables
 
@@ -92,7 +92,7 @@ A lag feature is simply the value of a variable at a previous time step. If you 
 
 Rolling aggregates summarize a window of recent values. A 7-day rolling mean of daily temperature. A 30-day rolling maximum of hospital admissions. A 4-week rolling standard deviation of a sensor reading. These features smooth over noise and capture trends at different timescales. They are often more informative than raw lagged values, especially when the underlying signal is noisy.
 
-There is one critical thing to get right when engineering time series features: the leakage boundary. Every feature you create for predicting time T should be built only from data that would have been available before time T. If you accidentally include information from the future in your features, your model will look impressive in development and fall apart on real data. This is easier to get wrong than it sounds, especially with rolling windows that span your train/test boundary. Always check your feature construction logic against your time splits before trusting a performance number.
+**There is one critical thing to get right when engineering time series features**: the leakage boundary. Every feature you create for predicting time T should be built only from data that would have been available before time T. If you accidentally include information from the future in your features, your model will look impressive in development and fall apart on real data. This is easier to get wrong than it sounds, especially with rolling windows that span your train/test boundary. Always check your feature construction logic against your time splits before trusting a performance number.
 
 ---
 
@@ -102,7 +102,7 @@ Raw images are high-dimensional objects: a 224x224 pixel image has nearly 50,000
 
 The standard approach today is transfer learning: take a convolutional neural network that has already been trained on a large image dataset, feed your images through it, and use the learned representations as your features. These representations are much more compact and semantically meaningful than raw pixel values. The model has already learned to detect useful visual patterns; you are borrowing that knowledge for your specific task.
 
-As with text embeddings, the practical question in most research contexts is which pretrained model to use and how to extract representations from it. [Chapter 20](ch20_pretrained_text_vision.md) covers this in the context of the AI Sandbox, including worked examples for image-based tasks. What belongs here is the principle: resist the impulse to start with raw pixels, and resist the impulse to train a vision model from scratch unless you have a very large labeled dataset and a compelling reason.
+As with text embeddings, the practical question in most research contexts is which pretrained model to use and how to extract representations from it. [Chapter 20](ch20_pretrained_text_vision.md) covers this topic, including worked examples for image-based tasks. What belongs here is the principle: resist the impulse to start with raw pixels, and resist the impulse to train a vision model from scratch unless you have a very large labeled dataset and a compelling reason.
 
 ---
 
