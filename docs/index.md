@@ -11,9 +11,11 @@ A practical guide for researchers integrating AI tools into their work responsib
 
 ## A Practical Guide to AI-Augmented Research
 
-This handbook is for researchers who want to bring AI into their work in a thoughtful, responsible way. Whether you are conducting literature reviews, preparing data, or writing grants, you will find practical guidance that treats AI as a collaborator, not a replacement for your own expertise and judgment.
+This handbook grew out of a recurring observation at MIDAS: researchers across many disciplines were asking the same kinds of questions about AI, often starting from scratch each time. What tools are actually useful? Where does AI fit into my existing workflow? How do I know whether to trust what it gives me? This handbook is an attempt to answer those questions in one place, in a form that researchers can return to as their work evolves.
 
-This handbook is for you if you are a researcher, faculty member, or graduate student who wants to use AI tools effectively and responsibly. You do not need a deep technical background to get started, though the handbook also covers more advanced topics for those who want to go further.
+It is written for faculty, graduate students, and research staff who already have a research job to do and want to know how AI can help them do it better. You do not need a computer science background to use most of it. Where the material gets more technical, the handbook flags that clearly and explains what level of familiarity you will need.
+
+A few things worth saying upfront. This handbook is not a course in machine learning, and it is not a substitute for understanding your own data, methods, and domain. It will not turn you into an AI developer. What it will do is help you make more informed decisions about where AI fits in your research, how to use it responsibly, and how to get reliable results when you do.
 
 What sets this handbook apart is its human-centered approach. We put domain knowledge first. We emphasize validation, reproducibility, and transparency at every step, and we are honest about what AI cannot do.
 
@@ -21,7 +23,15 @@ What sets this handbook apart is its human-centered approach. We put domain know
 
 The handbook follows the research lifecycle, from the earliest stage of framing a research question through data work, analysis, and finally sharing your findings. **You do not need to read it from beginning to end**. Each chapter is designed to stand on its own, so you can jump to whatever is most relevant to you right now.
 
-Part I covers how AI fits into the broader research process, including how modern AI works, prompt engineering, literature review, writing, grant development, and ethics. Part II focuses on the hands-on side of data analysis, from accessing and preparing data to running models. Part III goes deeper into building with modern AI, covering language model applications, retrieval-augmented generation, agents, and fine-tuning. Part IV is a reference section with tools, resources, and templates you can put to use right away.
+**Part I: AI Across the Research Lifecycle** (Chapters 1 through 11) covers the process side of things. It starts with a conceptual introduction to what AI is and how modern AI systems actually work, moves into practical topics like prompt engineering and deciding when to use AI at all, and then works through specific research tasks: literature review, research planning, writing, grant development, peer review, and ethics. The last chapter in this part focuses on validation, which connects to nearly everything else in the handbook.
+
+**Part II: AI in Data Analysis** (Chapters 12 through 22) is the hands-on section. It covers how to access and work with research data, how to set up computing environments, and then walks through a full analysis workflow from exploratory analysis and data preparation through AutoML, pre-trained models, and interpretation. These chapters assume basic familiarity with Python but are written to be accessible even if you are not primarily a data scientist.
+
+**Part III: Building with Modern AI** (Chapters 23 through 26) goes deeper into the tools and approaches behind more sophisticated AI applications in research. This includes working with pre-trained language models for NLP tasks, building retrieval-augmented generation systems, designing AI agents for multi-step workflows, and evaluating or fine-tuning language models. These chapters are more technical and build on the material in Part II.
+
+**Part IV: Resources and Reference** (Chapters 27 through 31) is the reference section. It includes a guide to AI tools and support available at the University of Michigan, a curated list of external resources, reusable templates, a glossary of key terms, and a video index of recorded workshops and tutorials.
+
+The examples throughout this handbook are drawn from a range of disciplines, including economics, environmental science, social science, ecology, and linguistics. AI methods are not specific to any one field, and the decision-making frameworks here are meant to travel across research contexts.
 
 ## The AI-Augmented Research Lifecycle
 
@@ -92,6 +102,14 @@ part4/ch29_templates
 part4/ch30_glossary
 part4/ch31_video_index
 ```
+
+---
+
+## Citation and Reuse
+
+This handbook is published under a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license. You are welcome to share, adapt, and build on this material for any purpose, as long as you give appropriate credit. The suggested citation is:
+
+> Hu, X., & MIDAS Research Team. *MIDAS AI in Research Handbook*. Michigan Institute for Data and AI in Society, University of Michigan. Retrieved from https://midas-ai-in-research.readthedocs.io
 
 ---
 
