@@ -1,8 +1,10 @@
 # Chapter 20: Pre-trained Models for Text and Vision
 
-The previous chapters focused on AutoML workflows where you bring your own labeled dataset and AutoGluon handles the modeling. That approach makes sense when your task is prediction and you have the data to train on. But a lot of research work does not look like that. Sometimes you need to make sense of interview transcripts, or classify field photographs, or translate survey responses collected in three different languages. For these kinds of tasks, the most practical first question is not "how do I train a model?" but rather "is there already a model that does this?"
+The previous chapters focused on AutoML workflows where you bring your own labeled dataset and AutoGluon handles the modeling. Chapter 19 is a good example: you provide labeled rows, and AutoGluon fine-tunes a pretrained backbone on your prediction task. That approach makes sense when your goal is prediction and you have the labeled data to train on.
 
-The answer is often yes. The machine learning community has produced a large ecosystem of pre-trained models, many of them freely available on platforms like Hugging Face, that can be applied to common research tasks without any training at all. You point the model at your data and it works. Some can be tested directly in a browser before you write a single line of code.
+But a lot of research work does not look like that. Sometimes you have no labeled data at all. Sometimes your goal is not prediction but understanding: you want to make sense of interview transcripts, organize field photographs, or translate survey responses collected in three different languages. For these kinds of tasks, the most practical first question is not "how do I train a model?" but rather "is there already a model that does this?"
+
+The answer is often yes. The machine learning community has produced a large ecosystem of pre-trained models, many of them freely available through [Hugging Face](https://huggingface.co). Hugging Face is a platform that hosts tens of thousands of open-source models, datasets, and interactive browser-based demos. You can browse models by task, read documentation, and in many cases test them directly in your browser before writing a single line of code. Think of it as a model library combined with a sandbox.
 
 This chapter introduces a set of these models across two modalities: text and vision. The goal is partly to show you what is out there, and partly to build the habit of checking for a pre-trained solution before committing to building your own. That instinct will save you considerable time.
 
@@ -10,232 +12,87 @@ This chapter introduces a set of these models across two modalities: text and vi
 
 ## Text Analysis with Pre-trained Models
 
-### 1. Introduction
+### Background: The Transformer Paradigm
 
-Researchers across education, health, policy, humanities, and social sciences routinely work with large amounts of unstructured text: interviews, survey responses, reports, patient narratives, archival material, or multilingual documents. Manually reviewing such data is time-consuming due to volume, not conceptual difficulty.
+Most modern text AI models share a common architectural foundation called the transformer, introduced by Vaswani and colleagues in 2017 {cite}`vaswani2017attention`. The core innovation was an attention mechanism: rather than reading text word by word in sequence, the model learns which words are most relevant to each other across an entire sentence or passage. This allowed models to capture long-range dependencies in language far more effectively than earlier approaches.
 
-Modern AI language models can support, though not replace, expert interpretation by helping researchers:
+Building on this foundation, Devlin and colleagues introduced BERT (Bidirectional Encoder Representations from Transformers) in 2019 {cite}`devlin2019bert`. What made BERT distinctive was that it reads text in both directions simultaneously, considering the full context around every word rather than only what comes before. BERT was pre-trained on a large amount of text using a masked prediction task, where the model learned to fill in randomly hidden words based on surrounding context. This produced a general-purpose language understanding model that could then be adapted to almost any text task with minimal additional training.
 
-- Organize and compare text  
-- Assign custom labels  
-- Translate multilingual materials  
-- Summarize long documents  
+BERT became the blueprint for a generation of specialized models. The models you will encounter in this chapter, including BART for summarization and classification, RoBERTa for sentiment analysis, and embedding models for semantic similarity, are all built on the same transformer foundation that BERT helped establish. Chapter 23 goes deeper into how BERT works and how you can fine-tune it for your own research tasks.
 
-This section introduces four foundational model types:
+### Model Overview
 
-- **EmbeddingGemma-300M** – semantic similarity & clustering  
-- **BART-Large-MNLI** – zero-shot classification into custom thematic labels  
-- **Helsinki-NLP / OPUS-MT** – open multilingual machine translation  
-- **BART-Large-CNN** – abstractive summarization  
+The table below summarizes the six pre-trained text models covered in this chapter, organized by the kind of task they are best suited for.
 
-These tools offer fast, flexible entry points into early-stage qualitative analysis.
+| Model | Task | What it does | Research uses |
+|---|---|---|---|
+| **EmbeddingGemma-300M** | Semantic similarity | Converts text into vectors that reflect meaning | Clustering open-ended responses; deduplication; similarity search |
+| **BART-Large-MNLI** | Zero-shot classification | Assigns user-defined labels without any training data | Thematic coding; filtering interview excerpts; sorting policy documents |
+| **Helsinki-NLP / OPUS-MT** | Machine translation | Translates between specific language pairs | Multilingual interviews; cross-regional comparative research |
+| **BART-Large-CNN** | Summarization | Produces concise summaries of long documents | Triaging reports, interviews, and policy texts |
+| **BERT Base Uncased** | General language understanding | Foundation model for sentence context and masked prediction | Named entity recognition; document classification; basis for fine-tuning |
+| **CardiffNLP Twitter RoBERTa** | Sentiment analysis | Classifies sentiment in informal text including slang and emoji | Social media monitoring; public perception studies |
 
----
+### Using These Models
 
-### 2. EmbeddingGemma-300M: Measuring Semantic Similarity
+**Semantic similarity and clustering.** When you have a large collection of open-ended responses and want to see how they group together conceptually, embedding models are the right starting point. EmbeddingGemma-300M converts each piece of text into a numerical vector that positions similar ideas close together in a high-dimensional space. The model captures meaning beyond surface wording, so responses like "I felt overwhelmed by the workload" and "there was too much to handle" would land near each other even though they share almost no words. From there, you can apply clustering algorithms to identify natural groupings, or calculate how conceptually close any two documents are to each other. This kind of analysis is especially useful in early-stage qualitative work, before you have settled on a coding scheme.
 
-**Model type:** Text embedding model  
-**Purpose:** Converts text into vectors that reflect meaning.
+**Zero-shot classification.** BART-Large-MNLI lets you assign labels to text without needing any labeled training data at all. You simply provide the categories you want, and the model decides which one fits best. A policy researcher might provide labels like "economic concerns," "housing access," or "climate policy" and apply them to hundreds of interview excerpts in minutes. The model uses natural-language inference internally, comparing each piece of text against each candidate label to determine the best match. The main thing to watch out for is label phrasing: vague or overlapping labels tend to produce inconsistent results, so it helps to test a few phrasings before running across a full dataset.
 
-EmbeddingGemma-300M maps sentences and documents into a high-dimensional embedding space where similar ideas cluster together. Because embeddings capture meaning beyond surface wording, they are ideal for:
+**Machine translation.** The Helsinki-NLP OPUS-MT models are trained on public multilingual corpora and optimized for specific language pairs, with separate models available for hundreds of combinations. For researchers working with multilingual data, these models offer a transparent, open-source alternative to commercial translation APIs. They are particularly well-suited to translating interviews, field notes, or survey responses into a shared analysis language while preserving a clear record of what was translated and how.
 
-- Clustering open-ended responses  
-- Detecting duplicates  
-- Exploring thematic structure  
-- Measuring conceptual distance  
+**Summarization.** BART-Large-CNN is an abstractive summarization model, meaning it generates a new condensed version of a document rather than extracting sentences verbatim. This is useful for quickly determining whether a long report or interview is relevant to your research question before reading it in full. Summarization also works well as a preprocessing step: generating summaries first and then applying classification or clustering to the summaries rather than the full documents can significantly speed up analysis of large corpora.
 
-**Example:**  
-In education research, embeddings can automatically group thousands of student reflections into clusters such as "motivation," "barriers," or "learning environment," allowing faster qualitative review.
-
----
-
-### 3. BART-Large-MNLI: Zero-Shot Text Classification
-
-**Model type:** Zero-shot classifier  
-**Purpose:** Assigns user-defined labels without training.
-
-BART-Large-MNLI uses natural-language inference to match text with categories you provide (e.g., "economic concerns," "climate policy," "mental health"). It is flexible, fast, and requires no annotated dataset.
-
-**Strengths:**  
-- Works immediately with any label set  
-- Handles varied writing styles  
-- Useful for qualitative coding and filtering
-
-**Limitations:**  
-- Sensitive to how labels are phrased  
-- May oversimplify nuanced content
-
-**Example:**  
-Policy researchers can sort hundreds of interview excerpts into themes to guide deeper qualitative coding.
-
----
-
-### 4. Helsinki-NLP / OPUS-MT: Machine Translation
-
-**Model type:** Open-access machine translation  
-**Purpose:** Cross-lingual research workflows.
-
-OPUS-MT models are trained entirely on public multilingual corpora and optimized for specific language pairs (e.g., English to Finnish; English to Swahili). This makes them ideal for:
-
-- Normalizing multilingual datasets  
-- Translating interviews or field-site documents  
-- Supporting cross-regional comparative research  
-- Adapting translation systems to domain-specific terminology  
-
-**Example:**  
-Migration researchers can translate interviews collected across countries into a shared analysis language while maintaining transparency around data sources.
-
----
-
-### 5. BART-Large-CNN: Summarizing Long Documents
-
-**Model type:** Abstractive summarization  
-**Purpose:** Produces concise, readable overviews.
-
-BART-Large-CNN helps researchers quickly determine relevance when reviewing lengthy material such as:
-
-- Public health reports  
-- Long interviews  
-- Meeting notes  
-- Policy documents  
-
-Summarization is often used before clustering or classification to accelerate interpretation.
-
-**Example:**  
-A research team can generate summaries of hundreds of interview transcripts, then cluster or label the summaries to identify thematic patterns.
-
----
-
-### 6. Additional Text Models
-
-#### BERT Base Uncased
-A bidirectional masked-language model used for understanding sentence context, predicting masked words, and forming a foundation for tasks such as sentiment analysis, named entity recognition, or document classification.
-
-#### CardiffNLP Twitter RoBERTa (Sentiment Analysis)
-A sentiment model trained on millions of tweets to handle informal language, slang, emojis, and sarcasm. Ideal for public-perception studies and large-scale social-media monitoring.
-
----
-
-### 7. Text Model Comparison Table
-
-| Model | Primary Function | Strengths | Limitations | Research Uses |
-|------|------------------|-----------|-------------|----------------|
-| **EmbeddingGemma** | Semantic similarity | Captures meaning beyond wording; great for clustering | No labels or summaries; requires metrics | Grouping responses; deduplication; similarity mapping |
-| **BART-MNLI** | Zero-shot classification | Flexible labels; no training needed | Sensitive to label phrasing | Sorting interviews; thematic coding; filtering |
-| **OPUS-MT** | Translation | Open data; strong for specific language pairs | One model per language pair | Translating multilingual interviews; cross-lingual analysis |
-| **BART-CNN** | Summarization | Clear summaries; fast document triage | May miss nuance | Summaries of interviews, reports, articles |
+**Sentiment analysis.** CardiffNLP Twitter RoBERTa is a fine-tuned version of RoBERTa, trained specifically on tweet data to handle informal writing, slang, emojis, and sarcasm that standard sentiment models tend to misclassify. For researchers studying public attitudes at scale, whether through social media, online reviews, or open survey responses, this model provides a fast baseline for understanding the emotional tone of text before moving into deeper qualitative analysis.
 
 ---
 
 ## Computer Vision with Pre-trained Models
 
-### 1. Introduction
+### Background
 
-This section introduces how AI "sees" and interprets images. You will explore four models that represent a progression from recognition to localization to segmentation to reasoning:
+Computer vision tasks are not all the same kind of problem, and it helps to understand the distinctions before choosing a model. The four main task types represented in this chapter are image classification (what category does this image belong to?), object detection (where are specific objects located within the image?), image segmentation (which pixels belong to which object?), and visual question answering (what can you infer from the content of this image?). Each type produces a different kind of output and suits different research scenarios. The sections below introduce one representative model for each task type.
 
-- **Segment Anything (SAM)** – outlines objects  
-- **Grounding DINO** – finds objects using text prompts  
-- **Vision Transformer (ViT)** – classifies what an image contains  
-- **Qwen-VL (Qwen3)** – answers questions about images  
+### Image Classification: Vision Transformer (ViT)
 
-These tools support research across biology, medicine, environmental science, cultural heritage, and more.
+Image classification assigns a single label to an entire image. The Vision Transformer (ViT) applies the same attention mechanism from the text transformer architecture to images by breaking a photograph into fixed-size patches and analyzing them jointly. This gives ViT strong generalization across diverse image types without requiring specialized preprocessing.
 
----
+For research purposes, ViT is a good starting point when you have a large collection of images that need to be sorted or labeled quickly and you are not yet sure whether a custom model is necessary. You can test it directly in your browser via the [Hugging Face model page](https://huggingface.co/google/vit-base-patch16-224). The main constraint is that the model produces a single category label per image and cannot tell you where within the image something appears or how many instances there are.
 
-### 2. Segment Anything (SAM)
+**Example.** A field ecologist working with thousands of camera trap photographs can use ViT to quickly separate images into broad categories such as animal present, empty frame, or camera malfunction, before moving into species-level analysis.
 
-**Model type:** Segmentation (object outlining)  
-**Demo:** https://segment-anything.com/demo
+### Object Detection: Grounding DINO
 
-SAM identifies and outlines objects even without knowing their category. It works via:
+Object detection goes further than classification by locating specific objects within an image and drawing bounding boxes around them. Grounding DINO is a zero-shot detection model, meaning you describe what you are looking for in plain language and the model finds it without needing any labeled training examples. You might ask it to locate "solar panels" in a satellite image, or "protective equipment" in a set of workplace photographs, and it will return bounding boxes around the matching regions. You can try it at the [Hugging Face demo](https://huggingface.co/spaces/merve/Grounding_DINO_demo).
 
-- Clicks  
-- Boxes  
-- Automatic mask generation  
+The key strength here is flexibility. Because the model accepts free-form natural language descriptions rather than fixed class lists, you can adapt it to unusual object types or domain-specific terminology that a standard detection model might not recognize. The trade-off is speed: Grounding DINO is slower than specialized detectors trained for a narrow task.
 
-**Strengths:**  
-- Works on any domain (microscopy, satellite, everyday images)  
-- Produces precise object masks  
-- No retraining required  
+**Example.** Environmental scientists monitoring land use change can use Grounding DINO to locate wind turbines or solar installations across large satellite image archives, without building a custom training dataset from scratch.
 
-**Limitations:**  
-- Does not name the object  
-- Can over-segment complex textures  
+### Image Segmentation: Segment Anything (SAM)
 
-**Example:**  
-Microbiologists use SAM to automatically outline cells, replacing hours of manual tracing.
+Segmentation goes beyond bounding boxes to identify which individual pixels belong to a given object, producing precise outlines rather than rectangular regions. The Segment Anything Model (SAM), developed by Meta AI, can segment objects across essentially any image domain without retraining. You can interact with it through clicks, bounding boxes, or by asking it to automatically propose segments for an entire image. A browser demo is available at [segment-anything.com](https://segment-anything.com/demo).
 
----
+The important limitation to keep in mind is that SAM identifies and outlines objects without naming them. It can tell you where things are, but not what they are. In practice this is often used as a first step, with a classification model applied afterward to label each segmented region.
 
-### 3. Grounding DINO
+**Example.** Microbiologists use SAM to automatically outline individual cells in microscopy images, replacing hours of manual tracing and making much larger sample sizes practical.
 
-**Model type:** Text-guided object detection  
-**Demo:** https://huggingface.co/spaces/merve/Grounding_DINO_demo
+### Visual Question Answering: Qwen-VL
 
-Grounding DINO connects language and vision: you describe an object ("find solar panels") and it locates it in the image.
+Visual question answering models can read an image and respond to open-ended questions about its content. Qwen-VL (part of the Qwen3 model family) takes both an image and a natural-language question as input and generates a descriptive answer. You can ask it things like "What kind of vegetation is in this photograph?" or "Is the person in this image wearing protective equipment?" and receive a text response. A browser demo is available on [Hugging Face Spaces](https://huggingface.co/spaces/Qwen/Qwen3-VL-Demo).
 
-**Strengths:**  
-- Accepts free-form natural language  
-- Detects unseen objects (zero-shot)  
-- Highly flexible  
+This kind of model is useful for exploratory analysis of visual materials, rapid documentation of image collections, and generating structured descriptions at scale. The main caveat is that accuracy varies depending on image quality and how familiar the content is to the model, so results should be spot-checked rather than taken at face value.
 
-**Limitations:**  
-- Requires clear wording  
-- Slower than specialized detectors  
+**Example.** Researchers working with historical photograph archives can use Qwen-VL to generate preliminary descriptive metadata for large collections, then review and correct the outputs manually.
 
-**Example:**  
-Environmental scientists use it to detect solar farms or wind turbines in satellite images.
+### Vision Model Comparison
 
----
-
-### 4. Vision Transformer (ViT)
-
-**Model type:** Image classification  
-**Demo:** https://huggingface.co/google/vit-base-patch16-224?maximized=true
-
-ViT breaks an image into patches and analyzes them jointly, offering:
-
-- Strong baseline performance  
-- Good generalization across image types  
-- Quick labeling of large datasets  
-
-**Limitations:**  
-- Produces one main label (no segmentation or localization)
-
-**Example:**  
-Researchers rapidly categorize large sets of lab or field images before deeper model development.
-
----
-
-### 5. Qwen-VL (Qwen3)
-
-**Model type:** Vision-language reasoning
-**Demo:** https://huggingface.co/spaces/Qwen/Qwen3-VL-Demo
-
-Qwen-VL can describe images, answer questions, and explain relationships ("Which buildings look like temples?" "Is the person wearing protective equipment?").
-
-**Strengths:**  
-- Open-ended question answering  
-- Integrates vision and natural-language reasoning  
-- Useful for research documentation and exploratory analysis  
-
-**Limitations:**  
-- Accuracy varies  
-- Requires more computing resources  
-
-**Example:**  
-Museum researchers use it to analyze historical photographs quickly.
-
----
-
-### 6. Vision Model Comparison Table
-
-| Model | Primary Function | Strengths | Limitations | Research Uses |
-|------|------------------|-----------|-------------|----------------|
-| **SAM** | Object segmentation | Precise masks; no training; domain-agnostic | Does not label objects | Segmenting cells; identifying regions in satellite images |
-| **Grounding DINO** | Text-guided detection | Understands natural language; zero-shot | Needs clear prompts | Mapping solar panels; locating wildlife; historical analysis |
-| **ViT** | Image classification | Strong baseline; efficient | Only single-label | Rapid labeling of large image datasets |
-| **Qwen-VL** | Visual Q&A | Explains image content; flexible | Variable accuracy | Documentation, cultural heritage research, interactive assistants |
+| Model | Task type | Output | Strengths | Limitations | Research uses |
+|---|---|---|---|---|---|
+| **ViT** | Classification | Single label per image | Strong baseline; efficient; generalizes well | No localization or segmentation | Sorting large image collections; rapid labeling |
+| **Grounding DINO** | Object detection | Bounding boxes | Zero-shot; accepts natural language | Slower than specialized detectors | Mapping objects in satellite images; locating domain-specific items |
+| **SAM** | Segmentation | Pixel-level masks | Precise outlines; domain-agnostic; no training required | Does not label objects | Cell segmentation; region identification in scientific images |
+| **Qwen-VL** | Visual Q&A | Text response | Open-ended; flexible; integrates vision and language | Variable accuracy; higher compute needs | Documentation; exploratory analysis; metadata generation |
 
 ---
 
