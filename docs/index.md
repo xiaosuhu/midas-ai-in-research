@@ -13,6 +13,19 @@
 
 A practical guide for researchers integrating AI tools into their work responsibly and effectively.
 
+```{admonition} Not sure where to start?
+:class: tip
+
+The handbook is modular. No one is meant to read all 31 chapters. Pick the path that fits you:
+
+- **Faculty exploring AI for your research** — Ch. 1, 4, 7, 8
+- **Grad student working with data** — Ch. 3, 14, 15, 17
+- **Research administrator or compliance focus** — Ch. 4, 10, 11
+- **Just want the big picture first** — Ch. 1, 4, 11
+
+Every chapter is written to stand on its own, so you can jump in anywhere.
+```
+
 ## A Practical Guide to AI-Augmented Research
 
 This handbook grew out of a recurring observation at MIDAS: researchers across many disciplines were asking the same kinds of questions about AI, often starting from scratch each time. What tools are actually useful? Where does AI fit into my existing workflow? How do I know whether to trust what it gives me? This handbook is an attempt to answer those questions in one place, in a form that researchers can return to as their work evolves.
