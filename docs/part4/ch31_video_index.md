@@ -1,10 +1,10 @@
 # Chapter 31: MIDAS Video Resources
 
 ```{note}
-This index was last generated on 2026-03-19. To refresh it with the latest videos, run `python scripts/generate_video_index.py` from the repository root after setting your `YOUTUBE_API_KEY` environment variable.
-```
-
 MIDAS maintains a growing YouTube library of recorded workshops, tutorial series, symposia, and invited lectures. As of this writing, the channel holds 279 videos across 19 playlists. Another 133 videos sit outside any playlist. This index helps you find recordings that connect to what you are reading in the handbook, whether you want to see a concept explained live, hear researchers talk through how they apply a method in their own work, or work through a full workshop from start to finish.
+
+This index was last generated on 2026-03-19. 
+```
 
 The index is organized in three parts. The first groups playlists by handbook topic, so you can jump directly to recordings that pair with a chapter you are working through. The second covers standalone videos not collected into a playlist. The third lists every playlist in one place, sorted by year, for when you want to browse more freely.
 
