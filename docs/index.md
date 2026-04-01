@@ -11,19 +11,29 @@
 
 **Contributors:** Nathan Fox, AI Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan (AI Sandbox materials, adapted for Chapter 20)
 
-A practical guide for researchers integrating AI tools into their work responsibly and effectively.
-
 ```{admonition} Not sure where to start?
 :class: tip
 
 The handbook is modular. No one is meant to read all 31 chapters. Pick the path that fits you:
 
+**By role or goal:**
 - **Faculty exploring AI for your research** — Ch. 1, 4, 7, 8
 - **Grad student working with data** — Ch. 3, 14, 15, 17
 - **Research administrator or compliance focus** — Ch. 4, 10, 11
 - **Just want the big picture first** — Ch. 1, 4, 11
 
-Every chapter is written to stand on its own, so you can jump in anywhere.
+**Looking for something specific?**
+- **External AI learning resources and tools** — Ch. 28
+- **MIDAS workshop recordings and tutorials** — Ch. 31
+- **U-M AI resources and support** — Ch. 27
+
+**How the handbook is organized:**
+- **Part I** (Ch. 1–11): AI across the research process — prompt engineering, literature review, writing, grant development, ethics, and validation
+- **Part II** (Ch. 12–22): Hands-on data analysis — computing setup, EDA, data preparation, AutoML, and pre-trained models
+- **Part III** (Ch. 23–26): Building with modern AI — RAG systems, AI agents, and fine-tuning (more technical)
+- **Part IV** (Ch. 27–31): Resources and reference — U-M tools, external links, templates, glossary, and video index
+
+Every chapter stands on its own. Jump in anywhere.
 ```
 
 ## A Practical Guide to AI-Augmented Research
