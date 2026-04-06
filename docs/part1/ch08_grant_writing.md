@@ -96,9 +96,19 @@ NSF's position, articulated in a 2023 community notice {cite}`NSF_AI_notice_2023
 
 ### Other Agencies
 
-For DOE, DOD, NASA, NOAA, and most other federal agencies, explicit AI-use policies for grant applications are still sparse as of 2025 {cite}`Bateyko_2025_AI_governance_grants`. In the absence of specific guidance, the safe approach is to follow U-M's institutional policies and apply general research integrity principles: transparency, originality, and protection of confidential information.
+A systematic review of federal grant notices published between 2009 and 2024 found that most agencies have set very few explicit AI requirements or restrictions in their grant programs {cite}`Bateyko_2025_AI_governance_grants`. For grant applicants specifically, the picture as of early 2026 is similar. DOE has published extensive internal AI governance guidance — including a Generative AI Policy issued in December 2025 — but that guidance is directed at agency employees and contractors, not at grant applicants {cite}`DOE_GenAI_Policy_2025`. Its focus is on internal compliance and responsible use within DOE operations, not on proposal authorship integrity. DOD and DARPA have not issued specific guidance on AI use in proposal writing; their policy attention is on research security and foreign influence risks. NASA and NOAA have not issued applicant-facing AI disclosure requirements as of this writing.
+
+In the absence of specific guidance, the safe approach is to follow U-M's institutional policies and apply general research integrity principles: transparency, originality, and protection of confidential information. This area is evolving quickly, and agency-specific requirements may have been issued since this chapter was last reviewed. Always check the current program announcement or solicitation before submitting.
 
 ---
+
+```{admonition} Using AI Responsibly in Grant Writing
+:class: tip
+
+The earlier sections cover this in pieces, so here is a quick synthesis. AI is appropriate for orientation work — mapping the literature, understanding a funding mechanism — and for structural feedback like stress-testing your aims. It is also appropriate for administrative writing (timelines, facilities descriptions) and for polishing language around ideas you already have. What it is not appropriate for is generating the research question, central hypothesis, or experimental rationale. If those came from the AI rather than from your own thinking, the proposal does not reflect your intellectual contribution, regardless of how well it reads.
+
+On the practical side: keep your work in UM-GPT or another institutionally governed environment when handling preliminary data or unpublished material. Document what you used at each stage. And always check your funder's current submission guidelines before submitting — the policies in this chapter were accurate at the time of review, but this is a fast-moving area.
+```
 
 ## A Note on Transparency
 
@@ -123,6 +133,8 @@ The following exercise works best if you have a grant idea you are actually deve
 This exercise illustrates the role AI works best in: not as a generator of your scientific ideas, but as a structured sounding board that pushes you to articulate and defend them more clearly.
 
 ---
+
+*Last reviewed: April 2026. Funder policies cited in this chapter — particularly those from NIH and NSF — are subject to change. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ## References
 
