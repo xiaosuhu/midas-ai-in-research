@@ -103,7 +103,7 @@ In the absence of specific guidance, the safe approach is to follow U-M's instit
 ---
 
 ```{admonition} Using AI Responsibly in Grant Writing
-:class: tip
+:class: note
 
 The earlier sections cover this in pieces, so here is a quick synthesis. AI is appropriate for orientation work — mapping the literature, understanding a funding mechanism — and for structural feedback like stress-testing your aims. It is also appropriate for administrative writing (timelines, facilities descriptions) and for polishing language around ideas you already have. What it is not appropriate for is generating the research question, central hypothesis, or experimental rationale. If those came from the AI rather than from your own thinking, the proposal does not reflect your intellectual contribution, regardless of how well it reads.
 
