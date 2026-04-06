@@ -14,9 +14,9 @@ This chapter introduces a set of these models across two modalities: text and vi
 
 ### Background: The Transformer Paradigm
 
-Most modern text AI models share a common architectural foundation called the transformer, introduced by Vaswani and colleagues in 2017 {cite}`vaswani2017attention`. The core innovation was an attention mechanism: rather than reading text word by word in sequence, the model learns which words are most relevant to each other across an entire sentence or passage. This allowed models to capture long-range dependencies in language far more effectively than earlier approaches.
+Most modern text AI models share a common architectural foundation called the transformer, introduced by Vaswani and colleagues in 2017 {cite}`ch20-vaswani2017attention`. The core innovation was an attention mechanism: rather than reading text word by word in sequence, the model learns which words are most relevant to each other across an entire sentence or passage. This allowed models to capture long-range dependencies in language far more effectively than earlier approaches.
 
-Building on this foundation, Devlin and colleagues introduced BERT (Bidirectional Encoder Representations from Transformers) in 2019 {cite}`devlin2019bert`. What made BERT distinctive was that it reads text in both directions simultaneously, considering the full context around every word rather than only what comes before. BERT was pre-trained on a large amount of text using a masked prediction task, where the model learned to fill in randomly hidden words based on surrounding context. This produced a general-purpose language understanding model that could then be adapted to almost any text task with minimal additional training.
+Building on this foundation, Devlin and colleagues introduced BERT (Bidirectional Encoder Representations from Transformers) in 2019 {cite}`ch20-devlin2019bert`. What made BERT distinctive was that it reads text in both directions simultaneously, considering the full context around every word rather than only what comes before. BERT was pre-trained on a large amount of text using a masked prediction task, where the model learned to fill in randomly hidden words based on surrounding context. This produced a general-purpose language understanding model that could then be adapted to almost any text task with minimal additional training.
 
 BERT became the blueprint for a generation of specialized models. The models you will encounter in this chapter, including BART for summarization and classification, RoBERTa for sentiment analysis, and embedding models for semantic similarity, are all built on the same transformer foundation that BERT helped establish. Chapter 23 goes deeper into how BERT works and how you can fine-tune it for your own research tasks.
 
@@ -97,3 +97,8 @@ This kind of model is useful for exploratory analysis of visual materials, rapid
 ---
 
 *Last reviewed: March 2026. Tool-specific content in this chapter refers to the Hugging Face Transformers ecosystem. Model availability and browser interfaces on platforms like Hugging Face Spaces change frequently. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+
+```{bibliography}
+:filter: docname in docnames
+:keyprefix: ch20-
+```

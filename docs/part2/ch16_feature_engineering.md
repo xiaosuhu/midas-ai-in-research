@@ -142,13 +142,13 @@ For a dataset you are currently working with or planning to use:
 
 ## Resources for Further Reading
 
-A practical introduction to the full range of feature engineering techniques across data types, including more advanced methods not covered here, is available in Zheng and Casari's work on feature engineering for machine learning {cite}`zheng2018feature`. For time series feature engineering in particular, Hyndman and Athanasopoulos offer a thorough and freely available treatment of lag structures, rolling features, and decomposition methods {cite}`hyndman2021forecasting`.
+A practical introduction to the full range of feature engineering techniques across data types, including more advanced methods not covered here, is available in Zheng and Casari's work on feature engineering for machine learning {cite}`zheng2018feature`. For time series feature engineering in particular, Hyndman and Athanasopoulos offer a thorough and freely available treatment of lag structures, rolling features, and decomposition methods ([Hyndman and Athanasopoulos, 2021](https://otexts.com/fpp3/)).
 
 ---
 
 ## Resources for Hands-On Learning
 
-Kaggle Learn offers a free micro-course on feature engineering that covers several techniques not discussed in this chapter, including mutual information for feature selection, target encoding with cross-validation, and using clustering and PCA to create new features from existing ones. The course uses interactive notebooks so you can run the code directly in your browser without any local setup. {cite}`kaggle_learn`
+Kaggle Learn offers a free micro-course on feature engineering that covers several techniques not discussed in this chapter, including mutual information for feature selection, target encoding with cross-validation, and using clustering and PCA to create new features from existing ones. The course uses interactive notebooks so you can run the code directly in your browser without any local setup. It is freely available at [kaggle.com/learn](https://www.kaggle.com/learn).
 
 ---
 

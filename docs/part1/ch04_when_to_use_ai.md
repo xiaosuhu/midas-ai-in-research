@@ -58,9 +58,3 @@ Finally, interpretation with real consequences needs human review. If your analy
 ## Try This
 
 Pick one research task you are currently doing manually. Ask yourself whether it is repetitive and scalable, whether you can easily verify the output, and whether doing it with AI would free up meaningful time for higher-value thinking. If the answer to all three is yes, that is a strong candidate for AI assistance. Start there, on something low-stakes, before moving to tasks where the consequences of an error are more significant.
-
-## References
-
-```{bibliography}
-:filter: docname in docnames
-```

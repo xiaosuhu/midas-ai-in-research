@@ -24,17 +24,17 @@ Until recently, answering any one of those questions computationally would have 
 
 ## The Idea Behind BERT
 
-BERT stands for Bidirectional Encoder Representations from Transformers. The key word is bidirectional, and understanding what it means helps explain why BERT became such a significant landmark in natural language processing {cite}`devlin2019bert`.
+BERT stands for Bidirectional Encoder Representations from Transformers. The key word is bidirectional, and understanding what it means helps explain why BERT became such a significant landmark in natural language processing {cite}`ch23-devlin2019bert`.
 
 Earlier language models read text in one direction, word by word from left to right. When the model processes any given word, it only has access to the words that came before it in the sentence. That works reasonably well for some tasks, but it is a genuine limitation for understanding meaning, because the meaning of a word often depends heavily on what comes after it.
 
 Consider the word "bank" in two sentences: "I walked to the bank to deposit a check" and "we sat on the bank of the river to eat lunch." A model reading left to right would have processed "bank" before it reaches "deposit" in the first sentence or "river" in the second, so it would need to rely heavily on what came before to make the right interpretation. BERT sees both sentences in full from the start, which means it can use context from both directions simultaneously.
 
-BERT learned this bidirectional reading through a training procedure called masked language modeling. During pretraining, roughly fifteen percent of the tokens in each training sentence were replaced with a special [MASK] token, and the model was trained to predict what the masked words were {cite}`devlin2019bert`. Because the missing words could appear anywhere in the sentence, the model was forced to attend to context from the left and the right at the same time. After training on enormous amounts of text using this approach, BERT developed representations that capture meaning in a remarkably context-sensitive way.
+BERT learned this bidirectional reading through a training procedure called masked language modeling. During pretraining, roughly fifteen percent of the tokens in each training sentence were replaced with a special [MASK] token, and the model was trained to predict what the masked words were {cite}`ch23-devlin2019bert`. Because the missing words could appear anywhere in the sentence, the model was forced to attend to context from the left and the right at the same time. After training on enormous amounts of text using this approach, BERT developed representations that capture meaning in a remarkably context-sensitive way.
 
 The practical output of all this pretraining is a model that produces **contextual embeddings**: dense numerical vectors where each word is represented not by a single fixed vector, but by a vector that changes based on surrounding context. "Bank" in a financial passage gets a different embedding from "bank" in a geographical passage, and that distinction is encoded in the representation itself. This is what makes BERT such a strong foundation for downstream research tasks.
 
-The architecture that makes all of this possible is the Transformer, introduced in a 2017 paper by Vaswani and colleagues {cite}`vaswani2017attention`. If you want a fuller picture of how the Transformer works, including attention mechanisms and token representations, [Chapter 2](../part1/ch02_how_ai_works.md) walks through those ideas in detail. For now, the key intuition is that attention allows the model to relate every word to every other word in the sequence simultaneously, which is what bidirectionality really means in practice.
+The architecture that makes all of this possible is the Transformer, introduced in a 2017 paper by Vaswani and colleagues {cite}`ch23-vaswani2017attention`. If you want a fuller picture of how the Transformer works, including attention mechanisms and token representations, [Chapter 2](../part1/ch02_how_ai_works.md) walks through those ideas in detail. For now, the key intuition is that attention allows the model to relate every word to every other word in the sequence simultaneously, which is what bidirectionality really means in practice.
 
 BERT is also one of the earliest examples of what researchers now call a foundation model: a large model pretrained at scale on broad data that can then be adapted to many different downstream tasks with relatively little additional effort. [Chapter 2](../part1/ch02_how_ai_works.md) introduces this concept if you want to understand the broader landscape before diving into the code here.
 
@@ -42,7 +42,7 @@ BERT is also one of the earliest examples of what researchers now call a foundat
 
 ## From Understanding to Doing: The Transformers Library
 
-The practical starting point for working with BERT is the Hugging Face `transformers` library {cite}`wolf2020transformers`. It provides a consistent Python interface to thousands of pre-trained models, all downloadable from the Hugging Face Model Hub. The library is designed around the idea that you should be able to go from "I need to run named entity recognition (NER) on my text" to working code in just a few lines.
+The practical starting point for working with BERT is the Hugging Face `transformers` library {cite}`ch23-wolf2020transformers`. It provides a consistent Python interface to thousands of pre-trained models, all downloadable from the Hugging Face Model Hub. The library is designed around the idea that you should be able to go from "I need to run named entity recognition (NER) on my text" to working code in just a few lines.
 
 The simplest interface is the `pipeline`. You specify the task, optionally name a specific model, and the library handles tokenization, the forward pass, and post-processing of the output:
 
@@ -55,7 +55,7 @@ results = ner("The EPA released a report from its Chicago field office last week
 
 Behind the scenes, the library downloads and caches the model weights on first use, tokenizes your input using the model's associated tokenizer, runs the text through the network, and decodes the outputs into a readable format. The model hub page for each model includes a model card explaining what data it was trained on, what tasks it supports, and any known limitations. Reading the model card before you use a model in research is good practice.
 
-For tasks involving semantic similarity, a companion library called `sentence-transformers` provides models specifically optimized for producing embeddings at the sentence level {cite}`reimers2019sentence`. Standard BERT embeddings are token-level representations, and simply averaging them to get a sentence vector does not work as well as you might expect. Sentence transformer models are trained with a different objective that makes their sentence-level embeddings directly useful for comparison.
+For tasks involving semantic similarity, a companion library called `sentence-transformers` provides models specifically optimized for producing embeddings at the sentence level {cite}`ch23-reimers2019sentence`. Standard BERT embeddings are token-level representations, and simply averaging them to get a sentence vector does not work as well as you might expect. Sentence transformer models are trained with a different objective that makes their sentence-level embeddings directly useful for comparison.
 
 ---
 
@@ -65,7 +65,7 @@ Named entity recognition is the task of identifying spans of text that refer to 
 
 A political scientist might use NER to track which advocacy organizations appear most frequently in congressional testimony over time. An economist might pull references to specific countries and industries from a corpus of regulatory filings. A historian might extract names of individuals mentioned in archival correspondence and then trace their co-occurrence patterns across documents.
 
-The model in the companion notebook is `dslim/bert-base-NER`, which is BERT fine-tuned on the CoNLL-2003 named entity recognition benchmark {cite}`sang2003conll`. CoNLL-2003 contains annotated news text in English and German; the English portion covers four entity types:
+The model in the companion notebook is `dslim/bert-base-NER`, which is BERT fine-tuned on the CoNLL-2003 named entity recognition benchmark {cite}`ch23-sang2003conll`. CoNLL-2003 contains annotated news text in English and German; the English portion covers four entity types:
 
 - **PER** — person names
 - **ORG** — organizations, companies, agencies, institutions
@@ -93,7 +93,7 @@ The companion notebook works through applying NER to a set of short news excerpt
 
 Semantic similarity is a measure of how alike two pieces of text are in meaning, independent of whether they share the same words. Two sentences can be worded completely differently and still express essentially the same idea, and two sentences can share many of the same words while meaning something quite different. Measuring this kind of meaning-level similarity is useful for finding documents on the same topic, detecting duplicate or near-duplicate survey responses, grouping open-ended answers into themes, and retrieving relevant passages from a large collection.
 
-The tool for this is the `sentence-transformers` library, which provides models trained explicitly to produce sentence embeddings that are useful for comparison {cite}`reimers2019sentence`. The model we use in the notebook is `all-MiniLM-L6-v2`, a compact and fast sentence transformer that performs well across a range of tasks. The core operation is: encode your texts into vectors, then compute cosine similarity between pairs.
+The tool for this is the `sentence-transformers` library, which provides models trained explicitly to produce sentence embeddings that are useful for comparison {cite}`ch23-reimers2019sentence`. The model we use in the notebook is `all-MiniLM-L6-v2`, a compact and fast sentence transformer that performs well across a range of tasks. The core operation is: encode your texts into vectors, then compute cosine similarity between pairs.
 
 ```python
 from sentence_transformers import SentenceTransformer, util
@@ -120,7 +120,7 @@ The notebook works through applying this to a set of policy-related excerpts, vi
 
 ## Task 3: Text Classification with a Fine-Tuned Model
 
-The third task demonstrates text classification using a model that was fine-tuned for a specific problem: sentiment analysis on short passages. The model is `distilbert-base-uncased-finetuned-sst-2-english`, a compact version of BERT fine-tuned on the Stanford Sentiment Treebank {cite}`socher2013sst`. DistilBERT retains about 97% of BERT's performance on most tasks while running approximately 60% faster, which makes it a practical choice when you are processing large volumes of text.
+The third task demonstrates text classification using a model that was fine-tuned for a specific problem: sentiment analysis on short passages. The model is `distilbert-base-uncased-finetuned-sst-2-english`, a compact version of BERT fine-tuned on the Stanford Sentiment Treebank {cite}`ch23-socher2013sst`. DistilBERT retains about 97% of BERT's performance on most tasks while running approximately 60% faster, which makes it a practical choice when you are processing large volumes of text.
 
 ```python
 from transformers import pipeline
@@ -191,7 +191,7 @@ Then try the semantic similarity section with a small set of documents you know 
 
 ## Further Reading
 
-Devlin et al. (2019) is the original BERT paper and is accessible even without a deep machine learning background {cite}`devlin2019bert`. The introduction and Section 3, which describes the pretraining and fine-tuning setup, are the most useful parts for a research context. The Hugging Face NLP course (huggingface.co/learn/nlp-course) provides a free, hands-on walkthrough of the transformers library with interactive notebooks covering all three tasks in this chapter. Reimers and Gurevych (2019) explain why standard BERT representations are not ideal for sentence-level similarity and how sentence transformers address that problem {cite}`reimers2019sentence`.
+Devlin et al. (2019) is the original BERT paper and is accessible even without a deep machine learning background {cite}`ch23-devlin2019bert`. The introduction and Section 3, which describes the pretraining and fine-tuning setup, are the most useful parts for a research context. The Hugging Face NLP course (huggingface.co/learn/nlp-course) provides a free, hands-on walkthrough of the transformers library with interactive notebooks covering all three tasks in this chapter. Reimers and Gurevych (2019) explain why standard BERT representations are not ideal for sentence-level similarity and how sentence transformers address that problem {cite}`ch23-reimers2019sentence`.
 
 ---
 
@@ -205,6 +205,7 @@ Devlin et al. (2019) is the original BERT paper and is accessible even without a
 
 ```{bibliography}
 :filter: docname in docnames
+:keyprefix: ch23-
 ```
 
 ---

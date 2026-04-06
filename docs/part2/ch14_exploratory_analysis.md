@@ -144,7 +144,7 @@ Before you write down your cleaning strategy:
 
 ## Resources for Hands-On Learning
 
-Kaggle Learn offers free micro-courses with practical examples that align well with this workflow. The courses on data cleaning and exploratory analysis include guided notebooks you can adapt to your own datasets. {cite}`kaggle_learn`
+Kaggle Learn offers free micro-courses with practical examples that align well with this workflow. The courses on data cleaning and exploratory analysis include guided notebooks you can adapt to your own datasets. They are freely available at [kaggle.com/learn](https://www.kaggle.com/learn).
 
 ## Related Chapters
 
@@ -156,6 +156,3 @@ Kaggle Learn offers free micro-courses with practical examples that align well w
 
 **Questions or feedback?** [Open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues)
 
-```{bibliography}
-:filter: docname in docnames
-```

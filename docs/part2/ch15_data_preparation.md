@@ -185,7 +185,7 @@ Always test on a small subset before running code on your full dataset. This is 
 
 ## Resources for Hands-On Learning
 
-Kaggle Learn offers micro-courses on data cleaning with practical, worked examples. The courses include guided notebooks where you can see the three-way framework in action: thinking through a strategy, executing simple transformations, and iteratively building complex validation scripts. {cite}`kaggle_learn`
+Kaggle Learn offers micro-courses on data cleaning with practical, worked examples. The courses include guided notebooks where you can see the three-way framework in action: thinking through a strategy, executing simple transformations, and iteratively building complex validation scripts. They are freely available at [kaggle.com/learn](https://www.kaggle.com/learn).
 
 ## Related Chapters
 
@@ -197,6 +197,3 @@ Kaggle Learn offers micro-courses on data cleaning with practical, worked exampl
 
 **Questions or feedback?** [Open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues)
 
-```{bibliography}
-:filter: docname in docnames
-```
