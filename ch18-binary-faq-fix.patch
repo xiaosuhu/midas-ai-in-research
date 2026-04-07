@@ -1,0 +1,18 @@
+diff --git a/docs/part2/ch18_automl_timeseries.md b/docs/part2/ch18_automl_timeseries.md
+index 022f54f..a00da8c 100644
+--- a/docs/part2/ch18_automl_timeseries.md
++++ b/docs/part2/ch18_automl_timeseries.md
+@@ -191,9 +191,11 @@ With `time_limit=120` and `presets="medium_quality"`, two minutes is usually eno
+ 
+ For a feasibility test, zero-shot Chronos is usually sufficient. If the results look promising and you want to squeeze more accuracy, AutoGluon supports fine-tuning Chronos on your specific dataset. Fine-tuning is most worthwhile when you have at least a few hundred observations and your series have patterns that differ from what general pretraining data covers {cite}`ansari2024chronos`.
+ 
+-**Can I use this to predict a binary event over time?**
++**My outcome is binary — can I still use AutoGluon?**
+ 
+-`TimeSeriesPredictor` is designed for forecasting continuous values, not event prediction. If your outcome is binary, you would typically reformulate this as a survival analysis or a time-to-event model, which is outside AutoGluon's current scope.
++It depends on what your question actually is. If you are asking "when will this event occur," that is a survival analysis or time-to-event problem, and `TimeSeriesPredictor` is not the right tool for that.
++
++But in many research contexts — neuroimaging work especially — the question is different. If you have segmented your time series into epochs and want to classify each epoch as condition A or condition B, that is a tabular classification problem, not a forecasting problem. You extract features from each epoch (band power, peak amplitude, windowed statistics, whatever is appropriate for your signal), put those in a DataFrame, and run `TabularPredictor`. This works well for EEG and fNIRS data where the goal is decoding a mental state or condition label from a fixed time window. `TimeSeriesPredictor` was never the right entry point for that kind of work — `TabularPredictor` is.
+ 
+ ---
+ 
