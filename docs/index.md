@@ -35,7 +35,9 @@ The handbook is modular. No one is meant to read all 31 chapters. Pick the path 
 - Ch. 17 — Tabular prediction with AutoGluon
 - Ch. 18 — Time series forecasting with AutoGluon
 - Ch. 19 — Multimodal learning with AutoGluon
-- Ch. 20 — Pre-trained text and vision models
+- Ch. 23 — NLP with Pre-trained Language Models
+- Ch. 24 — Building a Research Knowledge Base with RAG
+- Ch. 25 — AI Agents: From Single Answers to Multi-Step Research Tasks
 
 Every chapter stands on its own. Jump in anywhere.
 ```
