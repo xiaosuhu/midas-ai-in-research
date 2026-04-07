@@ -12,7 +12,7 @@ Within deep learning, **generative AI** refers to models that can produce new co
 
 What made all of this possible at scale was an architectural breakthrough from 2017 called the Transformer. Unlike earlier approaches that processed text word by word, Transformers can attend to all parts of an input simultaneously, making them both more capable and much more efficient to train at large scale. Combine that with the parallel computing power of modern GPUs, and you have the two ingredients that explain why AI has advanced so quickly and why LLMs are now showing up across the research enterprise.
 
-```{image} ../_static/_overview_assets/AI-terminology.png
+```{image} ../_static/ch1-AI-terminology.png
 :alt: Nested diagram showing AI containing ML containing Deep Learning, which overlaps with Generative AI to produce LLMs
 :width: 700px
 :align: center
