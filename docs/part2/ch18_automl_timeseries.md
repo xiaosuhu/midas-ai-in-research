@@ -149,7 +149,7 @@ Other metrics worth knowing: SMAPE (symmetric mean absolute percentage error) if
 
 ### What the Forecast Output Looks Like
 
-Unlike tabular prediction, the output of `predict()` is a DataFrame with one row per time step per series, and multiple columns for different quantile levels. By default you get the 10th, 50th, and 90th percentiles:
+Like tabular prediction, `predict()` returns the best model's output by default — usually the `WeightedEnsemble`. If you want a specific model's forecast, pass its name from the leaderboard using the `model=` argument. What differs is the output format. Rather than a single predicted value per row, you get a DataFrame with one row per time step per series, and multiple columns for different quantile levels. By default you get the 10th, 50th, and 90th percentiles:
 
 ```
                         0.1      0.5      0.9
