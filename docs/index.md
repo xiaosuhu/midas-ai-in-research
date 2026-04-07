@@ -31,6 +31,12 @@ The handbook is modular. No one is meant to read all 31 chapters. Pick the path 
 - **MIDAS workshop recordings and tutorials** — Ch. 31
 - **U-M AI resources and support** — Ch. 27
 
+**Chapters with companion Colab notebooks** (hands-on code you can run immediately):
+- Ch. 17 — Tabular prediction with AutoGluon
+- Ch. 18 — Time series forecasting with AutoGluon
+- Ch. 19 — Multimodal learning with AutoGluon
+- Ch. 20 — Pre-trained text and vision models
+
 Every chapter stands on its own. Jump in anywhere.
 ```
 

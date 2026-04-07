@@ -3,7 +3,12 @@
 :::{admonition} What you will learn
 :class: tip
 
-By the end of this chapter and its companion notebook, you will understand how `MultiModalPredictor` handles text, images, and tabular data through the same interface, when combining data types actually improves your model, how to run all three use cases in a GPU-enabled Colab environment, and what to watch for when interpreting results from a multimodal model.
+By the end of this chapter and its companion notebook, you will be able to:
+
+- Understand how `MultiModalPredictor` handles text, images, and tabular data through the same interface
+- Recognize when combining data types actually improves your model
+- Run all three use cases in a GPU-enabled Colab environment
+- Know what to watch for when interpreting results from a multimodal model
 :::
 
 Research data rarely comes in just one form. A psychology study might collect both numeric questionnaire scores and participants' written explanations of their answers. An ecology dataset might pair sensor readings with field photographs. A social science survey might combine Likert-scale items with open-ended responses that participants typed out themselves. In all of these cases, useful information sits across more than one data type at the same time, and the question is what to do with it.
@@ -170,7 +175,7 @@ The same cautions from the tabular chapter apply here, and multimodal modeling a
 
 ---
 
-*Last reviewed: March 2026. Tool-specific content in this chapter refers to AutoGluon 1.x. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: April 2026. Tool-specific content in this chapter refers to AutoGluon 1.x. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ---
 

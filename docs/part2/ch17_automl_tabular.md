@@ -3,7 +3,12 @@
 :::{admonition} What you will learn
 :class: tip
 
-By the end of this chapter and its companion notebook, you will know how to quickly test whether there is a predictive signal in your tabular data, how `TabularPredictor` handles preprocessing and model selection automatically, how to read the leaderboard and evaluate model performance on a held-out test set, and how to use feature importance to interpret what the model is actually responding to.
+By the end of this chapter and its companion notebook, you will be able to:
+
+- Quickly test whether there is a predictive signal in your tabular data
+- Understand how `TabularPredictor` handles preprocessing and model selection automatically
+- Read the leaderboard and evaluate model performance on a held-out test set
+- Use feature importance to interpret what the model is actually responding to
 :::
 
 Before committing significant time to building a custom machine learning pipeline, it helps to first ask a simpler question: is there a predictive signal in this data at all? AutoGluon is one of the most practical tools for answering that question quickly. It is an open-source AutoML framework developed by Amazon that trains and compares multiple models automatically, with almost no configuration required {cite}`erickson2020autogluon`.
@@ -36,7 +41,7 @@ AutoGluon handles three problem types that come up regularly in research.
 
 ## Tutorial: Predicting House Prices
 
-The tutorial uses a 500-row sample based on the California Housing dataset, originally from Pace and Barry (1997) {cite}`statlib_ca_housing`. Each row represents a census block group, and the task is to predict median house value from neighborhood characteristics — a regression problem. The workflow is identical for classification; only the label column and evaluation metric differ.
+To make this concrete, let's walk through what tabular prediction actually looks like from start to finish. The tutorial uses a 500-row sample based on the California Housing dataset, originally from Pace and Barry (1997) {cite}`statlib_ca_housing`. Each row represents a census block group, and the task is to predict median house value from neighborhood characteristics — a regression problem. The workflow is identical for classification; only the label column and evaluation metric differ.
 
 All code, explanatory notes, and hands-on exercises live in the Colab notebook. Clicking the badge opens a temporary session — click "Copy to Drive" inside Colab to save your own copy.
 
@@ -78,15 +83,9 @@ The notebook walks through each step in detail — data splits, metric selection
 
 ---
 
-## What's Coming: Time Series and Multimodal Notebooks
+## What's Next
 
-This chapter focused on tabular prediction, which is the right starting point for most research datasets. Two additional notebooks are planned to extend the same feasibility-testing workflow to other data types.
-
-The **time series notebook** will walk through `TimeSeriesPredictor` using a longitudinal research dataset, covering how to specify the time column and item ID, set a forecast horizon, and interpret the resulting metrics. It will also address how to handle irregular time intervals and missing observations, which are common in clinical and social science data.
-
-The **multimodal notebook** will demonstrate `MultiModalPredictor` combining structured fields with text, using a dataset that pairs tabular features with short text descriptions. It will include a GPU-enabled example using MNIST image classification, taking advantage of the free GPU runtime available in Colab, to show how the same interface scales to image data with minimal code changes.
-
-Both notebooks will follow the same structure as the tabular tutorial: load data, split, fit, inspect the leaderboard, evaluate, and check feature importance — so once you are comfortable with one, the others will feel familiar.
+The next two chapters extend this same feasibility-testing workflow to other data types. Chapter 18 covers time series forecasting with `TimeSeriesPredictor`, and Chapter 19 covers multimodal learning with `MultiModalPredictor` for datasets that combine text, images, and tabular columns. The structure and design pattern are the same across all three, so once you are comfortable with this chapter, the others will feel familiar.
 
 ---
 
@@ -129,7 +128,7 @@ Approved options at U-M include Armis2 for HIPAA-covered data and Great Lakes fo
 
 ---
 
-*Last reviewed: March 2026. Tool-specific content in this chapter refers to AutoGluon 1.x. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: April 2026. Tool-specific content in this chapter refers to AutoGluon 1.x. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ---
 

@@ -3,7 +3,12 @@
 :::{admonition} What you will learn
 :class: tip
 
-By the end of this chapter and its companion notebook, you will be able to recognize when a research question is genuinely a forecasting problem, format longitudinal or panel data for `TimeSeriesPredictor`, set a forecast horizon and interpret quantile outputs with prediction intervals, and understand why temporal data leakage matters and how AutoGluon handles it for you.
+By the end of this chapter and its companion notebook, you will be able to:
+
+- Recognize when a research question is genuinely a forecasting problem
+- Format longitudinal or panel data for `TimeSeriesPredictor`
+- Set a forecast horizon and interpret quantile outputs with prediction intervals
+- Understand why temporal data leakage matters and how AutoGluon handles it for you
 :::
 
 Some research datasets do not just describe a snapshot — they track how something changes over time. Repeated physiological measurements, weekly survey responses, yearly economic indicators, hourly sensor readings: all of these share a structure that tabular prediction is not designed for. When the goal is to predict future values based on past observations, the problem is called forecasting, and it calls for a different set of tools.
@@ -212,7 +217,7 @@ Approved options include Great Lakes for general sensitive workloads and Armis2 
 
 ---
 
-*Last reviewed: March 2026. Tool-specific content in this chapter refers to AutoGluon 1.x. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: April 2026. Tool-specific content in this chapter refers to AutoGluon 1.x. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ---
 
