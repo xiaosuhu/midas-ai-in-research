@@ -119,7 +119,7 @@ probabilities = predictor.predict_proba(test_df)  # for classification
 
 ---
 
-## Practical Notes for Research Data
+## Practical Notes
 
 **Does combining modalities always help?** Not necessarily. If your text descriptions are mostly boilerplate or do not vary meaningfully across observations, adding a text column may add noise rather than signal and slow down training considerably. The Section 3 comparison in the notebook (tabular-only versus tabular-plus-text) is specifically designed to let you check this on your own data.
 

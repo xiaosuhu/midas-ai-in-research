@@ -163,7 +163,7 @@ The 50th percentile is your point forecast. The range between the 10th and 90th 
 
 ---
 
-## Practical Notes for Research Data
+## Practical Notes
 
 **Short series.** Most models need a history length meaningfully longer than the forecast horizon. A rough rule of thumb is that your history should be at least two to three times longer than `prediction_length`. If you have 15 monthly observations and want a 12-month forecast, deep learning models will struggle and classical methods are your best option.
 
