@@ -14,9 +14,7 @@
 ```{admonition} Not sure where to start?
 :class: tip
 
-This handbook gives researchers a working map of today's AI landscape and a practical starting point for using it in their own work.
-
-The handbook is modular. No one is meant to read all 31 chapters. Pick the path that fits you:
+This handbook is a practical map of where AI fits across the research workflow. Pick the chapter that matches where you are right now.
 
 **By role or goal (for example):**
 - **Faculty exploring AI for your research** — Ch. 1, 4, 7, 8
@@ -31,15 +29,23 @@ The handbook is modular. No one is meant to read all 31 chapters. Pick the path 
 - **MIDAS workshop recordings and tutorials** — Ch. 31
 - **U-M AI resources and support** — Ch. 27
 
-**Chapters with companion Colab notebooks** (hands-on code you can run immediately):
+Every chapter stands on its own. Jump in anywhere.
+```
+
+```{admonition} Want to try the code yourself?
+:class: note
+
+Several chapters include a companion Colab notebook. Look for the Open in Colab badge inside the chapter, click it, and the notebook opens directly in your browser with no local setup needed.
+
+The examples are built around simple working datasets to give you a runnable starting point. The real goal is to bring your own problem — swap in your own data and see what happens.
+
+Chapters with companion notebooks:
 - Ch. 17 — Tabular prediction with AutoGluon
 - Ch. 18 — Time series forecasting with AutoGluon
 - Ch. 19 — Multimodal learning with AutoGluon
 - Ch. 23 — NLP with Pre-trained Language Models
 - Ch. 24 — Building a Research Knowledge Base with RAG
 - Ch. 25 — AI Agents: From Single Answers to Multi-Step Research Tasks
-
-Every chapter stands on its own. Jump in anywhere.
 ```
 
 ## A Practical Guide to AI-Augmented Research
