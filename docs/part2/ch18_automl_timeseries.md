@@ -98,7 +98,7 @@ The ensemble combines the best-performing models, weighting their forecasts to m
 
 The tutorial uses a 10-series subset of the M4 forecasting competition dataset, specifically a collection of monthly series {cite}`makridakis2020m4`. The M4 dataset is a widely used benchmark in the forecasting literature, covering series from domains including demographics, finance, industry, and economics. The figure below shows all ten series so you can see what you are working with before any code runs.
 
-```{figure} ../_static/m4_sample_series.png
+```{figure} ../_static/fig18_1_m4_sample_series.png
 :alt: Ten M4-style monthly time series showing variety in scale, trend, seasonality, and length. Solid lines are the training history; dashed lines and gray shading mark the last 12 months held out for testing.
 :width: 100%
 :align: center
