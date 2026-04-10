@@ -86,7 +86,7 @@ One of the strengths of `TimeSeriesPredictor` is that it runs a wide range of mo
 
 **Tree-based models** (DirectTabular, RecursiveTabular, built on LightGBM) treat forecasting as a tabular regression problem by creating lag features from the history. These are efficient and often competitive, especially when you have many series with relatively regular patterns.
 
-**Deep learning models** (DeepAR, Temporal Fusion Transformer) learn global patterns across all series jointly. They can capture complex temporal dependencies and handle covariates, but they need more data and more training time to pay off. On a small dataset, they often do not beat the classical methods.
+**Deep learning models** (Temporal Fusion Transformer) learn global patterns across all series jointly. They can capture complex temporal dependencies and handle covariates, but they need more data and more training time to pay off. On a small dataset, they often do not beat the classical methods.
 
 **Foundation model** (Chronos-2) is something qualitatively different. It is a pretrained model trained on hundreds of millions of real and synthetic time series observations, and it can produce forecasts for entirely new datasets without any training at all. This is called zero-shot forecasting {cite}`ansari2024chronos`. In practice, Chronos-2 often produces competitive results on research datasets even when the dataset is small, because it brings knowledge from pretraining rather than fitting from scratch.
 
@@ -109,6 +109,10 @@ The ten series in the tutorial dataset. Notice how they differ in scale (M3 reac
 All code, explanatory notes, and exercises live in the companion notebook. Click the badge to open a temporary Colab session, then click "Copy to Drive" to save your own copy.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/autogluon_timeseries_demo.ipynb)
+
+:::{note}
+AutoGluon's `medium_quality` preset includes Chronos-2 and Temporal Fusion Transformer, but a known compatibility issue between Colab's pre-installed PyTorch version and torchvision causes these two models to be skipped automatically on Colab. The rest of the workflow runs normally. Step 11 in the notebook, which runs Chronos-2 as a standalone zero-shot predictor, will also not complete on Colab for the same reason. If you want to run the full model list, you will need a local environment with Python 3.10 or 3.11 and torch 2.4.x. See [AutoGluon's install guide](https://auto.gluon.ai/stable/install.html) for setup instructions.
+:::
 
 ### The Core Call
 
@@ -173,7 +177,7 @@ The 50th percentile is your point forecast. The range between the 10th and 90th 
 
 **Single series.** If you have only one series, you can still use `TimeSeriesPredictor` by setting `item_id` to a constant value for all rows. Classical and Chronos models work well in this setting.
 
-**Covariates.** If you have external variables that are known in advance for the forecast period, such as seasonal indicators, treatment assignments, or scheduled events, you can pass these as `known_covariates`. Models that support covariates (like Temporal Fusion Transformer) will incorporate them automatically. The notebook shows a basic example.
+**Covariates.** If you have external variables that are known in advance for the forecast period, such as seasonal indicators, treatment assignments, or scheduled events, you can pass these as `known_covariates`. Models that support covariates (like Temporal Fusion Transformer) will incorporate them automatically. The [AutoGluon in-depth forecasting tutorial](https://auto.gluon.ai/stable/tutorials/timeseries/forecasting-indepth.html) covers this in detail.
 
 ---
 
