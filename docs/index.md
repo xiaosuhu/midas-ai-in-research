@@ -154,7 +154,6 @@ This handbook is published under a [Creative Commons Attribution 4.0 Internation
 
 ## How This Handbook Was Written
 
-```{important}
 This handbook was written using AI-assisted tools as part of its core workflow, and we want to be transparent about what that looked like.
 
 **Purpose of AI use:** The author developed the structure, frameworks, and core arguments for each chapter, drawing on research experience and observations from MIDAS research consultations. AI tools were then used to assist with drafting and refining the language, and all content was reviewed and revised through multiple rounds of discussion between the author and the AI.
@@ -164,7 +163,6 @@ This handbook was written using AI-assisted tools as part of its core workflow, 
 **Human oversight:** Every section went through multiple rounds of review. That review drew on the author's experience as a researcher and on direct observations from MIDAS research consultations, where the same questions and misconceptions come up repeatedly when researchers across disciplines are learning to work with AI. All framing decisions, judgment calls, and final wording were made by the author, not the AI.
 
 **Limitations and feedback:** AI-generated content can contain errors, and no review process eliminates that risk entirely. All content has been carefully checked against the contributors' knowledge and experience, but this handbook will evolve as the field does and as readers point out things we missed. If you find something that looks wrong or incomplete, we welcome your feedback through the form at the bottom of each page.
-```
 
 ---
 
