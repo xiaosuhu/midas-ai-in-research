@@ -27,7 +27,7 @@ For choosing between U-M's HPC clusters specifically, the decision usually comes
 | Public or synthetic data | Great Lakes, local machine, or Colab |
 | Sensitive but not HIPAA-covered | Great Lakes (with data governance controls) |
 | HIPAA-covered (e.g., EHR data) | Armis2 |
-| Large-scale AI with big data storage needs | Lighthouse |
+| Large-scale AI with big data storage needs | Turbo Research Storage |
 
 If you are unsure where your data falls, the U-M Safe Computing website and the Research Technology Stewardship program are the right starting points. MIDAS and U-M Research Computing are also available for guidance.
 
@@ -155,11 +155,19 @@ Armis2 supports computation involving sensitive or clinical data, including elec
 
 ---
 
-#### Lighthouse (Research Storage and HPC Integration)
+#### Lighthouse (Researcher-Owned HPC Hardware)
 
-Lighthouse provides large-scale research data storage with direct integration with UM's HPC systems and shared access for collaborative projects. It is especially useful for research generating large volumes of data, such as neuroimaging, high-density sensor streams, and multimodal datasets.
+Lighthouse is designed for researchers whose grants or funding sources require purchasing computing hardware. Rather than applying for allocations on a shared cluster, these researchers work with ARC to place their own hardware within the Slurm environment, with ARC handling the data center, networking, and staff support. That hardware is then for the exclusive use of the research group that purchased it. This makes Lighthouse a good fit when your grant mandates hardware acquisition, or when your workflow has requirements that Great Lakes and Armis2 cannot meet. Note that sensitive or HIPAA-covered data is not permitted on Lighthouse.
 
-**Link:** https://arc.umich.edu/lighthouse/
+**Link:** https://its.umich.edu/advanced-research-computing/high-performance-computing/lighthouse
+
+---
+
+#### Turbo Research Storage
+
+Turbo is ARC's high-capacity, high-performance network storage service for active research data. It is designed to integrate directly with all of ARC's HPC clusters, including Great Lakes, Armis2, and Lighthouse, making it a natural companion to cluster-based workflows. If your research generates large volumes of data that need to stay accessible during active analysis, such as neuroimaging datasets, high-density sensor streams, or multimodal corpora, Turbo is the right place to keep it. Basic Turbo storage is included in the UM Research Computing Package, and additional capacity is available at a per-terabyte rate. Sensitive data storage is supported; consult the ARC Sensitive Data Guide for specifics.
+
+**Link:** https://its.umich.edu/advanced-research-computing/storage/turbo
 
 ---
 
@@ -246,7 +254,8 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 | AI Tools | NotebookLM | Document-grounded research assistant via UM Google Workspace | https://notebooklm.google.com |
 | HPC | Great Lakes | Large-scale compute for ML | https://arc.umich.edu/greatlakes/ |
 | Secure HPC | Armis2 | HIPAA-aligned secure compute | https://arc.umich.edu/armis2/ |
-| Storage | Lighthouse | Shared research storage | https://arc.umich.edu/lighthouse/ |
+| HPC | Lighthouse | Researcher-owned hardware in ARC Slurm environment | https://its.umich.edu/advanced-research-computing/high-performance-computing/lighthouse |
+| Storage | Turbo Research Storage | High-capacity active storage integrated with ARC HPC clusters | https://its.umich.edu/advanced-research-computing/storage/turbo |
 | Data Access | Deep Blue Data | UM research data repository | https://deepblue.lib.umich.edu/data |
 | Data Access | ICPSR | Curated research datasets | https://www.icpsr.umich.edu/ |
 | Data Access | Michigan Medicine | Synthetic clinical datasets | https://www.michiganmedicine.org/ |
