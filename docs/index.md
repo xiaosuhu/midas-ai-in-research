@@ -170,7 +170,7 @@ This handbook was written using AI-assisted tools as part of its core workflow, 
 
 The resources below were selected to give you a broader picture of where AI in research stands today and where it is heading. They pair well with the themes in this handbook, from understanding the overall landscape to thinking through the risks.
 
-[Stanford HAI AI Index Report (2025)](https://hai.stanford.edu/ai-index/2025-ai-index-report) is one of the most comprehensive annual overviews of AI progress, adoption, and societal impact. It is a good starting point if you want data-driven context for the conversations happening in your field.
+[Stanford HAI AI Index Report (2026)](https://hai.stanford.edu/ai-index/2026-ai-index-report) is one of the most comprehensive annual overviews of AI progress, adoption, and societal impact. It is a good starting point if you want data-driven context for the conversations happening in your field.
 
 [ExplanAItions 2025: The Evolution of AI in Research](https://www.wiley.com/en-us/about-us/ai-resources/ai-study/) is a recent study focused specifically on how researchers across disciplines are using AI today. It offers a grounded look at actual practices and what researchers say is working and what is not.
 
