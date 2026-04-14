@@ -207,9 +207,9 @@ Michigan Medicine provides synthetic and simulated clinical datasets designed to
 
 ### ARC Consulting
 
-ARC supports researchers in getting their computational workloads running efficiently on UM's systems. Their team helps with HPC onboarding, GPU access, SLURM scripting and job optimization, and data movement and storage workflows.
+Advanced Research Computing (ARC), a division of ITS, offers scientific computing and research consulting services to help implement machine learning and data driven workflows within their projects. These services include expert guidance on data science projects, identifying proper tools, and programming in support of implementing advanced data analytics, machine learning models, and computational techniques to enhance research projects. Researchers are not required to be users of ARC's HPC services to take advantage of the consulting service. This service is not for general guidance on the use of HPC resources ARC provides.
 
-**Link:** https://arc.umich.edu/consulting/
+**Link:** https://its.umich.edu/advanced-research-computing/consulting
 
 ---
 
@@ -260,7 +260,7 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 | Data Access | ICPSR | Curated research datasets | https://www.icpsr.umich.edu/ |
 | Data Access | Michigan Medicine | Synthetic clinical datasets | https://www.michiganmedicine.org/ |
 | Data Access | UM Library | Data catalog and consultations | https://guides.lib.umich.edu/data |
-| Consulting | ARC | HPC and workflow support | https://arc.umich.edu/consulting/ |
+| Consulting | ARC | Scientific computing and research consulting | https://its.umich.edu/advanced-research-computing/consulting |
 | Training | UM Library Workshops | Data management and coding workshops | https://ttc.iss.lsa.umich.edu/ |
 | Funding | OVPR Programs | UM research funding programs | https://research.umich.edu/funding/ |
 
