@@ -55,27 +55,31 @@ Before running any cells in the notebook, make sure the GPU runtime is active. I
 
 ### Section 1: Text-Only Classification
 
-The first section uses a sample of product reviews from the Multilingual Amazon Reviews Corpus, where the task is to classify review sentiment from the review text alone {cite}`keung2020multilingual`. There are no numeric features and no images, just a column of text strings and a label. This is a good starting point because it isolates exactly what the language model component contributes.
+The first section uses a 600-row collection of short movie review sentences, each labeled as positive or negative, modeled on the Stanford Sentiment Treebank benchmark {cite}`socher2013sst`. The data is stored directly in the handbook repository so the notebook does not depend on any external data source. There are no numeric features and no images, just a column of text strings and a label. This is a good starting point because it isolates exactly what the language model component contributes.
 
-The dataset is straightforward to load and split, and AutoGluon's text tokenization and batching happen automatically in the background. Training takes a few minutes on Colab's T4 GPU.
-
-After training, you can inspect the predictions and look at cases where the model struggled. For sentiment classification, errors tend to cluster around reviews that are genuinely ambiguous, where the writer praises one aspect of a product while complaining about another. That pattern is meaningful: it suggests the model is doing something reasonable rather than just memorizing surface features.
+AutoGluon's text tokenization and batching happen automatically in the background. The model optimizes for `roc_auc` internally, which is a more informative metric than accuracy for binary classification on a balanced dataset. A `roc_auc` around 0.75-0.85 after two minutes on 500 training rows is a reasonable result for a BERT-style model fine-tuned on a small sample.
 
 ### Section 2: Image-Only Classification
 
-The second section uses Fashion-MNIST, a dataset of 70,000 grayscale images of clothing items across ten categories {cite}`xiao2017fashion`. The task is to classify each image into its correct category (t-shirt, trouser, pullover, and so on). Fashion-MNIST was designed as a direct drop-in replacement for the original MNIST handwritten digits dataset but with a harder classification problem, and it has become a standard benchmark for image classification.
+The second section uses Beans, a dataset of RGB photographs of bean leaves across three categories: healthy, angular leaf spot, and bean rust {cite}`beans2020`. The task is to classify each image into its correct disease category. The dataset is hosted on Hugging Face and is a common benchmark for transfer learning on domain-specific image data.
 
 The interface change from Section 1 is minimal. Instead of a text column, you have an image path column. The `MultiModalPredictor` call looks identical; AutoGluon figures out from the column type that it needs the vision encoder rather than the language model.
 
-Fashion-MNIST is a clean pedagogical example for a few reasons: images are small (28x28 pixels), the categories are intuitive, and the classification task is hard enough to be interesting without being intractable. GPU training typically completes within a few minutes on Colab, and the leaderboard makes it easy to see how fine-tuning compares to simpler baselines.
+Beans is a good pedagogical example for this chapter because the images are natural RGB photographs that share visual characteristics with the data pretrained vision models were trained on. This means the pretrained features transfer well, and you can expect accuracy around 0.80-0.90 even with 500 training samples and a three-minute time budget. This is the transfer learning advantage in practice: most of the feature learning has already happened before your data enters the picture.
 
 ### Section 3: Text and Tabular Combined
 
-The third section uses a sample from the PetFinder.my Adoption Prediction dataset, a Kaggle competition dataset where the task is to predict how quickly a pet gets adopted based on its listing information {cite}`petfinder2019`. Each row represents a pet listing and includes both structured columns (species, age, breed, health status, adoption fee, and so on) and a free-text description written by the shelter or owner.
+The third section uses a sample of wine reviews from Wine Enthusiast magazine {cite}`winemag2017`. Each row represents a reviewed wine and includes both structured fields and a free-text description:
 
-This section is the most research-realistic of the three. The combination of structured features with a text description is a pattern that appears regularly in social science surveys, grant applications, administrative records, and clinical notes. The question the section answers is whether the text column adds predictive value beyond what the structured features already capture.
+- `description`: the written tasting notes
+- `variety`: the grape variety (categorical)
+- `country`: the wine's country of origin (categorical)
+- `price`: the bottle price in USD (numeric)
+- `points`: the quality score from 80 to 100 (the prediction target)
 
-To test this directly, the notebook fits two models: one on the tabular features only (`TabularPredictor`) and one on the full dataset including the description column (`MultiModalPredictor`). Comparing their leaderboard scores shows whether the text is actually helping.
+This section is the most research-realistic of the three. The combination of structured metadata with free-form text is a pattern that appears regularly in social science surveys, grant applications, administrative records, and clinical notes. The key question the section answers is whether adding the tabular columns actually improves over text alone.
+
+To test this directly, the notebook fits two models: one on the description text only and one on the full dataset. In the notebook run, text-only RMSE was around 2.97 while the combined model reached 2.30, a meaningful improvement that shows the structured fields are carrying genuine predictive signal beyond what the text alone captures.
 
 ### The Core Call
 
@@ -86,29 +90,23 @@ from autogluon.multimodal import MultiModalPredictor
 
 predictor = MultiModalPredictor(
     label="target_column",
-    eval_metric="accuracy",
+    problem_type="binary",  # or "multiclass", "regression"
     path="autogluon_multimodal_model"
 ).fit(
     train_data=train_df,
-    time_limit=300
+    time_limit=180
 )
 ```
 
 In Section 1, `train_df` has a text column and a label. In Section 2, it has an image path column and a label. In Section 3, it has numeric columns, a text column, and a label. AutoGluon detects the column types and routes them to the appropriate encoder. You do not tell it which columns to treat as text or images; it infers this from the data.
 
-The `time_limit` is in seconds. Five minutes is a reasonable starting point for text and image tasks. For the mixed tabular-plus-text section, three to five minutes is usually enough to get a meaningful leaderboard on a dataset of a few thousand rows.
+One practical note on timing: `time_limit` controls the actual training time, but it does not include model download and initialization. The first run will take longer than subsequent ones because AutoGluon downloads the pretrained backbone on first use. After that, the model is cached locally and the time budget applies more predictably. For text tasks with longer inputs, truncating descriptions to a few hundred characters before training can significantly reduce per-batch compute time.
 
 ---
 
 ## Reading the Output
 
-`MultiModalPredictor` produces a leaderboard just like the tabular and time series predictors. The format is the same: models ranked by the evaluation metric, with higher values always meaning better performance. The model set is different, though. Rather than a wide ensemble of gradient boosting and random forest models, you will typically see a small set of fine-tuned pretrained models and a simple weighted ensemble on top.
-
-```python
-predictor.leaderboard(test_data=test_df, silent=True)
-```
-
-For classification tasks, accuracy is the default metric, though you can specify others at initialization. For the image and text tasks in the notebook, the leaderboard tends to be short because the model zoo for `MultiModalPredictor` is more focused than the tabular one. What matters is comparing the top model's performance against a simple baseline, such as a majority-class classifier, to make sure you are actually capturing signal.
+Unlike `TabularPredictor`, `MultiModalPredictor` does not produce a multi-model leaderboard. It trains a single model — a pretrained backbone fine-tuned on your data — rather than running a wide ensemble of different model families. What you get instead is a training log showing how validation performance improved across epochs, and a final evaluation score on your test set.
 
 Predictions are accessed the same way as always:
 
@@ -116,6 +114,8 @@ Predictions are accessed the same way as always:
 predictions = predictor.predict(test_df)
 probabilities = predictor.predict_proba(test_df)  # for classification
 ```
+
+For classification tasks, the default metric depends on the problem type: `roc_auc` for binary classification, `accuracy` for multiclass. For regression, the default is `rmse`. You can specify a different metric at initialization using the `eval_metric` argument. What matters most is comparing the result against a simple baseline — a majority-class classifier for classification, or the mean prediction for regression — to confirm you are actually capturing signal and not just overfitting to noise on a small dataset.
 
 ---
 
