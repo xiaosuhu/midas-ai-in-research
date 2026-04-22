@@ -56,6 +56,20 @@ The main limitations are memory and, for deep learning, the absence of a dedicat
 
 One practical note: if your machine does have a dedicated GPU, which is common in gaming computers and some workstations, libraries like PyTorch and TensorFlow can use it automatically, which meaningfully accelerates deep learning workflows without any additional infrastructure.
 
+### Running AI Models Locally
+
+A growing number of researchers are choosing to run large language models directly on their own machines rather than through a cloud API. The motivations are practical. When you use a hosted API, every prompt you send and every response you receive passes through the provider's servers. For most academic use cases that is fine. But if your project involves sensitive interview transcripts, unpublished manuscripts, proprietary datasets, or any data covered by a use agreement, sending that content to an external service may not be appropriate, or may require institutional review that takes time to arrange.
+
+Running a model locally keeps everything on your own hardware. Your prompts, your data, and the model's responses never leave your machine. There is no API key to manage, no usage quota, and no ongoing cost after the initial setup.
+
+The two most widely used tools for this are [LM Studio](https://lmstudio.ai) and [Ollama](https://ollama.com). Both let you download and run open-weight models, such as those from the Llama, Mistral, and Qwen families, without writing any infrastructure code. LM Studio provides a graphical interface that makes it straightforward to browse available models, download them, and start a local chat session. Ollama is command-line based and is often preferred when you want to call a local model from a script or notebook rather than chat with it interactively. Both tools expose a local API endpoint that follows the same interface as the OpenAI API, which means that code written for a cloud model can usually be switched to a local model by changing a single line.
+
+The main constraint is hardware. A model needs to fit in your machine's memory to run at a useful speed. Smaller models in the 7 to 13 billion parameter range can run on a laptop with 16 GB of RAM, though without a GPU the responses will be slow. If your machine has a dedicated NVIDIA or Apple Silicon GPU, performance improves substantially. Models above 30 billion parameters generally require either a GPU with significant memory or a workstation with 64 GB of RAM or more. For most exploratory research tasks, a 7 to 13 billion parameter model is a reasonable starting point and capable enough to be genuinely useful.
+
+This is not to say local models are always the right choice. For tasks where response quality and speed matter most and the data is not sensitive, a cloud API is simpler and more capable at comparable cost. The decision comes back to the same first question in this chapter: what does your data allow? If the answer is that your data cannot leave your machine, a local model may be exactly what you need.
+
+The companion notebook for Chapter 25 demonstrates how to switch between a cloud API and a local model running through LM Studio with minimal code changes, so you can see what that looks like in practice.
+
 
 ## Cloud Computing
 
