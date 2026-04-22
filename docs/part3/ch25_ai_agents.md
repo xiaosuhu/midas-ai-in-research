@@ -20,8 +20,6 @@ This is exactly the kind of situation that AI agents are designed to help with.
 
 A companion notebook for this chapter demonstrates the core agent loop in minimal Python, without any framework, so you can see exactly what is happening at each step. Rather than abstracting the mechanics behind a library, it shows how a model decides to call a tool, receives the result, and decides what to do next.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/agent_loop_demo.ipynb)
-
 ---
 
 ## What Makes an Agent Different from a Language Model
@@ -121,7 +119,7 @@ You do not need to build anything right now. The exercise is about developing th
 - [Chapter 20: Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): hands-on exploration of language and vision models without writing code
 - [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md): how to evaluate outputs you did not produce entirely yourself
 
-*Last reviewed: March 2026. The agent framework landscape changes quickly; specific tool recommendations in this chapter may have evolved since this review. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: April 2026. The agent framework landscape changes quickly; specific tool recommendations in this chapter may have evolved since this review. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ```{bibliography}
 :filter: docname in docnames
