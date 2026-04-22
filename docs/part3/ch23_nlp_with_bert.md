@@ -20,6 +20,11 @@ Until recently, answering any one of those questions computationally would have 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/bert_nlp_demo.ipynb)
 
+:::{admonition} Prefer to run this on your own machine?
+:class: tip
+Colab is used here for convenience, but this notebook does not rely on any cloud API. The models download from Hugging Face and run entirely on your hardware. If your data is sensitive or you would rather work in a local Jupyter environment, you can run the notebook as-is after installing the required packages. See the [Running AI Models Locally](../part2/ch13_computing_resources.md#running-ai-models-locally) section in Chapter 13 for hardware requirements and setup options.
+:::
+
 ---
 
 ## The Idea Behind BERT

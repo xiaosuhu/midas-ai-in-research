@@ -84,6 +84,11 @@ The companion notebook for this chapter is a minimal, framework-free agent loop 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/agent_loop_demo.ipynb)
 
+:::{admonition} Prefer not to use a cloud API?
+:class: tip
+The notebook uses the Gemini API for convenience, but the agent loop itself does not depend on any particular model provider. If your data is sensitive or you would rather avoid sending prompts to an external service, the same loop can be adapted to run against a local model served through [LM Studio](https://lmstudio.ai) or [Ollama](https://ollama.com), both of which expose a local endpoint that the code can call with minimal changes. See the [Running AI Models Locally](../part2/ch13_computing_resources.md#running-ai-models-locally) section in Chapter 13 for hardware requirements and setup options.
+:::
+
 The most accessible entry point into the broader conceptual landscape is the material produced by Google and Kaggle as part of their free intensive courses on generative AI and agents.
 
 The 5-Day Gen AI Intensive course includes a Day 5 whitepaper on agents that gives a clear conceptual overview of how agent systems are structured and how they differ from standalone language model calls {cite}`kaggle2024genai_agents`. The full course is available at [kaggle.com/learn-guide/5-day-genai](https://www.kaggle.com/learn-guide/5-day-genai).

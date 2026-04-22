@@ -104,6 +104,11 @@ The companion notebook walks through a complete, working RAG pipeline using publ
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xiaosuhu/midas-ai-in-research/blob/v1.0-dev/docs/notebooks/rag_demo.ipynb)
 
+:::{admonition} Prefer to run this on your own machine?
+:class: tip
+This notebook does not call any external API. The embedding model and the generation model both run locally, which means you can move it off Colab without changing a line of code. If your documents are sensitive or you prefer a local environment, see the [Running AI Models Locally](../part2/ch13_computing_resources.md#running-ai-models-locally) section in Chapter 13 for hardware requirements and setup options.
+:::
+
 The notebook uses a collection of short document excerpts drawn from publicly available research methodology descriptions across environmental science, economics, and public health. None of the demo documents are sensitive, and no external API calls are made during retrieval. The generation step uses a small open-weight model that runs on Colab's free CPU.
 
 ### The Core Pipeline
