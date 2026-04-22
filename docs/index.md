@@ -177,3 +177,11 @@ The resources below were selected to give you a broader picture of where AI in r
 [University of Michigan: Going All-In on AI](https://research.umich.edu/research-stories/going-all-in-on-ai/) describes how U-M is approaching AI across its research enterprise. If you are working within the U-M ecosystem, this piece gives helpful context for the institutional direction and the kinds of support that are becoming available.
 
 [Yale News: Doing More, Learning Less — The Risks of AI in Research](https://news.yale.edu/2024/03/07/doing-more-learning-less-risks-ai-research) offers a useful counterpoint. As AI tools make certain tasks faster and easier, there is a real question about whether researchers are developing the deeper understanding their work requires. This is worth reading alongside the more optimistic accounts.
+
+---
+
+## Version History
+
+**v1.0.0** — April 2026 — Initial public release
+
+This is the first complete version of the handbook. All 31 chapters are published, covering the full research lifecycle from literature review and grant writing through data analysis, AutoML, and modern AI methods. Part III (Chapters 23 through 26) introduces more technical topics including NLP with pre-trained language models, retrieval-augmented generation, AI agents, and LLM evaluation. Part IV includes a guide to University of Michigan AI resources, curated external resources, reusable templates, a glossary, and a video index of MIDAS workshop recordings. Companion Colab notebooks are available for six chapters.
