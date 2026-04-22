@@ -64,7 +64,23 @@ Running a model locally keeps everything on your own hardware. Your prompts, you
 
 The two most widely used tools for this are [LM Studio](https://lmstudio.ai) and [Ollama](https://ollama.com). Both let you download and run open-weight models, such as those from the Llama, Mistral, and Qwen families, without writing any infrastructure code. LM Studio provides a graphical interface that makes it straightforward to browse available models, download them, and start a local chat session. Ollama is command-line based and is often preferred when you want to call a local model from a script or notebook rather than chat with it interactively. Both tools expose a local API endpoint that follows the same interface as the OpenAI API, which means that code written for a cloud model can usually be switched to a local model by changing a single line.
 
-The main constraint is hardware. A model needs to fit in your machine's memory to run at a useful speed. Smaller models in the 7 to 13 billion parameter range can run on a laptop with 16 GB of RAM, though without a GPU the responses will be slow. If your machine has a dedicated NVIDIA or Apple Silicon GPU, performance improves substantially. Models above 30 billion parameters generally require either a GPU with significant memory or a workstation with 64 GB of RAM or more. For most exploratory research tasks, a 7 to 13 billion parameter model is a reasonable starting point and capable enough to be genuinely useful.
+The main constraint is GPU memory (VRAM). A model needs to fit entirely within VRAM to run at a practical speed. The table below gives a rough guide based on 4-bit quantization, which is the default in both LM Studio and Ollama.
+
+| Model size | VRAM needed | Example GPU |
+|---|---|---|
+| 7B | 4–6 GB | RTX 3060 (12 GB), RTX 4060 |
+| 13B | 8–10 GB | RTX 3080 (10 GB), RTX 4070 |
+| 30B+ | 20 GB+ | RTX 4090, multi-GPU setup |
+
+For most exploratory research tasks, a 7 to 13 billion parameter model is a reasonable starting point and capable enough to be genuinely useful.
+
+:::{admonition} Apple Silicon and CPU-only inference
+:class: note
+
+Apple Silicon Macs are a notable exception to the VRAM rule. Because they use a unified memory architecture where the CPU and GPU share the same memory pool, a MacBook Pro or Mac Mini with 16 or 24 GB of unified memory can run 7 to 13 billion parameter models quite smoothly, without a discrete GPU. This makes Apple Silicon one of the more practical options for researchers who want local inference without a dedicated workstation.
+
+Running a model on CPU only, without any GPU, is technically possible but produces responses slowly enough to be impractical for most research use.
+:::
 
 This is not to say local models are always the right choice. For tasks where response quality and speed matter most and the data is not sensitive, a cloud API is simpler and more capable at comparable cost. The decision comes back to the same first question in this chapter: what does your data allow? If the answer is that your data cannot leave your machine, a local model may be exactly what you need.
 
