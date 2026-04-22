@@ -48,9 +48,17 @@ This is what distinguishes RAG from asking a general-purpose chatbot the same qu
 
 Before building anything yourself, it is worth knowing what already exists. For documents that are not sensitive, **NotebookLM** is the most accessible starting point. It is a Google product that lets you upload PDFs, Google Docs, websites, and other sources, then ask questions across all of them in a single interface. It handles embedding and retrieval automatically, cites its sources in the responses, and lets you generate structured summaries and briefing documents. The interface is easy to use and works well for literature reviews, project planning documents, and other collections of publicly available or non-sensitive material.
 
-The one constraint that matters for researchers is that your documents are uploaded to Google's servers. That rules NotebookLM out for anything covered by an IRB protocol, a data use agreement, or a confidentiality commitment to participants. If your documents fall into that category, see the U-M note at the end of this chapter before deciding what to use.
+The one constraint that matters for researchers is that your documents are uploaded to Google's servers. That rules NotebookLM out for anything covered by an IRB protocol, a data use agreement, or a confidentiality commitment to participants. If your documents fall into that category, see the U-M note below before deciding what to use.
 
-Both tools are doing RAG under the hood. Understanding that connection matters because it helps you know what these tools are good at, where they will struggle, and why sometimes you need to build something yourself.
+Both NotebookLM and Maizey are doing RAG under the hood. Understanding that connection matters because it helps you know what these tools are good at, where they will struggle, and why sometimes you need to build something yourself.
+
+```{admonition} If You're at U-M
+:class: note
+
+If your documents are sensitive but fall within U-M's data governance framework, **Maizey** is the first option to explore before writing any code {cite}`maizey2024`. It is U-M ITS's institutional RAG tool, available to students, staff, and faculty. It works similarly to NotebookLM: you build a knowledge base from uploaded documents and query it in natural language, but it operates within U-M's approved infrastructure rather than a commercial cloud. For many research use cases involving non-public or IRB-adjacent materials, Maizey is the right starting point.
+
+When Maizey is not enough, whether because the data requires a stricter environment, the pipeline needs to be automated, or you need structured output for downstream analysis, Great Lakes is the right compute environment for building a custom pipeline. The Armis2 cluster is available for HIPAA-covered data. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on access and data classification.
+```
 
 ---
 
@@ -154,14 +162,6 @@ A production RAG system for a real research project involves a few additional de
 
 **RAG is not an analysis tool.** A RAG system can find what is in your documents, but it cannot tell you what it means for your research. This is especially important for qualitative work. If you ask a RAG system "what do participants think about X" and it returns relevant passages, you still need to read those passages and interpret them through the lens of your theoretical framework and your understanding of the data. The system helps you navigate; the intellectual work remains yours.
 
-```{admonition} If You're at U-M
-:class: note
-
-If your documents are sensitive but fall within U-M's data governance framework, **Maizey** is the first option to explore before writing any code {cite}`maizey2024`. It is U-M ITS's institutional RAG tool, available to students, staff, and faculty. It works similarly to NotebookLM: you build a knowledge base from uploaded documents and query it in natural language, but it operates within U-M's approved infrastructure rather than a commercial cloud. For many research use cases involving non-public or IRB-adjacent materials, Maizey is the right starting point.
-
-When Maizey is not enough, whether because the data requires a stricter environment, the pipeline needs to be automated, or you need structured output for downstream analysis, Great Lakes is the right compute environment for building a custom pipeline. The Armis2 cluster is available for HIPAA-covered data. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on access and data classification.
-```
-
 ---
 
 ## Try This
@@ -174,7 +174,7 @@ Ask yourself a question you would genuinely want answered, then look at what the
 
 ## Further Reading
 
-Lewis et al. (2020) is the paper that introduced and named retrieval-augmented generation as a formal architecture {cite}`lewis2020retrieval`. The introduction is accessible to readers without a deep NLP background and gives useful framing for why grounding generation in retrieved documents matters. Google's 5-Day Gen AI Intensive whitepaper on embeddings and vector stores provides a practical technical overview of how embeddings work, how vector stores are organized, and the engineering considerations for different retrieval strategies {cite}`google2024embeddings`. It is particularly useful if you want to go beyond the numpy-based approach in the companion notebook and think about production-grade retrieval systems. Reimers and Gurevych (2019) explains why sentence-level embeddings from models like `all-MiniLM-L6-v2` outperform averaged token embeddings for retrieval, and is the foundational paper behind the `sentence-transformers` library used throughout this chapter.
+Lewis et al. (2020) is the paper that introduced and named retrieval-augmented generation as a formal architecture {cite}`lewis2020retrieval`. The introduction is accessible to readers without a deep NLP background and gives useful framing for why grounding generation in retrieved documents matters. Google's 5-Day Gen AI Intensive whitepaper on embeddings and vector stores provides a practical technical overview of how embeddings work, how vector stores are organized, and the engineering considerations for different retrieval strategies {cite}`google2024embeddings`. It is particularly useful if you want to go beyond the numpy-based approach in the companion notebook and think about production-grade retrieval systems. Reimers and Gurevych (2019) explains why sentence-level embeddings from models like `all-MiniLM-L6-v2` outperform averaged token embeddings for retrieval, and is the foundational paper behind the `sentence-transformers` library used throughout this chapter {cite}`reimers2019sentence`.
 
 ---
 
@@ -185,7 +185,7 @@ Lewis et al. (2020) is the paper that introduced and named retrieval-augmented g
 - [Chapter 13: Computing Resources](../part2/ch13_computing_resources.md): where to run local pipelines for sensitive data at U-M
 - [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md): evaluating outputs before using them in research
 
-*Last reviewed: March 2026. Tool-specific content in this chapter refers to the sentence-transformers library and FAISS. The RAG tooling ecosystem evolves quickly. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: April 2026. Tool-specific content in this chapter refers to the sentence-transformers library and FAISS. The RAG tooling ecosystem evolves quickly. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ```{bibliography}
 :filter: docname in docnames
