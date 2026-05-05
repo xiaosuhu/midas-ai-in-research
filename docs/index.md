@@ -184,6 +184,10 @@ The resources below were selected to give you a broader picture of where AI in r
 
 ## Version History
 
+**v1.0.1** — May 2026 — Added Chapter 31: Computing Fundamentals
+
+A new reference chapter covering the hardware and compute terminology researchers encounter when working with AI models. Topics include TFLOPS and TOPS, memory bandwidth, model precision levels (FP32, FP16, INT8), and how to estimate inference time from GPU specifications. The video index moves to Chapter 32. Part IV now covers 6 chapters.
+
 **v1.0.0** — April 2026 — Initial public release
 
 This is the first complete version of the handbook. All 31 chapters are published, covering the full research lifecycle from literature review and grant writing through data analysis, AutoML, and modern AI methods. Part III (Chapters 23 through 26) introduces more technical topics including NLP with pre-trained language models, retrieval-augmented generation, AI agents, and LLM evaluation. Part IV includes a guide to University of Michigan AI resources, curated external resources, reusable templates, a glossary, and a video index of MIDAS workshop recordings. Companion Colab notebooks are available for six chapters.
