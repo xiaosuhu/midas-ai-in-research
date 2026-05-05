@@ -25,8 +25,9 @@ This handbook is a practical map of where AI fits across the research workflow. 
 **Looking for something specific?**
 - **AutoML and predictive modeling** — Ch. 17, 18
 - **RAG, AI agents, and LLM applications** — Ch. 24, 25, 26
+- **Understanding GPU specs and compute terminology** — Ch. 31
 - **External AI learning resources and tools** — Ch. 28
-- **MIDAS workshop recordings and tutorials** — Ch. 31
+- **MIDAS workshop recordings and tutorials** — Ch. 32
 - **U-M AI resources and support** — Ch. 27
 
 Every chapter stands on its own. Jump in anywhere.
@@ -68,7 +69,7 @@ The handbook follows the research lifecycle, from the earliest stage of framing 
 
 **Part III: Building with Modern AI** (Chapters 23 through 26) goes deeper into the tools and approaches behind more sophisticated AI applications in research. This includes working with pre-trained language models for NLP tasks, building retrieval-augmented generation systems, designing AI agents for multi-step workflows, and evaluating or fine-tuning language models. These chapters are more technical and build on the material in Part II.
 
-**Part IV: Resources and Reference** (Chapters 27 through 31) is the reference section. It includes a guide to AI tools and support available at the University of Michigan, a curated list of external resources, reusable templates, a glossary of key terms, and a video index of recorded workshops and tutorials.
+**Part IV: Resources and Reference** (Chapters 27 through 32) is the reference section. It includes a guide to AI tools and support available at the University of Michigan, a curated list of external resources, reusable templates, a glossary of key terms, a practical guide to understanding compute specifications and hardware fundamentals, and a video index of recorded workshops and tutorials.
 
 The examples throughout this handbook are drawn from a range of disciplines, including economics, environmental science, social science, ecology, and linguistics. AI methods are not specific to any one field, and the decision-making frameworks here are meant to travel across research contexts.
 
@@ -139,7 +140,8 @@ part4/ch27_um_resources
 part4/ch28_external_resources
 part4/ch29_templates
 part4/ch30_glossary
-part4/ch31_video_index
+part4/ch31_computing_fundamentals
+part4/ch32_video_index
 ```
 
 ---

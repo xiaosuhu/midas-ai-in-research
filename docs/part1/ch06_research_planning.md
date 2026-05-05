@@ -82,6 +82,8 @@ What AI cannot do is tell you whether a question is worth asking. That judgment 
 
 A well-developed research question makes everything that comes after significantly easier. When you sit down to write a grant proposal, a clear and defensible question is the foundation everything else builds on. When you design your study, the question dictates the appropriate methods. When you write your IRB application, a specific question makes the risk-benefit analysis much more tractable.
 
+As your question takes shape, it is also worth thinking about feasibility from a compute perspective. If your plan involves training a large neural network or analyzing millions of records, the computational requirements should inform your timeline and resource planning. See [Chapter 13](../part2/ch13_computing_resources.md) for guidance on choosing computing resources, and [Chapter 31](../part4/ch31_computing_fundamentals.md) if you need to understand GPU specs and compute terminology.
+
 The planning phase often feels like it should be over faster than it is. Researchers sometimes rush through it because it does not feel like "real" work yet. But time spent getting the question right tends to pay back later in cleaner designs, more focused data collection, and cleaner papers. AI can help you spend that time more productively.
 
 ## Try This

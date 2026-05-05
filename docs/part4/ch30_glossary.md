@@ -2,6 +2,8 @@
 
 ```{note}
 This glossary covers terms as they appear in this handbook. It is intentionally scoped to the book rather than trying to cover the full breadth of the AI field. If you encounter a term in the text that is not defined here, the MIDAS AI Literacy Glossary at https://midas.umich.edu/ maintains a more comprehensive version.
+
+For an in-depth guide to computing specifications and hardware fundamentals (such as TFLOPS, memory bandwidth, and model precision), see [Chapter 31: Computing Fundamentals](../part4/ch31_computing_fundamentals.md).
 ```
 
 ---

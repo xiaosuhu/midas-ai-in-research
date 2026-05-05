@@ -1,4 +1,4 @@
-# Chapter 31: MIDAS Video Resources
+# Chapter 32: MIDAS Video Resources
 
 ```{note}
 MIDAS maintains a growing YouTube library of recorded workshops, tutorial series, symposia, and invited lectures. As of this writing, the channel holds 279 videos across 19 playlists. Another 133 videos sit outside any playlist. This index helps you find recordings that connect to what you are reading in the handbook, whether you want to see a concept explained live, hear researchers talk through how they apply a method in their own work, or work through a full workshop from start to finish.
