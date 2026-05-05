@@ -6,6 +6,7 @@
 - The difference between CPU and GPU computing, and which tasks require which
 - How to decide which computing environment is appropriate for your data
 - What local, cloud, and University of Michigan resources are available and when to use each
+- Why mixing local and cloud resources across a project is normal and often the right approach
 - What a software environment is and why managing it matters across different computing resources
 :::
 
@@ -113,6 +114,19 @@ For most academic researchers, the free notebook options or university HPC resou
 
 U-M researchers have access to three HPC systems through Advanced Research Computing (ARC): Great Lakes for general CPU and GPU computing, Armis2 for HIPAA-covered and other compliance-sensitive data, and Lighthouse for large-scale AI and data-intensive workflows. See [AI Resources at the University of Michigan](../part4/ch27_um_resources.md) for details on each cluster, hardware specs, and how to request access.
 ```
+
+
+## Local and Cloud in Practice
+
+Reading through this chapter, you might get the impression that choosing a computing resource is a one-time decision you make at the start of a project. In practice, most researchers end up using a mix of local and cloud resources across the same project, and often across the same week.
+
+That is not a sign of inconsistency. It reflects the fact that different tasks within a research workflow have different requirements. A researcher might use a local model running through Ollama to process hundreds of sensitive interview transcripts, because that data should not leave the machine, and then switch to a cloud API like Claude or GPT-4 for drafting and synthesis tasks where the data is not sensitive and response quality matters more than privacy. The analysis pipeline runs on a university HPC cluster because the dataset is too large for a laptop and the computation takes hours. The exploratory work and visualization happen locally because that is faster and more convenient.
+
+None of these choices contradict each other. They reflect a simple habit: matching the resource to what the task actually requires, rather than committing to one environment and forcing every task to fit it.
+
+If you are not sure where to start, a reasonable default is to begin locally for anything that fits comfortably on your machine, move to a cloud notebook when you need a GPU for a one-off experiment, and use university HPC resources for anything that requires sustained computation or large memory. If your data is sensitive at any point in that process, that constraint overrides the others.
+
+The question is not really "local or cloud" but "which resource fits this particular task, given what my data allows and what the analysis requires." You may find yourself answering that question differently at different stages of the same project, and that is entirely fine.
 
 
 ## Setting Up Your Environment
