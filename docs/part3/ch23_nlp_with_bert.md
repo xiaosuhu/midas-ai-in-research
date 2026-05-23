@@ -9,6 +9,8 @@ By the end of this chapter and its companion notebook, you will be able to:
 - Use the Hugging Face `transformers` library to apply pre-trained models to your own text
 - Extract named entities from a document collection
 - Measure semantic similarity between passages
+- Distinguish between binary, multi-class, multi-label, and zero-shot text classification, and match each to your research scenario
+- Use topic modeling as an exploratory tool when your categories are not yet defined, and understand when LDA or BERTopic is the better starting point
 - Reason about model selection and validation before applying these tools to your research data
 :::
 
@@ -123,6 +125,20 @@ The notebook works through applying this to a set of policy-related excerpts, vi
 
 ---
 
+## Text Classification in Research
+
+Named entity recognition pulls out specific spans of text. Semantic similarity measures how close two passages are in meaning. Text classification does something different: it assigns predefined categories to entire documents or sentences. If you want to know whether a survey response is positive or negative, whether a policy document belongs to health, environment, or education, or whether an abstract reports empirical findings or is purely theoretical, classification is the right tool.
+
+The task comes in a few variants worth keeping straight. Binary classification has two possible outcomes, such as relevant or not relevant, which makes it common in systematic reviews when you need to filter a large corpus down to a workable set. Multi-class classification assigns one label from three or more categories, for example sorting news articles into topic areas. Multi-label classification allows more than one category to apply to the same document, which fits situations where categories are not mutually exclusive, as when a paper might address both climate change and public health at the same time. Zero-shot classification works differently: instead of training a model on labeled examples, you describe the categories in plain language and the model applies them without any additional training. This is what BART-Large-MNLI does in [Chapter 20](../part2/ch20_pretrained_text_vision.md), and it is often the most practical first step when labeled data does not yet exist.
+
+The choice between a fine-tuned and a zero-shot approach comes down to how well your task matches existing training data. A fine-tuned model for a problem close to your own will almost always outperform zero-shot. But if your categories are unusual or domain-specific, and especially if they are still evolving as your research develops, zero-shot gives you something usable right away. You can then collect a small set of hand-labeled examples to check how well it is actually performing on your data, and decide from there whether fine-tuning is worth the investment.
+
+For domain-specific corpora, the same reasoning that motivates BioBERT and SciBERT for named entity recognition applies here. A classifier trained on biomedical text {cite}`ch23-lee2020biobert` handles clinical terminology more reliably than a general-purpose model trained primarily on news and books. For scientific literature, SciBERT {cite}`ch23-beltagy2019scibert` is worth checking before defaulting to standard BERT. The Hugging Face hub hosts a large number of fine-tuned classifiers across domains, and each model card describes the training data and evaluation results, which gives you a basis for judging whether a model is a reasonable fit before you commit to running it on your corpus.
+
+Task 3 below demonstrates this with working code. You will run DistilBERT on a set of short passages and compare the results against the zero-shot approach from Chapter 20. That comparison makes the practical trade-off between the two approaches concrete in a way that is hard to convey in the abstract.
+
+---
+
 ## Task 3: Text Classification with a Fine-Tuned Model
 
 The third task demonstrates text classification using a model that was fine-tuned for a specific problem: sentiment analysis on short passages. The model is `distilbert-base-uncased-finetuned-sst-2-english`, a compact version of BERT fine-tuned on the Stanford Sentiment Treebank {cite}`ch23-socher2013sst`. DistilBERT retains about 97% of BERT's performance on most tasks while running approximately 60% faster, which makes it a practical choice when you are processing large volumes of text.
@@ -145,6 +161,22 @@ results = classifier([
 The reason to introduce a fine-tuned classifier here, alongside the zero-shot approach from [Chapter 20](../part2/ch20_pretrained_text_vision.md), is to make the trade-off concrete. A fine-tuned model is generally more accurate for the specific task it was trained on. A zero-shot model is more flexible because you supply your own category labels without any retraining. When a pre-existing fine-tuned model matches your research question closely, it is almost always the better choice. When your classification problem is unusual or domain-specific, zero-shot is a reasonable first step, and you can collect a small set of hand-labeled examples to measure how well it actually performs.
 
 The notebook includes a comparison exercise where you run the same short texts through both approaches and look at where they agree and where they diverge. That comparison is a quick way to build intuition for when each tool is appropriate.
+
+---
+
+## Topic Modeling: Finding Structure You Did Not Know to Look For
+
+Classification works well when you already know what categories matter. Topic modeling is for the situation where you do not. It is an unsupervised method that reads through a corpus and identifies clusters of words that appear together more often than chance would predict, without you specifying in advance what those clusters should be. The output is a set of topics, each described by a list of representative words, along with a topic distribution for each document.
+
+The practical value is different from classification. If you have ten thousand social media posts about a policy issue and want to know what aspects people are actually discussing, classification requires you to decide the categories first, which means you need a theory about what matters before you start. Topic modeling lets the data suggest the structure, which makes it better suited for exploratory work, for generating hypotheses, or for checking whether a coding scheme developed on a small sample actually captures the main themes in a larger corpus.
+
+The oldest and most widely used method is Latent Dirichlet Allocation, known as LDA, introduced by Blei, Ng, and Jordan in 2003 {cite}`ch23-blei2003lda`. LDA treats each document as a mixture of topics and each topic as a probability distribution over words. Given a corpus and a specified number of topics, it infers both simultaneously. LDA remains useful for large corpora and has the advantage of being computationally efficient and well understood. Its main limitation is that the resulting topics can be hard to interpret, especially when documents are short or the vocabulary is noisy, because the model works with raw word frequencies rather than meaning.
+
+Embedding-based approaches like BERTopic address this by using the same contextual representations that run through this entire chapter {cite}`ch23-grootendorst2022bertopic`. Instead of counting word co-occurrences, BERTopic converts documents into semantic embeddings, clusters them in that embedding space, and then derives topic labels from the words that best characterize each cluster. The topics that emerge tend to be more coherent and easier to name than LDA topics, particularly for short texts. The trade-off is that BERTopic involves more computational overhead and more decisions about clustering parameters.
+
+One thing worth being direct about is that topic modeling does not produce objective answers. The topics are statistical constructs, and deciding what they mean is your job as a researcher. A topic that loads heavily on words like "species," "habitat," "distribution," and "population" probably reflects biodiversity monitoring, but the model has no idea. You have to look at the top words, read a sample of representative documents, and make a judgment call. This interpretive step is not a weakness of the method. It is simply part of how it works. Topic modeling organizes a large body of text into something you can reason about. The reasoning itself is still yours.
+
+A practical workflow typically starts with cleaning the text and removing stop words, runs the model across a range of topic counts to find the number that produces the most interpretable results, and then combines coherence scores with your own qualitative judgment. Topic distributions from the final model can then feed into downstream analysis, for example to examine how topic prevalence shifts over time or differs across groups.
 
 ---
 
@@ -196,7 +228,7 @@ Then try the semantic similarity section with a small set of documents you know 
 
 ## Further Reading
 
-Devlin et al. (2019) is the original BERT paper and is accessible even without a deep machine learning background {cite}`ch23-devlin2019bert`. The introduction and Section 3, which describes the pretraining and fine-tuning setup, are the most useful parts for a research context. The Hugging Face NLP course (huggingface.co/learn/nlp-course) provides a free, hands-on walkthrough of the transformers library with interactive notebooks covering all three tasks in this chapter. Reimers and Gurevych (2019) explain why standard BERT representations are not ideal for sentence-level similarity and how sentence transformers address that problem {cite}`ch23-reimers2019sentence`.
+Devlin et al. (2019) is the original BERT paper and is accessible even without a deep machine learning background {cite}`ch23-devlin2019bert`. The introduction and Section 3, which describes the pretraining and fine-tuning setup, are the most useful parts for a research context. The Hugging Face NLP course (huggingface.co/learn/nlp-course) provides a free, hands-on walkthrough of the transformers library with interactive notebooks covering all three tasks in this chapter. Reimers and Gurevych (2019) explain why standard BERT representations are not ideal for sentence-level similarity and how sentence transformers address that problem {cite}`ch23-reimers2019sentence`. For topic modeling, Blei et al. (2003) is the foundational LDA paper {cite}`ch23-blei2003lda`, and Grootendorst (2022) introduces BERTopic and explains how embedding-based clustering produces more coherent topics than word-frequency methods {cite}`ch23-grootendorst2022bertopic`.
 
 ---
 
@@ -206,7 +238,7 @@ Devlin et al. (2019) is the original BERT paper and is accessible even without a
 - [Chapter 13: Computing Resources](../part2/ch13_computing_resources.md) — choosing where to run GPU workloads at scale
 - [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md) — checking model outputs before using them in research
 
-*Last reviewed: April 2026. Tool-specific content in this chapter refers to Hugging Face Transformers (4.x). If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: May 2026. Tool-specific content in this chapter refers to Hugging Face Transformers (4.x). If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ```{bibliography}
 :filter: docname in docnames
