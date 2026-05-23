@@ -9,6 +9,9 @@ By the end of this chapter, you will be able to:
 - Navigate Hugging Face to find, evaluate, and test models directly in your browser before writing any code
 - Match common text analysis tasks (semantic similarity, zero-shot classification, translation, summarization, and sentiment analysis) to appropriate pre-trained models
 - Match common computer vision tasks (image classification, object detection, segmentation, and visual question answering) to appropriate pre-trained models
+- Use CLIP and BioCLIP for zero-shot image classification when labeled training data is not available
+- Transcribe audio recordings with Whisper and recognize where its output needs human review before research use
+- Distinguish between analytical models, which extract information from existing data, and generative models, which produce new content, and choose accordingly for your research task
 :::
 
 The previous chapters focused on AutoML workflows where you bring your own labeled dataset and AutoGluon handles the modeling. Chapter 19 is a good example: you provide labeled rows, and AutoGluon fine-tunes a pretrained backbone on your prediction task. That approach makes sense when your goal is prediction and you have the labeled data to train on.
@@ -17,7 +20,9 @@ But a lot of research work does not look like that. Sometimes you have no labele
 
 The answer is often yes. The machine learning community has produced a large ecosystem of pre-trained models, many of them freely available through [Hugging Face](https://huggingface.co). Hugging Face is a platform that hosts tens of thousands of open-source models, datasets, and interactive browser-based demos. You can browse models by task, read documentation, and in many cases test them directly in your browser before writing a single line of code. Think of it as a model library combined with a sandbox.
 
-This chapter introduces a set of these models across two modalities: text and vision. The goal is partly to show you what is out there, and partly to build the habit of checking for a pre-trained solution before committing to building your own. That instinct will save you considerable time.
+This chapter introduces a set of these models across text, vision, and audio. The goal is partly to show you what is out there, and partly to build the habit of checking for a pre-trained solution before committing to building your own. That instinct will save you considerable time.
+
+One distinction worth keeping in mind as you read: the models here fall into two broad categories. Most of them are analytical, meaning they take existing data and extract information from it. A smaller set are generative, meaning they produce new content such as synthesized images or spoken audio. The two types serve different research purposes and come with different considerations around validation and appropriate use. The chapter flags this distinction as it comes up.
 
 ---
 
@@ -72,6 +77,18 @@ For research purposes, ViT is a good starting point when you have a large collec
 
 **Example.** A field ecologist working with thousands of camera trap photographs can use ViT to quickly separate images into broad categories such as animal present, empty frame, or camera malfunction, before moving into species-level analysis.
 
+### Zero-Shot Image Classification: CLIP and BioCLIP
+
+ViT requires labeled training examples to classify images into your categories. CLIP (Contrastive Language-Image Pretraining), developed by OpenAI, takes a different approach {cite}`ch20-radford2021clip`. Instead of learning fixed categories, CLIP learns a shared embedding space where images and text descriptions are aligned. This means you can classify images using natural language prompts without any retraining. You write out candidate labels as short descriptions, such as "a photograph of dense forest" or "an aerial view of urban development," and CLIP ranks each image against those descriptions based on similarity.
+
+This zero-shot capability is particularly useful when your categories are still evolving, when labeled training data is hard to collect, or when you are doing exploratory work and want to test several classification schemes before committing to one. A browser demo is available through [OpenCLIP on Hugging Face](https://huggingface.co/spaces/mlunar/open-clip-explorer).
+
+For ecological and biodiversity research, BioCLIP offers a domain-specific alternative {cite}`ch20-stevens2024bioclip`. It is fine-tuned on a large collection of biological specimen images spanning hundreds of thousands of taxa, which gives it a significant advantage over general CLIP for species-level identification. Researchers working with camera trap images, herbarium specimens, or field photographs can apply BioCLIP to species identification tasks where general-purpose models tend to struggle with fine-grained visual distinctions within a taxon. A demo is available on [Hugging Face](https://huggingface.co/imageomics/bioclip).
+
+The practical choice between ViT and CLIP comes down to whether you have labeled data. When labeled examples exist and categories are well-defined, a fine-tuned ViT will usually perform better. When you are exploring or when your categories are unusual, CLIP gets you started immediately without any labeling effort.
+
+**Example.** A researcher studying urban green space could classify satellite image patches into categories such as tree canopy, grass, impervious surface, and water by writing those descriptions as text prompts, with no need to collect labeled training images.
+
 ### Object Detection: Grounding DINO
 
 Object detection goes further than classification by locating specific objects within an image and drawing bounding boxes around them. Grounding DINO is a zero-shot detection model, meaning you describe what you are looking for in plain language and the model finds it without needing any labeled training examples {cite}`ch20-liu2023groundingdino`. You might ask it to locate "solar panels" in a satellite image, or "protective equipment" in a set of workplace photographs, and it will return bounding boxes around the matching regions. You can try it at the [Hugging Face demo](https://huggingface.co/spaces/merve/Grounding_DINO_demo).
@@ -96,18 +113,54 @@ This kind of model is useful for exploratory analysis of visual materials, rapid
 
 **Example.** Researchers working with historical photograph archives can use Qwen3-VL to generate preliminary descriptive metadata for large collections, then review and correct the outputs manually.
 
+### Image Captioning: BLIP
+
+The models above either assign predefined categories to images or answer specific questions about them. BLIP (Bootstrapping Language-Image Pre-training) serves a different purpose: it generates free-text descriptions of image content without requiring a prompt {cite}`ch20-li2022blip`. Given an image, BLIP produces a sentence or two describing what it sees, which makes it practical for generating descriptive metadata at scale, creating alt-text for figures, or producing text that downstream NLP tools can then process and analyze.
+
+For researchers managing large archives of photographs, microscopy images, or field images, this captioning capability offers a way to make visual material searchable and summarizable without writing descriptions by hand. BLIP also supports visual question answering, but where Qwen3-VL handles open-ended and complex reasoning tasks, BLIP is generally more efficient for straightforward captioning workflows where you want a description of image content rather than an answer to a specific question. A browser demo is available at [Hugging Face Spaces](https://huggingface.co/spaces/Salesforce/BLIP).
+
+**Example.** A researcher archiving a large collection of field survey photographs could use BLIP to generate draft descriptions for each image, then review and correct the outputs rather than composing them from scratch.
+
 ### Vision Model Comparison
 
 | Model | Task type | Output | Strengths | Limitations | Research uses |
 |---|---|---|---|---|---|
-| **ViT** | Classification | Single label per image | Strong baseline; efficient; generalizes well | No localization or segmentation | Sorting large image collections; rapid labeling |
+| **ViT** | Classification | Single label per image | Strong baseline; efficient; generalizes well | Requires labeled data for fine-tuning | Sorting large image collections; rapid labeling |
+| **CLIP / BioCLIP** | Zero-shot classification | Label + similarity score | No labeled data needed; flexible text prompts; BioCLIP specialized for species | Weaker than fine-tuned models on narrow tasks | Exploratory labeling; biodiversity identification |
 | **Grounding DINO** | Object detection | Bounding boxes | Zero-shot; accepts natural language | Slower than specialized detectors | Mapping objects in satellite images; locating domain-specific items |
 | **SAM** | Segmentation | Pixel-level masks | Precise outlines; domain-agnostic; no training required | Does not label objects | Cell segmentation; region identification in scientific images |
+| **BLIP** | Image captioning | Descriptive text | Generates natural descriptions without prompting | Less capable than Qwen3-VL for complex reasoning | Metadata generation; making image archives searchable |
 | **Qwen3-VL** | Visual Q&A | Text response | Open-ended; flexible; integrates vision and language | Variable accuracy; higher compute needs | Documentation; exploratory analysis; metadata generation |
 
 ---
 
-*Last reviewed: March 2026. Tool-specific content in this chapter refers to the Hugging Face Transformers ecosystem. Model availability and browser interfaces on platforms like Hugging Face Spaces change frequently. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+## Audio: Transcription and Speech
+
+Many researchers work with audio and never think of it as something a pre-trained model could handle. Recorded interviews, focus group sessions, conference presentations, and oral history archives all contain information that typically requires manual transcription before it can be analyzed. Whisper, developed by OpenAI, changes that considerably {cite}`ch20-radford2023whisper`.
+
+Whisper is a speech recognition model trained on a large and diverse corpus of audio from the web, covering many languages and acoustic conditions. It converts spoken audio into text with accuracy strong enough for most research transcription tasks, and it handles background noise, varied accents, and technical vocabulary better than earlier automatic systems. Because the model is open and can be run locally, it is suitable for sensitive research contexts where recordings should not leave your institution's infrastructure. You can access it through the [Hugging Face model page](https://huggingface.co/openai/whisper-large-v3), and Chapter 13 covers the compute options for running it on Great Lakes or a local GPU.
+
+The main limitation worth knowing about is overlapping speakers. Whisper transcribes what it hears but does not automatically separate multiple voices, which means focus group recordings or panel discussions may need post-processing to attribute speech to individual participants. For single-speaker recordings such as individual interviews or lectures, accuracy is generally strong enough to use directly in qualitative analysis, with a round of human review to catch errors in domain-specific terminology.
+
+Beyond transcription, text-to-speech models can convert written text back into natural-sounding audio. This has practical applications in research communication: generating narration for video presentations, producing accessible audio versions of written materials, or creating spoken instructions for experiments. Tools like Bark (open-source) and ElevenLabs (commercial) offer this capability through simple interfaces. For most research workflows this is a secondary application, but the option is there when you need it.
+
+---
+
+## Image Generation: Stable Diffusion
+
+The models covered so far in this chapter are all analytical: they take existing data and extract information from it. Stable Diffusion works differently. It is a generative model that produces new images from text descriptions {cite}`ch20-rombach2022ldm`, which puts it in the same broad category as large language models, just for visual content rather than text.
+
+The underlying mechanism is a diffusion process: the model starts from random noise and iteratively refines it, guided by the meaning of your prompt, until a coherent image emerges. Stable Diffusion is open-source and can run on consumer hardware with a modest GPU, which makes it more accessible than many proprietary image generation systems.
+
+For researchers, the most useful applications are not about generating photorealistic images as evidence, but rather about producing visual communication materials faster than traditional illustration workflows would allow. An ecologist explaining habitat fragmentation, a social scientist visualizing a theoretical concept, or an educator building teaching slides can all use image generation to produce conceptual diagrams and placeholder figures without commissioning custom illustrations or spending hours in design software. The model is also used in computer vision research to generate synthetic training data for scenarios that are difficult to photograph in the real world, though results should always be validated against real images before drawing conclusions.
+
+Because Stable Diffusion can run locally, it is appropriate for research settings where visual materials involve sensitive topics or proprietary content that should not be sent to external services. Graphical interfaces like Automatic1111 and ComfyUI make it usable without writing code. A cloud-based option is available through [Hugging Face Spaces](https://huggingface.co/spaces/stabilityai/stable-diffusion).
+
+One boundary that matters for research use: generated images should not be presented as photographs or data. They are production tools for communication and experimentation. Journals and conferences increasingly have explicit policies about AI-generated figures, and the right practice is always to disclose when generated imagery appears in a submission. Chapter 7 discusses this in the context of research writing and communication.
+
+---
+
+*Last reviewed: May 2026. Tool-specific content in this chapter refers to the Hugging Face Transformers ecosystem. Model availability and browser interfaces on platforms like Hugging Face Spaces change frequently. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ```{bibliography}
 :filter: docname in docnames
