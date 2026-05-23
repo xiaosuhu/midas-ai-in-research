@@ -1,4 +1,4 @@
-# Chapter 20: Pre-trained Models for Text and Vision
+# Chapter 20: Pre-trained Models for Text, Vision, and Audio
 
 :::{admonition} What you will learn
 :class: tip
