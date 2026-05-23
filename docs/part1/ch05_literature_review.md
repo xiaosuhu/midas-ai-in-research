@@ -5,7 +5,7 @@
 - How deep research tools work and what capabilities they add beyond traditional search
 - Why semantic search matters for literature discovery and when keyword matching falls short
 - How to orchestrate a workflow combining human expertise, search databases, and AI tools
-- What makes specialized tools like Asta different from general-purpose deep research systems
+- What kinds of information AI summarization tools tend to leave out, and how to account for that
 - Where human judgment remains irreplaceable in the review process
 :::
 
@@ -174,6 +174,20 @@ NotebookLM also offers an Audio Overview feature that generates a two-person con
 NotebookLM works only with what you give it. If you upload five papers, its answers reflect those five papers. It has no way of knowing what you left out, and it will not tell you that a study you should have included exists. This means the quality of what you get is directly tied to the quality of your initial selection — which is why the discovery phase, using the tools described earlier in this chapter, still matters.
 
 As with all AI tools in the research context, you should verify anything you plan to rely on. The citations NotebookLM provides make this easier than with tools that only cite at the level of a full document, but the verification step is still yours to do.
+
+---
+
+## What AI Summarization Leaves Out
+
+Every AI tool in this chapter compresses information in some way. A deep research tool distills hundreds of papers into a structured synthesis. NotebookLM gives you a response grounded in five PDFs rather than asking you to read all five. An audio overview turns a dense paper into a ten-minute conversation. That compression is often genuinely useful. But it is worth being clear about what tends to get left behind, because the losses are not random.
+
+The parts of a paper most likely to survive summarization are the headline findings: what the study tested, what it found, and what the authors conclude. The parts most likely to disappear are the qualifications around those findings. Limitations sections, which authors typically write at the end of a discussion, are among the most frequently compressed content. A paper that concludes "method X improves outcome Y" may also note in the limitations that the effect only held in a specific population, that the sample was small, or that the authors suspect a confound they could not control for. A summary of that paper might carry the headline finding forward without the qualifications.
+
+The same pattern applies to boundary conditions. A method that works well on datasets of one type but fails on another might be summarized simply as "a method that works well." Statistical detail often compresses too: sample sizes, confidence intervals, effect sizes, and power estimates have a way of dropping out of AI-generated summaries even when they are central to evaluating whether a finding is meaningful. And the reasoning behind methodological choices, why the authors used this measure rather than that one, why they excluded a particular subgroup, tends to disappear entirely.
+
+None of this is unique to AI tools. Abstracts written by authors face similar constraints, which is why researchers are trained not to cite a paper based only on its abstract. The difference with AI summarization tools is that the compression happens automatically and invisibly. There is no signal to tell you that something was dropped.
+
+The practical implication is straightforward. AI summarization tools are genuinely useful for two things: quickly identifying which papers are worth your time, and getting an initial orientation to a body of literature you are not yet familiar with. They are not a substitute for reading the papers you actually plan to rely on. For any study you intend to cite, apply in your own analysis, or use to make a methodological decision, you should read the original, particularly the methods section and the limitations. That is where the conditions and qualifications live, and those are exactly the parts that determine whether the finding applies to your situation.
 
 ---
 
