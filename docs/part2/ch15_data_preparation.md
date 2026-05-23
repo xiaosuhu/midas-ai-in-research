@@ -6,6 +6,7 @@
 - A three-way framework: discuss with AI, hand off simple tasks, collaborate on complex ones
 - How to validate transformations without blindly trusting AI output
 - The importance of documenting every cleaning decision
+- What vibe coding is and where it fits within a research workflow
 :::
 
 ## The Real Work Begins
@@ -100,6 +101,18 @@ Imagine you are analyzing a dataset of research grants and need to calculate a "
 - *Political science:* "I need to merge election results data with demographic data by county FIPS code. Some counties changed boundaries between surveys. Write a script that does the merge and reports how many records could not be matched."
 - *Education research:* "Create a script that flags impossible combinations -- for example, a student with a graduation year earlier than their enrollment year, or a grade level that does not match the recorded school type."
 - *Climate science:* "I need to aggregate daily temperature readings into monthly summaries. If more than 10% of days in a month are missing, flag that month rather than computing a potentially misleading average."
+
+## Vibe Coding: What Researchers Need to Know
+
+If you have spent time in developer communities lately, you have probably heard the term "vibe coding." The idea was described by AI researcher Andrej Karpathy in early 2025: rather than carefully reading and understanding every line of code, you fully delegate the implementation to AI and stay at the level of intent {cite}`karpathy2025vibecoding`. You describe what you want, AI writes it, something does not work, you paste the error back in and keep going. You are not reading the code so much as steering it from a distance.
+
+For some tasks, this is genuinely practical. If you need a quick script to rename files, reformat a column of dates, or standardize capitalization across a table, the logic is simple enough that you can verify the output without reading every line. That is not far from Way 2 in the framework above: the task is mechanical, the outcome is easy to spot-check, and your domain judgment is not really what is being tested.
+
+The risk for researchers comes when vibe coding drifts into Way 1 and Way 3 territory. Say you ask AI to build a derived variable that involves conditional logic across several columns, accept the first version that runs without errors, and move directly to analysis. The code worked in the sense that it did not crash. But did it handle the edge cases your research design requires? Did it make assumptions about your data structure that you never verified? If you cannot answer those questions, you have not just delegated the coding. You have delegated a methodological decision.
+
+This matters when it comes time to defend your work. If a reviewer or committee member asks how you handled a particular transformation, "the AI wrote it and it ran" is not a sufficient answer. Reproducibility in the fullest sense means being able to explain every step in your pipeline, not just re-run it. The three-way framework in this chapter is a guide to where your attention belongs. Vibe coding is a reasonable shortcut where that attention is optional. It becomes a problem where it is not.
+
+A useful check: if you could not explain the logic in plain English before asking AI to code it, that is a signal to think it through first. Once you can articulate what the code should do and why, having AI write it is just a convenience. When you cannot, the code is doing your reasoning for you.
 
 ## Recommended Data Prep Workflow
 
