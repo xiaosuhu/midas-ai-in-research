@@ -9,7 +9,7 @@
 
 **Primary Author:** Xiao-Su Hu (Frank), Research Data Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan
 
-**Contributors:** Nathan Fox, AI Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan (AI Sandbox materials, adapted for Chapter 20)
+**Contributors:** Nathan Fox, AI Scientist, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan — Chapters 20, 23
 
 ```{admonition} Not sure where to start?
 :class: tip
@@ -65,7 +65,7 @@ The handbook follows the research lifecycle, from the earliest stage of framing 
 
 **Part I: AI Across the Research Lifecycle** (Chapters 1 through 11) covers the process side of things. It starts with a conceptual introduction to what AI is and how modern AI systems actually work, moves into practical topics like prompt engineering and deciding when to use AI at all, and then works through specific research tasks: literature review, research planning, writing, grant development, peer review, and ethics. The last chapter in this part focuses on validation, which connects to nearly everything else in the handbook.
 
-**Part II: AI in Data Analysis** (Chapters 12 through 22) is the hands-on section. It covers how to access and work with research data, how to set up computing environments, and then walks through a full analysis workflow from exploratory analysis and data preparation through AutoML, pre-trained models, and interpretation. These chapters assume basic familiarity with Python but are written to be accessible even if you are not primarily a data scientist.
+**Part II: AI in Data Analysis** (Chapters 12 through 22) is the hands-on section. It covers how to access and work with research data, how to set up computing environments, and then walks through a full analysis workflow from exploratory analysis and data preparation through AutoML, pre-trained models, and interpretation. Chapter 20 covers a broad range of pre-trained models for text, vision, and audio, including tools for transcription, zero-shot image classification, and generative applications such as image synthesis. These chapters assume basic familiarity with Python but are written to be accessible even if you are not primarily a data scientist.
 
 **Part III: Building with Modern AI** (Chapters 23 through 26) goes deeper into the tools and approaches behind more sophisticated AI applications in research. This includes working with pre-trained language models for NLP tasks, building retrieval-augmented generation systems, designing AI agents for multi-step workflows, and evaluating or fine-tuning language models. These chapters are more technical and build on the material in Part II.
 
@@ -183,6 +183,9 @@ The resources below were selected to give you a broader picture of where AI in r
 ---
 
 ## Version History
+
+**v1.1.0** — May 2026 — Expanded Chapters 20 and 23
+Chapter 20 now covers zero-shot image classification (CLIP, BioCLIP), image captioning (BLIP), audio transcription (Whisper), and image generation (Stable Diffusion), with a new framing distinguishing analytical from generative models. Chapter 23 adds two new sections on text classification types and topic modeling (LDA and BERTopic). Chapter 7 includes a new entry on visual communication tools. Contributions by Dr. Nathan Fox (Chapters 20, 23).
 
 **v1.0.1** — May 2026 — Added Chapter 31: Computing Fundamentals
 

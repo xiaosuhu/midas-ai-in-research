@@ -131,6 +131,8 @@ Most journals now ask authors to include a statement describing how AI was or wa
 
 **For citation integrity:** This is a place where AI tools have real weaknesses, so supplement with dedicated tools. Semantic Scholar provides AI-powered recommendations and summaries grounded in real literature. Scite.ai classifies whether a paper supports, contrasts, or simply mentions a given claim, which is genuinely useful for lit review work. Zotero remains the gold standard reference manager, and it integrates well with AI writing tools even though it is not itself AI-powered.
 
+**For visual communication:** When you need a conceptual diagram, a schematic for a presentation slide, or a placeholder illustration for teaching materials, image generation models can produce a usable draft faster than drawing one by hand or commissioning custom artwork. Stable Diffusion is the most widely used open-source option and can run locally if your content is sensitive. For quick experimentation, cloud-based interfaces are available through Hugging Face Spaces. Keep in mind that generated images are communication aids, not data: journals and conferences have increasingly explicit policies about AI-generated figures, and disclosure is always the right practice. [Chapter 20](../part2/ch20_pretrained_text_vision.md) covers how these models work and what they are actually suited for.
+
 ---
 
 ## Try This
