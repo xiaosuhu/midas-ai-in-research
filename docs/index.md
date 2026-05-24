@@ -184,6 +184,9 @@ The resources below were selected to give you a broader picture of where AI in r
 
 ## Version History
 
+**v1.1.0** — May 2026 — Expanded Chapters 20 and 23
+Chapter 20 now covers zero-shot image classification (CLIP, BioCLIP), image captioning (BLIP), audio transcription (Whisper), and image generation (Stable Diffusion), with a new framing distinguishing analytical from generative models. Chapter 23 adds two new sections on text classification types and topic modeling (LDA and BERTopic). Chapter 7 includes a new entry on visual communication tools. Contributions by Dr. Nathan Fox (Chapters 20, 23).
+
 **v1.0.1** — May 2026 — Added Chapter 31: Computing Fundamentals
 
 A new reference chapter covering the hardware and compute terminology researchers encounter when working with AI models. Topics include TFLOPS and TOPS, memory bandwidth, model precision levels (FP32, FP16, INT8), and how to estimate inference time from GPU specifications. The video index moves to Chapter 32. Part IV now covers 6 chapters.
