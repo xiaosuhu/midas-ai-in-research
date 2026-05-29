@@ -1,10 +1,10 @@
-# Chapter 32: MIDAS Video Resources
+# MIDAS Video Resources
 
 ```{note}
-MIDAS maintains a growing YouTube library of recorded workshops, tutorial series, symposia, and invited lectures. As of this writing, the channel holds 279 videos across 19 playlists. Another 133 videos sit outside any playlist. This index helps you find recordings that connect to what you are reading in the handbook, whether you want to see a concept explained live, hear researchers talk through how they apply a method in their own work, or work through a full workshop from start to finish.
-
-This index was last generated on 2026-03-19. 
+This index was last generated on 2026-05-29. To refresh it with the latest videos, run `python scripts/generate_video_index.py` from the repository root after setting your `YOUTUBE_API_KEY` environment variable.
 ```
+
+MIDAS maintains a growing YouTube library of recorded workshops, tutorial series, symposia, and invited lectures. As of this writing, the channel holds 289 videos across 20 playlists. Another 134 videos sit outside any playlist. This index helps you find recordings that connect to what you are reading in the handbook, whether you want to see a concept explained live, hear researchers talk through how they apply a method in their own work, or work through a full workshop from start to finish.
 
 The index is organized in three parts. The first groups playlists by handbook topic, so you can jump directly to recordings that pair with a chapter you are working through. The second covers standalone videos not collected into a playlist. The third lists every playlist in one place, sorted by year, for when you want to browse more freely.
 
@@ -18,7 +18,7 @@ Related chapters: [Ethics and Privacy](../part1/ch10_ethics_privacy), [Validatio
 
 | Playlist | Videos | Year |
 |----------|:------:|:----:|
-| [Data and AI in Society Lecture Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFUypet8fns8r7g8zhS5_9L) | 12 | 2023 |
+| [Data and AI in Society Lecture Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFUypet8fns8r7g8zhS5_9L) | 13 | 2023 |
 | [MIDAS Ethical AI Forum: "From Theory to Practice: Building Ethical and Trustworthy AI"](https://www.youtube.com/playlist?list=PL0iUdEecI6UFewelccsbGL1OJfT31yS-e) | 6 | 2023 |
 | [MIDAS: Responsible Data Science and AI mini-symposium, 4/13/23](https://www.youtube.com/playlist?list=PL0iUdEecI6UGl2Gy4NQo14LSV0CFfsahO) | 4 | 2023 |
 | [MIDAS / LHS Colloquium  April 2023: Implementing AI in Health](https://www.youtube.com/playlist?list=PL0iUdEecI6UGWCE8WrBLz2LkUMjELznTv) | 2 | 2023 |
@@ -31,7 +31,7 @@ Related chapters: [NLP with BERT](../part3/ch23_nlp_with_bert), [Retrieval-Augme
 
 | Playlist | Videos | Year |
 |----------|:------:|:----:|
-| [Generative AI: From Theory to Scientific Applications Mini-Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEct2Q-h0RM_Q2N1gRrpD88) | 8 | 2025 |
+| [Generative AI: From Theory to Scientific Applications Mini-Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEct2Q-h0RM_Q2N1gRrpD88) | 7 | 2025 |
 
 ### Understanding How AI Works
 
@@ -41,7 +41,7 @@ Related chapters: [How Modern AI Works](../part1/ch02_how_ai_works), [Prompt Eng
 
 | Playlist | Videos | Year |
 |----------|:------:|:----:|
-| [Generative AI Tutorial Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFbj3A3UR0ApyEmO07vkrS3) | 15 | 2023 |
+| [Generative AI Tutorial Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFbj3A3UR0ApyEmO07vkrS3) | 16 | 2023 |
 | [MIDAS mini-symposium Sept 2023: Generative AI: Diffusion Models for Scientific Machine Learning](https://www.youtube.com/playlist?list=PL0iUdEecI6UELzywyQUu_DOLMB_kjYBsy) | 7 | 2023 |
 | [Generative AI Coast-to-Coast Webinars 2023](https://www.youtube.com/playlist?list=PL0iUdEecI6UGURBY1qOP0-zwJr2-jTXtY) | 4 | 2023 |
 
@@ -64,6 +64,7 @@ Related chapters: [When to Use AI](../part1/ch04_when_to_use_ai), [Research Plan
 
 | Playlist | Videos | Year |
 |----------|:------:|:----:|
+| [2026 AI in Research Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UG9GW5Ln5VwUgiJrrMTQ7Qg) | 8 | 2026 |
 | [U-M Annual Data Science & AI Summit 2025](https://www.youtube.com/playlist?list=PL0iUdEecI6UH1-2i1lk0yUmu062Iywx3R) | 11 | 2025 |
 | [2025 AI in S&E Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEaABOmJn0tT5YkL1xPMHo7) | 20 | 2025 |
 | [2024 MIDAS x ADSA](https://www.youtube.com/playlist?list=PL0iUdEecI6UHP4t2Imbgbutd56Lu-_5Gu) | 4 | 2024 |
@@ -82,6 +83,7 @@ The videos below are on the MIDAS channel but have not been collected into a pla
 
 | Video | Date |
 |-------|------|
+| [Elle O'Brien MIDAS Summer Academies](https://www.youtube.com/watch?v=Xl_vAcnHQOE) | 2026-04-28 |
 | [Propelling Original Data Science (PODS) Funding Town Hall - 2026](https://www.youtube.com/watch?v=ugD5LjdAv-A) | 2026-03-02 |
 
 ### 2025
@@ -257,17 +259,18 @@ The table below lists every curated playlist on the channel in one place, sorted
 
 | Playlist | Videos | Year |
 |----------|:------:|:----:|
+| [2026 AI in Research Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UG9GW5Ln5VwUgiJrrMTQ7Qg) | 8 | 2026 |
 | [U-M Annual Data Science & AI Summit 2025](https://www.youtube.com/playlist?list=PL0iUdEecI6UH1-2i1lk0yUmu062Iywx3R) | 11 | 2025 |
 | [2025 AI in S&E Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEaABOmJn0tT5YkL1xPMHo7) | 20 | 2025 |
-| [Generative AI: From Theory to Scientific Applications Mini-Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEct2Q-h0RM_Q2N1gRrpD88) | 8 | 2025 |
+| [Generative AI: From Theory to Scientific Applications Mini-Symposium](https://www.youtube.com/playlist?list=PL0iUdEecI6UEct2Q-h0RM_Q2N1gRrpD88) | 7 | 2025 |
 | [Vesuvius Scrolls: From Ancient Manuscripts to Artificial Intelligence](https://www.youtube.com/playlist?list=PL0iUdEecI6UHn_MAmz6I1VcU93Ch5xxLH) | 9 | 2025 |
 | [2024 MIDAS x ADSA](https://www.youtube.com/playlist?list=PL0iUdEecI6UHP4t2Imbgbutd56Lu-_5Gu) | 4 | 2024 |
 | [MIDAS mini-symposium 2024: Interdisciplinary Open Science in Social and Behavioral Research](https://www.youtube.com/playlist?list=PL0iUdEecI6UH_bH-blVmqEbUvS7H3bMdJ) | 5 | 2024 |
 | [MIDAS mini-symposium March 2024: Understanding Biodiversity in a Changing Planet](https://www.youtube.com/playlist?list=PL0iUdEecI6UGLX-smK6TOfkGuQ-X9hWI5) | 6 | 2024 |
 | [MIDAS Symposium: The Future of Discovery in the Age of Human-AI Collaboration](https://www.youtube.com/playlist?list=PL0iUdEecI6UHLsLv5kM18uTNLIX777B7d) | 4 | 2024 |
 | [MIDAS mini-symposium Oct 2023: AI-driven Research Workflows](https://www.youtube.com/playlist?list=PL0iUdEecI6UFmo23poV3XEJvJAvdngjb3) | 5 | 2023 |
-| [Data and AI in Society Lecture Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFUypet8fns8r7g8zhS5_9L) | 12 | 2023 |
-| [Generative AI Tutorial Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFbj3A3UR0ApyEmO07vkrS3) | 15 | 2023 |
+| [Data and AI in Society Lecture Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFUypet8fns8r7g8zhS5_9L) | 13 | 2023 |
+| [Generative AI Tutorial Series](https://www.youtube.com/playlist?list=PL0iUdEecI6UFbj3A3UR0ApyEmO07vkrS3) | 16 | 2023 |
 | [MIDAS mini-symposium Sept 2023: Generative AI: Diffusion Models for Scientific Machine Learning](https://www.youtube.com/playlist?list=PL0iUdEecI6UELzywyQUu_DOLMB_kjYBsy) | 7 | 2023 |
 | [Generative AI Coast-to-Coast Webinars 2023](https://www.youtube.com/playlist?list=PL0iUdEecI6UGURBY1qOP0-zwJr2-jTXtY) | 4 | 2023 |
 | [MIDAS Ethical AI Forum: "From Theory to Practice: Building Ethical and Trustworthy AI"](https://www.youtube.com/playlist?list=PL0iUdEecI6UFewelccsbGL1OJfT31yS-e) | 6 | 2023 |
