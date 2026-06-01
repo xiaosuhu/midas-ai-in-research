@@ -3,7 +3,7 @@
 generate_video_index.py
 
 Fetches all playlists and videos from the MIDAS YouTube channel and
-generates docs/part4/ch31_video_index.md for the handbook.
+generates docs/part4/ch32_video_index.md for the handbook.
 
 Usage
 -----
@@ -64,7 +64,7 @@ except ImportError:
 CHANNEL_HANDLE = "UM_MIDAS"  # YouTube handle without the @
 REPO_ROOT      = Path(__file__).resolve().parent.parent
 CACHE_FILE     = Path(__file__).resolve().parent / "midas_videos_cache.json"
-OUTPUT_FILE    = REPO_ROOT / "docs" / "part4" / "ch31_video_index.md"
+OUTPUT_FILE    = REPO_ROOT / "docs" / "part4" / "ch32_video_index.md"
 
 CHANNEL_URL    = "https://www.youtube.com/@UM_MIDAS"
 PLAYLISTS_URL  = "https://www.youtube.com/@UM_MIDAS/playlists"
