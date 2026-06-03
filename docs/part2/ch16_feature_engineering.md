@@ -106,6 +106,24 @@ As with text embeddings, the practical question in most research contexts is whi
 
 ---
 
+## Dimensionality Reduction
+
+Some datasets arrive with far more variables than any model can meaningfully use. Genomics studies routinely produce tens of thousands of gene expression measurements per sample. Survey instruments with dozens of highly correlated items create redundancy that inflates model complexity without adding information. Text embeddings from a language model might be 768 numbers wide, even when the task only requires a fraction of that signal. In situations like these, dimensionality reduction is the tool for consolidating a high-dimensional representation into something more compact before modeling or visualization.
+
+There are three methods worth knowing for research contexts.
+
+**PCA (Principal Component Analysis)** is the most widely used starting point. It finds linear combinations of your original variables that capture the most variance in the data, and represents each observation as a set of scores on those new axes, called principal components {cite}`jolliffe2016principal`. PCA is fast, deterministic, and fully invertible, which means you can apply it consistently to new data using the same transformation learned on your training set. That last property is what makes it suitable for use inside a modeling pipeline rather than just as a visualization step. A reasonable rule of thumb: if your dataset has more than a few dozen correlated numeric features and you are not sure how many are actually informative, running PCA and keeping enough components to explain 90 to 95 percent of the variance is a sensible starting point.
+
+**UMAP (Uniform Manifold Approximation and Projection)** takes a different approach {cite}`mcinnes2018umap`. Rather than looking for linear structure, it tries to preserve the local and global neighborhood relationships in the original high-dimensional space when projecting down to two or three dimensions. UMAP handles nonlinear structure that PCA would miss, and it tends to produce cleaner cluster separation when the data has meaningful groupings. It is faster than t-SNE on large datasets and, unlike t-SNE, can transform new data points after the model has been fit, which makes it usable in a pipeline. UMAP is a good choice when you suspect the meaningful variation in your data is not captured by straight lines through the variable space.
+
+**t-SNE (t-Distributed Stochastic Neighbor Embedding)** is designed exclusively for visualization {cite}`vandermaaten2008tsne`. It excels at revealing cluster structure in two dimensions and is widely used for exploring embeddings, single-cell RNA sequencing data, and other high-dimensional outputs. What it cannot do is serve as a preprocessing step for downstream modeling. The transformation is non-deterministic: running t-SNE twice on the same data produces different layouts. More importantly, t-SNE cannot transform new observations using the mapping it learned from the training data. Treat t-SNE as a diagnostic tool for understanding what your data looks like, not as a feature engineering method.
+
+A simple decision framework: if you need to reduce dimensions for modeling purposes, start with PCA for linear data and try UMAP if you suspect nonlinear structure. If you want to visualize whether natural clusters exist in a high-dimensional dataset, t-SNE or UMAP both work well as exploratory tools. Do not use t-SNE in a pipeline you plan to apply to new data.
+
+One thing worth noting about dimensionality reduction and interpretability: once you have projected your data into principal components or UMAP coordinates, the original variable names are gone. A model trained on PCA components may perform well, but its coefficients no longer correspond to anything in your data that has a substantive meaning. If interpretability is important for your research question, weigh that trade-off carefully before reducing dimensions aggressively.
+
+---
+
 ## When to Engineer Manually versus Let AutoML Handle It
 
 The honest answer is that the boundary shifts depending on your data and your question. But a few heuristics are worth keeping in mind.
@@ -126,6 +144,7 @@ A practical workflow: start with clean data and let AutoGluon run first as a bas
 - For tabular data, focus on correcting skewed distributions, choosing the right encoding for categorical variables, and building derived features that carry conceptual meaning
 - For text and images, the most practical path in most research settings is using pretrained representations rather than building features from scratch; [Chapter 20](ch20_pretrained_text_vision.md) covers the hands-on details
 - For time series, lag features and rolling aggregates are the core tools; getting the leakage boundary right is more important than getting the window size perfect
+- When your dataset has many correlated or redundant features, dimensionality reduction can help; PCA and UMAP are both usable in modeling pipelines, while t-SNE is a visualization tool only
 - Start with a baseline AutoGluon run, then use the feature importance output to decide where manual engineering is worth the effort
 
 ---
