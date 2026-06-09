@@ -5,6 +5,7 @@
 
 By the end of this chapter and its companion notebook, you will be able to:
 
+- Distinguish between supervised, unsupervised, semi-supervised, and reinforcement learning, and identify which paradigm fits your research question
 - Quickly test whether there is a predictive signal in your tabular data
 - Understand how `TabularPredictor` handles preprocessing and model selection automatically
 - Read the leaderboard and evaluate model performance on a held-out test set
@@ -14,6 +15,26 @@ By the end of this chapter and its companion notebook, you will be able to:
 Before committing significant time to building a custom machine learning pipeline, it helps to first ask a simpler question: is there a predictive signal in this data at all? AutoGluon is one of the most practical tools for answering that question quickly. It is an open-source AutoML framework developed by Amazon that trains and compares multiple models automatically, with almost no configuration required {cite}`erickson2020autogluon`.
 
 In the context of research, AutoGluon is best understood as a rapid feasibility tool rather than a final modeling solution. The goal is to get a reliable performance baseline in minutes, so you can decide whether the problem is worth pursuing further, and if so, where to focus your attention {cite}`autogluon2024`.
+
+---
+
+## Understanding Learning Paradigms
+
+Before jumping into AutoGluon, it is worth pausing on a question that comes up constantly in practice: what kind of learning problem are you actually working with? The answer shapes everything downstream, from how you structure your data to which tools make sense to reach for.
+
+Most machine learning tasks fall into one of four paradigms. They are not equally common in research settings, and knowing which one fits your situation will save you a lot of confusion.
+
+**Supervised learning** is the most common starting point for researchers. You have a dataset where each observation comes with a known outcome, a label, and the goal is to learn a mapping from inputs to that outcome so you can predict it for new observations. Predicting student dropout risk from course engagement data, classifying grant applications by funding area, estimating crop yield from satellite imagery: these are all supervised problems. The defining feature is that you have ground truth labels to learn from. AutoGluon's `TabularPredictor`, which this chapter covers, is a supervised learning tool.
+
+**Unsupervised learning** drops the labels entirely. You have observations but no outcomes to predict, and the goal is to find structure in the data itself. Clustering patients into subgroups based on symptom profiles, identifying latent topics in a corpus of policy documents, detecting unusual patterns in sensor data without knowing in advance what "unusual" looks like: these are unsupervised tasks. The dimensionality reduction methods covered in [Chapter 16](ch16_feature_engineering.md), such as PCA and UMAP, are also unsupervised in this sense, as are topic modeling methods covered in [Chapter 23](ch23_nlp_with_bert.md).
+
+**Semi-supervised learning** sits in between. You have labels for some observations but not all, which is a common situation in research: labeling data is expensive and time-consuming, so you might have a small set of manually annotated examples alongside a much larger pool of unlabeled ones. Semi-supervised methods try to use both. In practice, the most accessible version of this idea for researchers is starting with a pretrained model and fine-tuning it on your small labeled set, which is exactly the approach covered in [Chapter 26](ch26_llm_eval_finetuning.md). The pretrained model has already learned useful representations from large unlabeled corpora; your labeled data provides the task-specific signal.
+
+**Reinforcement learning** is the paradigm where an agent learns by taking actions in an environment and receiving feedback in the form of rewards or penalties. It is the basis for systems like AlphaGo and for training the RLHF (Reinforcement Learning from Human Feedback) step used to align large language models. It is worth knowing about conceptually, but it is rarely the right tool for empirical research questions. Most research datasets are static collections of observations rather than interactive environments, and reinforcement learning requires a fundamentally different kind of problem setup. If you are doing research on reinforcement learning itself as a topic, that is a different matter, but for the vast majority of applied research tasks you are unlikely to need it.
+
+A practical way to think about this: if you have labeled outcomes you want to predict, you are doing supervised learning. If you want to find structure without predefined labels, you are doing unsupervised learning. If you have some labels but not many, semi-supervised methods or fine-tuning a pretrained model are worth considering. And if none of those fit, it is worth stepping back to ask whether the problem is actually a prediction problem at all.
+
+The rest of this chapter focuses on supervised learning for tabular data, which is where AutoGluon is most useful.
 
 ---
 
