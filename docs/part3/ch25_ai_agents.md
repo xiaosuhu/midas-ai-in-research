@@ -12,11 +12,13 @@ By the end of this chapter, you will be able to:
 - Identify where human oversight is essential in any agent workflow
 :::
 
-Imagine you are conducting a systematic review of the literature on community-based interventions for food insecurity. You have a clear research question, a set of inclusion and exclusion criteria, and a list of databases to search. Now think about what the next several days actually look like. You run searches across PubMed, Scopus, and Google Scholar. You download a few hundred abstracts. You read through them manually to flag which ones meet your inclusion criteria. You pull the full texts of the ones that pass the first screen. You extract the relevant variables from each paper: study design, sample size, intervention type, outcome measures, and so on. You organize all of this into a spreadsheet. Then you check your own work because you know how easy it is to miss something when you are reading abstract number 217 at 11 at night.
+Say you just picked up a new research thread, maybe a collaborator pulled you into it, maybe a grant call nudged you toward it, and you need to get oriented fast. What has already been done in this space? Where are the open questions? Who is publishing on this right now? You start pulling up papers across PubMed, Google Scholar, and a couple of field-specific databases. You skim abstracts, save the ones that look relevant, and start building a rough map in your head of who is arguing what. A week later you have forty tabs open, a messy folder of PDFs, and a nagging feeling that you are missing something published last month that would have changed your framing.
 
-Every step in that list is something you understand completely. None of it requires expert judgment that only you can provide. And yet the whole process takes weeks, and a great deal of that time is spent on tasks that feel more like logistics than scholarship.
+None of this requires the kind of judgment that only you can bring to the work. It is closer to reconnaissance than scholarship, and yet it can eat up the better part of a week before you write a single sentence of your own.
 
-This is exactly the kind of situation that AI agents are designed to help with.
+This is the kind of work AI agents are actually good at right now.
+
+Worth being upfront about one thing: this is not the same as running a formal systematic review, or SR for short, the kind of literature review that follows a strict, pre-registered protocol so its methods can be checked and repeated by anyone. If you are working toward a PRISMA-style SR meant for publication, the search and screening stages still need a human in the lead, agents included. More on why later in this chapter.
 
 A companion notebook for this chapter demonstrates the core agent loop in minimal Python, without any framework, so you can see exactly what is happening at each step. Rather than abstracting the mechanics behind a library, it shows how a model decides to call a tool, receives the result, and decides what to do next.
 
@@ -58,7 +60,9 @@ For researchers building or evaluating agent workflows, this means the most impo
 
 A few scenarios where agents are already being put to use in academic research illustrate both the current possibilities and where things are heading.
 
-**Automated literature triage.** A researcher studying climate adaptation policy sets up an agent with access to a literature database, a set of inclusion criteria, and instructions to produce a structured summary for each paper that passes the screen. The agent searches the database, retrieves abstracts, applies the criteria, pulls full texts for qualifying papers, and returns a spreadsheet with standardized fields filled in. This does not replace the researcher's reading, but it compresses the triage phase from weeks to hours and reduces the chance that relevant papers are missed because of inconsistent keyword searches.
+**Exploring a new literature.** A researcher picking up a new topic sets an agent loose across a couple of databases with a rough set of keywords and a short description of what counts as relevant. The agent pulls candidate papers, writes a one-paragraph summary of each, groups them by theme, and flags a handful that keep getting cited by the others. None of this replaces reading the papers that matter. It just means you start reading them a week earlier than you would have otherwise.
+
+One caveat worth flagging here: this works well for open-ended exploration, but it is a different story once you are running a formal systematic review with inclusion criteria and a registered protocol. Recent work comparing AI search tools against manually conducted reviews found recall rates for the search stage as low as 18 percent, largely because tools like these only reach into a narrow slice of the literature and miss anything behind a paywall {cite}`moens2025aiteam`. If the review needs to hold up to PRISMA-level scrutiny, keep a person driving the search and the screening.
 
 **Multi-source data assembly.** A labor economist is tracking how state-level minimum wage changes relate to employment outcomes over a twenty-year period. The data she needs lives across federal databases, state government websites, and several research archives, in different formats and with different update schedules. She sets up an agent to pull from each source on a schedule, standardize the formats, run a set of validation checks, and flag discrepancies for her to review. The agent handles the logistics. She handles the interpretation.
 
