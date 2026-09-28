@@ -1,0 +1,22 @@
+diff --git a/docs/part3/ch25_ai_agents.md b/docs/part3/ch25_ai_agents.md
+index ff046ae..31cade8 100644
+--- a/docs/part3/ch25_ai_agents.md
++++ b/docs/part3/ch25_ai_agents.md
+@@ -97,7 +97,7 @@ The most accessible entry point into the broader conceptual landscape is the mat
+ 
+ The 5-Day Gen AI Intensive course includes a Day 5 whitepaper on agents that gives a clear conceptual overview of how agent systems are structured and how they differ from standalone language model calls {cite}`kaggle2024genai_agents`. The full course is available at [kaggle.com/learn-guide/5-day-genai](https://www.kaggle.com/learn-guide/5-day-genai).
+ 
+-The 5-Day AI Agents Intensive, released in 2025, goes deeper and is specifically organized around the question of when and why you would use an agent instead of a direct language model prompt. The Day 1 whitepaper is particularly relevant for researchers who want to understand the decision logic behind agent design {cite}`kaggle2025agents_day1`. That course is available at [kaggle.com/learn-guide/5-day-genai-agents-2025](https://www.kaggle.com/learn-guide/5-day-genai-agents-2025).
++The 5-Day AI Agents Intensive goes deeper and is organized around the question of when and why you would use an agent instead of a direct language model prompt. The Day 1 whitepaper is particularly relevant for researchers who want to understand the decision logic behind agent design {cite}`kaggle2025agents_day1`. Google and Kaggle refreshed the course in June 2026 with a heavier emphasis on what they call vibe coding, describing what you want in plain language and letting the model handle the implementation, so expect the current materials to lean into that framing more than the description above suggests. If you want a closer look at what that means specifically for research code, including where it helps and where it can quietly turn into a methodological decision you did not mean to make, see the [vibe coding discussion in Chapter 15](../part2/ch15_data_preparation.md#vibe-coding-what-researchers-need-to-know). That course is available at [kaggle.com/learn-guide/5-day-genai-agents-2025](https://www.kaggle.com/learn-guide/5-day-genai-agents-2025).
+ 
+ Both are free, require no account to read, and are written for a technical but not specialist audience.
+ 
+@@ -128,7 +128,7 @@ You do not need to build anything right now. The exercise is about developing th
+ - [Chapter 20: Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): hands-on exploration of language and vision models without writing code
+ - [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md): how to evaluate outputs you did not produce entirely yourself
+ 
+-*Last reviewed: April 2026. The agent framework landscape changes quickly; specific tool recommendations in this chapter may have evolved since this review. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
++*Last reviewed: September 2026. The agent framework landscape changes quickly; specific tool recommendations in this chapter may have evolved since this review. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+ 
+ ```{bibliography}
+ :filter: docname in docnames
