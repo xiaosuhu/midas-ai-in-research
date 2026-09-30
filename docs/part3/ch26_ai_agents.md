@@ -1,4 +1,4 @@
-# Chapter 25: AI Agents: From Single Answers to Multi-Step Research Tasks
+# Chapter 26: AI Agents: From Single Answers to Multi-Step Research Tasks
 
 :::{admonition} What you will learn
 :class: tip
@@ -125,7 +125,7 @@ You do not need to build anything right now. The exercise is about developing th
 
 ## Related Chapters
 
-- [Chapter 24: Building a Research Knowledge Base with RAG](ch24_rag.md): the retrieval layer that many agent workflows use to give a model access to a specific document collection
+- [Chapter 25: Building a Research Knowledge Base with RAG](ch25_rag.md): the retrieval layer that many agent workflows use to give a model access to a specific document collection
 - [Chapter 23: NLP with Pre-trained Language Models](ch23_nlp_with_bert.md): foundational understanding of how language models represent and process text
 - [Chapter 20: Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): hands-on exploration of language and vision models without writing code
 - [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md): how to evaluate outputs you did not produce entirely yourself

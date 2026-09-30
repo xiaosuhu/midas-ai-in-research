@@ -1,4 +1,4 @@
-# Chapter 26: LLM Evaluation and Fine-tuning
+# Chapter 24: LLM Evaluation and Fine-tuning
 
 :::{admonition} What you will learn
 :class: tip

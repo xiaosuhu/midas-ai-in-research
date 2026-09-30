@@ -22,7 +22,7 @@ The handbook follows the research lifecycle from beginning to end, covering lite
 
 **Part II: AI in Data Analysis** focuses on the hands-on work of data science, including accessing data, exploratory analysis, feature engineering, AutoML, and reproducibility.
 
-**Part III: Building with Modern AI** goes deeper into applied AI development, covering NLP with BERT, retrieval-augmented generation, AI agents, and LLM evaluation and fine-tuning.
+**Part III: Building with Modern AI** goes deeper into applied AI development, covering NLP with BERT, LLM evaluation and fine-tuning, retrieval-augmented generation, and AI agents.
 
 **Part IV: Resources and Reference** is a practical reference section with tools, templates, a glossary, and links to further reading.
 

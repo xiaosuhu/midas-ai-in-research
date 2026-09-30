@@ -45,7 +45,7 @@ Using a model trained on one task or dataset as the starting point for a differe
 A pretraining objective in which some tokens in a sentence are hidden and the model is trained to predict them from surrounding context. BERT was trained this way, reading context from both directions around each masked token simultaneously. This produces rich, context-sensitive representations of language. Covered in [Chapter 23](../part3/ch23_nlp_with_bert.md).
 
 **Downstream Task**
-A specific applied problem that a pretrained model is adapted to solve, such as text classification, named entity recognition, or sentiment analysis. Fine-tuning is how a general pretrained model is adjusted to perform well on a downstream task. Covered in [Chapter 26](../part3/ch26_llm_eval_finetuning.md).
+A specific applied problem that a pretrained model is adapted to solve, such as text classification, named entity recognition, or sentiment analysis. Fine-tuning is how a general pretrained model is adjusted to perform well on a downstream task. Covered in [Chapter 24](../part3/ch24_llm_eval_finetuning.md).
 
 **Training Data**
 The examples used to teach a model. Model quality depends heavily on the quantity, diversity, and accuracy of the training data.
@@ -63,13 +63,13 @@ A technique for estimating model performance by repeatedly splitting the data in
 A simple reference model used to set a performance floor. If a sophisticated model cannot beat a well-chosen baseline, that is a signal to revisit the problem setup before investing in more complexity.
 
 **Fine-Tuning**
-Adapting a pre-trained model to a specific dataset or task, rather than training a model from scratch. Fine-tuning is often much more efficient than full training and is widely used for adapting LLMs to specialized domains. [Chapter 26](../part3/ch26_llm_eval_finetuning.md) covers fine-tuning in depth, including parameter-efficient approaches.
+Adapting a pre-trained model to a specific dataset or task, rather than training a model from scratch. Fine-tuning is often much more efficient than full training and is widely used for adapting LLMs to specialized domains. [Chapter 24](../part3/ch24_llm_eval_finetuning.md) covers fine-tuning in depth, including parameter-efficient approaches.
 
 **Embeddings**
 Numeric vector representations of text, images, or other data that capture their semantic meaning. Two items with similar meanings end up close together in the embedding space, which is what makes search and retrieval systems work.
 
 **Cosine Similarity**
-A measure of the angle between two vectors, used to compare embeddings. A cosine similarity of 1 means the vectors point in the same direction (maximum similarity); 0 means they are perpendicular (no similarity). Because embeddings capture meaning as directions in a high-dimensional space, cosine similarity is a natural way to measure how close two texts are in meaning. Used throughout [Chapters 23](../part3/ch23_nlp_with_bert.md) and [24](../part3/ch24_rag.md).
+A measure of the angle between two vectors, used to compare embeddings. A cosine similarity of 1 means the vectors point in the same direction (maximum similarity); 0 means they are perpendicular (no similarity). Because embeddings capture meaning as directions in a high-dimensional space, cosine similarity is a natural way to measure how close two texts are in meaning. Used throughout [Chapters 23](../part3/ch23_nlp_with_bert.md) and [25](../part3/ch25_rag.md).
 
 **Inference**
 The process of using a trained model to generate predictions or outputs on new data. Distinct from training, which adjusts the model's parameters.
@@ -140,7 +140,7 @@ Models trained on large text corpora to understand and generate natural language
 The neural network architecture that underlies most state-of-the-art NLP and vision models. Transformers use attention mechanisms to identify which parts of the input are most relevant to each output token.
 
 **BERT (Bidirectional Encoder Representations from Transformers)**
-A transformer-based language model introduced by Google in 2018 and trained using masked language modeling. BERT reads text bidirectionally, using context from both sides of each word simultaneously, which produces strong contextual representations. It became one of the first widely adopted foundation models for NLP tasks and is the basis for domain-adapted models such as BioBERT and SciBERT. Covered in [Chapters 20](../part2/ch20_pretrained_text_vision.md), [23](../part3/ch23_nlp_with_bert.md), and [26](../part3/ch26_llm_eval_finetuning.md).
+A transformer-based language model introduced by Google in 2018 and trained using masked language modeling. BERT reads text bidirectionally, using context from both sides of each word simultaneously, which produces strong contextual representations. It became one of the first widely adopted foundation models for NLP tasks and is the basis for domain-adapted models such as BioBERT and SciBERT. Covered in [Chapters 20](../part2/ch20_pretrained_text_vision.md), [23](../part3/ch23_nlp_with_bert.md), and [24](../part3/ch24_llm_eval_finetuning.md).
 
 **Vision Models**
 Models trained to understand or generate visual data, including images and video. Examples include ResNet, Vision Transformer (ViT), and YOLO.
@@ -162,7 +162,7 @@ A supervised learning method that trains many decision trees on random subsets o
 The fraction of predictions a model gets correct. Accuracy is easy to interpret but can be misleading when class distributions are uneven. In a dataset where 95% of examples belong to one class, a model that always predicts that class achieves 95% accuracy without learning anything useful.
 
 **Precision, Recall, and F1 Score**
-Metrics for evaluating classifiers when class balance matters. Precision is the fraction of predicted positives that are actually positive. Recall is the fraction of actual positive cases that the model correctly identified. F1 score is the harmonic mean of precision and recall, summarizing the tradeoff between them. These metrics are more informative than accuracy alone when one class is much rarer than the other. Covered in [Chapters 21](../part2/ch21_validation_interpretation.md) and [26](../part3/ch26_llm_eval_finetuning.md).
+Metrics for evaluating classifiers when class balance matters. Precision is the fraction of predicted positives that are actually positive. Recall is the fraction of actual positive cases that the model correctly identified. F1 score is the harmonic mean of precision and recall, summarizing the tradeoff between them. These metrics are more informative than accuracy alone when one class is much rarer than the other. Covered in [Chapters 21](../part2/ch21_validation_interpretation.md) and [24](../part3/ch24_llm_eval_finetuning.md).
 
 **AUC-ROC**
 Area under the receiver operating characteristic curve. A threshold-independent measure of how well a classifier separates the positive and negative classes across all possible decision thresholds. An AUC of 1.0 indicates perfect separation; 0.5 is equivalent to random guessing. Covered in [Chapter 21](../part2/ch21_validation_interpretation.md).
@@ -203,7 +203,7 @@ Methods that allow machines to understand and generate human language. Common ta
 An NLP task that identifies spans of text referring to named things and labels them by type, such as people, organizations, and locations. NER is used in research to extract entities from large document collections without reading them manually. Covered in [Chapters 20](../part2/ch20_pretrained_text_vision.md) and [23](../part3/ch23_nlp_with_bert.md).
 
 **Semantic Search**
-Retrieval based on meaning rather than exact keyword matching. A semantic search system converts both the query and the documents into embeddings and finds results based on conceptual closeness, even when the specific words differ. This is the core mechanism behind the retrieval step in RAG systems. Covered in [Chapters 5](../part1/ch05_literature_review.md) and [24](../part3/ch24_rag.md).
+Retrieval based on meaning rather than exact keyword matching. A semantic search system converts both the query and the documents into embeddings and finds results based on conceptual closeness, even when the specific words differ. This is the core mechanism behind the retrieval step in RAG systems. Covered in [Chapters 5](../part1/ch05_literature_review.md) and [25](../part3/ch25_rag.md).
 
 **Semantic Similarity**
 A measure of how alike two pieces of text are in meaning, independent of whether they share the same words. Computed using embeddings: two texts are semantically similar when their vector representations are close together in the embedding space. Useful for grouping open-ended responses, deduplication, and document retrieval. Covered in [Chapter 23](../part3/ch23_nlp_with_bert.md).
@@ -212,10 +212,10 @@ A measure of how alike two pieces of text are in meaning, independent of whether
 Applying a model to a classification task without providing any labeled training examples for the specific categories. The model uses its pretraining knowledge to assign texts to user-defined labels described in natural language. Useful when collecting labeled examples would be costly and the categories can be described clearly in plain text. Covered in [Chapters 20](../part2/ch20_pretrained_text_vision.md) and [23](../part3/ch23_nlp_with_bert.md).
 
 **Chunking**
-Splitting a document into smaller pieces before embedding and indexing them in a RAG system. Chunk boundaries affect what the retrieval step can find: a relevant passage that spans two chunks might only return half as context. Common strategies include splitting by character count, paragraph, or section header. Covered in [Chapter 24](../part3/ch24_rag.md).
+Splitting a document into smaller pieces before embedding and indexing them in a RAG system. Chunk boundaries affect what the retrieval step can find: a relevant passage that spans two chunks might only return half as context. Common strategies include splitting by character count, paragraph, or section header. Covered in [Chapter 25](../part3/ch25_rag.md).
 
 **Vector Database**
-A specialized storage system designed to efficiently index and search high-dimensional embedding vectors. Unlike a relational database that matches on exact field values, a vector database finds entries whose embeddings are closest to a query embedding. Common examples include ChromaDB and FAISS. Covered in [Chapter 24](../part3/ch24_rag.md).
+A specialized storage system designed to efficiently index and search high-dimensional embedding vectors. Unlike a relational database that matches on exact field values, a vector database finds entries whose embeddings are closest to a query embedding. Common examples include ChromaDB and FAISS. Covered in [Chapter 25](../part3/ch25_rag.md).
 
 ---
 
@@ -253,30 +253,30 @@ A prompting technique that asks the model to reason through a problem step by st
 An instruction provided to an LLM that sets its role, tone, or constraints for a conversation. Used to customize model behavior without being part of the user-facing conversation.
 
 **Retrieval-Augmented Generation (RAG)**
-A technique where an LLM retrieves relevant documents from a knowledge base before generating a response. RAG reduces hallucination and allows a model to work with information it was not trained on. Maizey, UM's document assistant, is a RAG system. Covered in depth in [Chapter 24](../part3/ch24_rag.md).
+A technique where an LLM retrieves relevant documents from a knowledge base before generating a response. RAG reduces hallucination and allows a model to work with information it was not trained on. Maizey, UM's document assistant, is a RAG system. Covered in depth in [Chapter 25](../part3/ch25_rag.md).
 
 ---
 
 ## Agents and Multi-Step Workflows
 
 **AI Agent**
-A system that can pursue a goal over multiple steps by planning, calling tools, and adjusting its approach based on what it observes. Unlike a single language model interaction, an agent can execute code, retrieve documents, and search the web, maintaining a record of what has already happened across a multi-step task. Covered in [Chapter 25](../part3/ch25_ai_agents.md).
+A system that can pursue a goal over multiple steps by planning, calling tools, and adjusting its approach based on what it observes. Unlike a single language model interaction, an agent can execute code, retrieve documents, and search the web, maintaining a record of what has already happened across a multi-step task. Covered in [Chapter 26](../part3/ch26_ai_agents.md).
 
 **Context Engineering**
-The practice of deliberately designing everything that goes into a model's context window at each step of a multi-step task. In agent workflows, context engineering involves deciding what task description, prior results, retrieved documents, and output format instructions to include at each point. The quality of context at each step is often more important than the sophistication of the framework used. Covered in [Chapter 25](../part3/ch25_ai_agents.md).
+The practice of deliberately designing everything that goes into a model's context window at each step of a multi-step task. In agent workflows, context engineering involves deciding what task description, prior results, retrieved documents, and output format instructions to include at each point. The quality of context at each step is often more important than the sophistication of the framework used. Covered in [Chapter 26](../part3/ch26_ai_agents.md).
 
 **Tool Use**
-An agent's ability to call external functions or APIs as part of completing a task, such as searching the web, running code, reading files, or querying a database. Tool use is what gives agents the ability to act rather than just describe. Covered in [Chapter 25](../part3/ch25_ai_agents.md).
+An agent's ability to call external functions or APIs as part of completing a task, such as searching the web, running code, reading files, or querying a database. Tool use is what gives agents the ability to act rather than just describe. Covered in [Chapter 26](../part3/ch26_ai_agents.md).
 
 ---
 
 ## Fine-Tuning and Adaptation
 
 **LoRA (Low-Rank Adaptation)**
-A parameter-efficient fine-tuning method that adds small trainable matrices alongside the frozen weights of a pretrained model rather than updating all parameters. LoRA typically trains less than one percent of a model's total parameters while achieving results competitive with full fine-tuning on many tasks, making it practical on limited hardware. Covered in [Chapter 26](../part3/ch26_llm_eval_finetuning.md).
+A parameter-efficient fine-tuning method that adds small trainable matrices alongside the frozen weights of a pretrained model rather than updating all parameters. LoRA typically trains less than one percent of a model's total parameters while achieving results competitive with full fine-tuning on many tasks, making it practical on limited hardware. Covered in [Chapter 24](../part3/ch24_llm_eval_finetuning.md).
 
 **PEFT (Parameter-Efficient Fine-Tuning)**
-A family of methods for adapting a pretrained model to a new task while updating only a small fraction of its parameters. LoRA is the most widely used approach in this family. PEFT makes fine-tuning practical on academic-scale hardware and produces compact adapters that can be stored and shared separately from the base model. Covered in [Chapter 26](../part3/ch26_llm_eval_finetuning.md).
+A family of methods for adapting a pretrained model to a new task while updating only a small fraction of its parameters. LoRA is the most widely used approach in this family. PEFT makes fine-tuning practical on academic-scale hardware and produces compact adapters that can be stored and shared separately from the base model. Covered in [Chapter 24](../part3/ch24_llm_eval_finetuning.md).
 
 ---
 

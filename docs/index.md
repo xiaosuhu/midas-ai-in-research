@@ -45,8 +45,9 @@ Chapters with companion notebooks:
 - Ch. 18 — Time series forecasting with AutoGluon
 - Ch. 19 — Multimodal learning with AutoGluon
 - Ch. 23 — NLP with Pre-trained Language Models
-- Ch. 24 — Building a Research Knowledge Base with RAG
-- Ch. 25 — AI Agents: From Single Answers to Multi-Step Research Tasks
+- Ch. 24 — LLM Evaluation and Fine-tuning
+- Ch. 25 — Building a Research Knowledge Base with RAG
+- Ch. 26 — AI Agents: From Single Answers to Multi-Step Research Tasks
 ```
 
 ## A Practical Guide to AI-Augmented Research
@@ -67,7 +68,7 @@ The handbook follows the research lifecycle, from the earliest stage of framing 
 
 **Part II: AI in Data Analysis** (Chapters 12 through 22) is the hands-on section. It covers how to access and work with research data, how to set up computing environments, and then walks through a full analysis workflow from exploratory analysis and data preparation through AutoML, pre-trained models, and interpretation. Chapter 20 covers a broad range of pre-trained models for text, vision, and audio, including tools for transcription, zero-shot image classification, and generative applications such as image synthesis. These chapters assume basic familiarity with Python but are written to be accessible even if you are not primarily a data scientist.
 
-**Part III: Building with Modern AI** (Chapters 23 through 26) goes deeper into the tools and approaches behind more sophisticated AI applications in research. This includes working with pre-trained language models for NLP tasks, building retrieval-augmented generation systems, designing AI agents for multi-step workflows, and evaluating or fine-tuning language models. These chapters are more technical and build on the material in Part II.
+**Part III: Building with Modern AI** (Chapters 23 through 26) goes deeper into the tools and approaches behind more sophisticated AI applications in research. This includes working with pre-trained language models for NLP tasks, evaluating and fine-tuning language models, building retrieval-augmented generation systems, and designing AI agents for multi-step workflows. These chapters are more technical and build on the material in Part II.
 
 **Part IV: Resources and Reference** (Chapters 27 through 32) is the reference section. It includes a guide to AI tools and support available at the University of Michigan, a curated list of external resources, reusable templates, a glossary of key terms, a practical guide to understanding compute specifications and hardware fundamentals, and a video index of recorded workshops and tutorials.
 
@@ -127,9 +128,9 @@ part2/ch22_reproducibility
 :hidden:
 
 part3/ch23_nlp_with_bert
-part3/ch24_rag
-part3/ch25_ai_agents
-part3/ch26_llm_eval_finetuning
+part3/ch24_llm_eval_finetuning
+part3/ch25_rag
+part3/ch26_ai_agents
 ```
 ```{toctree}
 :maxdepth: 2
@@ -193,4 +194,4 @@ A new reference chapter covering the hardware and compute terminology researcher
 
 **v1.0.0** — April 2026 — Initial public release
 
-This is the first complete version of the handbook. All 31 chapters are published, covering the full research lifecycle from literature review and grant writing through data analysis, AutoML, and modern AI methods. Part III (Chapters 23 through 26) introduces more technical topics including NLP with pre-trained language models, retrieval-augmented generation, AI agents, and LLM evaluation. Part IV includes a guide to University of Michigan AI resources, curated external resources, reusable templates, a glossary, and a video index of MIDAS workshop recordings. Companion Colab notebooks are available for six chapters.
+This is the first complete version of the handbook. All 31 chapters are published, covering the full research lifecycle from literature review and grant writing through data analysis, AutoML, and modern AI methods. Part III (Chapters 23 through 26) introduces more technical topics including NLP with pre-trained language models, LLM evaluation and fine-tuning, retrieval-augmented generation, and AI agents. Part IV includes a guide to University of Michigan AI resources, curated external resources, reusable templates, a glossary, and a video index of MIDAS workshop recordings. Companion Colab notebooks are available for seven chapters.

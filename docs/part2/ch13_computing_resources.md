@@ -85,7 +85,7 @@ Running a model on CPU only, without any GPU, is technically possible but produc
 
 This is not to say local models are always the right choice. For tasks where response quality and speed matter most and the data is not sensitive, a cloud API is simpler and more capable at comparable cost. The decision comes back to the same first question in this chapter: what does your data allow? If the answer is that your data cannot leave your machine, a local model may be exactly what you need.
 
-The companion notebook for Chapter 25 demonstrates how to switch between a cloud API and a local model running through LM Studio with minimal code changes, so you can see what that looks like in practice.
+The companion notebook for Chapter 26 demonstrates how to switch between a cloud API and a local model running through LM Studio with minimal code changes, so you can see what that looks like in practice.
 
 
 ## Cloud Computing
