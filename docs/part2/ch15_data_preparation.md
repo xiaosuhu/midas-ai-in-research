@@ -206,6 +206,10 @@ Kaggle Learn offers micro-courses on data cleaning with practical, worked exampl
 - [Chapter 16: Feature Engineering](ch16_feature_engineering.md) - Creating new variables from cleaned data
 - [Chapter 21: Validation and Interpretation](ch21_validation_interpretation.md) - Ensuring your results are robust
 
+```{bibliography}
+:filter: docname in docnames
+```
+
 ---
 
 **Questions or feedback?** [Open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues)

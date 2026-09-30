@@ -113,9 +113,9 @@ TOPIC_GROUPS = [
         ),
         "chapter_refs": [
             ("NLP with BERT", "part3/ch23_nlp_with_bert"),
-            ("Retrieval-Augmented Generation", "part3/ch24_rag"),
-            ("AI Agents", "part3/ch25_ai_agents"),
-            ("LLM Evaluation and Fine-Tuning", "part3/ch26_llm_eval_finetuning"),
+            ("LLM Evaluation and Fine-Tuning", "part3/ch24_llm_eval_finetuning"),
+            ("Retrieval-Augmented Generation", "part3/ch25_rag"),
+            ("AI Agents", "part3/ch26_ai_agents"),
         ],
         "keywords": [
             "from theory to scientific",

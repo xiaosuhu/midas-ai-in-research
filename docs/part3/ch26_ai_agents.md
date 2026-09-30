@@ -1,4 +1,4 @@
-# Chapter 25: AI Agents: From Single Answers to Multi-Step Research Tasks
+# Chapter 26: AI Agents: From Single Answers to Multi-Step Research Tasks
 
 :::{admonition} What you will learn
 :class: tip
@@ -12,11 +12,13 @@ By the end of this chapter, you will be able to:
 - Identify where human oversight is essential in any agent workflow
 :::
 
-Imagine you are conducting a systematic review of the literature on community-based interventions for food insecurity. You have a clear research question, a set of inclusion and exclusion criteria, and a list of databases to search. Now think about what the next several days actually look like. You run searches across PubMed, Scopus, and Google Scholar. You download a few hundred abstracts. You read through them manually to flag which ones meet your inclusion criteria. You pull the full texts of the ones that pass the first screen. You extract the relevant variables from each paper: study design, sample size, intervention type, outcome measures, and so on. You organize all of this into a spreadsheet. Then you check your own work because you know how easy it is to miss something when you are reading abstract number 217 at 11 at night.
+Say you just picked up a new research thread, maybe a collaborator pulled you into it, maybe a grant call nudged you toward it, and you need to get oriented fast. What has already been done in this space? Where are the open questions? Who is publishing on this right now? You start pulling up papers across PubMed, Google Scholar, and a couple of field-specific databases. You skim abstracts, save the ones that look relevant, and start building a rough map in your head of who is arguing what. A week later you have forty tabs open, a messy folder of PDFs, and a nagging feeling that you are missing something published last month that would have changed your framing.
 
-Every step in that list is something you understand completely. None of it requires expert judgment that only you can provide. And yet the whole process takes weeks, and a great deal of that time is spent on tasks that feel more like logistics than scholarship.
+None of this requires the kind of judgment that only you can bring to the work. It is closer to reconnaissance than scholarship, and yet it can eat up the better part of a week before you write a single sentence of your own.
 
-This is exactly the kind of situation that AI agents are designed to help with.
+This is the kind of work AI agents are actually good at right now.
+
+Worth being upfront about one thing: this is not the same as running a formal systematic review, or SR for short, the kind of literature review that follows a strict, pre-registered protocol so its methods can be checked and repeated by anyone. If you are working toward a PRISMA-style SR meant for publication, the search and screening stages still need a human in the lead, agents included. More on why later in this chapter.
 
 A companion notebook for this chapter demonstrates the core agent loop in minimal Python, without any framework, so you can see exactly what is happening at each step. Rather than abstracting the mechanics behind a library, it shows how a model decides to call a tool, receives the result, and decides what to do next.
 
@@ -26,7 +28,7 @@ A companion notebook for this chapter demonstrates the core agent loop in minima
 
 When you ask a language model a question, what you get back is text. The model takes your prompt, processes it, and produces a response. That is the entire transaction. The model has no memory of what you asked before, it cannot take any action in the world, and it cannot go back and revise its answer based on new information it discovers. It reads your input and writes something back. For many tasks, that is exactly what you need.
 
-An agent is something more than that {cite}`kaggle2024genai_agents`. At its core, an agent is a system that can pursue a goal over multiple steps, taking actions, observing results, and adjusting its approach as it goes. Think of the difference between asking a colleague a question in a hallway and asking a colleague to handle a project for you. In the first case, they answer from what they already know. In the second, they might do some research, send a few emails, check some databases, write a draft, revise it based on feedback, and report back to you when it is done. Same underlying competence, very different scope of operation.
+An agent is something more than that {cite}`wiesinger2024agents`. At its core, an agent is a system that can pursue a goal over multiple steps, taking actions, observing results, and adjusting its approach as it goes. Think of the difference between asking a colleague a question in a hallway and asking a colleague to handle a project for you. In the first case, they answer from what they already know. In the second, they might do some research, send a few emails, check some databases, write a draft, revise it based on feedback, and report back to you when it is done. Same underlying competence, very different scope of operation.
 
 Three things make an agent different from a plain language model:
 
@@ -36,7 +38,7 @@ Three things make an agent different from a plain language model:
 
 **Memory.** Within a session, an agent keeps track of what it has already done and found, so each subsequent action can build on what came before. Some agent architectures also support longer-term memory that persists across sessions, though this varies by implementation.
 
-These three capabilities together are what allow an agent to work through a task like the systematic review example above, rather than stopping after a single answer {cite}`kaggle2025agents_day1`.
+These three capabilities together are what allow an agent to work through a task like the literature exploration example above, rather than stopping after a single answer {cite}`blount2025introagents`.
 
 One more thing worth noting: agents are not autonomous in the sense of being unsupervised. The goal, the constraints, and the tools are all specified by you. A well-designed agent workflow has checkpoints where a human reviews what has been done before proceeding. Thinking of an agent as a capable research assistant who works on your behalf, rather than as a system that operates independently, is a more accurate and safer mental model.
 
@@ -46,7 +48,7 @@ One more thing worth noting: agents are not autonomous in the sense of being uns
 
 You have probably heard the phrase "prompt engineering" before, and you may have a sense that writing good prompts involves being clear and specific. That framing is useful for simple, one-off interactions. But for agent workflows, a more precise concept applies: context engineering.
 
-Context engineering is the practice of deliberately designing everything that goes into the model's context window at each step of a multi-step task {cite}`kaggle2025agents_day1`. In a single-turn chat, the context is essentially just your message. In an agent workflow, the context at any given step might include a system prompt defining the agent's role and constraints, the original task description, a summary of what has already been done, the results of tool calls made in previous steps, retrieved passages from a document collection, and instructions about what output format is expected next. Every one of these elements is a design decision that affects what the model can and cannot do.
+Context engineering is the practice of deliberately designing everything that goes into the model's context window at each step of a multi-step task {cite}`milam2025contexteng`. In a single-turn chat, the context is essentially just your message. In an agent workflow, the context at any given step might include a system prompt defining the agent's role and constraints, the original task description, a summary of what has already been done, the results of tool calls made in previous steps, retrieved passages from a document collection, and instructions about what output format is expected next. Every one of these elements is a design decision that affects what the model can and cannot do.
 
 The reason this matters in practice is that models have no memory between steps except what you explicitly give them. If step three of a workflow needs to know what was found in step one, that information has to be passed forward in the context. If it is not there, the model cannot use it. If the context becomes so long that early instructions get pushed out, the model may lose track of its original goal. And if the retrieved passages or tool results that the model is working from are irrelevant or poorly formatted, the model will generate answers based on the wrong information no matter how capable it is.
 
@@ -58,7 +60,9 @@ For researchers building or evaluating agent workflows, this means the most impo
 
 A few scenarios where agents are already being put to use in academic research illustrate both the current possibilities and where things are heading.
 
-**Automated literature triage.** A researcher studying climate adaptation policy sets up an agent with access to a literature database, a set of inclusion criteria, and instructions to produce a structured summary for each paper that passes the screen. The agent searches the database, retrieves abstracts, applies the criteria, pulls full texts for qualifying papers, and returns a spreadsheet with standardized fields filled in. This does not replace the researcher's reading, but it compresses the triage phase from weeks to hours and reduces the chance that relevant papers are missed because of inconsistent keyword searches.
+**Exploring a new literature.** A researcher picking up a new topic sets an agent loose across a couple of databases with a rough set of keywords and a short description of what counts as relevant. The agent pulls candidate papers, writes a one-paragraph summary of each, groups them by theme, and flags a handful that keep getting cited by the others. None of this replaces reading the papers that matter. It just means you start reading them a week earlier than you would have otherwise.
+
+One caveat worth flagging here: this works well for open-ended exploration, but it is a different story once you are running a formal systematic review with inclusion criteria and a registered protocol. Recent work comparing AI search tools against manually conducted reviews found that no tool recovered more than about 19 percent of the relevant articles in any of the four reviews it tested, and many recovered none. The authors attribute the gap mostly to how these tools source their articles: they draw on a limited set of databases and overlook journal content behind a paywall {cite}`moens2025aiteam`. If the review needs to hold up to PRISMA-level scrutiny, keep a person driving the search and the screening. For a current view of where the major systematic review methodology groups and journals stand on AI use, see the library guidance covered in [AI Resources at the University of Michigan](../part4/ch27_um_resources.md#ai-use-in-research-library-guidance).
 
 **Multi-source data assembly.** A labor economist is tracking how state-level minimum wage changes relate to employment outcomes over a twenty-year period. The data she needs lives across federal databases, state government websites, and several research archives, in different formats and with different update schedules. She sets up an agent to pull from each source on a schedule, standardize the formats, run a set of validation checks, and flag discrepancies for her to review. The agent handles the logistics. She handles the interpretation.
 
@@ -89,13 +93,15 @@ The companion notebook for this chapter is a minimal, framework-free agent loop 
 The notebook uses the Gemini API for convenience, but the agent loop itself does not depend on any particular model provider. If your data is sensitive or you would rather avoid sending prompts to an external service, the same loop can be adapted to run against a local model served through [LM Studio](https://lmstudio.ai) or [Ollama](https://ollama.com), both of which expose a local endpoint that the code can call with minimal changes. See the [Running AI Models Locally](../part2/ch13_computing_resources.md#running-ai-models-locally) section in Chapter 13 for hardware requirements and setup options.
 :::
 
-The most accessible entry point into the broader conceptual landscape is the material produced by Google and Kaggle as part of their free intensive courses on generative AI and agents.
+The most accessible entry point into the broader conceptual landscape is the material produced by Google and Kaggle as part of their free intensive courses on generative AI and agents. There are three of them, and the names are similar enough that they are easy to mix up.
 
-The 5-Day Gen AI Intensive course includes a Day 5 whitepaper on agents that gives a clear conceptual overview of how agent systems are structured and how they differ from standalone language model calls {cite}`kaggle2024genai_agents`. The full course is available at [kaggle.com/learn-guide/5-day-genai](https://www.kaggle.com/learn-guide/5-day-genai).
+The 5-Day Gen AI Intensive is the broad one. It ran live in November 2024 and again in spring 2025, and its Day 3 whitepaper on agents gives a conceptual overview of how agent systems are structured and how they differ from standalone language model calls {cite}`wiesinger2024agents`. The course is available at [kaggle.com/learn-guide/5-day-genai](https://www.kaggle.com/learn-guide/5-day-genai).
 
-The 5-Day AI Agents Intensive, released in 2025, goes deeper and is specifically organized around the question of when and why you would use an agent instead of a direct language model prompt. The Day 1 whitepaper is particularly relevant for researchers who want to understand the decision logic behind agent design {cite}`kaggle2025agents_day1`. That course is available at [kaggle.com/learn-guide/5-day-genai-agents-2025](https://www.kaggle.com/learn-guide/5-day-genai-agents-2025).
+The 5-Day AI Agents Intensive, held in November 2025, goes deeper on agents themselves. Its Day 1 whitepaper lays out a taxonomy of agent capabilities and argues for a discipline it calls Agent Ops, aimed at keeping agents reliable and governable {cite}`blount2025introagents`. Day 3 covers sessions and memory, and its whitepaper goes further into the context engineering ideas covered earlier in this chapter {cite}`milam2025contexteng`. That course is available at [kaggle.com/learn-guide/5-day-agents](https://www.kaggle.com/learn-guide/5-day-agents).
 
-Both are free, require no account to read, and are written for a technical but not specialist audience.
+Google and Kaggle ran a third course in June 2026, the 5-Day AI Agents: Intensive Vibe Coding Course. It keeps the agent themes but changes the question. Instead of asking how an agent works, it asks how you build software when you describe what you want in plain language and AI tools write much of the code {cite}`kaggle2026vibecoding_course`. If you want to see where agentic coding tools are heading, this is the one to look at. For what it means for research code specifically, including where it helps and where it can quietly turn into a methodological decision you did not mean to make, see the [vibe coding discussion in Chapter 15](../part2/ch15_data_preparation.md#vibe-coding-what-researchers-need-to-know). That course is available at [kaggle.com/learn-guide/5-day-agents-vibecoding](https://www.kaggle.com/learn-guide/5-day-agents-vibecoding).
+
+All three are free. The hands-on codelabs ask for a free Kaggle account with a verified phone number, and the materials are written with developers in mind, so expect to do a little translating for research settings.
 
 ```{admonition} If You're at U-M
 :class: note
@@ -119,12 +125,12 @@ You do not need to build anything right now. The exercise is about developing th
 
 ## Related Chapters
 
-- [Chapter 24: Building a Research Knowledge Base with RAG](ch24_rag.md): the retrieval layer that many agent workflows use to give a model access to a specific document collection
+- [Chapter 25: Building a Research Knowledge Base with RAG](ch25_rag.md): the retrieval layer that many agent workflows use to give a model access to a specific document collection
 - [Chapter 23: NLP with Pre-trained Language Models](ch23_nlp_with_bert.md): foundational understanding of how language models represent and process text
 - [Chapter 20: Pre-trained Models for Text and Vision](../part2/ch20_pretrained_text_vision.md): hands-on exploration of language and vision models without writing code
 - [Chapter 21: Validation and Interpretation](../part2/ch21_validation_interpretation.md): how to evaluate outputs you did not produce entirely yourself
 
-*Last reviewed: April 2026. The agent framework landscape changes quickly; specific tool recommendations in this chapter may have evolved since this review. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
+*Last reviewed: September 2026. The agent framework landscape changes quickly; specific tool recommendations in this chapter may have evolved since this review. If you notice outdated content, [open an issue on GitHub](https://github.com/xiaosuhu/midas-ai-in-research/issues).*
 
 ```{bibliography}
 :filter: docname in docnames

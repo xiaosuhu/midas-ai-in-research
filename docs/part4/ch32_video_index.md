@@ -27,7 +27,7 @@ Related chapters: [Ethics and Privacy](../part1/ch10_ethics_privacy), [Validatio
 
 Recordings focused on applying large language models to real research tasks, including retrieval-augmented generation, agentic workflows, and fine-tuning. These connect closely to the chapters in Part III.
 
-Related chapters: [NLP with BERT](../part3/ch23_nlp_with_bert), [Retrieval-Augmented Generation](../part3/ch24_rag), [AI Agents](../part3/ch25_ai_agents), [LLM Evaluation and Fine-Tuning](../part3/ch26_llm_eval_finetuning)
+Related chapters: [NLP with BERT](../part3/ch23_nlp_with_bert), [LLM Evaluation and Fine-Tuning](../part3/ch24_llm_eval_finetuning), [Retrieval-Augmented Generation](../part3/ch25_rag), [AI Agents](../part3/ch26_ai_agents)
 
 | Playlist | Videos | Year |
 |----------|:------:|:----:|

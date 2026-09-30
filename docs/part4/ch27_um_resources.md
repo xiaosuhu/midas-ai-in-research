@@ -221,6 +221,24 @@ The UM Library's Technology Training Center offers workshops on reproducible res
 
 ---
 
+### AI Use in Research: Library Guidance
+
+#### AI in Systematic Reviews: Position Statement Tracker
+
+The Taubman Health Sciences Library maintains a living page that tracks where the major systematic review methodology groups, along with a set of evidence synthesis journals, currently stand on the use of AI in systematic reviews. Because guidance in this area keeps shifting as tools and journal policies evolve, this is a more reliable way to check current expectations than relying on any single paper or blog post. It is a useful starting point if you are planning a systematic review and want to know what your target journal or methodology framework currently allows.
+
+**Link:** https://guides.lib.umich.edu/sysreviews/AI
+
+---
+
+#### Statement on Appropriate Use of Electronic Resources
+
+The UM Library's Statement on Appropriate Use of Electronic Resources explains the copyright and licensing constraints that apply when using automated tools, including AI agents, to search or pull content from licensed library databases. This matters more than it might seem: a search agent scraping full text from a licensed database at scale can violate the terms of the library's vendor agreements, even when the researcher has no intention of doing anything improper with the material. The page also lists contacts for librarians who can help researchers think through copyright questions before they run into a problem rather than after.
+
+**Link:** https://www.lib.umich.edu/about-us/policies/statement-appropriate-use-electronic-resources/
+
+---
+
 ### Other Funding Programs
 
 #### OVPR Funding Programs
@@ -262,6 +280,8 @@ Many UM units offer small grants, cloud compute credits through AWS, GCP, or Azu
 | Data Access | UM Library | Data catalog and consultations | https://guides.lib.umich.edu/data |
 | Consulting | ARC | Scientific computing and research consulting | https://its.umich.edu/advanced-research-computing/consulting |
 | Training | UM Library Workshops | Data management and coding workshops | https://ttc.iss.lsa.umich.edu/ |
+| Library Guidance | AI in Systematic Reviews Tracker | Position statements from SR methodology groups and journals | https://guides.lib.umich.edu/sysreviews/AI |
+| Library Guidance | Appropriate Use of Electronic Resources | Copyright and licensing limits on automated database access | https://www.lib.umich.edu/about-us/policies/statement-appropriate-use-electronic-resources/ |
 | Funding | OVPR Programs | UM research funding programs | https://research.umich.edu/funding/ |
 
 ---
